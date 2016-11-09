@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c84d2f501da59c342a441ccc7e5b507c
+timeCreated: 1478229417
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Source Serif Pro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 42abd032c72946e4e9f09a7fe1334003, type: 3}
+  - {fileID: 12800000, guid: 596b8166bfb7f9c448ee4df71164bfd1, type: 3}
+  - {fileID: 12800000, guid: 62b99c4af857f664fa0b14807e565c3c, type: 3}
+  - {fileID: 12800000, guid: 4e8f35bbc0fcce44e9911f50862df083, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
