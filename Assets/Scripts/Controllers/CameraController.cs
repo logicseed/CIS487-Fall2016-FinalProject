@@ -17,6 +17,12 @@ public class CameraController : MonoBehaviour
     [Header("Zoom Settings")]
 
     [SerializeField]
+    private bool allowManualZoom;
+
+    [SerializeField]
+    private float scrollSpeed;
+
+    [SerializeField]
     [Range(5, 500)]
     private float maximumZoomLevel;
 
@@ -121,6 +127,12 @@ public class CameraController : MonoBehaviour
     private void UpdateZoom()
     {
         Vector3 cameraMovement = Vector3.zero;
+
+        if (allowManualZoom)
+        {
+            var scroll = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+            newZoomLevel -= scroll;
+        }
 
         if (ZoomLevel > newZoomLevel) cameraMovement = new Vector3(0.0f, -1.0f, 1.0f) * zoomSpeed; // zoom in
         if (ZoomLevel < newZoomLevel) cameraMovement = new Vector3(0.0f, 1.0f, -1.0f) * zoomSpeed; // zoom out
