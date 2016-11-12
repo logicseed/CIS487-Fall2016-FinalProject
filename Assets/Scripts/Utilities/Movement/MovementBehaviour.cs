@@ -22,22 +22,39 @@ public class MovementBehaviour
 
     #region Private Fields
 
+    [SerializeField]
     private MovementType type = MovementType.Idle;
+    [SerializeField]
     private Transform transform = null;
+    [SerializeField]
     private Vector3 position = Vector3.zero;
+    [SerializeField]
     private float strength = 1.0f;
+    [SerializeField]
     private bool deleteUponArrived = false;
+    [SerializeField]
     private bool deleteAfterFlee = false;
+    [SerializeField]
     private bool deleteTransformNull = false;
+    [SerializeField]
     private float arrivalRadius = 3.0f;
+    [SerializeField]
     private float arrivedRadius = 0.5f;
+    [SerializeField]
     private float fleeRadius = 20.0f;
+    [SerializeField]
     private float orbitRadius = 10.0f;
+    [SerializeField]
     private float wanderRate = 1.0f;
+    [SerializeField]
     private float wanderMagnitude = 2.0f;
+    [SerializeField]
     private float wanderAngle = 0.0f;
+    [SerializeField]
     private float wanderAngleChange = 30.0f;
+    [SerializeField]
     private float wanderTime = -1.0f;
+    [SerializeField]
     private float pursuePrediction = 10.0f;
 
     #endregion Private Fields
