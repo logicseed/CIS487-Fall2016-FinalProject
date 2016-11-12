@@ -25,9 +25,9 @@ public class MovementBehaviour
     private Transform transform = null;
     private Vector3 position = Vector3.zero;
     private float strength = 1.0f;
-    private bool deleteUponArrived = true;
-    private bool deleteAfterFlee = true;
-    private bool deleteTransformNull = true;
+    private bool deleteUponArrived = false;
+    private bool deleteAfterFlee = false;
+    private bool deleteTransformNull = false;
     private float arrivalRadius = 3.0f;
     private float arrivedRadius = 0.5f;
     private float fleeRadius = 20.0f;
@@ -36,6 +36,8 @@ public class MovementBehaviour
     private float wanderMagnitude = 2.0f;
     private float wanderAngle = 0.0f;
     private float wanderAngleChange = 30.0f;
+    public float WanderTime = -1.0f;
+    public float PursuePrediction = 10.0f;
 
     #endregion Private Fields
 

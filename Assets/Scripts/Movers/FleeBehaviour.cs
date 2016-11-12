@@ -37,7 +37,6 @@ public class FleeBehaviour : ActiveBehaviour
         if (Deleting()) return parentBehaviour.Steering();
 
         var velocity = moverProperties.currentPosition - behaviour.Position;
-        var distance = velocity.magnitude;
         velocity = velocity.normalized * moverProperties.maximumSpeed;
 
         var steering = velocity - moverProperties.currentVelocity;

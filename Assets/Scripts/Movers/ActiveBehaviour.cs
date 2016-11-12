@@ -82,6 +82,12 @@ public abstract class ActiveBehaviour : AbstractBehaviour
             if (behaviour.DeleteAfterFlee && distance > behaviour.FleeRadius) delete = true;
         }
 
+        if (behaviour.WanderTime != -1.0f)
+        {
+            if (behaviour.WanderTime > 0.0f) behaviour.WanderTime -= Time.fixedDeltaTime;
+            if (behaviour.WanderTime < 0.0f && behaviour.WanderTime >= -1.0f) delete = true;
+        }
+
         if (delete) behaviour.OnDeleteBehaviour();
 
         return delete;

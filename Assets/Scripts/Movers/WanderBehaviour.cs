@@ -2,6 +2,12 @@
 
 using UnityEngine;
 
+/// <summary>
+/// Causes the attached mover to wander.
+/// </summary>
+/// <remarks>
+/// ConcreteDecorator of the Decorator pattern.
+/// </remarks>
 public class WanderBehaviour : ActiveBehaviour
 {
     #region Constructor
