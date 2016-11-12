@@ -13,19 +13,19 @@ public class MoverProperties
     /// <summary>
     /// Current local space velocity vector of this mover.
     /// </summary>
-    [HideInInspector]
+    //[HideInInspector]
     public Vector3 currentVelocity;
 
     /// <summary>
     /// Current world space position of this mover.
     /// </summary>
-    [HideInInspector]
+    //[HideInInspector]
     public Vector3 currentPosition;
 
     /// <summary>
     /// Direction of the current velocity.
     /// </summary>
-    [HideInInspector]
+    //[HideInInspector]
     public Vector3 currentHeading;
 
     /// <summary>

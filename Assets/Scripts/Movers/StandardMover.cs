@@ -52,7 +52,11 @@ public class StandardMover : MonoBehaviour
     private void UpdateMovementProperties()
     {
         movementProperties.currentPosition = transform.position;
+        
         movementProperties.currentVelocity = CalculateNewVelocity();
+
+        if (movementProperties.currentVelocity != Vector3.zero)
+            movementProperties.currentHeading = movementProperties.currentVelocity.normalized;
     }
 
     /// <summary>
@@ -64,6 +68,7 @@ public class StandardMover : MonoBehaviour
     /// </remarks>
     private Vector3 CalculateNewVelocity()
     {
+        Debug.Log("Number of behaviours: " + behaviours.Count);
         AbstractBehaviour movementBehaviour = new IdleBehaviour(movementProperties, new MovementBehaviour());
 
         foreach (var behaviour in behaviours)
@@ -75,6 +80,9 @@ public class StandardMover : MonoBehaviour
                     break;
                 case MovementType.Flee:
                     movementBehaviour = new FleeBehaviour(movementBehaviour, behaviour);
+                    break;
+                case MovementType.Wander:
+                    movementBehaviour = new WanderBehaviour(movementBehaviour, behaviour);
                     break;
             }
         }
@@ -89,7 +97,7 @@ public class StandardMover : MonoBehaviour
     {
         if (graphicsGameObject != null)
         {
-            var heading = transform.position + movementProperties.currentVelocity;
+            var heading = transform.position + movementProperties.currentHeading;
             graphicsGameObject.LookAt(heading);
         }
     }

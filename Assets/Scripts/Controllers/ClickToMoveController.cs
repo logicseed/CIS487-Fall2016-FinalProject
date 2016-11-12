@@ -29,9 +29,17 @@ public class ClickToMoveController : MonoBehaviour
             seekGraphic = Instantiate(Resources.Load("MoveTarget")) as GameObject;
             seekGraphic.transform.position = FindMousePosition();
             
+            // var behaviour = new MovementBehaviour();
+            // behaviour.Type = MovementType.Seek;
+            // behaviour.Transform = seekGraphic.transform;
+
+            // mover.AddBehaviour(behaviour);
+
             var behaviour = new MovementBehaviour();
-            behaviour.Type = MovementType.Seek;
-            behaviour.Transform = seekGraphic.transform;
+            behaviour.Type = MovementType.Wander;
+            behaviour.DeleteTransformNull = false;
+            behaviour.DeleteAfterFlee = false;
+            behaviour.DeleteUponArrived = false;
 
             mover.AddBehaviour(behaviour);
         }

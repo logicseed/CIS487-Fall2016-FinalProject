@@ -25,7 +25,7 @@ GameObject:
   - 135: {fileID: 135000010665063772}
   - 114: {fileID: 114000014173799538}
   m_Layer: 9
-  m_Name: ClickToMoveTarget
+  m_Name: MoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

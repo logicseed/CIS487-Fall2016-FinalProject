@@ -32,6 +32,10 @@ public class MovementBehaviour
     private float arrivedRadius = 0.5f;
     private float fleeRadius = 20.0f;
     private float orbitRadius = 10.0f;
+    private float wanderRate = 1.0f;
+    private float wanderMagnitude = 2.0f;
+    private float wanderAngle = 0.0f;
+    private float wanderAngleChange = 30.0f;
 
     #endregion Private Fields
 
@@ -210,6 +214,70 @@ public class MovementBehaviour
         set
         {
             orbitRadius = value;
+        }
+    }
+
+    /// <summary>
+    /// Percentage of MaximumVelocity that the mover will tend to wander at.
+    /// </summary>
+    public float WanderRate
+    {
+        get
+        {
+            return wanderRate;
+        }
+
+        set
+        {
+            wanderRate = value;
+        }
+    }
+
+    /// <summary>
+    /// Strength of steering while wandering; higher is more erratic.
+    /// </summary>
+    public float WanderMagnitude
+    {
+        get
+        {
+            return wanderMagnitude;
+        }
+
+        set
+        {
+            wanderMagnitude = value;
+        }
+    }
+
+    /// <summary>
+    /// Last angle used while wandering. SHOULD NOT SET.
+    /// </summary>
+    public float WanderAngle
+    {
+        get
+        {
+            return wanderAngle;
+        }
+
+        set
+        {
+            wanderAngle = value;
+        }
+    }
+
+    /// <summary>
+    /// The maximum change to WanderAngle during each update.
+    /// </summary>
+    public float WanderAngleChange
+    {
+        get
+        {
+            return wanderAngleChange;
+        }
+
+        set
+        {
+            wanderAngleChange = value;
         }
     }
 

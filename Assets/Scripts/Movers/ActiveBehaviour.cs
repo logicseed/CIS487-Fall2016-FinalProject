@@ -55,7 +55,7 @@ public abstract class ActiveBehaviour : AbstractBehaviour
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
     public override Vector3 NewVelocity()
     {
-        var steering = Steering().Truncate(moverProperties.maximumSteering);
+        var steering = Steering().Truncate(moverProperties.maximumSteering);// / moverProperties.moverMass;
         var velocity = moverProperties.currentVelocity + steering;
         return velocity.Truncate(moverProperties.maximumSpeed);
     }
