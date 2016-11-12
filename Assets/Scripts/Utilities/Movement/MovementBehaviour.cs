@@ -11,6 +11,7 @@ public delegate void DeleteBehaviourHandler(MovementBehaviour behaviour);
 /// <summary>
 /// Stores information about a movement behaviour that will be applied to a mover.
 /// </summary>
+[System.Serializable]
 public class MovementBehaviour
 {
     #region Events
@@ -36,8 +37,8 @@ public class MovementBehaviour
     private float wanderMagnitude = 2.0f;
     private float wanderAngle = 0.0f;
     private float wanderAngleChange = 30.0f;
-    public float WanderTime = -1.0f;
-    public float PursuePrediction = 10.0f;
+    private float wanderTime = -1.0f;
+    private float pursuePrediction = 10.0f;
 
     #endregion Private Fields
 
@@ -280,6 +281,32 @@ public class MovementBehaviour
         set
         {
             wanderAngleChange = value;
+        }
+    }
+
+    public float WanderTime
+    {
+        get
+        {
+            return wanderTime;
+        }
+
+        set
+        {
+            wanderTime = value;
+        }
+    }
+
+    public float PursuePrediction
+    {
+        get
+        {
+            return pursuePrediction;
+        }
+
+        set
+        {
+            pursuePrediction = value;
         }
     }
 

@@ -68,7 +68,7 @@ public class StandardMover : MonoBehaviour
     /// </remarks>
     private Vector3 CalculateNewVelocity()
     {
-        Debug.Log("Number of behaviours: " + behaviours.Count);
+        //Debug.Log("Number of behaviours: " + behaviours.Count);
         AbstractBehaviour movementBehaviour = new IdleBehaviour(movementProperties, new MovementBehaviour());
 
         foreach (var behaviour in behaviours)
@@ -108,6 +108,11 @@ public class StandardMover : MonoBehaviour
     private void UpdateMoverPosition()
     {
         transform.Translate(movementProperties.currentVelocity * Time.fixedDeltaTime);
+        // transform.position = Vector3.Slerp(
+        //     transform.position,
+        //     transform.position + CurrentVelocity,
+        //     Time.fixedDeltaTime
+        // );
     }
 
     /// <summary>
