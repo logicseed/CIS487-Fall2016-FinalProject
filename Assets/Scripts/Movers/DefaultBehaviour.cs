@@ -28,7 +28,7 @@ public class DefaultBehaviour : MonoBehaviour
         var mover = gameObject.GetComponent<StandardMover>();
 
         var behaviour = new MovementBehaviour();
-        behaviour.Type = movementType = MovementType.Idle;
+        behaviour.Type = movementType;
         behaviour.Transform = targetTransform;
         behaviour.Position = position;
         behaviour.Strength = strength;
