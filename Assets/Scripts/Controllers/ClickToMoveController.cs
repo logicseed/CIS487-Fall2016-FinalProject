@@ -1,9 +1,10 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class ClickToMoveController : MonoBehaviour
+public class ClickToMoveController : NetworkBehaviour
 {
     private StandardMover mover;
     private GameObject seekGraphic;

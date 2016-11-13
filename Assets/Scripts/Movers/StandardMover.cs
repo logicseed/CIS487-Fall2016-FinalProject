@@ -1,13 +1,14 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections.Generic;
 
 /// <summary>
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
 [DisallowMultipleComponent]
-public class StandardMover : MonoBehaviour
+public class StandardMover : NetworkBehaviour
 {
     #region Inspector Fields
 

@@ -22,6 +22,7 @@ public class MovementBehaviour
 
     #region Private Fields
 
+    [Header("Generic Behaviour Properties")]
     [SerializeField]
     private MovementType type = MovementType.Idle;
     [SerializeField]

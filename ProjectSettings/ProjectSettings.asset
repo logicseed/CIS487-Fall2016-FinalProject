@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Playground
+  companyName: Vista Sciences
+  productName: Solar Rift
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -41,7 +41,7 @@ PlayerSettings:
   disableDepthAndStencilBuffers: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
-  runInBackground: 0
+  runInBackground: 1
   captureSingleScreen: 0
   Override IPod Music: 0
   Prepare IOS For Recording: 0
@@ -89,11 +89,11 @@ PlayerSettings:
   wiiUAllowScreenCapture: 1
   wiiUControllerCount: 0
   m_SupportedAspectRatios:
-    4:3: 1
-    5:4: 1
-    16:10: 1
+    4:3: 0
+    5:4: 0
+    16:10: 0
     16:9: 1
-    Others: 1
+    Others: 0
   bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
   preloadedAssets: []
@@ -115,7 +115,7 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   preloadShaders: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
     m_Bits: 238
