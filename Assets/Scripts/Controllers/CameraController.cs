@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class CameraController : NetworkBehaviour
+public class CameraController : MonoBehaviour
 {
     #region Inspector Fields
 

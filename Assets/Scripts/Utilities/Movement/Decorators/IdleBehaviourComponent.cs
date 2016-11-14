@@ -8,12 +8,12 @@ using UnityEngine;
 /// <remarks>
 /// ConcreteComponent of the Decorator pattern.
 /// </remarks>
-public class IdleBehaviour : AbstractBehaviour
+public class IdleBehaviourComponent : AbstractBehaviourComponent
 {
     #region Protected Fields
 
     protected MoverProperties moverProperties;
-    protected MovementBehaviour behaviourProperties;
+    protected IdleBehaviour behaviourProperties;
 
     #endregion Protected Fields
 
@@ -28,10 +28,10 @@ public class IdleBehaviour : AbstractBehaviour
     /// <param name="behaviourProperties">
     /// MovementBehaviour details for this behaviour.
     /// </param>
-    public IdleBehaviour(MoverProperties moverProperties, MovementBehaviour behaviourProperties)
+    public IdleBehaviourComponent(MoverProperties moverProperties, MovementBehaviour behaviourProperties)
     {
         this.moverProperties = moverProperties;
-        this.behaviourProperties = behaviourProperties;
+        this.behaviourProperties = behaviourProperties as IdleBehaviour;
     }
 
     #endregion Constructor
@@ -53,9 +53,9 @@ public class IdleBehaviour : AbstractBehaviour
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
     public override Vector3 NewVelocity()
     {
-        var acceleration = moverProperties.currentVelocity.magnitude - moverProperties.maximumSteering;
+        var acceleration = moverProperties.CurrentVelocity.magnitude - moverProperties.MaximumSteering;
         acceleration = Mathf.Max(0.0f, acceleration);
-        return moverProperties.currentVelocity.Truncate(acceleration);
+        return moverProperties.CurrentVelocity.Truncate(acceleration);
     }
 
     /// <summary>
@@ -64,6 +64,12 @@ public class IdleBehaviour : AbstractBehaviour
     /// <returns>Vector3 steering vector of idle behaviour.</returns>
     public override Vector3 Steering()
     {
+        //Debug.Log("Idle Steering called.");
+        if (behaviourProperties.Braking)
+        {
+            var steering = Vector3.ClampMagnitude(-moverProperties.CurrentVelocity, moverProperties.MaximumSteering);
+            return steering;
+        }
         return Vector3.zero;
     }
 

@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
-public class ClickToMoveController : NetworkBehaviour
+public class ClickToMoveController : MonoBehaviour
 {
     private StandardMover mover;
     private GameObject seekGraphic;
     private GameObject fleeGraphic;
+    public StandardMover seekTestNPC;
+    public StandardMover pursueTestNPC;
 
     private int lastBehaviour;
 
@@ -17,6 +19,8 @@ public class ClickToMoveController : NetworkBehaviour
     private void Start ()
     {
         mover = gameObject.GetComponent<StandardMover>();
+        //seekTestNPC.AddBehaviour(new SeekBehaviour(transform));
+        //pursueTestNPC.AddBehaviour(new PursueBehaviour(transform));
     }
     private void FixedUpdate () { }
     private void Update ()
@@ -30,11 +34,7 @@ public class ClickToMoveController : NetworkBehaviour
             seekGraphic = Instantiate(Resources.Load("MoveTarget")) as GameObject;
             seekGraphic.transform.position = FindMousePosition();
             
-            var behaviour = new MovementBehaviour();
-            behaviour.Type = MovementType.Seek;
-            behaviour.Transform = seekGraphic.transform;
-            behaviour.DeleteTransformNull = true;
-            behaviour.DeleteUponArrived = true;
+            MovementBehaviour behaviour = new SeekBehaviour(seekGraphic.transform);
 
             mover.AddBehaviour(behaviour);
 
@@ -49,16 +49,16 @@ public class ClickToMoveController : NetworkBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (seekGraphic != null)
+            if (fleeGraphic != null)
             {
                 Destroy(fleeGraphic);
             }
             fleeGraphic = Instantiate(Resources.Load("MoveTarget")) as GameObject;
+            fleeGraphic.GetComponent<Renderer>().material.color = Color.red;
             fleeGraphic.transform.position = FindMousePosition();
             
-            var behaviour = new MovementBehaviour();
-            behaviour.Type = MovementType.Flee;
-            behaviour.Transform = fleeGraphic.transform;
+            FleeBehaviour behaviour = new FleeBehaviour(fleeGraphic.transform);
+            behaviour.DeleteWhenOutOfRange = true;
 
             mover.AddBehaviour(behaviour);
         }

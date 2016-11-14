@@ -1,13 +1,10 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using UnityEngine.Networking;
+using System.Collections;
 
-/// <summary>
-/// Adds a default behaviour to a StandardMover.
-/// </summary>
 [RequireComponent(typeof(StandardMover))]
-public class DefaultBehaviour : MonoBehaviour
+public class PursueMover : MonoBehaviour
 {
     public PursueBehaviour movementBehaviour;
 
@@ -19,4 +16,5 @@ public class DefaultBehaviour : MonoBehaviour
         mover.AddBehaviour(movementBehaviour);
     }
     #endregion MonoBehaviour Methods
+
 }

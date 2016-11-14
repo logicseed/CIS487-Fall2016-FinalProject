@@ -8,9 +8,11 @@ using UnityEngine;
 /// <remarks>
 /// ConcreteDecorator of the Decorator pattern.
 /// </remarks>
-public class FleeBehaviour : ActiveBehaviour
+public class FleeBehaviourDecorator : TargetBehaviourDecorator
 {
     #region Constructor
+
+    new FleeBehaviour behaviour;
 
     /// <summary>
     /// Constructor for flee behaviour.
@@ -21,8 +23,8 @@ public class FleeBehaviour : ActiveBehaviour
     /// <param name="parentBehaviour">
     /// Reference to component to decorate.
     /// </param>
-    public FleeBehaviour(AbstractBehaviour parentBehaviour, MovementBehaviour behaviour)
-    : base(parentBehaviour, behaviour) { }
+    public FleeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
+    : base(parentBehaviour, behaviour) { this.behaviour = behaviour as FleeBehaviour; }
 
     #endregion Constructor
 
@@ -36,13 +38,30 @@ public class FleeBehaviour : ActiveBehaviour
     {
         if (Deleting()) return parentBehaviour.Steering();
 
-        var velocity = moverProperties.currentPosition - behaviour.Position;
-        velocity = velocity.normalized * moverProperties.maximumSpeed;
+        var velocity = moverProperties.CurrentPosition - behaviour.Position;
+        velocity = velocity.normalized * moverProperties.MaximumSpeed;
 
-        var steering = velocity - moverProperties.currentVelocity;
+        var steering = velocity - moverProperties.CurrentVelocity;
 
         return steering + parentBehaviour.Steering();
     }
 
     #endregion Public Methods
+
+    private bool Deleting()
+    {
+        if (DeleteIfTargetNull() || (behaviour.DeleteWhenOutOfRange && HasFled()))
+        {
+            behaviour.OnDeleteBehaviour();
+            return true;
+        }
+        return false;
+    }
+
+    private bool HasFled()
+    {
+        var distance = (behaviour.Position - moverProperties.CurrentPosition).magnitude;
+        if (distance > behaviour.Distance) return true;
+        return false;
+    }
 }

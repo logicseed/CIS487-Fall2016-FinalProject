@@ -8,13 +8,13 @@ using UnityEngine;
 /// <remarks>
 /// Abstract Decorator of the Decorator pattern.
 /// </remarks>
-public abstract class ActiveBehaviour : AbstractBehaviour
+public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
 {
     #region Protected Fields
 
     protected MoverProperties moverProperties;
     protected MovementBehaviour behaviour;
-    protected AbstractBehaviour parentBehaviour;
+    protected AbstractBehaviourComponent parentBehaviour;
 
     #endregion Protected Fields
 
@@ -29,7 +29,7 @@ public abstract class ActiveBehaviour : AbstractBehaviour
     /// <param name="parentBehaviour">
     /// Reference to component to decorate.
     /// </param>
-    protected ActiveBehaviour(AbstractBehaviour parentBehaviour, MovementBehaviour behaviour)
+    protected ActiveBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
     {
         this.behaviour = behaviour;
         this.parentBehaviour = parentBehaviour;
@@ -55,9 +55,9 @@ public abstract class ActiveBehaviour : AbstractBehaviour
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
     public override Vector3 NewVelocity()
     {
-        var steering = Steering().Truncate(moverProperties.maximumSteering);// / moverProperties.moverMass;
-        var velocity = moverProperties.currentVelocity + steering;
-        return velocity.Truncate(moverProperties.maximumSpeed);
+        var steering = Steering().Truncate(moverProperties.MaximumSteering);// / moverProperties.moverMass;
+        var velocity = moverProperties.CurrentVelocity + steering;
+        return velocity.Truncate(moverProperties.MaximumSpeed);
     }
 
     #endregion Public Methods
@@ -68,30 +68,30 @@ public abstract class ActiveBehaviour : AbstractBehaviour
     /// Determines if the behaviour should be deleted, and raises an event to do so if it does.
     /// </summary>
     /// <returns>True if the behaviour will be deleted; false otherwise.</returns>
-    protected bool Deleting()
-    {
-        var delete = false;
+    //protected bool Deleting()
+    //{
+    //    var delete = false;
 
-        if (behaviour.DeleteTransformNull && behaviour.Transform == null) delete = true;
+        
 
-        if (behaviour.DeleteUponArrived || behaviour.DeleteAfterFlee)
-        {
-            var distance = (behaviour.Position - moverProperties.currentPosition).magnitude;
+    //    // if (behaviour.DeleteUponArrived || behaviour.DeleteAfterFlee)
+    //    // {
+    //    //     var distance = (behaviour.Position - moverProperties.currentPosition).magnitude;
 
-            if (behaviour.DeleteUponArrived && distance < behaviour.ArrivedRadius) delete = true;
-            if (behaviour.DeleteAfterFlee && distance > behaviour.FleeRadius) delete = true;
-        }
+    //    //     if (behaviour.DeleteUponArrived && distance < behaviour.ArrivedRadius) delete = true;
+    //    //     if (behaviour.DeleteAfterFlee && distance > behaviour.FleeRadius) delete = true;
+    //    // }
 
-        if (behaviour.WanderTime != -1.0f)
-        {
-            if (behaviour.WanderTime > 0.0f) behaviour.WanderTime -= Time.fixedDeltaTime;
-            if (behaviour.WanderTime < 0.0f && behaviour.WanderTime >= -1.0f) delete = true;
-        }
+    //    // if (behaviour.WanderTime != -1.0f)
+    //    // {
+    //    //     if (behaviour.WanderTime > 0.0f) behaviour.WanderTime -= Time.fixedDeltaTime;
+    //    //     if (behaviour.WanderTime < 0.0f && behaviour.WanderTime >= -1.0f) delete = true;
+    //    // }
 
-        if (delete) behaviour.OnDeleteBehaviour();
+    //    // if (delete) behaviour.OnDeleteBehaviour();
 
-        return delete;
-    }
+    //    return delete;
+    //}
 
     #endregion Protected Methods
 }

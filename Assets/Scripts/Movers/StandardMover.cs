@@ -7,8 +7,9 @@ using System.Collections.Generic;
 /// <summary>
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
+[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
-public class StandardMover : NetworkBehaviour
+public class StandardMover : MonoBehaviour
 {
     #region Inspector Fields
 
@@ -28,11 +29,14 @@ public class StandardMover : NetworkBehaviour
 
     #region MonoBehaviour Methods
 
+    private void Start()
+    {
+        rigidBody = gameObject.GetComponent<Rigidbody>();
+    }
     private void FixedUpdate()
     {
         UpdateMovementProperties();
         UpdateGraphicsHeading();
-        UpdateMoverPosition();
         RemoveDeletedBehaviours();
     }
 
@@ -40,6 +44,7 @@ public class StandardMover : NetworkBehaviour
 
     #region Private Fields
 
+    private Rigidbody rigidBody;
     private List<MovementBehaviour> behaviours = new List<MovementBehaviour>();
     private List<MovementBehaviour> behavioursToRemove = new List<MovementBehaviour>();
 
@@ -52,12 +57,16 @@ public class StandardMover : NetworkBehaviour
     /// </summary>
     private void UpdateMovementProperties()
     {
-        movementProperties.currentPosition = transform.position;
-        
-        movementProperties.currentVelocity = CalculateNewVelocity();
+        movementProperties.CurrentPosition = transform.position;
 
-        if (movementProperties.currentVelocity != Vector3.zero)
-            movementProperties.currentHeading = movementProperties.currentVelocity.normalized;
+        movementProperties.CurrentVelocity = rigidBody.velocity;
+        var steering = CalculateSteeringForce();
+        //Debug.Log("Steering: " + steering);
+        rigidBody.AddForce(steering, ForceMode.VelocityChange);
+        movementProperties.CurrentVelocity = rigidBody.velocity;
+
+        if (movementProperties.CurrentVelocity != Vector3.zero)
+            movementProperties.CurrentHeading = movementProperties.CurrentVelocity.normalized;
     }
 
     /// <summary>
@@ -67,27 +76,33 @@ public class StandardMover : NetworkBehaviour
     /// <remarks>
     /// Uses the Decorator pattern.
     /// </remarks>
-    private Vector3 CalculateNewVelocity()
+    private Vector3 CalculateSteeringForce()
     {
         //Debug.Log("Number of behaviours: " + behaviours.Count);
-        AbstractBehaviour movementBehaviour = new IdleBehaviour(movementProperties, new MovementBehaviour());
+        AbstractBehaviourComponent movementBehaviour = new IdleBehaviourComponent(movementProperties, new IdleBehaviour());
 
         foreach (var behaviour in behaviours)
         {
             switch (behaviour.Type)
             {
-                case MovementType.Seek:
-                    movementBehaviour = new SeekBehaviour(movementBehaviour, behaviour);
+                case BehaviourType.Seek:
+                    movementBehaviour = new SeekBehaviourDecorator(movementBehaviour, behaviour);
                     break;
-                case MovementType.Flee:
-                    movementBehaviour = new FleeBehaviour(movementBehaviour, behaviour);
+                case BehaviourType.Flee:
+                    movementBehaviour = new FleeBehaviourDecorator(movementBehaviour, behaviour);
                     break;
-                case MovementType.Wander:
-                    movementBehaviour = new WanderBehaviour(movementBehaviour, behaviour);
+                case BehaviourType.Wander:
+                    movementBehaviour = new WanderBehaviourDecorator(movementBehaviour, behaviour);
+                    Debug.Log("Added wander behaviour.");
+                    break;
+                case BehaviourType.Pursue:
+                    movementBehaviour = new PursueBehaviourDecorator(movementBehaviour, behaviour);
+                    Debug.Log("Added pursue behaviour.");
                     break;
             }
         }
-        return movementBehaviour.NewVelocity();
+        
+        return Vector3.ClampMagnitude(movementBehaviour.Steering(), movementProperties.MaximumSteering);
     }
 
     /// <summary>
@@ -98,22 +113,12 @@ public class StandardMover : NetworkBehaviour
     {
         if (graphicsGameObject != null)
         {
-            var heading = transform.position + movementProperties.currentHeading;
-            graphicsGameObject.LookAt(heading);
+            //var heading = transform.position + movementProperties.CurrentHeading;
+            //graphicsGameObject.LookAt(heading);
+            var targetDir = rigidBody.velocity;
+            var newDir = Vector3.RotateTowards(graphicsGameObject.transform.forward, targetDir, Time.fixedDeltaTime * 10, 0.0f);
+            graphicsGameObject.rotation = Quaternion.LookRotation(newDir);
         }
-    }
-
-    /// <summary>
-    /// Updates the position of the mover based on the most recent changes to its movement properties.
-    /// </summary>
-    private void UpdateMoverPosition()
-    {
-        transform.Translate(movementProperties.currentVelocity * Time.fixedDeltaTime);
-        // transform.position = Vector3.Slerp(
-        //     transform.position,
-        //     transform.position + CurrentVelocity,
-        //     Time.fixedDeltaTime
-        // );
     }
 
     /// <summary>
@@ -163,7 +168,7 @@ public class StandardMover : NetworkBehaviour
     {
         get
         {
-            return movementProperties.currentVelocity;
+            return movementProperties.CurrentVelocity;
         }
     }
 

@@ -8,7 +8,7 @@ using UnityEngine;
 /// <remarks>
 /// ConcreteDecorator of the Decorator pattern.
 /// </remarks>
-public class EvadeBehaviour : ActiveBehaviour
+public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
 {
 #region Constructor
 
@@ -21,7 +21,7 @@ public class EvadeBehaviour : ActiveBehaviour
     /// <param name="parentBehaviour">
     /// Reference to component to decorate.
     /// </param>
-    public EvadeBehaviour(AbstractBehaviour parentBehaviour, MovementBehaviour behaviour) 
+    public EvadeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour) 
     : base(parentBehaviour, behaviour) { }
 
     #endregion Constructor
@@ -34,14 +34,14 @@ public class EvadeBehaviour : ActiveBehaviour
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
     public override Vector3 Steering()
     {
-        if (Deleting()) return parentBehaviour.Steering();
+        //if (Deleting()) return parentBehaviour.Steering();
 
         var position = CalculateFuturePosition();
 
-        var velocity = moverProperties.currentPosition - position;
-        velocity = velocity.normalized * moverProperties.maximumSpeed;
+        var velocity = moverProperties.CurrentPosition - position;
+        velocity = velocity.normalized * moverProperties.MaximumSpeed;
 
-        var steering = velocity - moverProperties.currentVelocity;
+        var steering = velocity - moverProperties.CurrentVelocity;
 
         return steering + parentBehaviour.Steering();
     }
@@ -56,12 +56,15 @@ public class EvadeBehaviour : ActiveBehaviour
     /// <returns>Vector3 position in world space.</returns>
     private Vector3 CalculateFuturePosition()
     {
-        var targetMover = behaviour.Transform.gameObject.GetComponent<StandardMover>();
-        var prediction = targetMover.CurrentVelocity * Time.fixedDeltaTime * behaviour.PursuePrediction;
-        prediction *= (Vector3.Distance(behaviour.Position, moverProperties.currentPosition) / moverProperties.maximumSpeed);
-        var position = behaviour.Transform.position + prediction;
-        return position;
+        // var targetMover = behaviour.Transform.gameObject.GetComponent<StandardMover>();
+        // var prediction = targetMover.CurrentVelocity * Time.fixedDeltaTime * behaviour.PursuePrediction;
+        // prediction *= (Vector3.Distance(behaviour.Position, moverProperties.currentPosition) / moverProperties.maximumSpeed);
+        // var position = behaviour.Transform.position + prediction;
+        // return position;
+        return Vector3.zero;
     }
 
     #endregion Private Methods
+
+
 }

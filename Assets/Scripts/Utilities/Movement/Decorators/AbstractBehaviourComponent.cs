@@ -8,7 +8,7 @@ using UnityEngine;
 /// <remarks>
 /// Abstract Component of the Decorator pattern.
 /// </remarks>
-public abstract class AbstractBehaviour
+public abstract class AbstractBehaviourComponent
 {
     #region Abstract Methods
 

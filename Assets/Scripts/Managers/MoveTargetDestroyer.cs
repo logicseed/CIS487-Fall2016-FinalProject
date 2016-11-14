@@ -22,11 +22,6 @@ public class MoveTargetDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        // if (collider.gameObject.layer == 8)
-        // {
-            //collider.transform.parent.gameObject.GetComponent<StandardMover>().FleeTargets.Remove(transform);
-            //collider.gameObject.GetComponent<SpaceshipMover>().FleeTargets.Remove(transform);
             Destroy(gameObject);
-        // }
     }
 }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents a type of movement behaviour.
 /// </summary>
-public enum MovementType
+public enum BehaviourType
 {
     /// <summary>
     /// Mover sits idle and does not move.
@@ -14,7 +14,7 @@ public enum MovementType
     Idle,
 
     /// <summary>
-    /// Mover attempts to move toward a position.
+    /// Mover attempts to move toward a transform.
     /// </summary>
     /// <remarks>
     /// Uses Radius as an arrival radius.
@@ -22,7 +22,7 @@ public enum MovementType
     Seek,
 
     /// <summary>
-    /// Mover attempts to move away from a position.
+    /// Mover attempts to move away from a transform.
     /// </summary>
     /// <remarks>
     /// Uses Radius as an escape distance.
@@ -38,7 +38,7 @@ public enum MovementType
     Wander,
 
     /// <summary>
-    /// Mover attempts to catch a target.
+    /// Mover attempts to catch a target transform.
     /// </summary>
     /// <remarks>
     /// Does not use Radius.
@@ -46,7 +46,7 @@ public enum MovementType
     Pursue,
 
     /// <summary>
-    /// Mover attempts to prevent a target from catching it.
+    /// Mover attempts to prevent a target transform from catching it.
     /// </summary>
     /// <remarks>
     /// Does not use Radius.
@@ -54,7 +54,7 @@ public enum MovementType
     Evade,
 
     /// <summary>
-    /// Mover attempts to go around a target while moving.
+    /// Mover attempts to go around a target transform while moving.
     /// </summary>
     /// <remarks>
     /// Uses Radius as avoidance distance.
