@@ -6,6 +6,7 @@ public class DestroyThisOnContact : MonoBehaviour
 {
 	public GameObject destroyer;
 	public float radius;
+	public TargetManager targetManager;
 
 	void Start()
 	{
@@ -27,6 +28,7 @@ public class DestroyThisOnContact : MonoBehaviour
 
 	private void OnTriggerEnter(Collider collider)
   {
-		if (collider.gameObject == destroyer) Destroy(gameObject);
+		//if (collider.gameObject == destroyer) Destroy(gameObject);
+		targetManager.ResetTarget();
   }
 }
