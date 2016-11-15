@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     private bool allowManualZoom;
 
     [SerializeField]
+    [Range(0.5f, 10.0f)]
     private float scrollSpeed;
 
     [SerializeField]
@@ -30,6 +31,10 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     [Range(5, 500)]
     private float minimumZoomLevel;
+
+    [SerializeField]
+    [Range(5, 500)]
+    private float defaultZoomLevel;
 
     [SerializeField]
     [Range(0.1f, 10.0f)]
@@ -49,7 +54,7 @@ public class CameraController : MonoBehaviour
 
     #region Data Fields
 
-    private float defaultZoomLevel;
+    
     private float newZoomLevel;
 
     #endregion Data Fields
@@ -80,8 +85,7 @@ public class CameraController : MonoBehaviour
 
     private void Start ()
     {
-        defaultZoomLevel = ZoomLevel;
-        newZoomLevel = ZoomLevel;
+        newZoomLevel = defaultZoomLevel;
     }
 
     private void Update()
@@ -118,8 +122,9 @@ public class CameraController : MonoBehaviour
     /// </summary>
     private void CheckZoomRange()
     {
-        if (newZoomLevel > maximumZoomLevel || ZoomLevel > maximumZoomLevel) newZoomLevel = maximumZoomLevel;
-        if (newZoomLevel < minimumZoomLevel || ZoomLevel < minimumZoomLevel) newZoomLevel = minimumZoomLevel;
+        if (newZoomLevel > maximumZoomLevel && ZoomLevel > maximumZoomLevel) newZoomLevel = maximumZoomLevel;
+
+        if (newZoomLevel < minimumZoomLevel && ZoomLevel < minimumZoomLevel) newZoomLevel = minimumZoomLevel;
     }
 
     /// <summary>
