@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CameraController
+  - BackgroundCamera
   - MoverGraphic
+  - Background
+  - SpaceScene_Moon
+  - SpaceScene_Planet
+  - SpaceScene_LocalStar
+  - CameraController
   layers:
   - Default
   - TransparentFX
@@ -15,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
+  - Background
   - Player
-  - Graphics
-  - 
+  - Environment
   - 
   - 
   - 

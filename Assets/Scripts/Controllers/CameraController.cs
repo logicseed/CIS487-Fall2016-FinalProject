@@ -135,8 +135,8 @@ public class CameraController : MonoBehaviour
             newZoomLevel -= scroll;
         }
 
-        if (ZoomLevel > newZoomLevel) cameraMovement = new Vector3(0.0f, -1.0f, 1.0f) * zoomSpeed; // zoom in
-        if (ZoomLevel < newZoomLevel) cameraMovement = new Vector3(0.0f, 1.0f, -1.0f) * zoomSpeed; // zoom out
+        if (ZoomLevel > newZoomLevel) cameraMovement = new Vector3(0.0f, -1.0f, 2.0f) * zoomSpeed; // zoom in
+        if (ZoomLevel < newZoomLevel) cameraMovement = new Vector3(0.0f, 1.0f, -2.0f) * zoomSpeed; // zoom out
 
         cameraTransform.Translate(cameraMovement, targetTransform);
     }
@@ -157,7 +157,9 @@ public class CameraController : MonoBehaviour
     private void UpdateRotation()
     {
         var rotation = Input.GetAxis("Rotate Camera") * rotationSpeed * Time.deltaTime;
-        targetTransform.Rotate(0.0f, rotation, 0.0f);
+        //cameraTransform.Rotate(0.0f, rotation, 0.0f);
+        var tet = Quaternion.Euler(0.0f, rotation, 0.0f);
+        transform.rotation *= tet;
     }
 
     #endregion Rotation Methods

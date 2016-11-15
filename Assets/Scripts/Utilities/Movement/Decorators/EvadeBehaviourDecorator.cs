@@ -22,7 +22,7 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
     /// Reference to component to decorate.
     /// </param>
     public EvadeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour) 
-    : base(parentBehaviour, behaviour) { }
+    : base(parentBehaviour, behaviour) { this.behaviour = behaviour as EvadeBehaviour; }
 
     #endregion Constructor
 

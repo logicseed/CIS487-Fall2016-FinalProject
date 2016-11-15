@@ -1,7 +1,7 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using System.Collections;
+
 
 [System.Serializable]
 public class PursueBehaviour : TargetBehaviour
@@ -18,7 +18,7 @@ public class PursueBehaviour : TargetBehaviour
     /// <param name="targetTransform">The Transform that will be the target of this movement behaviour.</param>
     /// <param name="deleteWhenNull">Whether or not this behaviour should be removed when the Transform becomes null.</param>
     public PursueBehaviour(Transform targetTransform, bool deleteWhenNull = true) 
-    : base (targetTransform, deleteWhenNull) { type = BehaviourType.Pursue; TargetTransform = targetTransform;}
+    : base (targetTransform, deleteWhenNull) { type = BehaviourType.Pursue; }
 
     public float Prediction
     {

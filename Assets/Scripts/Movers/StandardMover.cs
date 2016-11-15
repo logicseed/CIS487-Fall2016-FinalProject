@@ -93,11 +93,11 @@ public class StandardMover : MonoBehaviour
                     break;
                 case BehaviourType.Wander:
                     movementBehaviour = new WanderBehaviourDecorator(movementBehaviour, behaviour);
-                    Debug.Log("Added wander behaviour.");
+                    //Debug.Log("Added wander behaviour.");
                     break;
                 case BehaviourType.Pursue:
                     movementBehaviour = new PursueBehaviourDecorator(movementBehaviour, behaviour);
-                    Debug.Log("Added pursue behaviour.");
+                    //Debug.Log("Added pursue behaviour.");
                     break;
             }
         }
