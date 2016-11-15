@@ -7,11 +7,13 @@ using System.Collections;
 public class MouseController : MonoBehaviour 
 {
 	private StandardMover standardMover;
+	private TargetManager targetManager;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		standardMover = gameObject.GetComponent<StandardMover>();
+		targetManager = gameObject.GetComponent<TargetManager>();
 	}
 	
 	// Update is called once per frame
@@ -19,9 +21,19 @@ public class MouseController : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
         {
             GameObject target = FindTarget();
-			if (target == null)
+			if (target != null)
 			{
+				targetManager.ResetTarget ();
+				targetManager.SetTarget(target, TargetType.Ally);
+			}
+			else if (target == null)
+			{
+				targetManager.ResetTarget ();
 				Vector3 position = FindMousePosition();
+				targetManager.SetTarget(position);
+				MovementBehaviour behaviour = new SeekBehaviour(targetManager.GetTarget().transform,true);
+
+				standardMover.AddBehaviour(behaviour);
 			}
         }
 	}

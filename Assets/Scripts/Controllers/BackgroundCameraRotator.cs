@@ -41,7 +41,7 @@ public class BackgroundCameraRotator : MonoBehaviour
     {
         var rotation = Input.GetAxis("Rotate Camera") * rotationSpeed * Time.deltaTime;
         //cameraTransform.Rotate(0.0f, rotation, 0.0f);
-        var tet = Quaternion.Euler(0.0f, rotation, 0.0f);
+        var tet = Quaternion.Euler(0.0f, -rotation, 0.0f);
         transform.rotation *= tet;
 
         // transform.rotation = Quaternion.Slerp(
