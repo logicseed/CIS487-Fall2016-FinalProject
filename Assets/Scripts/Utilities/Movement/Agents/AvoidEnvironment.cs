@@ -13,7 +13,7 @@ public class AvoidEnvironment : Seek
     protected override void Awake () 
     { 
         base.Awake();
-        target = new GameObject;
+        target = new GameObject();
     }
 
     #endregion MonoBehaviour Methods
