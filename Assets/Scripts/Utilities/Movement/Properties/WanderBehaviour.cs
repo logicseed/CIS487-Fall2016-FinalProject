@@ -25,7 +25,7 @@ public class WanderBehaviour : MovementBehaviour
 
     [SerializeField]
     [Tooltip("How severe of an angle wandering turns will be.")]
-    [Range(15.0f, 90.0f)]
+    [Range(0.0f, 90.0f)]
     private float angleChange = 30.0f;
 
     [SerializeField]
