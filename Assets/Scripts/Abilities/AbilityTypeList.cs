@@ -4,5 +4,6 @@
     Shields,
     Buffs,
     Debuffs,
-    Movement
+    Movement,
+    Cloak
 };

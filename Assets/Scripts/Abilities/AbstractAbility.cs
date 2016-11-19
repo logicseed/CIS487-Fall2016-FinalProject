@@ -11,18 +11,22 @@ using System.Collections;
 
 public abstract class AbstractAbility : ScriptableObject
 {
-    //Power Shield - Enhance shield for a short time
-    //Power Beam - Emit a high damage beam
-    //Ion Burst - Release a shield destroying ion pulse form ship
-    //Power Ram - Charge your ship into another for high damage
-    //Overcharge Guns - Charge auto attack turrets for extra damage
-    //Cloak Field - Release a temporary cloak field to stop ships from targeting
-    //Concussive Missiles - Hit ship is slowed and disoriented for a short time
-    //Smart Bomb - Launch a bomb that explodes creating a huge blast radius
-    //Lay Mine - Release a mine that explodes on contact
-    //Over Charge Engines - Charge engines for more speed for a short time
-    //Power Blast - Fire a powerful high damage shot
-    //Tractor Beam - Attach your ship to another forcing a set distance between
+    //Tractor Beam - Attach your ship to another forcing a set distance between  -- Point click (???)
+    //Smart Bomb - Launch a bomb that explodes creating a huge blast radius      -- Point click (damage)
+    //Power Beam - Emit a high damage beam                                       -- Point click (damage)
+
+    //Lay Mine - Release a mine that explodes on contact                         -- Nontargetted (at loc/damage)
+    //Gravity well - Place a large gravity well nearby, suck in other players    -- Nontargetted (at loc/slow)
+    //Ion Burst - Release a shield destroying ion pulse form ship                -- Nontargetted (on self)
+    //Cloak Field - Release a temporary cloak field to stop ships from targeting -- Nontargetted (on self)
+
+    //Concussive Missiles - Hit ship is slowed and disoriented for a short time  -- Skill shot (debuff)
+    //Power Blast - Fire a powerful high damage shot                             -- Skill shot (damage)
+    //Power Ram - Charge your ship into another for high damage                  -- Skill shot (buff/damage)
+
+    //Overcharge Guns - Charge auto attack turrets for extra damage              -- Self (buff)
+    //Power Shield - Enhance shield for a short time                             -- Self (buff)
+    //OverCharge Engines - Charge engines for more speed for a short time        -- Self (buff)
 
     //For ability classification
     public new string name = "New ability name";
@@ -30,19 +34,10 @@ public abstract class AbstractAbility : ScriptableObject
     public int effect;  //Retrieve value from AbilityList enum
 
     //Required components for any ability
-    public GameObject abilityObject; //Has many forms
+    public GameObject abilityObject; 
     public float range;
-
-    //Skill shots
-    [HideInInspector] public Vector3 velocity; //Speed and direction of projectile
-
-    //AOE
-    public float aoeRadius; //Size of aoe
-    [HideInInspector] public Transform aoeLocation;  //Location for aoe
-
-    //Point and click
-    [HideInInspector] public GameObject target;
-
+    public float aoeRadius; 
+  
     /// <summary>
     /// Create and cast ability sequences
     /// </summary>
