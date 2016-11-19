@@ -18,7 +18,7 @@ public partial class ConsoleParser
     private void MapCommands()
     {
         //When adding commands, you must add a call below to registerCommand() with its name, implementation method, and help text.
-        MapCommand("zoom", zoom, "Sets the camera zoom. Syntax: zoom [zoom level].");
+        //MapCommand("zoom", zoom, "Sets the camera zoom. Syntax: zoom [zoom level].");
         MapCommand("babble", babble, "Example command that demonstrates how to parse arguments. babble [word] [# of times to repeat]");
         MapCommand("echo", echo, "echoes arguments back as array (for testing argument parser)");
         MapCommand("help", help, "Print this help.");
@@ -30,13 +30,13 @@ public partial class ConsoleParser
     #region Command handlers
     //Implement new commands in this region of the file.
 
-    void zoom(string[] args)
-    {
+    // void zoom(string[] args)
+    // {
 
-        var cameraController = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>();
-        Debug.Log("Found camera controller: current zoom = " + cameraController.ZoomLevel);
-        cameraController.ZoomLevel = Convert.ToSingle(args[0]);
-    }
+    //     var cameraController = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>();
+    //     Debug.Log("Found camera controller: current zoom = " + cameraController.ZoomLevel);
+    //     cameraController.ZoomLevel = Convert.ToSingle(args[0]);
+    // }
 
     /// <summary>
     /// A test command to demonstrate argument checking/parsing.

@@ -6,7 +6,7 @@ using UnityEngine;
 /// Properties of a GameObject with a StandardMover script attached.
 /// </summary>
 [System.Serializable]
-public class MoverProperties
+public class AgentProperties
 {
     #region Inspector Fields
 

@@ -1,171 +1,173 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using UnityEngine.Networking;
 
 public class CameraController : MonoBehaviour
 {
-    #region Inspector Fields
+    [Header("GameObjects")]
+    [Tooltip("The child Camera of this controller.")]
+    public GameObject camera;
+    [Tooltip("The object to follow while not in free explore.")]
+    public GameObject target;
 
-    [Header("Isometric Camera Transforms")]
+    private Transform pivot;
 
-    [SerializeField]
-    private Transform cameraTransform;
+    [Header("Allow Change")]
+    [Tooltip("Allows the controller to change the altitude of the camera.")]
+    public bool allowAltitudeChange = true;
+    [Tooltip("Allows the controller to change the zoom level of the camera.")]
+    public bool allowZoomChange = true;
+    [Tooltip("Allows the controller to change the position of the camera. " +
+             "Default whenever the target is null.")]
+    public bool allowPositionChange = true;
 
-    [SerializeField]
-    private Transform targetTransform;
+    [Header("Rates of Change")]
+    [Tooltip("How quickly the altitude will change.")]
+    [Range(0.0f, 100.0f)]
+    public float altitudeRate = 10;
+    [Tooltip("How quickly the rotation will change.")]
+    [Range(0.0f, 100.0f)]
+    public float rotationRate = 10;
+    [Tooltip("How quickly the zoom will change.")]
+    [Range(0.0f, 100.0f)]
+    public float zoomRate = 10;
+    [Tooltip("How quickly the position will change.")]
+    [Range(0.0f, 100.0f)]
+    public float moveRate = 10;
 
-    [Header("Zoom Settings")]
+    [Header("Extents of Change")]
+    [Tooltip("Minimum degress the camera can pivot.")]
+    [Range(-90.0f, 90.0f)]
+    public float minimumAltitude = -90.0f;
+    [Tooltip("Maximum degrees the camera can pivot.")]
+    [Range(-90.0f, 90.0f)]
+    public float maximumAltitude = 90.0f;
+    [Space(10)]
+    [Tooltip("Minimum amount of zoom.")]
+    [Range(0.0f, 100.0f)]
+    public float minimumZoom = 5.0f;
+    [Tooltip("Maximum amount of zoom.")]
+    [Range(10.0f, 1000.0f)]
+    public float maximumZoom = 100.0f;
 
-    [SerializeField]
-    private bool allowManualZoom;
+    [Header("Default Settings")]
+    [Tooltip("Default degrees of camera pivot.")]
+    [Range(0.0f, 100.0f)]
+    public float defaultAltitude = 20.0f;
+    [Tooltip("Default level of zoom.")]
+    [Range(0.0f, 1000.0f)]
+    public float defaultZoom = 20.0f;
+    [Tooltip("Default rotation.")]
+    [Range(-180.0f, 180.0f)]
+    public float defaultRotation = 0.0f;
 
-    [SerializeField]
-    [Range(0.5f, 10.0f)]
-    private float scrollSpeed;
-
-    [SerializeField]
-    [Range(5, 500)]
-    private float maximumZoomLevel;
-
-    [SerializeField]
-    [Range(5, 500)]
-    private float minimumZoomLevel;
-
-    [SerializeField]
-    [Range(5, 500)]
-    private float defaultZoomLevel;
-
-    [SerializeField]
-    [Range(0.1f, 10.0f)]
-    private float zoomSpeed;
-
-    [SerializeField]
-    [Range(0.0f, 10.0f)]
-    private float lookAboveDistance;
-
-    [Header("Rotation Settings")]
-
-    [SerializeField]
-    [Range(10,500)]
-    private float rotationSpeed;
-
-    #endregion Inspector Fields
-
-    #region Data Fields
-
-    
-    private float newZoomLevel;
-
-    #endregion Data Fields
-
-    #region MonoBehaviour Methods
-
-    private void Awake ()
+    private void Start()
     {
-        // Make sure we have an instance of the camera
-        if (cameraTransform == null)
-        {
-            cameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        }
+        pivot = camera.transform.parent;
 
-        // Make sure we have an instance of the target
-        if (targetTransform == null)
-        {
-            targetTransform = cameraTransform.parent;
-        }
-
-        // Fix invalid inspector settings
-        if (maximumZoomLevel < minimumZoomLevel)
-        {
-            maximumZoomLevel = minimumZoomLevel;
-        }
-    }
-
-
-    private void Start ()
-    {
-        newZoomLevel = defaultZoomLevel;
+        ResetZoom();
+        ResetRotation();
+        ResetAltitude();
     }
 
     private void Update()
     {
-        CheckZoomRange();
-        UpdateZoom();
-        UpdateTarget();
-        UpdateRotation();
-    }
+        if (target == null) allowPositionChange = true;
 
-    #endregion MonoBehaviour Methods
-
-    #region Zoom Methods
-
-    public float ZoomLevel
-    {
-        get { return cameraTransform.position.y; }
-        set { newZoomLevel = value; }
-    }
-
-    public float DefaultZoomLevel
-    {
-        get { return defaultZoomLevel; }
-        set { defaultZoomLevel = value; }
-    }
-
-    public void RestoreZoom()
-    {
-        ZoomLevel = DefaultZoomLevel;
-    }
-
-    /// <summary>
-    /// Ensures that the requested zoom level doesn't fall outside of the allowed range.
-    /// </summary>
-    private void CheckZoomRange()
-    {
-        if (newZoomLevel > maximumZoomLevel && ZoomLevel > maximumZoomLevel) newZoomLevel = maximumZoomLevel;
-
-        if (newZoomLevel < minimumZoomLevel && ZoomLevel < minimumZoomLevel) newZoomLevel = minimumZoomLevel;
-    }
-
-    /// <summary>
-    /// Performs a frame-based update to the current zoom level based on the zoom speed.
-    /// </summary>
-    private void UpdateZoom()
-    {
-        Vector3 cameraMovement = Vector3.zero;
-
-        if (allowManualZoom)
+        if (allowAltitudeChange && Input.GetAxis("UpDown Camera") != 0.0f)
         {
-            var scroll = Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
-            newZoomLevel -= scroll;
+            ChangeAltitude(Input.GetAxis("UpDown Camera") * altitudeRate);
         }
 
-        if (ZoomLevel > newZoomLevel) cameraMovement = new Vector3(0.0f, -1.0f, 2.0f) * zoomSpeed; // zoom in
-        if (ZoomLevel < newZoomLevel) cameraMovement = new Vector3(0.0f, 1.0f, -2.0f) * zoomSpeed; // zoom out
+        if (Input.GetAxis("Rotate Camera") != 0.0f)
+        {
+            ChangeRotation(Input.GetAxis("Rotate Camera") * rotationRate);
+        }
 
-        cameraTransform.Translate(cameraMovement, targetTransform);
+        if (allowZoomChange && Input.GetAxis("Zoom Camera") != 0.0f)
+        {
+            ChangeZoom(Input.GetAxis("Zoom Camera") * zoomRate);
+        }
+
+        if (allowPositionChange)
+        {
+            transform.Translate(Input.GetAxis("LeftRight Camera") * moveRate,
+                0.0f,
+                Input.GetAxis("ForwardBack Camera") * moveRate);
+        }
+        else
+        {
+            transform.position = target.transform.position;
+        }
     }
 
-    private void UpdateTarget()
+    public float GetAltitude()
     {
-        var lookAtPosition = targetTransform.position + new Vector3(0.0f, lookAboveDistance, 0.0f);
-        cameraTransform.LookAt(lookAtPosition);
+        return pivot.transform.eulerAngles.x;
     }
 
-    #endregion Zoom Methods
-
-    #region Rotation Methods
-
-    /// <summary>
-    /// Performs a frame-based update to the camera rotation when receiving input.
-    /// </summary>
-    private void UpdateRotation()
+    public void SetAltitude(float altitude)
     {
-        var rotation = Input.GetAxis("Rotate Camera") * rotationSpeed * Time.deltaTime;
-        //cameraTransform.Rotate(0.0f, rotation, 0.0f);
-        var tet = Quaternion.Euler(0.0f, -rotation, 0.0f);
-        transform.rotation *= tet;
+        var rotation = pivot.transform.localEulerAngles;
+        rotation.x = altitude;
+        pivot.transform.localEulerAngles = rotation;
     }
 
-    #endregion Rotation Methods
+    public void ChangeAltitude(float amount)
+    {
+        SetAltitude(GetAltitude() + amount);
+    }
+
+    public void ResetAltitude()
+    {
+        SetAltitude(defaultAltitude);
+    }
+
+    public float GetZoom()
+    {
+        return camera.transform.localPosition.z;
+    }
+
+    public void SetZoom(float zoom)
+    {
+        var position = camera.transform.localPosition;
+        position.z = Mathf.Clamp(zoom, -maximumZoom, -minimumZoom);
+        camera.transform.localPosition = position;
+    }
+
+    public void ChangeZoom(float amount)
+    {
+        SetZoom(GetZoom() + amount);
+    }
+
+    public void ResetZoom()
+    {
+        SetZoom(-defaultZoom);
+    }
+
+    public float GetRotation()
+    {
+        return transform.localEulerAngles.y;
+    }
+
+    public void SetRotation(float rotation)
+    {
+        var newRotation = transform.localEulerAngles;
+        newRotation.y = rotation;
+        transform.localEulerAngles = newRotation;
+    }
+
+    public void ChangeRotation(float amount)
+    {
+        var rotation = GetRotation() + amount;
+        if (rotation > 360.0f) rotation -= 360.0f;
+        else if (rotation < 0.0f) rotation += 360.0f;
+        SetRotation(rotation);
+    }
+
+    public void ResetRotation()
+    {
+        SetRotation(defaultRotation);
+    }
+
 }

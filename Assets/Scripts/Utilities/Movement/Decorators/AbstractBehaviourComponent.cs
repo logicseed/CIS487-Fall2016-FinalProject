@@ -16,7 +16,7 @@ public abstract class AbstractBehaviourComponent
     /// Gets the properties of the mover to which this behaviour is attached.
     /// </summary>
     /// <returns>MovementProperties of the mover.</returns>
-    public abstract MoverProperties Properties();
+    public abstract AgentProperties Properties();
 
     /// <summary>
     /// Calculates a new velocity based on all attached movement behaviours.

@@ -12,7 +12,7 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
 {
     #region Protected Fields
 
-    protected MoverProperties moverProperties;
+    protected AgentProperties moverProperties;
     protected MovementBehaviour behaviour;
     protected AbstractBehaviourComponent parentBehaviour;
 
@@ -44,7 +44,7 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
     /// Gets the properties of the mover to which this behaviour is attached.
     /// </summary>
     /// <returns>MovementProperties of the mover.</returns>
-    public override MoverProperties Properties()
+    public override AgentProperties Properties()
     {
         return moverProperties;
     }

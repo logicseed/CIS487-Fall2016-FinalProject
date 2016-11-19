@@ -12,7 +12,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
 {
     #region Protected Fields
 
-    protected MoverProperties moverProperties;
+    protected AgentProperties moverProperties;
     protected IdleBehaviour behaviourProperties;
 
     #endregion Protected Fields
@@ -28,7 +28,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// <param name="behaviourProperties">
     /// MovementBehaviour details for this behaviour.
     /// </param>
-    public IdleBehaviourComponent(MoverProperties moverProperties, MovementBehaviour behaviourProperties)
+    public IdleBehaviourComponent(AgentProperties moverProperties, MovementBehaviour behaviourProperties)
     {
         this.moverProperties = moverProperties;
         this.behaviourProperties = behaviourProperties as IdleBehaviour;
@@ -42,7 +42,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// Gets the properties of the mover to which this behaviour is attached.
     /// </summary>
     /// <returns>MovementProperties of the mover.</returns>
-    public override MoverProperties Properties()
+    public override AgentProperties Properties()
     {
         return moverProperties;
     }

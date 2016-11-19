@@ -9331,6 +9331,7 @@ GameObject:
   - 114: {fileID: 290665307}
   - 114: {fileID: 290665306}
   - 114: {fileID: 290665305}
+  - 114: {fileID: 290665311}
   - 114: {fileID: 290665310}
   m_Layer: 0
   m_Name: TestPlayer (1)
@@ -9422,11 +9423,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 290665304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 45190296a9c7b1d42b9be229e82afca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mover: {fileID: 0}
   targets: {fileID: 0}
+  graphics: {fileID: 0}
+  mouse: {fileID: 0}
+--- !u!114 &290665311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290665304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &292374356
 GameObject:
   m_ObjectHideFlags: 0
@@ -48974,7 +48988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1689214078
 Transform:
   m_ObjectHideFlags: 0
@@ -54197,8 +54211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5344335326b7d7439d8c17cffcc2b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seekTestNPC: {fileID: 0}
-  pursueTestNPC: {fileID: 1220199708}
 --- !u!114 &1910023781
 MonoBehaviour:
   m_ObjectHideFlags: 0

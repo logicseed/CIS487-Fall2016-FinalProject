@@ -3,7 +3,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BackgroundCameraRotator : MonoBehaviour
+public class BackgroundCameraController : MonoBehaviour
 {
     [SerializeField]
     private Transform cameraTransform;

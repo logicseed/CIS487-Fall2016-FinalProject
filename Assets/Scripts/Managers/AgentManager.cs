@@ -1,28 +1,23 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using System.Collections;
 
-
-
+[RequireComponent(typeof(StandardMover))]
+[RequireComponent(typeof(TargetManager))]
+[RequireComponent(typeof(GraphicsManager))]
 public class AgentManager : MonoBehaviour
 {
-    [Header("SDFDSFSDF")]
-    [HideInInspector]
+    [Header("Populated at Runtime")]
     public StandardMover mover;
-    [HideInInspector]
     public TargetManager targets;
+    public GraphicsManager graphics;
+    //public AbilityController abilities;
 
-    #region MonoBehavior Methods
-    private void Awake ()
+    protected virtual void Start()
     {
-
+        mover = gameObject.GetComponent<StandardMover>();
+        targets = gameObject.GetComponent<TargetManager>();
+        graphics = gameObject.GetComponent<GraphicsManager>();
+        //abilities = gameObject.GetComponent<AbilityController>();
     }
-    private void Start () { }
-    private void FixedUpdate () { }
-    private void Update () { }
-    private void LateUpdate () { }
-    private void OnDestroy () { }
-    #endregion MonoBehaviour Methods
-
 }

@@ -17,7 +17,7 @@ public class StandardMover : MonoBehaviour
     /// Properties of the mover.
     /// </summary>
     [Tooltip("Movement properties of the mover.")]
-    public MoverProperties movementProperties;
+    public AgentProperties movementProperties;
 
     /// <summary>
     /// GameObject reference to the graphical representation of this mover.
