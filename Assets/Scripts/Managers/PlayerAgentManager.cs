@@ -3,6 +3,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MouseController))]
+[DisallowMultipleComponent]
 public class PlayerAgentManager : AgentManager
 {
     public MouseController mouse;
@@ -11,5 +12,6 @@ public class PlayerAgentManager : AgentManager
     {
         base.Start();
         mouse = gameObject.GetComponent<MouseController>();
+        this.isPlayer = true;
     }
 }

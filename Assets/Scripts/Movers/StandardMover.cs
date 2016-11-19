@@ -8,6 +8,7 @@ using System.Collections.Generic;
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AgentManager))]
 [DisallowMultipleComponent]
 public class StandardMover : MonoBehaviour
 {

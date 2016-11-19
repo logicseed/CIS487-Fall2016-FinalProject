@@ -2,7 +2,9 @@
 
 using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(StandardMover))]
+
+[RequireComponent(typeof(AgentManager))]
+[DisallowMultipleComponent]
 public class WanderMover : MonoBehaviour
 {
 
