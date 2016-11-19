@@ -99,6 +99,8 @@ public class CameraController : MonoBehaviour
         {
             transform.position = targetGO.transform.position;
         }
+
+        if (Input.GetButton("Reset Camera")) ResetAll();
     }
 
     public float GetAltitude()
@@ -168,6 +170,13 @@ public class CameraController : MonoBehaviour
     public void ResetRotation()
     {
         SetRotation(defaultRotation);
+    }
+
+    public void ResetAll()
+    {
+        ResetAltitude();
+        ResetRotation();
+        ResetZoom();
     }
 
 }
