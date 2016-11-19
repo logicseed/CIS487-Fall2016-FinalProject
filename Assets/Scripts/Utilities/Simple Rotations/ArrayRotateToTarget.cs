@@ -21,7 +21,8 @@ public class ArrayRotateToTarget : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach(Transform child in transform){
+		if(target != null){
+			foreach(Transform child in transform){
 			if(Vector3.Distance(target.transform.position,transform.position)<=range){
 				child.transform.LookAt(target.transform.position);
 			}
@@ -29,6 +30,8 @@ public class ArrayRotateToTarget : MonoBehaviour {
 				transform.rotation=transform.parent.rotation;
 			}	
 		}
+		}
+		
 		
 		
 
