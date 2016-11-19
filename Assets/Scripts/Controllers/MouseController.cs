@@ -54,7 +54,6 @@ public class MouseController : MonoBehaviour
 
 	private GameObject FindTarget()
 	{
-		var plane = new Plane(Vector3.up, transform.position);
 		var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if (Physics.Raycast (ray, out hit, 100.0f))

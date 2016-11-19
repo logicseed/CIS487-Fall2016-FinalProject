@@ -6,9 +6,9 @@ public class CameraController : MonoBehaviour
 {
     [Header("GameObjects")]
     [Tooltip("The child Camera of this controller.")]
-    public GameObject camera;
+    public GameObject cameraGO;
     [Tooltip("The object to follow while not in free explore.")]
-    public GameObject target;
+    public GameObject targetGO;
 
     private Transform pivot;
 
@@ -63,7 +63,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        pivot = camera.transform.parent;
+        pivot = cameraGO.transform.parent;
 
         ResetZoom();
         ResetRotation();
@@ -72,7 +72,7 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (target == null) allowPositionChange = true;
+        if (targetGO == null) allowPositionChange = true;
 
         if (allowAltitudeChange && Input.GetAxis("UpDown Camera") != 0.0f)
         {
@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            transform.position = target.transform.position;
+            transform.position = targetGO.transform.position;
         }
     }
 
@@ -125,14 +125,14 @@ public class CameraController : MonoBehaviour
 
     public float GetZoom()
     {
-        return camera.transform.localPosition.z;
+        return cameraGO.transform.localPosition.z;
     }
 
     public void SetZoom(float zoom)
     {
-        var position = camera.transform.localPosition;
+        var position = cameraGO.transform.localPosition;
         position.z = Mathf.Clamp(zoom, -maximumZoom, -minimumZoom);
-        camera.transform.localPosition = position;
+        cameraGO.transform.localPosition = position;
     }
 
     public void ChangeZoom(float amount)
