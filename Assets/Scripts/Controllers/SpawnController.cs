@@ -14,7 +14,9 @@ public class SpawnController : MonoBehaviour {
 	//spawn spawnable object every x seconds
 	public float spawnRate =5.0f;
 	//begin spawning after x seconds of being created
-	public float startDelay = 1.0f;
+	public float startDelay = 2.0f;
+
+	public bool spawnSquad = false;
 	// Use this for initialization
 	void Start () {
 		if (spawnable!= null) {
@@ -23,7 +25,26 @@ public class SpawnController : MonoBehaviour {
 
 	}
 
+	public void Update(){
+	}
+
 	private void spawnSpawnable(){
-		GameObject instance = Instantiate(spawnable);
+		if (spawnSquad) {
+			GameObject instance1 = Instantiate(spawnable);
+			instance1.transform.position = transform.position;
+			GameObject instance2 = Instantiate(spawnable);
+			Vector3 offset1 = transform.position;
+			offset1.x += 5;
+			instance2.transform.position = offset1;
+			GameObject instance3 = Instantiate(spawnable);
+			Vector3 offset2 = transform.position;
+			offset2.x -= 5;
+			instance3.transform.position = offset2;
+		} else {
+			GameObject instance = Instantiate(spawnable);
+			instance.transform.position = transform.position;
+		}
+
+		//instance.
 	}
 }
