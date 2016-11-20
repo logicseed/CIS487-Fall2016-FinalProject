@@ -38,10 +38,10 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
 
         var position = CalculateFuturePosition();
 
-        var velocity = moverProperties.CurrentPosition - position;
-        velocity = velocity.normalized * moverProperties.MaximumSpeed;
+        var velocity = agentProperties.CurrentPosition - position;
+        velocity = velocity.normalized * agentProperties.MaximumSpeed;
 
-        var steering = velocity - moverProperties.CurrentVelocity;
+        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
 
         return steering + parentBehaviour.Steering();
     }

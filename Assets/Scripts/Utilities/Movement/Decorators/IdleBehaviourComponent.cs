@@ -12,7 +12,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
 {
     #region Protected Fields
 
-    protected AgentProperties moverProperties;
+    protected AgentProperties agentProperties;
     protected IdleBehaviour behaviourProperties;
 
     #endregion Protected Fields
@@ -22,15 +22,15 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// <summary>
     /// Constructor for idle movement behaviour.
     /// </summary>
-    /// <param name="moverProperties">
+    /// <param name="agentProperties">
     /// MovementProperties of the attached mover.
     /// </param>
     /// <param name="behaviourProperties">
     /// MovementBehaviour details for this behaviour.
     /// </param>
-    public IdleBehaviourComponent(AgentProperties moverProperties, MovementBehaviour behaviourProperties)
+    public IdleBehaviourComponent(AgentProperties agentProperties, MovementBehaviour behaviourProperties)
     {
-        this.moverProperties = moverProperties;
+        this.agentProperties = agentProperties;
         this.behaviourProperties = behaviourProperties as IdleBehaviour;
     }
 
@@ -44,7 +44,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// <returns>MovementProperties of the mover.</returns>
     public override AgentProperties Properties()
     {
-        return moverProperties;
+        return agentProperties;
     }
 
     /// <summary>
@@ -53,9 +53,9 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
     public override Vector3 NewVelocity()
     {
-        var acceleration = moverProperties.CurrentVelocity.magnitude - moverProperties.MaximumSteering;
+        var acceleration = agentProperties.CurrentVelocity.magnitude - agentProperties.MaximumSteering;
         acceleration = Mathf.Max(0.0f, acceleration);
-        return moverProperties.CurrentVelocity.Truncate(acceleration);
+        return agentProperties.CurrentVelocity.Truncate(acceleration);
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
         //Debug.Log("Idle Steering called.");
         if (behaviourProperties.Braking)
         {
-            var steering = Vector3.ClampMagnitude(-moverProperties.CurrentVelocity, moverProperties.MaximumSteering);
+            var steering = Vector3.ClampMagnitude(-agentProperties.CurrentVelocity, agentProperties.MaximumSteering);
             return steering;
         }
         return Vector3.zero;

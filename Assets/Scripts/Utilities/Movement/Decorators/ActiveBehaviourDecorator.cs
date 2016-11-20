@@ -12,7 +12,7 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
 {
     #region Protected Fields
 
-    protected AgentProperties moverProperties;
+    protected AgentProperties agentProperties;
     protected MovementBehaviour behaviour;
     protected AbstractBehaviourComponent parentBehaviour;
 
@@ -33,7 +33,7 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
     {
         this.behaviour = behaviour;
         this.parentBehaviour = parentBehaviour;
-        this.moverProperties = parentBehaviour.Properties();
+        this.agentProperties = parentBehaviour.Properties();
     }
 
     #endregion Protected Fields
@@ -46,7 +46,7 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
     /// <returns>MovementProperties of the mover.</returns>
     public override AgentProperties Properties()
     {
-        return moverProperties;
+        return agentProperties;
     }
 
     /// <summary>
@@ -55,9 +55,9 @@ public abstract class ActiveBehaviourDecorator : AbstractBehaviourComponent
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
     public override Vector3 NewVelocity()
     {
-        var steering = Steering().Truncate(moverProperties.MaximumSteering);// / moverProperties.moverMass;
-        var velocity = moverProperties.CurrentVelocity + steering;
-        return velocity.Truncate(moverProperties.MaximumSpeed);
+        var steering = Steering().Truncate(agentProperties.MaximumSteering);// / moverProperties.moverMass;
+        var velocity = agentProperties.CurrentVelocity + steering;
+        return velocity.Truncate(agentProperties.MaximumSpeed);
     }
 
     #endregion Public Methods

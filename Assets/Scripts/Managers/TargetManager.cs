@@ -46,7 +46,7 @@ public class TargetManager : MonoBehaviour
     /// Gets the location target.
     /// </summary>
     /// <returns>The location target.</returns>
-    public LocationTarget GetPositionTarget()
+    public LocationTarget GetLocationTarget()
     {
         return locationTarget;
     }

@@ -38,10 +38,10 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
     {
         if (Deleting()) return parentBehaviour.Steering();
 
-        var velocity = moverProperties.CurrentPosition - behaviour.Position;
-        velocity = velocity.normalized * moverProperties.MaximumSpeed;
+        var velocity = agentProperties.CurrentPosition - behaviour.Position;
+        velocity = velocity.normalized * agentProperties.MaximumSpeed;
 
-        var steering = velocity - moverProperties.CurrentVelocity;
+        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
 
         return steering + parentBehaviour.Steering();
     }
@@ -60,7 +60,7 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
 
     private bool HasFled()
     {
-        var distance = (behaviour.Position - moverProperties.CurrentPosition).magnitude;
+        var distance = (behaviour.Position - agentProperties.CurrentPosition).magnitude;
         if (distance > behaviour.Distance) return true;
         return false;
     }

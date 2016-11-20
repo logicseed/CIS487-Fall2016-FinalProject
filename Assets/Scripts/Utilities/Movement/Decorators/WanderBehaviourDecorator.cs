@@ -23,7 +23,7 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
     /// <param name="parentBehaviour">
     /// Reference to component to decorate.
     /// </param>
-    public WanderBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour) 
+    public WanderBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
     : base(parentBehaviour, behaviour) { this.behaviour = behaviour as WanderBehaviour; }
 
     #endregion Constructor
@@ -39,33 +39,33 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
         if (Deleting()) return parentBehaviour.Steering();
 
 
-            //if (moverProperties.CurrentVelocity == Vector3.zero)
-            //    moverProperties.CurrentVelocity = moverProperties.CurrentHeading * moverProperties.MaximumSteering;
-            Debug.DrawRay(moverProperties.CurrentPosition, moverProperties.CurrentVelocity, Color.green);
+        //if (moverProperties.CurrentVelocity == Vector3.zero)
+        //    moverProperties.CurrentVelocity = moverProperties.CurrentHeading * moverProperties.MaximumSteering;
+        Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
-            var center = Vector3.ClampMagnitude(
-                moverProperties.CurrentHeading.normalized * moverProperties.MaximumSpeed,
-                moverProperties.MaximumSpeed * behaviour.Rate
-            );
+        var center = Vector3.ClampMagnitude(
+            agentProperties.CurrentHeading.normalized * agentProperties.MaximumSpeed,
+            agentProperties.MaximumSpeed * behaviour.Rate
+        );
 
-            if (center == Vector3.zero) center = Vector3.forward * moverProperties.MaximumSteering;
+        if (center == Vector3.zero) center = Vector3.forward * agentProperties.MaximumSteering;
 
-            Debug.DrawRay(moverProperties.CurrentPosition, center, Color.red);
+        Debug.DrawRay(agentProperties.CurrentPosition, center, Color.red);
 
-            var steering = Vector3.forward * behaviour.Magnitude;
+        var steering = Vector3.forward * behaviour.Magnitude;
 
-            var rotation = Quaternion.AngleAxis(behaviour.Angle, Vector3.up);
-            steering = (center + (rotation * steering)) - moverProperties.CurrentVelocity;
+        var rotation = Quaternion.AngleAxis(behaviour.Angle, Vector3.up);
+        steering = ((center + (rotation * steering)) - agentProperties.CurrentVelocity) * behaviour.Priority;
 
-            //var newWanderAngle = (Random.value * behaviour.AngleChange) - (behaviour.AngleChange * 0.5f);
-            var newWanderAngle = Random.value * behaviour.AngleChange - behaviour.AngleChange * 0.5f;
+        //var newWanderAngle = (Random.value * behaviour.AngleChange) - (behaviour.AngleChange * 0.5f);
+        var newWanderAngle = Random.value * behaviour.AngleChange - behaviour.AngleChange * 0.5f;
 
-            behaviour.Angle += newWanderAngle;
+        behaviour.Angle += newWanderAngle;
 
-            //steering = steering / 100;
-            Debug.DrawRay(moverProperties.CurrentPosition, steering, Color.blue);
+        //steering = steering / 100;
+        Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
 
-            return steering + parentBehaviour.Steering();
+        return steering + parentBehaviour.Steering();
 
     }
 

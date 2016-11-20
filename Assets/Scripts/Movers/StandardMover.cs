@@ -82,6 +82,10 @@ public class StandardMover : MonoBehaviour
         //Debug.Log("Number of behaviours: " + behaviours.Count);
         AbstractBehaviourComponent movementBehaviour = new IdleBehaviourComponent(movementProperties, new IdleBehaviour());
 
+        var avoid = new AvoidBehaviour();
+        avoid.Priority = 5.0f;
+        movementBehaviour = new AvoidBehaviourDecorator(movementBehaviour, avoid);
+
         foreach (var behaviour in behaviours)
         {
             switch (behaviour.Type)

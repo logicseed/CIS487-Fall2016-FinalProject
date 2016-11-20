@@ -38,22 +38,22 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
     {
         if (Deleting()) return parentBehaviour.Steering();
         
-        Debug.DrawRay(moverProperties.CurrentPosition, behaviour.Position - moverProperties.CurrentPosition, Color.yellow);
+        Debug.DrawRay(agentProperties.CurrentPosition, behaviour.Position - agentProperties.CurrentPosition, Color.yellow);
 
-        Debug.DrawRay(moverProperties.CurrentPosition, moverProperties.CurrentVelocity, Color.green);
+        Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
         
-        var velocity = behaviour.Position - moverProperties.CurrentPosition;
+        var velocity = behaviour.Position - agentProperties.CurrentPosition;
         var distance = velocity.magnitude;
-        velocity = velocity.normalized * moverProperties.MaximumSpeed;
+        velocity = velocity.normalized * agentProperties.MaximumSpeed;
 
         if (distance < behaviour.SlowApproachRadius)
             velocity *= (distance / behaviour.SlowApproachRadius);
         
-        Debug.DrawRay(moverProperties.CurrentPosition, velocity, Color.red);
+        Debug.DrawRay(agentProperties.CurrentPosition, velocity, Color.red);
 
-        var steering = velocity - moverProperties.CurrentVelocity;
+        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
 
-        Debug.DrawRay(moverProperties.CurrentPosition, steering, Color.blue);
+        Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
 
         return steering + parentBehaviour.Steering();
     }
@@ -62,7 +62,7 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
 
     private bool HasArrived()
     {
-        var distance = (behaviour.Position - moverProperties.CurrentPosition).magnitude;
+        var distance = (behaviour.Position - agentProperties.CurrentPosition).magnitude;
 
         if (distance < behaviour.ArrivedRadius) return true;
         return false;

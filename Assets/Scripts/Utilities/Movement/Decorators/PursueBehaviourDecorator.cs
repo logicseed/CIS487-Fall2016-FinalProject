@@ -38,25 +38,25 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
     {
         Debug.Log("Pursue steering called.");
         //if (Deleting()) return parentBehaviour.Steering();
-        Debug.DrawRay(moverProperties.CurrentPosition, behaviour.Position - moverProperties.CurrentPosition, Color.yellow);
-        Debug.DrawRay(moverProperties.CurrentPosition, moverProperties.CurrentVelocity, Color.green);
+        Debug.DrawRay(agentProperties.CurrentPosition, behaviour.Position - agentProperties.CurrentPosition, Color.yellow);
+        Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
         var position = CalculateFuturePosition();
 
-        Debug.DrawRay(moverProperties.CurrentPosition, position - moverProperties.CurrentPosition, Color.magenta);
+        Debug.DrawRay(agentProperties.CurrentPosition, position - agentProperties.CurrentPosition, Color.magenta);
 
-        var velocity = position - moverProperties.CurrentPosition;
+        var velocity = position - agentProperties.CurrentPosition;
         var distance = velocity.magnitude;
-        velocity = velocity.normalized * moverProperties.MaximumSpeed;
+        velocity = velocity.normalized * agentProperties.MaximumSpeed;
 
-        Debug.DrawRay(moverProperties.CurrentPosition, velocity, Color.red);
+        Debug.DrawRay(agentProperties.CurrentPosition, velocity, Color.red);
 
         if (distance < behaviour.Distance * 2)
             velocity *= ((distance - behaviour.Distance) / behaviour.Distance);
 
-        var steering = velocity - moverProperties.CurrentVelocity;
+        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
 
-        Debug.DrawRay(moverProperties.CurrentPosition, steering, Color.blue);
+        Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
 
         return steering + parentBehaviour.Steering();
     }
@@ -76,7 +76,7 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
         
 
         var prediction = targetMover.CurrentVelocity * Time.fixedDeltaTime * behaviour.Prediction;
-        prediction *= (Vector3.Distance(behaviour.Position, moverProperties.CurrentPosition) / moverProperties.MaximumSpeed);
+        prediction *= (Vector3.Distance(behaviour.Position, agentProperties.CurrentPosition) / agentProperties.MaximumSpeed);
         
         var position = behaviour.TargetTransform.position + prediction;
         
