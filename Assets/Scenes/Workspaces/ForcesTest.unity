@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4368103, g: 0.48440862, b: 0.56459606, a: 1}
+  m_IndirectSpecularColor: {r: 0.43681046, g: 0.48440892, b: 0.56459653, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &43649921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &52123005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &53792943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &55844135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &58514629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &79390179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &79985402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2070,7 +2070,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &93527468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &127585187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2684,7 +2684,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &135907282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &137907008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,7 +2994,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &146626183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3472,7 +3472,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &163403893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3732,7 +3732,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &175110827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4058,7 +4058,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &188338714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4393,7 +4393,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &206521964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4716,7 +4716,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &214040256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4923,7 +4923,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &218078062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5153,7 +5153,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &227225744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5292,7 +5292,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &227408388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5489,7 +5489,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &236888220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5757,7 +5757,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &253400549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6098,7 +6098,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &261848671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6215,7 +6215,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &262929882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6392,7 +6392,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &265073988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6680,7 +6680,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &279252738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6946,7 +6946,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &284595223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7058,7 +7058,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &288234764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7670,7 +7670,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &319850553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7883,7 +7883,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &332719237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8236,7 +8236,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &340339328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8344,7 +8344,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &346950064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8554,7 +8554,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &356479148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8913,7 +8913,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &379299915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9048,7 +9048,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &384487679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9241,7 +9241,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &388745481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9564,7 +9564,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &403170595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10020,7 +10020,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &427166058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10342,7 +10342,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &441146980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10510,7 +10510,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &447007046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10645,7 +10645,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &451217064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10840,7 +10840,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &461773419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11075,7 +11075,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &486961526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11773,7 +11773,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &533928809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11997,7 +11997,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &539347128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12221,7 +12221,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &557109879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12502,7 +12502,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &567991195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12637,7 +12637,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &568106227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12929,7 +12929,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &578540197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13776,7 +13776,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &619669469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14040,7 +14040,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &632575906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14354,7 +14354,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &640420000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14564,7 +14564,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &646899686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14799,7 +14799,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &655138391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15025,7 +15025,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &668281241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15334,7 +15334,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &699523820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15473,7 +15473,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &710458157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15675,7 +15675,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &718720522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15956,7 +15956,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &741998447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16161,7 +16161,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &755534413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16738,7 +16738,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &802690154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17242,7 +17242,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &838217244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17479,7 +17479,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &855663356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17678,7 +17678,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &857215444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17753,7 +17753,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &860283311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18253,7 +18253,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &881055236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18388,7 +18388,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &889288152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18656,7 +18656,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &902287772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18865,7 +18865,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &924173293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19029,7 +19029,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &929659451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19239,7 +19239,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &933181690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19445,7 +19445,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &940165231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19673,7 +19673,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &943592346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19748,7 +19748,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &945761622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19883,7 +19883,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &948001170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20118,7 +20118,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &955391148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20404,7 +20404,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &971488551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20479,7 +20479,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &973910547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20614,7 +20614,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &975680223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20808,7 +20808,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &976899680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21181,7 +21181,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &980399463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21316,7 +21316,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &982942330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21730,7 +21730,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1005350955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22053,7 +22053,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1035120371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22192,7 +22192,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1041660908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22452,7 +22452,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1047347784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22782,7 +22782,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1056688344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23852,7 +23852,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1099903451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23960,7 +23960,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1111130439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24162,7 +24162,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1112585993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24453,7 +24453,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1114711469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24628,7 +24628,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1119289860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25025,7 +25025,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1140849844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25394,7 +25394,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1154491113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25573,7 +25573,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1163621227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25932,7 +25932,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1193798213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26067,7 +26067,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1194805851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26302,7 +26302,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1209050357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26437,7 +26437,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1209298009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26572,7 +26572,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1211589913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26707,7 +26707,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1211640468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27048,7 +27048,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1220199713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27123,7 +27123,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1222140689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27262,7 +27262,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1223078392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27526,7 +27526,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1230091831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27899,7 +27899,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1236270919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28223,7 +28223,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1260381786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28573,7 +28573,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1288342418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28712,7 +28712,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1290205573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28816,7 +28816,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1291136551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28907,7 +28907,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1291778873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29183,7 +29183,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1312269235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29318,7 +29318,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1317871010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29520,7 +29520,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1319038219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29722,7 +29722,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1320558093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30157,7 +30157,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1342889484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30523,7 +30523,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1363544685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30598,7 +30598,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1364370156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30982,7 +30982,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1403670993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31117,7 +31117,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1405463366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31252,7 +31252,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1406097920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31387,7 +31387,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1409794649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31593,7 +31593,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1418116783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31728,7 +31728,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1422677208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32096,7 +32096,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1431405097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32231,7 +32231,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1432169496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32558,7 +32558,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1447944718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32693,7 +32693,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1448740338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32832,7 +32832,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1456901788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33131,7 +33131,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1464040543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33299,7 +33299,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1468047247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33434,7 +33434,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1468950666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33636,7 +33636,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1475583329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33771,7 +33771,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1478459597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33939,7 +33939,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1486014353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34078,7 +34078,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1487378606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34525,7 +34525,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1518687734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34793,7 +34793,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1538669782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34928,7 +34928,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1542633159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35238,7 +35238,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1553101423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35433,7 +35433,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1554113113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35545,7 +35545,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1557823835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35680,7 +35680,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1563305809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35965,7 +35965,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1577592668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36137,7 +36137,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1584715738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36301,7 +36301,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1595201080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36511,7 +36511,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1608724887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36717,7 +36717,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1612739174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36856,7 +36856,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1617304818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36991,7 +36991,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1618086905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37201,7 +37201,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1624109199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37505,7 +37505,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1629471377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37640,7 +37640,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1630556372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37850,7 +37850,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1643454299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38265,7 +38265,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1659977404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38400,7 +38400,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1660885423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38631,7 +38631,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1678560045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38766,7 +38766,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1684336148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38937,7 +38937,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1690501294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39132,7 +39132,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1691841121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39342,7 +39342,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1697455644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39477,7 +39477,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1701961057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39798,7 +39798,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1714846447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40112,7 +40112,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1737734236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40307,7 +40307,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1738106620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40587,7 +40587,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1744970698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40722,7 +40722,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1746413561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40857,7 +40857,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1749751878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41667,7 +41667,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1783084138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41939,7 +41939,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1808402875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42274,7 +42274,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1833512562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42473,7 +42473,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1837552705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42682,7 +42682,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1860608495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43096,7 +43096,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1876773056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43264,7 +43264,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1883102680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43603,7 +43603,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1895469164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43798,7 +43798,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1896692381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44149,7 +44149,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1903835965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44373,7 +44373,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1906581521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44448,7 +44448,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1909292537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44670,7 +44670,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1916250230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45066,7 +45066,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1927410456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45234,7 +45234,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1928605016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45369,7 +45369,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1932330304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45508,7 +45508,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1938956887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45629,7 +45629,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1940184230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45778,7 +45778,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1941210831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45980,7 +45980,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1948314224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46119,7 +46119,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1958098798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46283,7 +46283,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &1958388354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47500,7 +47500,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2020806475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47635,7 +47635,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2026287173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47803,7 +47803,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2026723628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48142,7 +48142,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2043896228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48277,7 +48277,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2047964108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48416,7 +48416,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2052413716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48551,7 +48551,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2052804450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48686,7 +48686,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2054561056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48887,7 +48887,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2068980840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49022,7 +49022,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2070971425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49157,7 +49157,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2071567953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49396,7 +49396,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2088268271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49926,7 +49926,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   teamColor: {r: 1, g: 1, b: 1, a: 1}
   isPlayer: 0
-  playerLayer: Default
+  teamLayer: Default
 --- !u!114 &2131763020
 MonoBehaviour:
   m_ObjectHideFlags: 0

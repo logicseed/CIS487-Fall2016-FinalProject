@@ -19,7 +19,7 @@ public class AgentManager : MonoBehaviour
     [HideInInspector]
     public bool isPlayer = false;
     [HideInInspector]
-    public string playerLayer = "Default";
+    public string teamLayer = "Default";
 
     protected virtual void Start()
     {

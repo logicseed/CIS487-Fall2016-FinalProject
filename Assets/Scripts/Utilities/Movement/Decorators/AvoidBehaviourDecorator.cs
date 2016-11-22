@@ -14,68 +14,59 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
 
     public override Vector3 Steering(bool debugRays = false)
     {
-        // find nearby colliders
-        // find closest collider in path
+        var steering = Vector3.zero;
 
-
-
-
-
-
-
-
-        // raycast to find if something is in front
+        // avoid obstacles in front
         RaycastHit hit;
 
         var rayDistance = (behaviour.maxDistance * agentProperties.MaximumSpeed) *
             (agentProperties.CurrentVelocity.magnitude / agentProperties.MaximumSpeed);
 
-        if (Physics.SphereCast(agentProperties.CurrentPosition, behaviour.sphereRadius, agentProperties.CurrentVelocity,
-            out hit, rayDistance))
-        //if (Physics.Raycast(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, out hit, rayDistance))
+        if (Physics.SphereCast(agentProperties.CurrentPosition, behaviour.sphereRadius, agentProperties.CurrentVelocity, out hit, rayDistance))
         {
             var hitAgent = hit.collider.gameObject.GetComponent<AgentManager>();
-            Vector3 direction;
+            var direction = hit.point - hitAgent.position;
 
-            // if the hit is moving, steering in the opposite direction as its velocity.
-            //if (hitAgent.mover.CurrentVelocity.magnitude >= 0.05f)
-            //{
-            //    direction = hitAgent.mover.CurrentVelocity.normalized * -1;
-            //}
-            //else
-            //{
-            //    direction = Vector3.Cross(Vector3.up, agentProperties.CurrentVelocity).normalized;
-            //}
-
-            direction = hit.point - hitAgent.position;
-
-
-            //var velocity = hitAgent.transform.position + (direction * (hitAgent.GetComponent<SphereCollider>().radius + 2));
-            //velocity = velocity.normalized * agentProperties.MaximumSpeed;
-
-            //var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
-
-
-            var steering = (direction.normalized * agentProperties.MaximumSteering) * behaviour.Priority;
+            steering = (direction.normalized * agentProperties.MaximumSteering);
 
             if (debugRays)
             {
                 // target
-                Debug.DrawRay(agentProperties.CurrentPosition, hit.transform.position - agentProperties.CurrentPosition,
-                              RayColor.Grey);
+                Debug.DrawRay(agentProperties.CurrentPosition, hit.transform.position - agentProperties.CurrentPosition, RayColor.Grey);
 
                 // look ahead
-                Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity.normalized * rayDistance,
-                          RayColor.Standard.AvoidRayDistance);
+                Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity.normalized * rayDistance, RayColor.Standard.AvoidRayDistance);
 
                 // steering
-                Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity,
-                              steering, RayColor.Standard.AvoidSteering);
+                Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity, steering, RayColor.Standard.AvoidSteering);
             }
 
-            return steering;
-            //return steering + parentBehaviour.Steering(debugRays);
         }
+
+        // avoid obstacles around
+        var hitColliders = Physics.OverlapSphere(agentProperties.CurrentPosition, behaviour.personalSpace);
+
+        foreach(SphereCollider hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.transform.position == agentProperties.CurrentPosition) continue;
+
+            //var hitAgent = hitCollider.gameObject.GetComponent<AgentManager>();
+            Debug.Log("Agent Position: " + agentProperties.CurrentPosition);
+            Debug.Log("Collider Position: " + hitCollider.transform.position);
+            var direction = hitCollider.transform.position - agentProperties.CurrentPosition;
+            var distance = Mathf.Abs(direction.magnitude) - (hitCollider.radius + behaviour.personalSpace);
+            Debug.Log("Distance: " + distance);
+            direction.Normalize();
+
+            var importance = behaviour.personalSpace / distance;
+            Debug.Log("Importance: " + importance);
+
+            steering += (direction * agentProperties.MaximumSteering) * importance;
+        }
+
+
+
+
 
         if (debugRays)
         {
@@ -83,7 +74,8 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
                           RayColor.Standard.AvoidRayDistance);
         }
 
-        return parentBehaviour.Steering(debugRays);
+        steering *= behaviour.Priority;
+        return steering + parentBehaviour.Steering(debugRays);
     }
 
 

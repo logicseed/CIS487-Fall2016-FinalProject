@@ -34,7 +34,7 @@ public class StandardMover : MonoBehaviour
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         UpdateAgentProperties();
         UpdateGraphicsHeading();
@@ -100,7 +100,9 @@ public class StandardMover : MonoBehaviour
         //Debug.Log("Number of behaviours: " + behaviours.Count);
         AbstractBehaviourComponent movementBehaviours = new IdleBehaviourComponent(props, new IdleBehaviour());
 
-        
+        var avoidB = new AvoidBehaviour();
+        avoidB.Priority = 100.0f;
+        movementBehaviours = new AvoidBehaviourDecorator(movementBehaviours, avoidB);
 
         foreach (var behaviour in behaviours)
         {
@@ -121,7 +123,7 @@ public class StandardMover : MonoBehaviour
             }
         }
 
-        movementBehaviours = new AvoidBehaviourDecorator(movementBehaviours, new AvoidBehaviour());
+        
 
         return movementBehaviours.Steering(debugRays);
     }

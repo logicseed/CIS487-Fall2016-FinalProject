@@ -167,11 +167,11 @@ public class TargetManager : MonoBehaviour
 
         var graphicGameObject = new GameObject("Target Indicator");
         graphicGameObject.transform.position = target.position;
-        graphicGameObject.layer = LayerMask.NameToLayer(agent.playerLayer);
+        graphicGameObject.layer = LayerMask.NameToLayer(agent.teamLayer);
 
         graphic.transform.parent = graphicGameObject.transform;
         graphic.transform.localPosition = Vector3.zero;
-        graphic.layer = LayerMask.NameToLayer(agent.playerLayer);
+        graphic.layer = LayerMask.NameToLayer(agent.teamLayer);
 
         if (target.type != TargetType.Location)
         {
