@@ -18,7 +18,7 @@ public class StandardMover : MonoBehaviour
     /// Properties of the mover.
     /// </summary>
     [Tooltip("Movement properties of the mover.")]
-    public AgentProperties movementProperties;
+    public AgentProperties props;
 
     /// <summary>
     /// GameObject reference to the graphical representation of this mover.
@@ -34,9 +34,9 @@ public class StandardMover : MonoBehaviour
     {
         rigidBody = gameObject.GetComponent<Rigidbody>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        UpdateMovementProperties();
+        UpdateAgentProperties();
         UpdateGraphicsHeading();
         RemoveDeletedBehaviours();
     }
@@ -54,20 +54,38 @@ public class StandardMover : MonoBehaviour
     #region Private Methods
 
     /// <summary>
-    /// Updates <see cref="movementProperties"/> based on recent movement and behaviours.
+    /// Updates <see cref="props"/> based on recent movement and behaviours.
     /// </summary>
-    private void UpdateMovementProperties()
+    private void UpdateAgentProperties()
     {
-        movementProperties.CurrentPosition = transform.position;
+        // true for debugging
+        var debugRays = true;
 
-        movementProperties.CurrentVelocity = rigidBody.velocity;
-        var steering = CalculateSteeringForce();
-        //Debug.Log("Steering: " + steering);
+        props.CurrentPosition = transform.position;
+
+        props.CurrentVelocity = rigidBody.velocity;
+
+        var prioritySteering = CalculateSteeringForce(debugRays);
+        var steering = Vector3.ClampMagnitude(prioritySteering, props.MaximumSteering);
+
         rigidBody.AddForce(steering, ForceMode.VelocityChange);
-        movementProperties.CurrentVelocity = rigidBody.velocity;
+        props.CurrentVelocity = rigidBody.velocity;
 
-        if (movementProperties.CurrentVelocity != Vector3.zero)
-            movementProperties.CurrentHeading = movementProperties.CurrentVelocity.normalized;
+        if (props.CurrentVelocity != Vector3.zero)
+            props.CurrentHeading = props.CurrentVelocity.normalized;
+
+        if (debugRays)
+        {
+            // Unclamped acceleration
+            Debug.DrawRay(props.CurrentPosition + props.CurrentVelocity,
+                          prioritySteering, RayColor.Standard.UnclampedAcceleration);
+            // Velocity vector
+            Debug.DrawRay(props.CurrentPosition, props.CurrentVelocity, RayColor.Standard.Velocity);
+
+            // Acceleration vector
+            Debug.DrawRay(props.CurrentPosition + props.CurrentVelocity,
+                          steering, RayColor.Standard.Acceleration);
+        }
     }
 
     /// <summary>
@@ -77,37 +95,35 @@ public class StandardMover : MonoBehaviour
     /// <remarks>
     /// Uses the Decorator pattern.
     /// </remarks>
-    private Vector3 CalculateSteeringForce()
+    private Vector3 CalculateSteeringForce(bool debugRays = false)
     {
         //Debug.Log("Number of behaviours: " + behaviours.Count);
-        AbstractBehaviourComponent movementBehaviour = new IdleBehaviourComponent(movementProperties, new IdleBehaviour());
+        AbstractBehaviourComponent movementBehaviours = new IdleBehaviourComponent(props, new IdleBehaviour());
 
-        var avoid = new AvoidBehaviour();
-        avoid.Priority = 5.0f;
-        movementBehaviour = new AvoidBehaviourDecorator(movementBehaviour, avoid);
+        
 
         foreach (var behaviour in behaviours)
         {
             switch (behaviour.Type)
             {
                 case BehaviourType.Seek:
-                    movementBehaviour = new SeekBehaviourDecorator(movementBehaviour, behaviour);
+                    movementBehaviours = new SeekBehaviourDecorator(movementBehaviours, behaviour);
                     break;
                 case BehaviourType.Flee:
-                    movementBehaviour = new FleeBehaviourDecorator(movementBehaviour, behaviour);
+                    movementBehaviours = new FleeBehaviourDecorator(movementBehaviours, behaviour);
                     break;
                 case BehaviourType.Wander:
-                    movementBehaviour = new WanderBehaviourDecorator(movementBehaviour, behaviour);
-                    //Debug.Log("Added wander behaviour.");
+                    movementBehaviours = new WanderBehaviourDecorator(movementBehaviours, behaviour);
                     break;
                 case BehaviourType.Pursue:
-                    movementBehaviour = new PursueBehaviourDecorator(movementBehaviour, behaviour);
-                    //Debug.Log("Added pursue behaviour.");
+                    movementBehaviours = new PursueBehaviourDecorator(movementBehaviours, behaviour);
                     break;
             }
         }
-        
-        return Vector3.ClampMagnitude(movementBehaviour.Steering(), movementProperties.MaximumSteering);
+
+        movementBehaviours = new AvoidBehaviourDecorator(movementBehaviours, new AvoidBehaviour());
+
+        return movementBehaviours.Steering(debugRays);
     }
 
     /// <summary>
@@ -173,7 +189,7 @@ public class StandardMover : MonoBehaviour
     {
         get
         {
-            return movementProperties.CurrentVelocity;
+            return props.CurrentVelocity;
         }
     }
 

@@ -12,8 +12,6 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
 {
     new SeekBehaviour behaviour;
 
-    #region Constructor
-
     /// <summary>
     /// Constructor for seek behaviour.
     /// </summary>
@@ -26,39 +24,37 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
     public SeekBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
     : base(parentBehaviour, behaviour) { this.behaviour = behaviour as SeekBehaviour; }
 
-    #endregion Constructor
-
-    #region Public Methods
-
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
     /// </summary>
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
-    public override Vector3 Steering()
+    public override Vector3 Steering(bool debugRays = false)
     {
         if (Deleting()) return parentBehaviour.Steering();
         
-        Debug.DrawRay(agentProperties.CurrentPosition, behaviour.Position - agentProperties.CurrentPosition, Color.yellow);
+        var velocityVector = behaviour.Position - agentProperties.CurrentPosition;
+        var desiredVelocity = velocityVector.normalized * agentProperties.MaximumSpeed;
 
-        Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
-        
-        var velocity = behaviour.Position - agentProperties.CurrentPosition;
-        var distance = velocity.magnitude;
-        velocity = velocity.normalized * agentProperties.MaximumSpeed;
-
+        var distance = velocityVector.magnitude;
         if (distance < behaviour.SlowApproachRadius)
-            velocity *= (distance / behaviour.SlowApproachRadius);
-        
-        Debug.DrawRay(agentProperties.CurrentPosition, velocity, Color.red);
+            desiredVelocity *= (distance / behaviour.SlowApproachRadius);
 
-        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
+        var steering = (desiredVelocity - agentProperties.CurrentVelocity);
+        var prioritySteering = steering * behaviour.Priority;
 
-        Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
+        if (debugRays)
+        {
+            Debug.DrawRay(agentProperties.CurrentPosition, velocityVector, RayColor.Grey);
+            Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity,
+                          prioritySteering, RayColor.Grey);
 
-        return steering + parentBehaviour.Steering();
+            Debug.DrawRay(agentProperties.CurrentPosition, desiredVelocity, RayColor.Standard.SeekDesiredVelocity);
+            Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity,
+                          steering, RayColor.Standard.SeekSteering);
+        }
+
+        return steering + parentBehaviour.Steering(debugRays);
     }
-
-    #endregion Public Methods
 
     private bool HasArrived()
     {
@@ -77,6 +73,4 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
         }
         return false;
     }
-
-
 }

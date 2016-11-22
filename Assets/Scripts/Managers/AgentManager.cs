@@ -14,6 +14,8 @@ public class AgentManager : MonoBehaviour
     public GraphicsManager graphics;
     //public AbilityController abilities;
 
+    public Color teamColor = new Color(1.0f,1.0f,1.0f,1.0f);
+
     [HideInInspector]
     public bool isPlayer = false;
     [HideInInspector]

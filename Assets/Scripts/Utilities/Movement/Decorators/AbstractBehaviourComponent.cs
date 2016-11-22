@@ -28,7 +28,7 @@ public abstract class AbstractBehaviourComponent
     /// Calculates the steering vector summation of all attached movement behaviours.
     /// </summary>
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
-    public abstract Vector3 Steering();
+    public abstract Vector3 Steering(bool debugRays = false);
 
     #endregion Abstract Methods
 }

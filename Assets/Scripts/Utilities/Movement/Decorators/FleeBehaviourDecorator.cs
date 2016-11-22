@@ -34,7 +34,7 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
     /// Calculates the steering vector summation of all attached movement behaviours.
     /// </summary>
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
-    public override Vector3 Steering()
+    public override Vector3 Steering(bool debugRays = false)
     {
         if (Deleting()) return parentBehaviour.Steering();
 

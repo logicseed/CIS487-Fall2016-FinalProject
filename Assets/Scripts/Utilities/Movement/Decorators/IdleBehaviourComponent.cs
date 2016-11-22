@@ -10,14 +10,10 @@ using UnityEngine;
 /// </remarks>
 public class IdleBehaviourComponent : AbstractBehaviourComponent
 {
-    #region Protected Fields
-
     protected AgentProperties agentProperties;
     protected IdleBehaviour behaviourProperties;
 
-    #endregion Protected Fields
 
-    #region Constructor
 
     /// <summary>
     /// Constructor for idle movement behaviour.
@@ -34,9 +30,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
         this.behaviourProperties = behaviourProperties as IdleBehaviour;
     }
 
-    #endregion Constructor
 
-    #region Public Methods
 
     /// <summary>
     /// Gets the properties of the mover to which this behaviour is attached.
@@ -62,9 +56,8 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// Calculates the steering vector of the idle behaviour.
     /// </summary>
     /// <returns>Vector3 steering vector of idle behaviour.</returns>
-    public override Vector3 Steering()
+    public override Vector3 Steering(bool debugRays = false)
     {
-        //Debug.Log("Idle Steering called.");
         if (behaviourProperties.Braking)
         {
             var steering = Vector3.ClampMagnitude(-agentProperties.CurrentVelocity, agentProperties.MaximumSteering);
@@ -72,6 +65,4 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
         }
         return Vector3.zero;
     }
-
-    #endregion Public Methods
 }

@@ -34,14 +34,14 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
     /// Calculates the steering vector summation of all attached movement behaviours.
     /// </summary>
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
-    public override Vector3 Steering()
+    public override Vector3 Steering(bool debugRays = false)
     {
         if (Deleting()) return parentBehaviour.Steering();
 
 
         //if (moverProperties.CurrentVelocity == Vector3.zero)
         //    moverProperties.CurrentVelocity = moverProperties.CurrentHeading * moverProperties.MaximumSteering;
-        Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
+        //Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
         var center = Vector3.ClampMagnitude(
             agentProperties.CurrentHeading.normalized * agentProperties.MaximumSpeed,
@@ -50,7 +50,7 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
 
         if (center == Vector3.zero) center = Vector3.forward * agentProperties.MaximumSteering;
 
-        Debug.DrawRay(agentProperties.CurrentPosition, center, Color.red);
+        //Debug.DrawRay(agentProperties.CurrentPosition, center, Color.red);
 
         var steering = Vector3.forward * behaviour.Magnitude;
 
@@ -63,7 +63,7 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
         behaviour.Angle += newWanderAngle;
 
         //steering = steering / 100;
-        Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
+        //Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
 
         return steering + parentBehaviour.Steering();
 
