@@ -12,8 +12,6 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
 {
     new WanderBehaviour behaviour;
 
-    #region Constructor
-
     /// <summary>
     /// Constructor for wander behaviour.
     /// </summary>
@@ -24,11 +22,10 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
     /// Reference to component to decorate.
     /// </param>
     public WanderBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
-    : base(parentBehaviour, behaviour) { this.behaviour = behaviour as WanderBehaviour; }
-
-    #endregion Constructor
-
-    #region Public Methods
+    : base(parentBehaviour, behaviour)
+    {
+        this.behaviour = behaviour as WanderBehaviour;
+    }
 
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
@@ -44,23 +41,23 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
         //Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
         var center = Vector3.ClampMagnitude(
-            agentProperties.CurrentHeading.normalized * agentProperties.MaximumSpeed,
-            agentProperties.MaximumSpeed * behaviour.Rate
+            agent.mover.heading * agent.mover.maxVelocity,
+            agent.mover.maxVelocity * behaviour.rate
         );
 
-        if (center == Vector3.zero) center = Vector3.forward * agentProperties.MaximumSteering;
+        if (center == Vector3.zero) center = Vector3.forward * agent.mover.maxSteering;
 
         //Debug.DrawRay(agentProperties.CurrentPosition, center, Color.red);
 
-        var steering = Vector3.forward * behaviour.Magnitude;
+        var steering = Vector3.forward * behaviour.magnitude;
 
-        var rotation = Quaternion.AngleAxis(behaviour.Angle, Vector3.up);
-        steering = ((center + (rotation * steering)) - agentProperties.CurrentVelocity) * behaviour.Priority;
+        var rotation = Quaternion.AngleAxis(behaviour.angle, Vector3.up);
+        steering = ((center + (rotation * steering)) - agent.mover.velocity) * behaviour.priority;
 
         //var newWanderAngle = (Random.value * behaviour.AngleChange) - (behaviour.AngleChange * 0.5f);
-        var newWanderAngle = Random.value * behaviour.AngleChange - behaviour.AngleChange * 0.5f;
+        var newWanderAngle = Random.value * behaviour.angleChange - behaviour.angleChange * 0.5f;
 
-        behaviour.Angle += newWanderAngle;
+        behaviour.angle += newWanderAngle;
 
         //steering = steering / 100;
         //Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
@@ -69,14 +66,12 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
 
     }
 
-    #endregion Public Methods
-
     private bool Deleting()
     {
-        if (behaviour.Time != -1.0f)
+        if (behaviour.time != -1.0f)
         {
-            if (behaviour.Time > 0.0f) behaviour.Time -= Time.fixedDeltaTime;
-            if (behaviour.Time < 0.0f && behaviour.Time >= -1.0f)
+            if (behaviour.time > 0.0f) behaviour.time -= Time.fixedDeltaTime;
+            if (behaviour.time < 0.0f && behaviour.time >= -1.0f)
             {
                 behaviour.OnDeleteBehaviour();
                 return true;

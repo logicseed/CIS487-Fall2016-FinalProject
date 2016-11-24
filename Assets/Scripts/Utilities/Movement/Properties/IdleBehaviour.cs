@@ -8,30 +8,22 @@ using UnityEngine;
 [System.Serializable]
 public class IdleBehaviour : MovementBehaviour
 {
-    [Header("Idle Properties")]
-
-    [SerializeField]
-    [Tooltip("Whether or not the mover will brake to a stop in order to be considered idle.")]
-    private bool braking = true;
-
-    /// <summary>
-    /// Default constructor.
-    /// </summary>
-    public IdleBehaviour() { Priority = 0.01f; type = BehaviourType.Idle; }
-
     /// <summary>
     /// Whether or not the mover will brake to a stop in order to be considered idle.
     /// </summary>
-    public bool Braking
-    {
-        get
-        {
-            return braking;
-        }
+    public bool activeBraking = true;
 
-        set
-        {
-            braking = value;
-        }
+    public IdleBehaviour(float priority, bool activeBraking = true)
+    {
+        this.priority = priority;
+        this.type = BehaviourType.Idle;
+        this.activeBraking = activeBraking;
+    }
+
+    public IdleBehaviour(bool activeBraking = true)
+    {
+        this.priority = 0.01f;
+        this.type = BehaviourType.Idle;
+        this.activeBraking = activeBraking;
     }
 }

@@ -12,8 +12,6 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
 {
     new PursueBehaviour behaviour;
 
-    #region Constructor
-
     /// <summary>
     /// Constructor for pursue behaviour.
     /// </summary>
@@ -26,9 +24,6 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
     public PursueBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
     : base(parentBehaviour, behaviour) { this.behaviour = behaviour as PursueBehaviour; }
 
-    #endregion Constructor
-
-    #region Public Methods
 
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
@@ -41,49 +36,45 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
         //Debug.DrawRay(agentProperties.CurrentPosition, behaviour.Position - agentProperties.CurrentPosition, Color.yellow);
         //Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
-        var position = CalculateFuturePosition();
+        var position = CalculateFuturePosition(agent.target.direct);
 
         //Debug.DrawRay(agentProperties.CurrentPosition, position - agentProperties.CurrentPosition, Color.magenta);
 
-        var velocity = position - agentProperties.CurrentPosition;
+        var velocity = position - agent.position;
         var distance = velocity.magnitude;
-        velocity = velocity.normalized * agentProperties.MaximumSpeed;
+        velocity = velocity.normalized * agent.mover.maxVelocity;
 
         //Debug.DrawRay(agentProperties.CurrentPosition, velocity, Color.red);
 
-        if (distance < behaviour.Distance * 2)
-            velocity *= ((distance - behaviour.Distance) / behaviour.Distance);
+        if (distance < behaviour.distance * 2)
+            velocity *= ((distance - behaviour.distance) / behaviour.distance);
 
-        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
+        var steering = (velocity - agent.mover.velocity) * behaviour.priority;
 
         //Debug.DrawRay(agentProperties.CurrentPosition, steering, Color.blue);
 
         return steering + parentBehaviour.Steering();
     }
 
-    #endregion Public Methods
 
-    #region Private Methods
+
+  
 
     /// <summary>
     /// Calculates the future position of the target based on its current velocity.
     /// </summary>
     /// <returns>Vector3 position in world space.</returns>
-    private Vector3 CalculateFuturePosition()
+    private Vector3 CalculateFuturePosition(AgentManager target)
     {
-        var targetMover = behaviour.TargetTransform.GetComponent<StandardMover>();
-
+        var prediction = target.mover.velocity * Time.fixedDeltaTime * behaviour.prediction;
+        prediction *= (Vector3.Distance(target.position, agent.position) / agent.mover.maxVelocity);
         
-
-        var prediction = targetMover.CurrentVelocity * Time.fixedDeltaTime * behaviour.Prediction;
-        prediction *= (Vector3.Distance(behaviour.Position, agentProperties.CurrentPosition) / agentProperties.MaximumSpeed);
-        
-        var position = behaviour.TargetTransform.position + prediction;
+        var position = target.position + prediction;
         
         return position;
     }
 
-    #endregion Private Methods
+  
 
     private bool Deleting()
     {

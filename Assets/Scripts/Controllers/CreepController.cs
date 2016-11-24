@@ -40,12 +40,12 @@ public class CreepController : MonoBehaviour {
 
 	private void seekCapturePoint(){
 		this.setTargetCapture ();
-		currentBehavior = new SeekBehaviour (agent.target.GetDirectTarget().gameObject.transform,true);
+		//currentBehavior = new SeekBehaviour (agent.target.GetDirectTarget().target.transform,true);
 		agent.mover.AddBehaviour (currentBehavior);
 	}
 
 	private void setTargetCapture(){
 		//var target = new DirectTarget (TargetType.EnemyCapture,getClosestMoon());
-		agent.target.SetDirectTarget (TargetType.EnemyCapture,getClosestMoon());
+		//agent.target.SetDirectTarget (TargetType.EnemyCapture,getClosestMoon());
 	}
 }
