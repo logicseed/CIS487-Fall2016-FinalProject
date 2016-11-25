@@ -5,7 +5,7 @@ using System.Collections;
 [CreateAssetMenu(menuName = "Ability/New Targeted ability")]
 public class Targeted : Ability
 {
-    private TargetedTrigger targeted;
+    private TargetedBehavior targeted;
     /// <summary>
     /// Give the information from the scriptable object to the monobehavior
     /// handlers. 
@@ -13,7 +13,7 @@ public class Targeted : Ability
     /// <param name="obj"></param>
     public override void initialize(GameObject obj)
     {
-        targeted = obj.GetComponent<TargetedTrigger>();
+        targeted = obj.GetComponent<TargetedBehavior>();
         targeted.abilityObject = abilityObject;
         targeted.maxRange = maxRange;
     }

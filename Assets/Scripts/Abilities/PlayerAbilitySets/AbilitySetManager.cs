@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Player ability manager, will contain scriptable objects attached to keys
 /// TODO: Need cooldown manager
 /// </summary>
-public class AbilityManager : MonoBehaviour
+public class AbilitySetManager : MonoBehaviour
 {
     public PlayerAbilitySet playerAbility;
 

@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Damage : Component
+public class Damage : AbilityComponent
 {
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
-        foreach(Collider x in hitColliders)
+        foreach (Collider x in hitColliders)
         {
-            //Damage in magnitude agent
+            Debug.Log("You've been hit for: " + magnitude);
         }
     }
 }

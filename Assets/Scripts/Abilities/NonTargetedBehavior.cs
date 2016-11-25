@@ -11,14 +11,14 @@ public class NonTargetedBehavior : MonoBehaviour
     
     public void cast()
     {
-        GameObject tempObject;
-       
+        GameObject instantiatedObject;
+
         if (maxRange == 0)
-            tempObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
+            instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
         else if(Vector3.Distance(gameObject.transform.position, FindMousePosition()) <= maxRange)
         {
-            tempObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
-            tempObject.transform.position = FindMousePosition();
+            instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
+            instantiatedObject.transform.position = FindMousePosition();
         }
     }
 

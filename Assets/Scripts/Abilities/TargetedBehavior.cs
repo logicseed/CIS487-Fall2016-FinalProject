@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TargetedTrigger : MonoBehaviour
+public class TargetedBehavior : MonoBehaviour
 {
     public Transform abilitySpawnLoc;
     [HideInInspector]
     public GameObject abilityObject;
     [HideInInspector]
     public float maxRange;
+
     AgentManager agent;
     AgentManager objectAgent;
 
@@ -23,8 +24,12 @@ public class TargetedTrigger : MonoBehaviour
             GameObject instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc);
             objectAgent = instantiatedObject.GetComponent<AgentManager>();
             objectAgent.SendMessage("Start");
-            MovementBehaviour behaviour = new PursueBehaviour(agent.target.direct.transform, true);
+
+            MovementBehaviour behaviour = new PursueBehaviour(agent.target.agent, true);
             objectAgent.mover.AddBehaviour(behaviour);
+
+            //objectAgent.mover.props.MaximumSpeed = 20.0f;
+            //objectAgent.mover.props.MaximumSteering = 3.0f;
         }
     }
 
