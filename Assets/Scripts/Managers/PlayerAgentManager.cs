@@ -6,12 +6,21 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class PlayerAgentManager : AgentManager
 {
+    [HideInInspector]
     public MouseController mouse;
+
+    public GameObject cameraPrefab;
 
     protected override void Start()
     {
         base.Start();
+    }
+
+    public override void OnStartLocalPlayer()
+    {
         mouse = gameObject.GetComponent<MouseController>();
+        var cameraController = Instantiate(cameraPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+        cameraController.GetComponent<CameraController>().SetTarget(gameObject);
         this.isPlayer = true;
     }
 }

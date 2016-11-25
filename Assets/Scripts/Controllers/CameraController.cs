@@ -1,8 +1,9 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class CameraController : MonoBehaviour
+public class CameraController : NetworkBehaviour
 {
     [Header("GameObjects")]
     [Tooltip("The child Camera of this controller.")]
@@ -177,6 +178,12 @@ public class CameraController : MonoBehaviour
         ResetAltitude();
         ResetRotation();
         ResetZoom();
+    }
+
+    public void SetTarget(GameObject gameObject, bool allowPositionChange = false)
+    {
+        targetGO = gameObject;
+        this.allowPositionChange = allowPositionChange;
     }
 
 }

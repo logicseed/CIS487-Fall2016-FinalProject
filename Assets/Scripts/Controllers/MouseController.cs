@@ -1,13 +1,15 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 [RequireComponent(typeof(TargetManager))]
 [DisallowMultipleComponent]
-public class MouseController : MonoBehaviour 
+public class MouseController : NetworkBehaviour 
 {
-    private AgentManager agent;
+    [HideInInspector]
+    public AgentManager agent;
     
     // Use this for initialization
     void Start ()
@@ -17,6 +19,8 @@ public class MouseController : MonoBehaviour
     
     // Update is called once per frame
     void Update () {
+        if (!isLocalPlayer) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             GameObject target = FindTarget();

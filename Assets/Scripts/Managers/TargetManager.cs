@@ -9,9 +9,13 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class TargetManager : MonoBehaviour
 {
+    [HideInInspector]
     public AgentManager agent;
+    [HideInInspector]
     public AgentManager direct;
+    [HideInInspector]
     public GameObject directIndicator;
+    [HideInInspector]
     public AgentManager location;
 
     void Start()

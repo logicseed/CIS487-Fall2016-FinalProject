@@ -1,15 +1,19 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 
 [DisallowMultipleComponent]
-public class AgentManager : MonoBehaviour
+public class AgentManager : NetworkBehaviour
 {
     public AgentType type = AgentType.None;
-    [Header("Populated at Runtime")] // these will be hidden in inspector later
+    [HideInInspector]
     public StandardMover mover;
+    [HideInInspector]
     public TargetManager target;
+    [HideInInspector]
     public GraphicsManager graphics;
+    [HideInInspector]
     public SphereCollider sphere;
 
     //public AbilityController abilities;
