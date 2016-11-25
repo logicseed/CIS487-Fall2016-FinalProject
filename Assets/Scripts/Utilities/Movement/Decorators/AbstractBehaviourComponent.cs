@@ -10,19 +10,20 @@ using UnityEngine;
 /// </remarks>
 public abstract class AbstractBehaviourComponent
 {
-    #region Abstract Methods
+
+    public AgentManager agent;
 
     /// <summary>
     /// Gets the properties of the mover to which this behaviour is attached.
     /// </summary>
     /// <returns>MovementProperties of the mover.</returns>
-    public abstract AgentProperties Properties();
+    //public abstract AgentProperties Properties();
 
     /// <summary>
     /// Calculates a new velocity based on all attached movement behaviours.
     /// </summary>
     /// <returns>Vector3 velocity based on movement behaviour.</returns>
-    public abstract Vector3 NewVelocity();
+    //public abstract Vector3 NewVelocity();
 
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
@@ -30,5 +31,5 @@ public abstract class AbstractBehaviourComponent
     /// <returns>Vector3 steering vector summation of all movement behaviours</returns>
     public abstract Vector3 Steering(bool debugRays = false);
 
-    #endregion Abstract Methods
+
 }

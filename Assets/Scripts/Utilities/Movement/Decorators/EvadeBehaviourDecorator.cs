@@ -10,7 +10,7 @@ using UnityEngine;
 /// </remarks>
 public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
 {
-#region Constructor
+
 
     /// <summary>
     /// Constructor for evade behaviour.
@@ -21,12 +21,16 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
     /// <param name="parentBehaviour">
     /// Reference to component to decorate.
     /// </param>
-    public EvadeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour) 
-    : base(parentBehaviour, behaviour) { this.behaviour = behaviour as EvadeBehaviour; }
+    public EvadeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
+    : base(parentBehaviour, behaviour)
+    {
+        this.behaviour = behaviour as EvadeBehaviour;
+        this.agent = parentBehaviour.agent;
+    }
 
-    #endregion Constructor
 
-    #region Public Methods
+
+
 
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
@@ -38,17 +42,14 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
 
         var position = CalculateFuturePosition();
 
-        var velocity = agentProperties.CurrentPosition - position;
-        velocity = velocity.normalized * agentProperties.MaximumSpeed;
+        var velocity = agent.position - position;
+        velocity = velocity.normalized * agent.mover.maxVelocity;
 
-        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
+        var steering = (velocity - agent.mover.velocity) * behaviour.priority;
 
         return steering + parentBehaviour.Steering();
     }
 
-    #endregion Public Methods
-
-    #region Private Methods
 
     /// <summary>
     /// Calculates the future position of the target based on its current velocity.
@@ -63,8 +64,6 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
         // return position;
         return Vector3.zero;
     }
-
-    #endregion Private Methods
 
 
 }

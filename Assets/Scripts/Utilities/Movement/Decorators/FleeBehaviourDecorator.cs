@@ -10,7 +10,7 @@ using UnityEngine;
 /// </remarks>
 public class FleeBehaviourDecorator : TargetBehaviourDecorator
 {
-    #region Constructor
+
 
     new FleeBehaviour behaviour;
 
@@ -26,9 +26,6 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
     public FleeBehaviourDecorator(AbstractBehaviourComponent parentBehaviour, MovementBehaviour behaviour)
     : base(parentBehaviour, behaviour) { this.behaviour = behaviour as FleeBehaviour; }
 
-    #endregion Constructor
-
-    #region Public Methods
 
     /// <summary>
     /// Calculates the steering vector summation of all attached movement behaviours.
@@ -38,19 +35,19 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
     {
         if (Deleting()) return parentBehaviour.Steering();
 
-        var velocity = agentProperties.CurrentPosition - behaviour.Position;
-        velocity = velocity.normalized * agentProperties.MaximumSpeed;
+        var velocity = agent.position - behaviour.target.position;
+        velocity = velocity.normalized * agent.mover.maxVelocity;
 
-        var steering = (velocity - agentProperties.CurrentVelocity) * behaviour.Priority;
+        var steering = (velocity - agent.mover.velocity) * behaviour.priority;
 
         return steering + parentBehaviour.Steering();
     }
 
-    #endregion Public Methods
+
 
     private bool Deleting()
     {
-        if (DeleteIfTargetNull() || (behaviour.DeleteWhenOutOfRange && HasFled()))
+        if (DeleteIfTargetNull() || (behaviour.deleteWhenOutOfRange && HasFled()))
         {
             behaviour.OnDeleteBehaviour();
             return true;
@@ -60,8 +57,8 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
 
     private bool HasFled()
     {
-        var distance = (behaviour.Position - agentProperties.CurrentPosition).magnitude;
-        if (distance > behaviour.Distance) return true;
+        var distance = (behaviour.target.position - agent.position).magnitude;
+        if (distance > behaviour.distance) return true;
         return false;
     }
 }

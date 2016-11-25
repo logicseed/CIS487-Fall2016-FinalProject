@@ -32,24 +32,24 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
     {
         if (Deleting()) return parentBehaviour.Steering();
         
-        var velocityVector = behaviour.Position - agentProperties.CurrentPosition;
-        var desiredVelocity = velocityVector.normalized * agentProperties.MaximumSpeed;
+        var velocityVector = behaviour.target.position - agent.position;
+        var desiredVelocity = velocityVector.normalized * agent.mover.maxVelocity;
 
         var distance = velocityVector.magnitude;
-        if (distance < behaviour.SlowApproachRadius)
-            desiredVelocity *= (distance / behaviour.SlowApproachRadius);
+        if (distance < behaviour.approachRadius)
+            desiredVelocity *= (distance / behaviour.approachRadius);
 
-        var steering = (desiredVelocity - agentProperties.CurrentVelocity);
-        var prioritySteering = steering * behaviour.Priority;
+        var steering = (desiredVelocity - agent.mover.velocity);
+        var prioritySteering = steering * behaviour.priority;
 
         if (debugRays)
         {
-            Debug.DrawRay(agentProperties.CurrentPosition, velocityVector, RayColor.Grey);
-            Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity,
+            Debug.DrawRay(agent.position, velocityVector, RayColor.Grey);
+            Debug.DrawRay(agent.position + agent.mover.velocity,
                           prioritySteering, RayColor.Grey);
 
-            Debug.DrawRay(agentProperties.CurrentPosition, desiredVelocity, RayColor.Standard.SeekDesiredVelocity);
-            Debug.DrawRay(agentProperties.CurrentPosition + agentProperties.CurrentVelocity,
+            Debug.DrawRay(agent.position, desiredVelocity, RayColor.Standard.SeekDesiredVelocity);
+            Debug.DrawRay(agent.position + agent.mover.velocity,
                           steering, RayColor.Standard.SeekSteering);
         }
 
@@ -58,15 +58,15 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
 
     private bool HasArrived()
     {
-        var distance = (behaviour.Position - agentProperties.CurrentPosition).magnitude;
+        var distance = (agent.target.location.position - agent.position).magnitude;
 
-        if (distance < behaviour.ArrivedRadius) return true;
+        if (distance < behaviour.arrivedRadius) return true;
         return false;
     }
 
     public bool Deleting()
     {
-        if (DeleteIfTargetNull() || (behaviour.DeleteUponArrived && HasArrived()))
+        if (DeleteIfTargetNull() || (behaviour.deleteUponArrived && HasArrived()))
         {
             behaviour.OnDeleteBehaviour();
             return true;

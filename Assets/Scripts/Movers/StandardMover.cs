@@ -1,90 +1,67 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections.Generic;
 
 /// <summary>
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
-[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(AgentManager))]
+[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class StandardMover : MonoBehaviour
 {
-    #region Inspector Fields
+    /// <summary>
+    /// The maximum velocity of this mover.
+    /// </summary>
+    public float maxVelocity;
 
     /// <summary>
-    /// Properties of the mover.
+    /// The maximum steering of this mover.
     /// </summary>
-    [Tooltip("Movement properties of the mover.")]
-    public AgentProperties props;
+    public float maxSteering;
 
-    /// <summary>
-    /// GameObject reference to the graphical representation of this mover.
-    /// </summary>
-    [Tooltip("GameObject reference to the graphical representation of this mover.")]
-    public Transform graphicsGameObject;
-
-    #endregion Inspector Fields
-
-    #region MonoBehaviour Methods
+    
 
     private void Start()
     {
+        agent = gameObject.GetComponent<AgentManager>();
         rigidBody = gameObject.GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
     {
-        UpdateAgentProperties();
-        UpdateGraphicsHeading();
+        UpdateMovement();
         RemoveDeletedBehaviours();
     }
 
-    #endregion MonoBehaviour Methods
-
-    #region Private Fields
-
+    private AgentManager agent;
     private Rigidbody rigidBody;
     private List<MovementBehaviour> behaviours = new List<MovementBehaviour>();
     private List<MovementBehaviour> behavioursToRemove = new List<MovementBehaviour>();
 
-    #endregion Private Fields
-
-    #region Private Methods
-
     /// <summary>
     /// Updates <see cref="props"/> based on recent movement and behaviours.
     /// </summary>
-    private void UpdateAgentProperties()
+    private void UpdateMovement()
     {
         // true for debugging
         var debugRays = true;
 
-        props.CurrentPosition = transform.position;
-
-        props.CurrentVelocity = rigidBody.velocity;
-
         var prioritySteering = CalculateSteeringForce(debugRays);
-        var steering = Vector3.ClampMagnitude(prioritySteering, props.MaximumSteering);
-
+        var steering = Vector3.ClampMagnitude(prioritySteering, maxSteering);
+ 
         rigidBody.AddForce(steering, ForceMode.VelocityChange);
-        props.CurrentVelocity = rigidBody.velocity;
-
-        if (props.CurrentVelocity != Vector3.zero)
-            props.CurrentHeading = props.CurrentVelocity.normalized;
 
         if (debugRays)
         {
             // Unclamped acceleration
-            Debug.DrawRay(props.CurrentPosition + props.CurrentVelocity,
+            Debug.DrawRay(transform.position + velocity,
                           prioritySteering, RayColor.Standard.UnclampedAcceleration);
             // Velocity vector
-            Debug.DrawRay(props.CurrentPosition, props.CurrentVelocity, RayColor.Standard.Velocity);
+            Debug.DrawRay(transform.position, velocity, RayColor.Standard.Velocity);
 
             // Acceleration vector
-            Debug.DrawRay(props.CurrentPosition + props.CurrentVelocity,
-                          steering, RayColor.Standard.Acceleration);
+            Debug.DrawRay(transform.position + velocity, steering, RayColor.Standard.Acceleration);
         }
     }
 
@@ -97,16 +74,13 @@ public class StandardMover : MonoBehaviour
     /// </remarks>
     private Vector3 CalculateSteeringForce(bool debugRays = false)
     {
-        //Debug.Log("Number of behaviours: " + behaviours.Count);
-        AbstractBehaviourComponent movementBehaviours = new IdleBehaviourComponent(props, new IdleBehaviour());
-
-        var avoidB = new AvoidBehaviour();
-        avoidB.Priority = 100.0f;
-        movementBehaviours = new AvoidBehaviourDecorator(movementBehaviours, avoidB);
+        //Debug.Log("Behaviours: " + behaviours.Count);
+        AbstractBehaviourComponent movementBehaviours = new IdleBehaviourComponent(agent, new IdleBehaviour());
+        movementBehaviours = new AvoidBehaviourDecorator(movementBehaviours, new AvoidBehaviour());
 
         foreach (var behaviour in behaviours)
         {
-            switch (behaviour.Type)
+            switch (behaviour.type)
             {
                 case BehaviourType.Seek:
                     movementBehaviours = new SeekBehaviourDecorator(movementBehaviours, behaviour);
@@ -120,28 +94,13 @@ public class StandardMover : MonoBehaviour
                 case BehaviourType.Pursue:
                     movementBehaviours = new PursueBehaviourDecorator(movementBehaviours, behaviour);
                     break;
+                case BehaviourType.Evade:
+                    movementBehaviours = new EvadeBehaviourDecorator(movementBehaviours, behaviour);
+                    break;
             }
         }
 
-        
-
         return movementBehaviours.Steering(debugRays);
-    }
-
-    /// <summary>
-    /// Updates the <see cref="GameObject"/> that represent the graphics for this mover to face to correct heading for
-    /// the mover's current velocity.
-    /// </summary>
-    private void UpdateGraphicsHeading()
-    {
-        if (graphicsGameObject != null)
-        {
-            //var heading = transform.position + movementProperties.CurrentHeading;
-            //graphicsGameObject.LookAt(heading);
-            var targetDir = rigidBody.velocity;
-            var newDir = Vector3.RotateTowards(graphicsGameObject.transform.forward, targetDir, Time.fixedDeltaTime * 10, 0.0f);
-            graphicsGameObject.rotation = Quaternion.LookRotation(newDir);
-        }
     }
 
     /// <summary>
@@ -161,14 +120,12 @@ public class StandardMover : MonoBehaviour
         }
     }
 
-    #endregion Private Methods
 
-    #region Public Methods
 
     /// <summary>
-    /// 
+    /// Adds a behaviour to this mover.
     /// </summary>
-    /// <param name="behaviour"></param>
+    /// <param name="behaviour">The behaviour to add.</param>
     public void AddBehaviour(MovementBehaviour behaviour)
     {
         behaviour.DeletingBehaviour += new DeleteBehaviourHandler(RemoveBehaviour);
@@ -176,24 +133,32 @@ public class StandardMover : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Removes a behaviour from this mover.
     /// </summary>
-    /// <param name="behaviour"></param>
+    /// <param name="behaviour">The behaviour to add.</param>
     public void RemoveBehaviour(MovementBehaviour behaviour)
     {
         behavioursToRemove.Add(behaviour);
     }
 
+
+
+
+
+
     /// <summary>
-    /// 
+    /// The agent's current velocity vector.
     /// </summary>
-    public Vector3 CurrentVelocity
+    public Vector3 velocity
     {
-        get
-        {
-            return props.CurrentVelocity;
-        }
+        get { return rigidBody.velocity; }
     }
 
-    #endregion Public Methods
+    /// <summary>
+    /// The agent's current heading vector.
+    /// </summary>
+    public Vector3 heading
+    {
+        get { return rigidBody.velocity.normalized; }
+    }
 }

@@ -10,46 +10,12 @@ using UnityEngine;
 /// </remarks>
 public class IdleBehaviourComponent : AbstractBehaviourComponent
 {
-    protected AgentProperties agentProperties;
-    protected IdleBehaviour behaviourProperties;
+    public IdleBehaviour behaviour;
 
-
-
-    /// <summary>
-    /// Constructor for idle movement behaviour.
-    /// </summary>
-    /// <param name="agentProperties">
-    /// MovementProperties of the attached mover.
-    /// </param>
-    /// <param name="behaviourProperties">
-    /// MovementBehaviour details for this behaviour.
-    /// </param>
-    public IdleBehaviourComponent(AgentProperties agentProperties, MovementBehaviour behaviourProperties)
+    public IdleBehaviourComponent(AgentManager agent, MovementBehaviour behaviour)
     {
-        this.agentProperties = agentProperties;
-        this.behaviourProperties = behaviourProperties as IdleBehaviour;
-    }
-
-
-
-    /// <summary>
-    /// Gets the properties of the mover to which this behaviour is attached.
-    /// </summary>
-    /// <returns>MovementProperties of the mover.</returns>
-    public override AgentProperties Properties()
-    {
-        return agentProperties;
-    }
-
-    /// <summary>
-    /// Calculates the new velocity of the idle behaviour.
-    /// </summary>
-    /// <returns>Vector3 velocity based on movement behaviour.</returns>
-    public override Vector3 NewVelocity()
-    {
-        var acceleration = agentProperties.CurrentVelocity.magnitude - agentProperties.MaximumSteering;
-        acceleration = Mathf.Max(0.0f, acceleration);
-        return agentProperties.CurrentVelocity.Truncate(acceleration);
+        this.agent = agent;
+        this.behaviour = behaviour as IdleBehaviour;
     }
 
     /// <summary>
@@ -58,9 +24,11 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
     /// <returns>Vector3 steering vector of idle behaviour.</returns>
     public override Vector3 Steering(bool debugRays = false)
     {
-        if (behaviourProperties.Braking)
+        //Debug.Log("Agent: " + agent);
+        //Debug.Log("Behaviour: " + behaviour);
+        if (behaviour.activeBraking)
         {
-            var steering = Vector3.ClampMagnitude(-agentProperties.CurrentVelocity, agentProperties.MaximumSteering);
+            var steering = Vector3.ClampMagnitude(-agent.mover.velocity, agent.mover.maxSteering);
             return steering;
         }
         return Vector3.zero;

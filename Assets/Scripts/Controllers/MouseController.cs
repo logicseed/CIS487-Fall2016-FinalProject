@@ -23,13 +23,13 @@ public class MouseController : MonoBehaviour
 
             if (target != null)
             {
-                agent.target.SetDirectTarget(TargetType.Ally, target);
+                agent.target.SetDirectTarget(target.GetComponent<AgentManager>());
             }
             else if (target == null)
             {
                 agent.target.SetLocationTarget(FindMousePosition());
 
-                MovementBehaviour behaviour = new SeekBehaviour(agent.target.location.graphicGameObject.transform,true);
+                MovementBehaviour behaviour = new SeekBehaviour(agent.target.location,true);
                 agent.mover.AddBehaviour(behaviour);
             }
         }
@@ -53,7 +53,7 @@ public class MouseController : MonoBehaviour
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast (ray, out hit, 100.0f))
+        if (Physics.Raycast (ray, out hit, 1000.0f))
         {
             
             Debug.Log("You selected the " + hit.transform.name);
