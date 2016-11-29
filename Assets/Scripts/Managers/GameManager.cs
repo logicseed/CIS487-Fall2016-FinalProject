@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;
 
+    public AgentManager capturePoint1;
+    public AgentManager capturePoint2;
+    public AgentManager capturePoint3;
+    public AgentManager capturePoint4;
+
     private void Awake ()
     {
         // Singleton
