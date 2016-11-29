@@ -2,23 +2,23 @@
 using System.Collections;
 
 public class CreepController : MonoBehaviour {
-	AgentManager agent;
+	//AgentManager agent;
 	GameObject[] moons= new GameObject[4];
-	float attackRange=5;
-	MovementBehaviour currentBehavior;
-	// Use this for initialization
+	//float attackRange=5;
+	//MovementBehaviour currentBehavior;
+	/// Use this for initialization
 	void Start () {
-		moons[0]=GameObject.Find ("/Capital System/Moons/Capture Moon 1/MoonObject");
-		moons[1]=GameObject.Find ("/Capital System/Moons/Capture Moon 2/MoonObject");
-		moons[2]=GameObject.Find ("/Capital System/Moons/Capture Moon 3/MoonObject");
-		moons[3]=GameObject.Find ("/Capital System/Moons/Capture Moon 4/MoonObject");
-		agent = gameObject.GetComponent<AgentManager> ();
-		seekCapturePoint ();
+		//moons[0]=GameObject.Find ("/Capital System/Moons/Capture Moon 1/MoonObject");
+		//moons[1]=GameObject.Find ("/Capital System/Moons/Capture Moon 2/MoonObject");
+		//moons[2]=GameObject.Find ("/Capital System/Moons/Capture Moon 3/MoonObject");
+		//moons[3]=GameObject.Find ("/Capital System/Moons/Capture Moon 4/MoonObject");
+		//agent = gameObject.GetComponent<AgentManager> ();
+		//seekCapturePoint ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	private GameObject checkNearbyShips(){
@@ -35,13 +35,14 @@ public class CreepController : MonoBehaviour {
 				nearMoon = moons [i];
 			}
 		}
+
 		return nearMoon;
 	}
 
 	private void seekCapturePoint(){
 		this.setTargetCapture ();
 		//currentBehavior = new SeekBehaviour (agent.target.GetDirectTarget().target.transform,true);
-		agent.mover.AddBehaviour (currentBehavior);
+		//agent.mover.AddBehaviour (currentBehavior);
 	}
 
 	private void setTargetCapture(){

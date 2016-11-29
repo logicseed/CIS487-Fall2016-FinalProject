@@ -8,11 +8,9 @@ public class ArrayRotateToTarget : MonoBehaviour {
 
 	public GameObject target;
 	public int range = 15;
-	private Transform defaultPosition;
 //#region MonoBehaviour Methods
 	// Use this for initialization
 	void awake(){
-		defaultPosition=transform;
 	}
 
 	void Start () {
