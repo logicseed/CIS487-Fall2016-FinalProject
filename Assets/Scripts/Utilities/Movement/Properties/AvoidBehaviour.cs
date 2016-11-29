@@ -9,7 +9,7 @@ public class AvoidBehaviour : MovementBehaviour
     public float sphereRadius = 5.0f;
     public float personalSpace = 5.0f;
 
-    public AvoidBehaviour(float priority = 100.0f)
+    public AvoidBehaviour(float priority = 50.0f)
     {
         this.priority = priority;
     }

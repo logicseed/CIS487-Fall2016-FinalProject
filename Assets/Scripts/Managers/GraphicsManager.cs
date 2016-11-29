@@ -5,22 +5,45 @@ using UnityEngine;
 public class GraphicsManager : MonoBehaviour
 {
     private AgentManager agent;
-
-    /// <summary>
-    /// <see cref="GameObject"/> reference to the graphical representation of this mover.
-    /// </summary>
-    [Tooltip("GameObject reference to the graphical representation of this mover.")]
-    public GameObject graphics;
-    public GameObject graphicsGameObject;
+    private GameObject graphicsGameObject;
 
     public void Start()
     {
         agent = gameObject.GetComponent<AgentManager>();
+
+        if (agent.createGraphics)
+        {
+            CreateGraphicsGameObject();
+        }
+        else
+        {
+            graphicsGameObject = gameObject.GetComponentInChildren(typeof(RendererManager)).gameObject;
+        }
+        
+        ApplyTeamColors();
     }
 
     public void FixedUpdate()
     {
         UpdateGraphicsHeading();
+    }
+
+    private void CreateGraphicsGameObject()
+    {
+        var resource = "Ships/";
+        resource += agent.species.ToString() + "/";
+        resource += agent.ship.ToString() + "Graphics";
+
+        graphicsGameObject = Instantiate(Resources.Load(resource)) as GameObject;
+        graphicsGameObject.transform.parent = gameObject.transform;
+        graphicsGameObject.transform.localPosition = Vector3.zero;
+        graphicsGameObject.name = "Graphics";
+    }
+
+    private void ApplyTeamColors()
+    {
+        var rendererManager = graphicsGameObject.GetComponent<RendererManager>();
+        rendererManager.SetTeamColors(agent.paintColor, agent.lightsColor);
     }
 
     /// <summary>

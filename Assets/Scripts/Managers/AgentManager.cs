@@ -18,7 +18,12 @@ public class AgentManager : NetworkBehaviour
 
     //public AbilityController abilities;
 
-    public Color teamColor = new Color(1.0f,1.0f,1.0f,1.0f);
+    [Header("Graphics")]
+    public bool createGraphics = false;
+    public SpeciesType species;
+    public ShipType ship;
+    public Color paintColor = Color.white;
+    public Color lightsColor = Color.white;
 
     [HideInInspector]
     public bool isPlayer = false;
@@ -34,7 +39,7 @@ public class AgentManager : NetworkBehaviour
         if (target == null) target = gameObject.AddComponent<NullTargetManager>() as NullTargetManager;
 
         graphics = gameObject.GetComponent<GraphicsManager>();
-        if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
+        //if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
 
         sphere = gameObject.GetComponent<SphereCollider>();
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
