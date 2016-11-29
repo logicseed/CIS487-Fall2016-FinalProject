@@ -64,6 +64,8 @@ public class ConsoleController : MonoBehaviour
             animator = background.gameObject.GetComponent<Animator>();
             animator.enabled = false;
         }
+
+        DontDestroyOnLoad(transform.parent.gameObject);
     }
 
     /// <summary>

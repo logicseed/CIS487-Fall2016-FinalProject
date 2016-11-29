@@ -2,52 +2,80 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System.Collections.Generic;
+
+public delegate void ColorChangeHandler();
 
 public class GameManager : MonoBehaviour
 {
+    public event ColorChangeHandler ColorChange;
+
     // Singleton
     [HideInInspector]
     public static GameManager instance = null;
 
-    [Header("Team 1 Settings")]
-    public string team1Name = "Team 1";
-    public Color team1Paint = MaterialColor.Red;
-    public Color team1Lights = MaterialColor.Amber;
-
-    [Header("Team 2 Settings")]
-    public string team2Name = "Team 2";
-    public Color team2Paint = MaterialColor.Blue;
-    public Color team2Lights = MaterialColor.Purple;
-
-    [Header("Team 3 Settings")]
-    public string team3Name = "Team 3";
-    public Color team3Paint = MaterialColor.Orange;
-    public Color team3Lights = MaterialColor.Pink;
-
-    [Header("Team 4 Settings")]
-    public string team4Name = "Team 4";
-    public Color team4Paint = MaterialColor.Green;
-    public Color team4Lights = MaterialColor.Lime;
+    [Header("Team Settings")]
+    public Dictionary<TeamType, string> teamNames;
+    public Dictionary<TeamType, Color> teamColors;
 
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;
 
-    public AgentManager capturePoint1;
-    public AgentManager capturePoint2;
-    public AgentManager capturePoint3;
-    public AgentManager capturePoint4;
+    [Header("Capture Points")]
+    public AgentManager[] capturePoints;
+
+    
 
     private void Awake ()
     {
         // Singleton
-        if (instance == null) instance = this; 
+        if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+        InitColors();
+        InitNames();
+        //teamNames = 
+    }
+
+    private void InitColors()
+    {
+        teamColors = new Dictionary<TeamType, Color>();
+        teamColors.Add(TeamType.Team1, MaterialColor.Red);
+        teamColors.Add(TeamType.Team2, MaterialColor.Blue);
+        teamColors.Add(TeamType.Team3, MaterialColor.Orange);
+        teamColors.Add(TeamType.Team4, MaterialColor.Green);
+    }
+
+    private void InitNames()
+    {
+        teamNames = new Dictionary<TeamType, string>();
+        teamNames.Add(TeamType.Team1, "Team 1");
+        teamNames.Add(TeamType.Team2, "Team 2");
+        teamNames.Add(TeamType.Team3, "Team 3");
+        teamNames.Add(TeamType.Team4, "Team 4");
+    }
+
+    public void SetTeamColor(TeamType team, Color color)
+    {
+        teamColors[team] = color;
+        OnColorChange();
+    }
+
+    public Color GetTeamColor(TeamType team)
+    {
+        return teamColors[team];
     }
 
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    /// <summary>
+    /// Invokes the DeletingBehaviour event.
+    /// </summary>
+    public void OnColorChange()
+    {
+        if (ColorChange != null) ColorChange();
     }
 }

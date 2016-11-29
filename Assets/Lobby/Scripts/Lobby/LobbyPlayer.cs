@@ -34,6 +34,8 @@ namespace Prototype.NetworkLobby
         public string playerName = "";
         [SyncVar(hook = "OnMyColor")]
         public Color playerColor = Color.white;
+        [SyncVar(hook = "OnMyNumber")]
+        public int playerNumber = 0;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
@@ -184,6 +186,7 @@ namespace Prototype.NetworkLobby
         public void OnPlayerListChanged(int idx)
         { 
             GetComponent<Image>().color = (idx % 2 == 0) ? EvenRowColor : OddRowColor;
+            OnMyNumber(idx);
         }
 
         ///===== callback from sync var
@@ -198,6 +201,11 @@ namespace Prototype.NetworkLobby
         {
             playerColor = newColor;
             colorButton.GetComponent<Image>().color = newColor;
+        }
+
+        public void OnMyNumber(int newNumber)
+        {
+            playerNumber = newNumber;
         }
 
         //===== UI Handler

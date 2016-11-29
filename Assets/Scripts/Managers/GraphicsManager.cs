@@ -10,6 +10,7 @@ public class GraphicsManager : MonoBehaviour
     private void Start()
     {
         agent = gameObject.GetComponent<AgentManager>();
+
         CreateGraphicsGameObject();
         ApplyTeamColors();
     }
@@ -56,31 +57,10 @@ public class GraphicsManager : MonoBehaviour
     /// </summary>
     private void ApplyTeamColors()
     {
-        var paintColor = Color.white;
-        var lightsColor = Color.white;
-
-        switch (agent.team)
-        {
-            case (TeamType.Team1):
-                paintColor = GameManager.instance.team1Paint;
-                lightsColor = GameManager.instance.team1Lights;
-                break;
-            case (TeamType.Team2):
-                paintColor = GameManager.instance.team2Paint;
-                lightsColor = GameManager.instance.team2Lights;
-                break;
-            case (TeamType.Team3):
-                paintColor = GameManager.instance.team3Paint;
-                lightsColor = GameManager.instance.team3Lights;
-                break;
-            case (TeamType.Team4):
-                paintColor = GameManager.instance.team4Paint;
-                lightsColor = GameManager.instance.team4Lights;
-                break;
-        }
+        var teamColor = GameManager.instance.teamColors[agent.team];
 
         var rendererManager = graphicsGameObject.GetComponent<RendererManager>();
-        rendererManager.SetTeamColors(paintColor, lightsColor);
+        rendererManager.SetTeamColor(teamColor);
     }
 
     /// <summary>
@@ -101,5 +81,4 @@ public class GraphicsManager : MonoBehaviour
             graphicsGameObject.transform.rotation = Quaternion.LookRotation(newDir);
         }
     }
-
 }

@@ -30,29 +30,13 @@ public class RendererManager : MonoBehaviour
     /// Sets the color of the emissive texture.
     /// </summary>
     /// <param name="color">Color to tint the texture with.</param>
-    public void SetLightColor(Color color)
+    public void SetTeamColor(Color color)
     {
         var lightIntensity = GameManager.instance.lightIntensity;
 
         foreach (Renderer renderer in renderers)
         {
             renderer.material.SetColor("_EmissionColor", color * lightIntensity);
-        }
-    }
-
-    /// <summary>
-    /// Sets the colors of the albedo and emissive textures.
-    /// </summary>
-    /// <param name="paint">Color to tint the albedo texture with.</param>
-    /// <param name="lights">Color to tint the emissive texture with.</param>
-    public void SetTeamColors(Color paint, Color lights)
-    {
-        var lightIntensity = GameManager.instance.lightIntensity;
-
-        foreach (Renderer renderer in renderers)
-        {
-            renderer.material.SetColor("_Color", paint);
-            renderer.material.SetColor("_EmissionColor", lights * lightIntensity);
         }
     }
 }

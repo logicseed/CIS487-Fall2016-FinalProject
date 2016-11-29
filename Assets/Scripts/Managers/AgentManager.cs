@@ -3,10 +3,17 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
+
+
 [DisallowMultipleComponent]
 public class AgentManager : NetworkBehaviour
 {
+    [HideInInspector]
+    public GameManager game = GameManager.instance;
+
     public AgentType type = AgentType.None;
+    public TeamType team = TeamType.Team1;
+
     [HideInInspector]
     public StandardMover mover;
     [HideInInspector]
@@ -22,10 +29,6 @@ public class AgentManager : NetworkBehaviour
     public bool createGraphics = false;
     public SpeciesType species;
     public ShipType ship;
-    public Color paintColor = Color.white; // deprecated
-    public Color lightsColor = Color.white; // deprecated
-
-    public TeamType team = TeamType.Team1;
 
     [HideInInspector]
     public bool isPlayer = false;

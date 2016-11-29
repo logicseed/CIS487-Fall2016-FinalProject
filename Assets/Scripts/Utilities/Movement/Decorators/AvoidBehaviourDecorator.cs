@@ -19,6 +19,7 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
     public override Vector3 Steering(bool debugRays = false)
     {
         var steering = Vector3.zero;
+        var layerMask = LayerMask.GetMask("Environment");
 
         // avoid obstacles in front
         RaycastHit hit;
@@ -26,7 +27,7 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
         var rayDistance = (behaviour.maxDistance * agent.mover.maxVelocity) *
             (agent.mover.velocity.magnitude / agent.mover.maxVelocity);
 
-        if (Physics.SphereCast(agent.position, behaviour.sphereRadius, agent.mover.velocity, out hit, rayDistance))
+        if (Physics.SphereCast(agent.position, behaviour.sphereRadius, agent.mover.velocity, out hit, rayDistance, layerMask))
         {
             var hitAgent = hit.collider.gameObject.GetComponent<AgentManager>();
             var direction = hit.point - hitAgent.position;
@@ -48,7 +49,7 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
         }
 
         // avoid obstacles around
-        var hitColliders = Physics.OverlapSphere(agent.position, behaviour.personalSpace);
+        var hitColliders = Physics.OverlapSphere(agent.position, behaviour.personalSpace, layerMask);
 
         foreach(SphereCollider hitCollider in hitColliders)
         {
