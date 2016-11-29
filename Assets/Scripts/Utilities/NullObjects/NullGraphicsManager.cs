@@ -7,12 +7,12 @@ using UnityEngine;
 /// </summary>
 public class NullGraphicsManager : GraphicsManager
 {
-    private AgentManager agent;
+    //private AgentManager agent;
     private GameObject graphicsGameObject;
 
     private void Start()
     {
-        agent = gameObject.GetComponent<AgentManager>();
+        //agent = gameObject.GetComponent<AgentManager>();
 
         graphicsGameObject = new GameObject();
         graphicsGameObject.transform.parent = gameObject.transform;

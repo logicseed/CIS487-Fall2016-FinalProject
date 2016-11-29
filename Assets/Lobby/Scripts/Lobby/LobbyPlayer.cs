@@ -11,7 +11,12 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+        static Color[] Colors = new Color[] { 
+            MaterialColor.Amber, MaterialColor.Blue, MaterialColor.Cyan, MaterialColor.DeepOrange,
+            MaterialColor.DeepPurple, MaterialColor.Green, MaterialColor.Indigo, MaterialColor.LightBlue,
+            MaterialColor.LightGreen, MaterialColor.Lime, MaterialColor.Orange, MaterialColor.Pink,
+            MaterialColor.Purple, MaterialColor.Red, MaterialColor.Teal, MaterialColor.Yellow 
+            };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
 
@@ -33,9 +38,9 @@ namespace Prototype.NetworkLobby
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
 
-        static Color JoinColor = new Color(255.0f/255.0f, 0.0f, 101.0f/255.0f,1.0f);
-        static Color NotReadyColor = new Color(34.0f / 255.0f, 44 / 255.0f, 55.0f / 255.0f, 1.0f);
-        static Color ReadyColor = new Color(0.0f, 204.0f / 255.0f, 204.0f / 255.0f, 1.0f);
+        static Color JoinColor = MaterialColor.DeepOrange;
+        static Color NotReadyColor = MaterialColor.DeepOrange;
+        static Color ReadyColor = MaterialColor.DeepOrange;
         static Color TransparentColor = new Color(0, 0, 0, 0);
 
         //static Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);

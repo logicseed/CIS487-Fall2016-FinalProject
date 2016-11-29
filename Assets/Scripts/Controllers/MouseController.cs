@@ -3,6 +3,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(TargetManager))]
 [DisallowMultipleComponent]
@@ -20,6 +21,7 @@ public class MouseController : NetworkBehaviour
     // Update is called once per frame
     void Update () {
         if (!isLocalPlayer) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,7 +49,7 @@ public class MouseController : NetworkBehaviour
         if (plane.Raycast(ray, out distance))
         {
             var location = ray.GetPoint(distance);
-            Debug.Log("You clicked at " + location);
+            //Debug.Log("You clicked at " + location);
             return location;
         }
         return Vector3.zero;
@@ -60,7 +62,7 @@ public class MouseController : NetworkBehaviour
         if (Physics.Raycast (ray, out hit, 1000.0f))
         {
             
-            Debug.Log("You selected the " + hit.transform.name);
+            //Debug.Log("You selected the " + hit.transform.name);
             return hit.transform.gameObject;
         }
         return null;
