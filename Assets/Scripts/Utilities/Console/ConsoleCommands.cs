@@ -86,7 +86,7 @@ public partial class ConsoleParser
     {
         foreach (CommandMapper reg in commands.Values)
         {
-            AppendOutput(string.Format("{0}: {1}", reg.Command.RichTextColor(MaterialColor.Cyan), reg.Help));
+            AppendOutput(string.Format("{0}: {1}", reg.Command.RichTextColor(ConsoleMaterialColor.Cyan), reg.Help));
         }
     }
 

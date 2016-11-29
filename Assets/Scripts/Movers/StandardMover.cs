@@ -56,12 +56,12 @@ public class StandardMover : MonoBehaviour
         {
             // Unclamped acceleration
             Debug.DrawRay(transform.position + velocity,
-                          prioritySteering, RayColor.Standard.UnclampedAcceleration);
+                          prioritySteering, MaterialColor.Standard.UnclampedAcceleration);
             // Velocity vector
-            Debug.DrawRay(transform.position, velocity, RayColor.Standard.Velocity);
+            Debug.DrawRay(transform.position, velocity, MaterialColor.Standard.Velocity);
 
             // Acceleration vector
-            Debug.DrawRay(transform.position + velocity, steering, RayColor.Standard.Acceleration);
+            Debug.DrawRay(transform.position + velocity, steering, MaterialColor.Standard.Acceleration);
         }
     }
 

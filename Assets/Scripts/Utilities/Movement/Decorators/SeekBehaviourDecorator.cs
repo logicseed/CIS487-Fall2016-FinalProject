@@ -44,13 +44,13 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
 
         if (debugRays)
         {
-            Debug.DrawRay(agent.position, velocityVector, RayColor.Grey);
+            Debug.DrawRay(agent.position, velocityVector, MaterialColor.Grey);
             Debug.DrawRay(agent.position + agent.mover.velocity,
-                          prioritySteering, RayColor.Grey);
+                          prioritySteering, MaterialColor.Grey);
 
-            Debug.DrawRay(agent.position, desiredVelocity, RayColor.Standard.SeekDesiredVelocity);
+            Debug.DrawRay(agent.position, desiredVelocity, MaterialColor.Standard.SeekDesiredVelocity);
             Debug.DrawRay(agent.position + agent.mover.velocity,
-                          steering, RayColor.Standard.SeekSteering);
+                          steering, MaterialColor.Standard.SeekSteering);
         }
 
         return steering + parentBehaviour.Steering(debugRays);

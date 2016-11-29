@@ -36,13 +36,13 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
             if (debugRays)
             {
                 // target
-                Debug.DrawRay(agent.position, hit.transform.position - agent.position, RayColor.Grey);
+                Debug.DrawRay(agent.position, hit.transform.position - agent.position, MaterialColor.Grey);
 
                 // look ahead
-                Debug.DrawRay(agent.position, agent.mover.velocity.normalized * rayDistance, RayColor.Standard.AvoidRayDistance);
+                Debug.DrawRay(agent.position, agent.mover.velocity.normalized * rayDistance, MaterialColor.Standard.AvoidRayDistance);
 
                 // steering
-                Debug.DrawRay(agent.position + agent.mover.velocity, steering, RayColor.Standard.AvoidSteering);
+                Debug.DrawRay(agent.position + agent.mover.velocity, steering, MaterialColor.Standard.AvoidSteering);
             }
 
         }
@@ -75,7 +75,7 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
         if (debugRays)
         {
             Debug.DrawRay(agent.position, agent.mover.velocity.normalized * rayDistance,
-                          RayColor.Standard.AvoidRayDistance);
+                          MaterialColor.Standard.AvoidRayDistance);
         }
 
         steering *= behaviour.priority;

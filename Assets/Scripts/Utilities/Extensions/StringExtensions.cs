@@ -4,12 +4,12 @@ using System;
 
 public static class StringExtensions
 {
-    public static string RichTextColor(this string text, MaterialColor color, MaterialOpacity opacity = MaterialOpacity.Full)
+    public static string RichTextColor(this string text, ConsoleMaterialColor color, ConsoleMaterialOpacity opacity = ConsoleMaterialOpacity.Full)
     {
         return "<color=" + color.HTMLCode() + opacity.HTMLCode() + ">" + text + "</color>";
     }
 
-    public static string RichTextColor(this string text, MaterialColorAdvanced color, MaterialOpacity opacity = MaterialOpacity.Full)
+    public static string RichTextColor(this string text, ConsoleMaterialColorAdvanced color, ConsoleMaterialOpacity opacity = ConsoleMaterialOpacity.Full)
     {
         return "<color=" + color.HTMLCode() + opacity.HTMLCode() + ">" + text + "</color>";
     }

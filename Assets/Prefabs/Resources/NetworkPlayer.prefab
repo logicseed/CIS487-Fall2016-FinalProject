@@ -159,7 +159,6 @@ GameObject:
   - 4: {fileID: 4000012973484578}
   - 33: {fileID: 33000010150372718}
   - 23: {fileID: 23000012252338622}
-  - 111: {fileID: 111000012856525750}
   m_Layer: 0
   m_Name: pirateFighter
   m_TagString: Untagged
@@ -334,7 +333,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e21d1c245ebbe684bbeb4bdd08030d55, type: 2}
+  - {fileID: 2100000, guid: d45429fd26ae57b47b21edb3f647cd56, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -372,20 +371,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!111 &111000012856525750
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013104602792}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114000011250571976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,9 +411,10 @@ MonoBehaviour:
   sphere: {fileID: 0}
   createGraphics: 0
   species: 0
-  ship: 0
+  ship: 2
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 2
   isPlayer: 0
   teamLayer: Default
   mouse: {fileID: 0}

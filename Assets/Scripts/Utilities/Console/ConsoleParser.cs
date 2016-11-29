@@ -87,7 +87,7 @@ public partial class ConsoleParser
     {
         // potential command start characters
         // ֎ ߦ ᐅ ‡ • → ⇒ ∷ 〉 ⏵ ⏹ ⏺ █ ► ◆ ◇ ▶ ◉ ◙ ◎ ● ◯ ☈ ⛋ ⛒ ⛚ ✚ ✱ ➜ ➲ ⮩ ⮡ ⯀ ⯁ ⯃ ⯄ ⯈ ꔪ 
-        AppendOutput(("➜ " + command).RichTextColor(MaterialColor.DeepOrange).RichTextBold());
+        AppendOutput(("➜ " + command).RichTextColor(ConsoleMaterialColor.DeepOrange).RichTextBold());
         commandHistory.Add(command);
 
         var commandElements = ParseCommand(command);

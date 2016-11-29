@@ -3,7 +3,7 @@
 using UnityEngine;
 
 
-public static class RayColor
+public static class MaterialColor
 {
     // Red: #F44336
     public static Color Red { get { return new Color(0.957f, 0.263f, 0.212f); } }

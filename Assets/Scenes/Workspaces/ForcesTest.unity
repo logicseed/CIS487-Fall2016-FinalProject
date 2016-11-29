@@ -371,10 +371,11 @@ MonoBehaviour:
   graphics: {fileID: 0}
   sphere: {fileID: 0}
   createGraphics: 1
-  species: 0
-  ship: 1
+  species: 2
+  ship: 3
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &55250247
@@ -595,6 +596,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &79985402
@@ -785,6 +787,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &93527468
@@ -958,6 +961,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &135907282
@@ -1251,6 +1255,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &261848671
@@ -1488,6 +1493,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &284595223
@@ -1734,6 +1740,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &319850553
@@ -1943,6 +1950,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &340339328
@@ -2163,10 +2171,11 @@ MonoBehaviour:
   graphics: {fileID: 0}
   sphere: {fileID: 0}
   createGraphics: 1
-  species: 0
-  ship: 0
+  species: 3
+  ship: 4
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 1
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &420576328
@@ -2429,6 +2438,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &539347128
@@ -2839,7 +2849,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114000010093414098, guid: a7fc42760e77ce6439ec32f1b311783d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a7fc42760e77ce6439ec32f1b311783d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &825229781
@@ -3066,6 +3077,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &838217244
@@ -3312,6 +3324,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &857215444
@@ -3558,6 +3571,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &943592346
@@ -3762,6 +3776,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &971488551
@@ -3983,6 +3998,158 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d183c466b2b7594daaf26577d7e80c4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1090616618
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013677986278, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team1Paint.r
+      value: 0.957
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team1Paint.g
+      value: 0.263
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team1Paint.b
+      value: 0.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team1Lights.g
+      value: 0.757
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team1Lights.b
+      value: 0.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Paint.r
+      value: 0.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Paint.g
+      value: 0.588
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Paint.b
+      value: 0.953
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Lights.r
+      value: 0.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Lights.g
+      value: 0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team2Lights.b
+      value: 0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team3Paint.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team3Paint.g
+      value: 0.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team3Lights.r
+      value: 0.914
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team3Lights.g
+      value: 0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team3Lights.b
+      value: 0.388
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Paint.r
+      value: 0.298
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Paint.g
+      value: 0.686
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Paint.b
+      value: 0.314
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Lights.r
+      value: 0.804
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Lights.g
+      value: 0.863
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: team4Lights.b
+      value: 0.224
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a6266ec8837b1dc468162c654349dbdc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1099903444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4102,6 +4269,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1099903451
@@ -4301,6 +4469,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1114711469
@@ -4500,6 +4669,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1154491113
@@ -4709,6 +4879,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1220199713
@@ -4955,6 +5126,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1260381786
@@ -5066,6 +5238,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1291136551
@@ -5239,6 +5412,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1363544685
@@ -5418,6 +5592,95 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014273125796, guid: 231922b3b08221e42a128921e0d9cbe8,
     type: 2}
   m_PrefabInternal: {fileID: 2000769876}
+--- !u!1 &1471340020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013349577368, guid: a7fc42760e77ce6439ec32f1b311783d,
+    type: 2}
+  m_PrefabInternal: {fileID: 800225551}
+--- !u!114 &1471340021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471340020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 227461547, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
+--- !u!114 &1471340023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1471340020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -822479833, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NetworkPort: 7777
+  m_ServerBindToIP: 0
+  m_ServerBindAddress: 
+  m_NetworkAddress: localhost
+  m_DontDestroyOnLoad: 1
+  m_RunInBackground: 1
+  m_ScriptCRCCheck: 1
+  m_MaxDelay: 0.01
+  m_LogLevel: 2
+  m_PlayerPrefab: {fileID: 1000010217514392, guid: 2f1501c6110d1d4499b5756929b5dad1,
+    type: 2}
+  m_AutoCreatePlayer: 1
+  m_PlayerSpawnMethod: 0
+  m_OfflineScene: ForcesTest
+  m_OnlineScene: ForcesTest
+  m_SpawnPrefabs: []
+  m_CustomConfig: 0
+  m_MaxConnections: 4
+  m_ConnectionConfig:
+    m_PacketSize: 1500
+    m_FragmentSize: 500
+    m_ResendTimeout: 1200
+    m_DisconnectTimeout: 2000
+    m_ConnectTimeout: 2000
+    m_MinUpdateTimeout: 10
+    m_PingTimeout: 500
+    m_ReducedPingTimeout: 100
+    m_AllCostTimeout: 20
+    m_NetworkDropThreshold: 5
+    m_OverflowDropThreshold: 5
+    m_MaxConnectionAttempt: 10
+    m_AckDelay: 33
+    m_MaxCombinedReliableMessageSize: 100
+    m_MaxCombinedReliableMessageCount: 10
+    m_MaxSentMessageQueueSize: 128
+    m_IsAcksLong: 0
+    m_UsePlatformSpecificProtocols: 0
+    m_WebSocketReceiveBufferMaxSize: 0
+    m_Channels: []
+  m_GlobalConfig:
+    m_ThreadAwakeTimeout: 1
+    m_ReactorModel: 0
+    m_ReactorMaximumReceivedMessages: 1024
+    m_ReactorMaximumSentMessages: 1024
+    m_MaxPacketSize: 2000
+  m_Channels: 
+  m_UseWebSockets: 0
+  m_UseSimulator: 0
+  m_SimulatedLatency: 1
+  m_PacketLossPercentage: 0
+  m_MaxBufferedPackets: 16
+  m_AllowFragmentation: 1
+  m_MatchHost: mm.unet.unity3d.com
+  m_MatchPort: 443
+  matchName: default
+  matchSize: 4
+  isNetworkActive: 0
+  matchMaker: {fileID: 0}
 --- !u!1001 &1525303237
 Prefab:
   m_ObjectHideFlags: 0
@@ -5579,6 +5842,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1554113113
@@ -5807,6 +6071,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1691841121
@@ -6006,6 +6271,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1697455644
@@ -6205,6 +6471,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1701961057
@@ -6446,6 +6713,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1738106620
@@ -6645,6 +6913,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1837552705
@@ -6919,6 +7188,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1896692381
@@ -7123,6 +7393,7 @@ MonoBehaviour:
   ship: 0
   paintColor: {r: 1, g: 1, b: 1, a: 1}
   lightsColor: {r: 1, g: 1, b: 1, a: 1}
+  team: 0
   isPlayer: 0
   teamLayer: Default
 --- !u!114 &1906581521

@@ -233,12 +233,12 @@ public class ConsoleController : MonoBehaviour
 
         var welcome = "┏" + new string('━', repeat) + "┓\n";
 
-        welcome += "┃ " + (name.RichTextBold() + " Console").RichTextColor(MaterialColor.DeepOrange);
+        welcome += "┃ " + (name.RichTextBold() + " Console").RichTextColor(ConsoleMaterialColor.DeepOrange);
         welcome += new string(' ', headerBuffer) + " ┃\n";
 
         welcome += "┣" + new string('━', repeat) + "┫\n";
 
-        welcome += "┃" + help.RichTextColor(MaterialColor.Amber);
+        welcome += "┃" + help.RichTextColor(ConsoleMaterialColor.Amber);
         welcome += new string(' ', helpBuffer) + "┃\n";
 
         welcome += "┗" + new string('━', repeat) + "┛\n";

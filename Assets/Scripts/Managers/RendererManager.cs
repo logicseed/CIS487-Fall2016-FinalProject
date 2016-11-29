@@ -32,9 +32,11 @@ public class RendererManager : MonoBehaviour
     /// <param name="color">Color to tint the texture with.</param>
     public void SetLightColor(Color color)
     {
+        var lightIntensity = GameManager.instance.lightIntensity;
+
         foreach (Renderer renderer in renderers)
         {
-            renderer.material.SetColor("_EmissionColor", color);
+            renderer.material.SetColor("_EmissionColor", color * lightIntensity);
         }
     }
 
@@ -45,10 +47,12 @@ public class RendererManager : MonoBehaviour
     /// <param name="lights">Color to tint the emissive texture with.</param>
     public void SetTeamColors(Color paint, Color lights)
     {
+        var lightIntensity = GameManager.instance.lightIntensity;
+
         foreach (Renderer renderer in renderers)
         {
             renderer.material.SetColor("_Color", paint);
-            renderer.material.SetColor("_EmissionColor", lights);
+            renderer.material.SetColor("_EmissionColor", lights * lightIntensity);
         }
     }
 }

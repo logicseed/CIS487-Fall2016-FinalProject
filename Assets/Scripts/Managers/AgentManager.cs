@@ -22,8 +22,10 @@ public class AgentManager : NetworkBehaviour
     public bool createGraphics = false;
     public SpeciesType species;
     public ShipType ship;
-    public Color paintColor = Color.white;
-    public Color lightsColor = Color.white;
+    public Color paintColor = Color.white; // deprecated
+    public Color lightsColor = Color.white; // deprecated
+
+    public TeamType team = TeamType.Team1;
 
     [HideInInspector]
     public bool isPlayer = false;
@@ -39,7 +41,7 @@ public class AgentManager : NetworkBehaviour
         if (target == null) target = gameObject.AddComponent<NullTargetManager>() as NullTargetManager;
 
         graphics = gameObject.GetComponent<GraphicsManager>();
-        //if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
+        if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
 
         sphere = gameObject.GetComponent<SphereCollider>();
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
@@ -56,5 +58,8 @@ public class AgentManager : NetworkBehaviour
         set { transform.position = value; }
     }
 
-    
+    private void SetTeamLayer()
+    {
+
+    }
 }
