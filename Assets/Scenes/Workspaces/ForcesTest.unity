@@ -238,6 +238,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &16780647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &16780649
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -552,6 +554,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &43165393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &43165395
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -899,6 +903,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &79985402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,6 +930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &79985404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1294,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &93527468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,6 +1517,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &103765837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,6 +1544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &103765839
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1829,6 +1838,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &135907282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,6 +1865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &135907284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,6 +2033,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &157431666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &157431668
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2559,6 +2572,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &215156405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,6 +2599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &215156407
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2760,6 +2775,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &222827565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,6 +2802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &222827567
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3016,6 +3033,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &233757940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3042,6 +3060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &233757942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3217,6 +3236,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &243460942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3243,6 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &243460944
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3486,6 +3507,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &261848671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3512,6 +3534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &261848673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3772,6 +3795,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &266011378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3798,6 +3822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &266011380
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4099,6 +4124,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &277008104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,6 +4151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &277008106
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4308,6 +4335,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &284595223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4334,6 +4362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &284595225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4556,6 +4585,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &302647449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4582,6 +4612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &302647451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4934,6 +4965,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &318661454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4960,6 +4992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &318661456
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5143,6 +5176,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &319850553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5169,6 +5203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &319850555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5464,6 +5499,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &340339328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5490,6 +5526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &340339330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5783,6 +5820,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &347131381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5809,6 +5847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &347131383
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5984,6 +6023,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &347899259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6010,6 +6050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &347899261
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6240,6 +6281,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &390588652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6266,6 +6308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &390588654
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6567,6 +6610,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &395412449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6593,6 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &395412451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6890,6 +6935,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &418230922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6916,6 +6962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &418230924
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7124,6 +7171,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &419094065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7150,6 +7198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &419094067
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7325,6 +7374,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &422781839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7351,6 +7401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &422781841
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7526,6 +7577,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &429432329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7552,6 +7604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &429432331
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7832,6 +7885,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &492216628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,6 +7912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &492216630
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8395,6 +8450,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &520660565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8421,6 +8477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &520660567
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8739,6 +8796,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &535787979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8765,6 +8823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &535787981
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8948,6 +9007,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &539347128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8974,6 +9034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &539347130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9141,6 +9202,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &549134718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9167,6 +9229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &549134720
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9667,6 +9730,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &604350387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9693,6 +9757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &604350389
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10074,6 +10139,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &623722850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10100,6 +10166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &623722852
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10922,6 +10989,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &740926368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10948,6 +11016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &740926370
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11123,6 +11192,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &757364347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11149,6 +11219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &757364349
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11379,6 +11450,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &780657094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11405,6 +11477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &780657096
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11580,6 +11653,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &793596145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11606,6 +11680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &793596147
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11990,6 +12065,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &838217244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12016,6 +12092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &838217246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12183,6 +12260,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &842675839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12209,6 +12287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &842675841
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12639,6 +12718,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &857215444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12665,6 +12745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &857215446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12832,6 +12913,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &861171283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12858,6 +12940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &861171285
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13075,6 +13158,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &868676757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13101,6 +13185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &868676759
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13402,6 +13487,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &878820766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13428,6 +13514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &878820768
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13946,6 +14033,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &943592346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13972,6 +14060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &943592348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14139,6 +14228,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &949326432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14165,6 +14255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &949326434
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14589,6 +14680,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &971488551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14615,6 +14707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &971488553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14952,6 +15045,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1010633195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14978,6 +15072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1010633197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15208,6 +15303,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1023314362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15234,6 +15330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1023314364
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15409,6 +15506,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1029587757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15435,6 +15533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1029587759
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15610,6 +15709,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1039052565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15636,6 +15736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1039052567
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15921,6 +16022,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1066700191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15947,6 +16049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1066700193
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16774,6 +16877,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1095502284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16800,6 +16904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1095502286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16983,6 +17088,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1099903451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17009,6 +17115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1099903453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17176,6 +17283,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1102613785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17202,6 +17310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1102613787
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17377,6 +17486,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1103880525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17403,6 +17513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1103880527
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17619,6 +17730,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1114711469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17645,6 +17757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1114711471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17812,6 +17925,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1128765121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17838,6 +17952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1128765123
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18046,6 +18161,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1142362687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18072,6 +18188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1142362689
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18247,6 +18364,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1144653428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18273,6 +18391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1144653430
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18448,6 +18567,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1152544380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18474,6 +18594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1152544382
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18657,6 +18778,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1154491113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18683,6 +18805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1154491115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18850,6 +18973,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1160177265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18876,6 +19000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1160177267
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19084,6 +19209,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1169397530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19110,6 +19236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1169397532
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19340,6 +19467,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1181381231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19366,6 +19494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1181381233
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19711,6 +19840,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1212915711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19737,6 +19867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1212915713
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19925,6 +20056,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1220199713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19951,6 +20083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1220199715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20244,6 +20377,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1229692924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20270,6 +20404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1229692926
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20626,6 +20761,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1247520517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20652,6 +20788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1247520519
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21012,6 +21149,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1260381786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21038,6 +21176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1260381788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21180,6 +21319,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1291136551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21347,6 +21487,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1296359610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21373,6 +21514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1296359612
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21548,6 +21690,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1313375820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21574,6 +21717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1313375822
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21892,6 +22036,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1362860510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21918,6 +22063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1362860512
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22101,6 +22247,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1363544685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22127,6 +22274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1363544687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22354,6 +22502,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1379839610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22380,6 +22529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1379839612
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22593,6 +22743,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1384061875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22619,6 +22770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1384061877
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22794,6 +22946,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1390196361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22820,6 +22973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1390196363
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23105,6 +23259,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1419994305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23131,6 +23286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1419994307
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23461,6 +23617,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1446783327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23487,6 +23644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1446783329
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23839,6 +23997,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1491028038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23865,6 +24024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1491028040
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24304,6 +24464,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1521822807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24330,6 +24491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1521822809
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24618,6 +24780,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1554113113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24644,6 +24807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1554113115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24811,6 +24975,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1555422205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24837,6 +25002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1555422207
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25012,6 +25178,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1567959028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25038,6 +25205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1567959030
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25427,6 +25595,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1581838813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25453,6 +25622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1581838815
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25628,6 +25798,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1581957042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25654,6 +25825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1581957044
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25829,6 +26001,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1584068406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25855,6 +26028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1584068408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26030,6 +26204,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1589692583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26056,6 +26231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1589692585
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26231,6 +26407,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1604589660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26257,6 +26434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1604589662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26597,6 +26775,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1644115790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26623,6 +26802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1644115792
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27037,6 +27217,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1691841121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27063,6 +27244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1691841123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27285,6 +27467,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1696528972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27311,6 +27494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1696528974
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27494,6 +27678,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1697455644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27520,6 +27705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1697455646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27695,6 +27881,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1701961057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27721,6 +27908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1701961059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28001,6 +28189,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1738106620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28027,6 +28216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1738106622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28304,6 +28494,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1767671105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28330,6 +28521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1767671107
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28505,6 +28697,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1768089271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28531,6 +28724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1768089273
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28646,7 +28840,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789483304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.11, y: 0, z: 0}
+  m_LocalPosition: {x: -7.11, y: 0, z: 134.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -28788,6 +28982,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1796535080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28814,6 +29009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1796535082
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28989,6 +29185,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1806375365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29015,6 +29212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1806375367
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29245,6 +29443,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1815335943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29271,6 +29470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1815335945
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29446,6 +29646,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1816629413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29472,6 +29673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1816629415
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29647,6 +29849,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1821675558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29673,6 +29876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1821675560
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29848,6 +30052,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1822074587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29874,6 +30079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1822074589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30112,6 +30318,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1837552705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30138,6 +30345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1837552707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30415,6 +30623,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1844700641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30441,6 +30650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1844700643
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30897,6 +31107,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1888795775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30923,6 +31134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1888795777
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -31216,6 +31428,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1896692381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31242,6 +31455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1896692383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31532,6 +31746,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1906581521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31558,6 +31773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!114 &1906581523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31725,6 +31941,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1907901085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31751,6 +31968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1907901087
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -31926,6 +32144,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1908998437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31952,6 +32171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1908998439
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32127,6 +32347,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1912692318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32153,6 +32374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1912692320
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32338,6 +32560,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1918885323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32364,6 +32587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1918885325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32577,6 +32801,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1937522150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32603,6 +32828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1937522152
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32778,6 +33004,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1960977726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32804,6 +33031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1960977728
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -32979,6 +33207,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1964535099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33005,6 +33234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1964535101
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33361,6 +33591,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1983723425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33387,6 +33618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1983723427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33562,6 +33794,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &1989982067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33588,6 +33821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &1989982069
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34039,6 +34273,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2013211085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34065,6 +34300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2013211087
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34631,6 +34867,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2049351621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34657,6 +34894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2049351623
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34887,6 +35125,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2060613551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34913,6 +35152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2060613553
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35148,6 +35388,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2093384691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35174,6 +35415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2093384693
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35404,6 +35646,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2109988814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35430,6 +35673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2109988816
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35605,6 +35849,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2111698365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35631,6 +35876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2111698367
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35806,6 +36052,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2114592666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35832,6 +36079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2114592668
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36188,6 +36436,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2139588046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36214,6 +36463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2139588048
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36570,6 +36820,7 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   hasDied: 0
+  currentHealth: 0
 --- !u!114 &2146921673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36596,6 +36847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb50ed1d8f1904748bc57939f24a107b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsGameObject: {fileID: 0}
 --- !u!135 &2146921675
 SphereCollider:
   m_ObjectHideFlags: 0
