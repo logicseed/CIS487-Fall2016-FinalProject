@@ -14,7 +14,7 @@ public class RandomAgent : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(agent);
+        //Debug.Log(agent);
         agent.team = (TeamType)Random.Range(0, 4);
        // Debug.Log();
         agent.species = (SpeciesType)Random.Range(0,5);
@@ -22,7 +22,8 @@ public class RandomAgent : MonoBehaviour
         agent.ship = (ShipType)Random.Range(0,5);
         //Debug.Log();
         agent.createGraphics = true;
-        Debug.Log(agent.graphics);
+        //Debug.Log(agent.graphics);
+        Destroy(agent.graphics.graphicsGameObject);
         agent.graphics.CreateGraphicsGameObject();
         agent.graphics.ApplyTeamColors();
     }

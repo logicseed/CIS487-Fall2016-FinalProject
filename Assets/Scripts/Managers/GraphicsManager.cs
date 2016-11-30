@@ -5,7 +5,7 @@ using UnityEngine;
 public class GraphicsManager : MonoBehaviour
 {
     private AgentManager agent;
-    private GameObject graphicsGameObject;
+    public GameObject graphicsGameObject;
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class GraphicsManager : MonoBehaviour
         }
         else
         {
-            var renderer = gameObject.GetComponentInChildren(typeof(RendererManager));
+            var renderer = gameObject.GetComponentInChildren<RendererManager>();
 
             if (renderer != null)
             {
@@ -51,6 +51,7 @@ public class GraphicsManager : MonoBehaviour
                 graphicsGameObject.transform.parent = gameObject.transform;
                 graphicsGameObject.transform.localPosition = Vector3.zero;
                 graphicsGameObject.name = "Graphics";
+                graphicsGameObject.AddComponent<RendererManager>();
             }
         }
     }
@@ -60,8 +61,10 @@ public class GraphicsManager : MonoBehaviour
     /// </summary>
     public void ApplyTeamColors()
     {
+        //Debug.Log(agent);
         var teamColor = GameManager.instance.teamColors[agent.team];
 
+        //Debug.Log(graphicsGameObject);
         var rendererManager = graphicsGameObject.GetComponent<RendererManager>();
         rendererManager.SetTeamColor(teamColor);
     }
