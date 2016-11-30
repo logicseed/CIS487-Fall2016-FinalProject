@@ -9,7 +9,7 @@ using UnityEngine.Networking;
 public class AgentManager : NetworkBehaviour
 {
     [HideInInspector]
-    public GameManager game = GameManager.instance;
+    public GameManager game;
 
     public AgentType type = AgentType.None;
     public TeamType team = TeamType.Team1;
@@ -35,7 +35,7 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public string teamLayer = "Default";
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         mover = gameObject.GetComponent<StandardMover>();
         if (mover == null) mover = gameObject.AddComponent<NullStandardMover>() as NullStandardMover;
@@ -47,6 +47,8 @@ public class AgentManager : NetworkBehaviour
         if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
 
         sphere = gameObject.GetComponent<SphereCollider>();
+
+        game = GameManager.Instance;
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
 
         //abilities = gameObject.GetComponent<AbilityController>();

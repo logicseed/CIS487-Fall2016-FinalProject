@@ -24,6 +24,19 @@ public class GameManager : MonoBehaviour
     [Header("Capture Points")]
     public AgentManager[] capturePoints;
 
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                var go = Instantiate(Resources.Load("GameManager"),Vector3.zero, Quaternion.identity)
+                    as GameObject;
+                instance = go.GetComponent<GameManager>();
+            }
+            return instance;
+        }
+    }
     
 
     private void Awake ()
@@ -31,7 +44,7 @@ public class GameManager : MonoBehaviour
         // Singleton
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
         InitColors();
         InitNames();
         //teamNames = 

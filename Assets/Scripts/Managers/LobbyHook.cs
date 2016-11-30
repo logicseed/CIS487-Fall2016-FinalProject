@@ -15,6 +15,7 @@ public class LobbyHook : Prototype.NetworkLobby.LobbyHook
         var team = (TeamType)player.playerNumber;
 
         agent.team = team;
+       // Debug.Log(GameManager.Instance);
         agent.game.teamNames[team] = player.playerName;
         agent.game.teamColors[team] = player.playerColor;
     }

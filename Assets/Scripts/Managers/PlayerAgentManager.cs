@@ -11,9 +11,9 @@ public class PlayerAgentManager : AgentManager
 
     public GameObject cameraPrefab;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
     }
 
     public override void OnStartLocalPlayer()
