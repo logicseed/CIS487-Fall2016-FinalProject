@@ -2,8 +2,8 @@
 
 using UnityEngine;
 using System.Collections;
-
-public class RandomSpawner : MonoBehaviour
+using UnityEngine.Networking;
+public class RandomSpawner : NetworkBehaviour
 {
     public GameObject randomAgent;
 
