@@ -65,13 +65,16 @@ public class TargetManager : MonoBehaviour
     /// <param name="target">The game object of the target.</param>
     public void SetDirectTarget(AgentManager target)
     {
-        if (direct != null) RemoveDirectTarget();
+        if (agent.type == AgentType.Player)
+        {
+            if (direct != null) RemoveDirectTarget();
 
-        directIndicator = Instantiate(Resources.Load("TargetSelectionAlly")) as GameObject;
-        directIndicator.transform.parent = target.transform;
-        directIndicator.transform.localPosition = Vector3.zero;
-        var scale = 4 * target.sphere.radius;
-        directIndicator.transform.localScale = new Vector3(scale, scale, scale);
+            directIndicator = Instantiate(Resources.Load("TargetSelectionAlly")) as GameObject;
+            directIndicator.transform.parent = target.transform;
+            directIndicator.transform.localPosition = Vector3.zero;
+            var scale = 4 * target.sphere.radius;
+            directIndicator.transform.localScale = new Vector3(scale, scale, scale);
+        }
         direct = target;
     }
 

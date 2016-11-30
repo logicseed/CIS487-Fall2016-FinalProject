@@ -23,15 +23,18 @@ public class GraphicsManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    private void CreateGraphicsGameObject()
+    public void CreateGraphicsGameObject()
     {
         if (agent.createGraphics)
         {
+            //Debug.Log(agent);
             var resource = "Ships/";
             resource += agent.species.ToString() + "/";
             resource += agent.ship.ToString() + "Graphics";
 
+            //Debug.Log(Resources.Load(resource));
             graphicsGameObject = Instantiate(Resources.Load(resource)) as GameObject;
+            //Debug.Log(graphicsGameObject);
             graphicsGameObject.MakeChildOf(gameObject, "Graphics");
         }
         else
@@ -55,7 +58,7 @@ public class GraphicsManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    private void ApplyTeamColors()
+    public void ApplyTeamColors()
     {
         var teamColor = GameManager.instance.teamColors[agent.team];
 

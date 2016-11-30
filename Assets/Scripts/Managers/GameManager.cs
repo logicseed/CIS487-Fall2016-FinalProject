@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         // Singleton
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         InitColors();
         InitNames();
         //teamNames = 

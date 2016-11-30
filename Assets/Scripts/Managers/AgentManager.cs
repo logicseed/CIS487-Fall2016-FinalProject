@@ -1,5 +1,6 @@
 ﻿// Marc King - mjking@umich.edu
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -13,6 +14,8 @@ public class AgentManager : NetworkBehaviour
 
     public AgentType type = AgentType.None;
     public TeamType team = TeamType.Team1;
+
+    public int health = 2;
 
     [HideInInspector]
     public StandardMover mover;
@@ -52,6 +55,19 @@ public class AgentManager : NetworkBehaviour
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
 
         //abilities = gameObject.GetComponent<AbilityController>();
+    }
+
+    public void FixedUpdate()
+    {
+        if (health <= 0) StartCoroutine(SpawnExplosion());
+    }
+
+    public IEnumerator SpawnExplosion()
+    {
+        var explosion = Instantiate(Resources.Load("Explosion")) as GameObject;
+        explosion.transform.position = position;
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     /// <summary>
