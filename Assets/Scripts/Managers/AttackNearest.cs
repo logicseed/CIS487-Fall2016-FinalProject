@@ -16,7 +16,7 @@ public class AttackNearest : MonoBehaviour
         agent = gameObject.GetComponent<AgentManager>();
      }
     private void FixedUpdate () {
-        if (agent.target.direct == null && Time.time > lastTargeting + timeBetweenTargeting)
+        if (Time.time > lastTargeting + timeBetweenTargeting)
         {
             TargetNearest();
         }
@@ -35,11 +35,12 @@ public class AttackNearest : MonoBehaviour
 		foreach(SphereCollider shipCollider in nearbyColliders)
         {
 			var agentCollider = shipCollider.gameObject.GetComponent<AgentManager>();
-            if (agentCollider.team != agent.team && agentCollider.type != AgentType.HomePlanet); 
+            if (agentCollider.team != agent.team && agentCollider.type != AgentType.HomePlanet)
             {
                 agent.target.SetDirectTarget(agentCollider);
                 break;
             }
+            continue;
 		}
     }
 }

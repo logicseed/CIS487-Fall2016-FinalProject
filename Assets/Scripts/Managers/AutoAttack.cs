@@ -10,6 +10,7 @@ public class AutoAttack : MonoBehaviour
 
     public float timeBetweenAttacks = 1.0f;
     private float lastAttack = 0.0f;
+    public float range = 10.0f;
 
     #region MonoBehavior Methods
     private void Awake() { }
@@ -19,6 +20,8 @@ public class AutoAttack : MonoBehaviour
         var go = Instantiate(Resources.Load("Weapon")) as GameObject;
         go.MakeChildOf(gameObject, "Weapon");
         lineRenderer = go.GetComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+        lineRenderer.SetColors(GameManager.instance.teamColors[agent.team], Color.white);
         lineRenderer.enabled = false;
     }
     private void FixedUpdate()
@@ -26,7 +29,7 @@ public class AutoAttack : MonoBehaviour
         if (Time.time > lastAttack + timeBetweenAttacks)
         {
             //Debug.Log("Past time conditional");
-            if (agent.target.direct != null)
+            if (agent.target.direct != null && Vector3.Distance(agent.position, agent.target.direct.position) <= range)
             {
                 //Debug.Log("Past target conditional");
                 StartCoroutine(FireAutoAttack());

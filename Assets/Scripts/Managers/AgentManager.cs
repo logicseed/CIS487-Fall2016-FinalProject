@@ -15,6 +15,7 @@ public class AgentManager : NetworkBehaviour
     public AgentType type = AgentType.None;
     public TeamType team = TeamType.Team1;
 
+    [SyncVar]
     public int health = 2;
 
     [HideInInspector]
@@ -38,7 +39,8 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public string teamLayer = "Default";
 
-    private bool hasDied = false;
+    [SyncVar]
+    public bool hasDied = false;
 
     protected virtual void Awake()
     {
@@ -57,6 +59,7 @@ public class AgentManager : NetworkBehaviour
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
 
         //abilities = gameObject.GetComponent<AbilityController>();
+
     }
 
     public void FixedUpdate()
@@ -68,7 +71,8 @@ public class AgentManager : NetworkBehaviour
     {
         hasDied = true;
         var explosion = Instantiate(Resources.Load("Explosion")) as GameObject;
-        explosion.transform.position = position;
+        explosion.transform.parent = transform;
+        explosion.transform.localPosition = Vector3.zero;
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }

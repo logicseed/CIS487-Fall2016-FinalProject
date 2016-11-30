@@ -7,16 +7,20 @@ using System.Collections;
 [DisallowMultipleComponent]
 public class WanderMover : MonoBehaviour
 {
-
+    private AgentManager agent;
     public WanderBehaviour movementBehaviour;
 
     #region MonoBehavior Methods
 
     private void Start()
     {
-        var mover = gameObject.GetComponent<StandardMover>();
-        mover.AddBehaviour(movementBehaviour);
+        agent = gameObject.GetComponent<AgentManager>();
+        agent.mover.AddBehaviour(movementBehaviour);
     }
     #endregion MonoBehaviour Methods
 
+    public void StopWander()
+    {
+        agent.mover.RemoveBehaviour(movementBehaviour);
+    }
 }

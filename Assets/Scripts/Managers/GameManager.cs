@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
     private void InitColors()
     {
         teamColors = new Dictionary<TeamType, Color>();
-        teamColors.Add(TeamType.Team1, MaterialColor.Red);
-        teamColors.Add(TeamType.Team2, MaterialColor.Blue);
-        teamColors.Add(TeamType.Team3, MaterialColor.Orange);
-        teamColors.Add(TeamType.Team4, MaterialColor.Green);
+        teamColors.Add(TeamType.Team1, Color.red);
+        teamColors.Add(TeamType.Team2, Color.blue);
+        teamColors.Add(TeamType.Team3, Color.green);
+        teamColors.Add(TeamType.Team4, Color.yellow);
     }
 
     private void InitNames()

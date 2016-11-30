@@ -418,6 +418,7 @@ MonoBehaviour:
   ship: 2
   isPlayer: 0
   teamLayer: Default
+  hasDied: 0
   mouse: {fileID: 0}
   cameraPrefab: {fileID: 1000011088453514, guid: ba9440723e1cba644a8461900ebf28ac,
     type: 2}
@@ -497,6 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
+  range: 10
 --- !u!114 &114000013859077416
 MonoBehaviour:
   m_ObjectHideFlags: 1
