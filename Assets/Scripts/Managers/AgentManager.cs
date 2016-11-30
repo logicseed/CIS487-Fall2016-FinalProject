@@ -38,6 +38,8 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public string teamLayer = "Default";
 
+    private bool hasDied = false;
+
     protected virtual void Awake()
     {
         mover = gameObject.GetComponent<StandardMover>();
@@ -59,11 +61,12 @@ public class AgentManager : NetworkBehaviour
 
     public void FixedUpdate()
     {
-        if (health <= 0) StartCoroutine(SpawnExplosion());
+        if (health <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
     }
 
     public IEnumerator SpawnExplosion()
     {
+        hasDied = true;
         var explosion = Instantiate(Resources.Load("Explosion")) as GameObject;
         explosion.transform.position = position;
         yield return new WaitForSeconds(1);
