@@ -11,6 +11,8 @@ public class PlayerAgentManager : AgentManager
 
     public GameObject cameraPrefab;
 
+    public Camera networkCamera;
+
     protected override void Awake()
     {
         base.Awake();
@@ -21,6 +23,7 @@ public class PlayerAgentManager : AgentManager
         mouse = gameObject.GetComponent<MouseController>();
         var cameraController = Instantiate(cameraPrefab, Vector3.zero, Quaternion.identity) as GameObject;
         cameraController.GetComponent<CameraController>().SetTarget(gameObject);
+        networkCamera = cameraController.GetComponent<Camera>();
         this.isPlayer = true;
     }
 }

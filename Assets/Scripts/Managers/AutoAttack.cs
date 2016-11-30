@@ -55,7 +55,7 @@ public class AutoAttack : MonoBehaviour
 
         lineRenderer.enabled = false;
         // reduce health
-        agent.target.direct.health--;
+        agent.target.direct.currentHealth--;
 
     }
 }

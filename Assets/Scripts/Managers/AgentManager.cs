@@ -16,7 +16,7 @@ public class AgentManager : NetworkBehaviour
     public TeamType team = TeamType.Team1;
 
     [SyncVar]
-    public int health = 2;
+    public int health = 3;
 
     [HideInInspector]
     public StandardMover mover;
@@ -41,6 +41,9 @@ public class AgentManager : NetworkBehaviour
 
     [SyncVar]
     public bool hasDied = false;
+    [HideInInspector]
+    [SyncVar]
+    public int currentHealth;
 
     protected virtual void Awake()
     {
@@ -59,12 +62,12 @@ public class AgentManager : NetworkBehaviour
         //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
 
         //abilities = gameObject.GetComponent<AbilityController>();
-
+        currentHealth = health;
     }
 
     public void FixedUpdate()
     {
-        if (health <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
+        if (currentHealth <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
     }
 
     public IEnumerator SpawnExplosion()
