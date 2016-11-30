@@ -2,8 +2,9 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class AutoAttack : MonoBehaviour
+public class AutoAttack : NetworkBehaviour
 {
     private AgentManager agent;
     private LineRenderer lineRenderer;
