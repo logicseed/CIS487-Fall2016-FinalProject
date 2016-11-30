@@ -12,7 +12,9 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public GameManager game;
 
+[SyncVar]
     public AgentType type = AgentType.None;
+    [SyncVar]
     public TeamType team = TeamType.Team1;
 
     [SyncVar]
@@ -31,7 +33,9 @@ public class AgentManager : NetworkBehaviour
 
     [Header("Graphics")]
     public bool createGraphics = false;
+    [SyncVar]
     public SpeciesType species;
+    [SyncVar]
     public ShipType ship;
 
     [HideInInspector]

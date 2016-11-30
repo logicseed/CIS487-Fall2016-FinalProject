@@ -8,6 +8,7 @@ public class RandomSpawner : NetworkBehaviour
     public GameObject randomAgent;
 
     private float timeBetweenSpawns = 2.0f;
+    [SyncVar]
     private float lastSpawn = 0.0f;
 
 
