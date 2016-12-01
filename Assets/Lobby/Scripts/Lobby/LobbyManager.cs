@@ -34,6 +34,7 @@ namespace Prototype.NetworkLobby
         protected RectTransform currentPanel;
 
         public Button backButton;
+        public Button exitButton;
 
         public Text statusInfo;
         public Text hostInfo;
@@ -134,6 +135,7 @@ namespace Prototype.NetworkLobby
             if (currentPanel != mainMenuPanel)
             {
                 backButton.gameObject.SetActive(true);
+                exitButton.gameObject.SetActive(false);
             }
             else
             {
