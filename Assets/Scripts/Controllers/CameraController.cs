@@ -1,37 +1,40 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
-using UnityEngine.Networking;
 
+/// <summary>
+/// Allows control of the local camera.
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     [Header("GameObjects")]
     [Tooltip("The child Camera of this controller.")]
     public GameObject cameraGO;
+    [Tooltip("The child pivot of this controller.")]
+    public GameObject pivotGO;
     [Tooltip("The object to follow while not in free explore.")]
     public GameObject targetGO;
-
-    private Transform pivot;
 
     [Header("Allow Change")]
     [Tooltip("Allows the controller to change the altitude of the camera.")]
     public bool allowAltitudeChange = true;
     [Tooltip("Allows the controller to change the zoom level of the camera.")]
     public bool allowZoomChange = true;
-    [Tooltip("Allows the controller to change the position of the camera. " +
-             "Default whenever the target is null.")]
+    [Tooltip("Allows the controller to change the rotation of the camera.")]
+    public bool allowRotationChange = true;
+    [Tooltip("Allows the controller to change the position of the camera.")]
     public bool allowPositionChange = true;
 
     [Header("Rates of Change")]
     [Tooltip("How quickly the altitude will change.")]
     [Range(0.0f, 100.0f)]
     public float altitudeRate = 10;
-    [Tooltip("How quickly the rotation will change.")]
-    [Range(0.0f, 100.0f)]
-    public float rotationRate = 10;
     [Tooltip("How quickly the zoom will change.")]
     [Range(0.0f, 100.0f)]
     public float zoomRate = 10;
+    [Tooltip("How quickly the rotation will change.")]
+    [Range(0.0f, 100.0f)]
+    public float rotationRate = 10;
     [Tooltip("How quickly the position will change.")]
     [Range(0.0f, 100.0f)]
     public float moveRate = 10;
@@ -62,124 +65,135 @@ public class CameraController : MonoBehaviour
     [Range(-180.0f, 180.0f)]
     public float defaultRotation = 0.0f;
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+    /// </summary>
     private void Start()
     {
-        pivot = cameraGO.transform.parent;
-
-        ResetZoom();
-        ResetRotation();
-        ResetAltitude();
+        SetToDefaultValues();
     }
 
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
     private void Update()
     {
+        // We can't follow a non-existent target
         if (targetGO == null) allowPositionChange = true;
 
-        if (allowAltitudeChange && Input.GetAxis("UpDown Camera") != 0.0f)
+        // Handle camera adjustment input
+
+        if (allowAltitudeChange)
         {
-            ChangeAltitude(Input.GetAxis("UpDown Camera") * altitudeRate);
+            altitude += altitudeRate * Input.GetAxis("UpDown Camera");
         }
 
-        if (Input.GetAxis("Rotate Camera") != 0.0f)
+        if (allowZoomChange)
         {
-            ChangeRotation(Input.GetAxis("Rotate Camera") * rotationRate);
+            zoom += zoomRate * Input.GetAxis("Zoom Camera");
         }
 
-        if (allowZoomChange && Input.GetAxis("Zoom Camera") != 0.0f)
+        if (allowRotationChange)
         {
-            ChangeZoom(Input.GetAxis("Zoom Camera") * zoomRate);
+            rotation += rotationRate * Input.GetAxis("Rotate Camera");
         }
 
         if (allowPositionChange)
         {
-            transform.Translate(Input.GetAxis("LeftRight Camera") * moveRate,
-                0.0f,
-                Input.GetAxis("ForwardBack Camera") * moveRate);
+            transform.Translate(
+                moveRate * Input.GetAxis("LeftRight Camera"),
+                0.0f, // No movement along Y axis
+                moveRate * Input.GetAxis("ForwardBack Camera")
+                );
         }
         else
         {
             transform.position = targetGO.transform.position;
         }
 
-        if (Input.GetButton("Reset Camera")) ResetAll();
+        if (Input.GetButton("Reset Camera")) SetToDefaultValues();
     }
 
-    public float GetAltitude()
+    /// <summary>
+    /// Property to change altitude of camera. Angle from XZ plane measured in Euler degrees.
+    /// </summary>
+    /// <remarks>
+    /// Ranges from 90 degrees (i.e. looking down at the target) to -90 degrees (i.e. looking up at the target.)
+    /// </remarks>
+    public float altitude
     {
-        return pivot.transform.eulerAngles.x;
+        get
+        {
+            return pivotGO.transform.eulerAngles.x;
+        }
+        set
+        {
+            var rotation = pivotGO.transform.localEulerAngles;
+            rotation.x = value;
+            pivotGO.transform.localEulerAngles = rotation;
+        }
     }
 
-    public void SetAltitude(float altitude)
+    /// <summary>
+    /// Property to change zoom of camera. Distance from pivot measured in Unity units.
+    /// </summary>
+    /// <remarks>
+    /// Larger numbers indicate a wider zoom level (e.g. 20 is zoomed out twice as much as 10.)
+    /// </remarks>
+    public float zoom
     {
-        var rotation = pivot.transform.localEulerAngles;
-        rotation.x = altitude;
-        pivot.transform.localEulerAngles = rotation;
+        // Zoom levels are stored as negative values because they represent a negative position
+        // distance from the pivot. This property handles the negative value aspect and allows
+        // all external usage to consider zoom a positive value.
+        get
+        {
+            return -cameraGO.transform.localPosition.z; // negative fix
+        }
+        set
+        {
+            var position = cameraGO.transform.localPosition;
+            position.z = -Mathf.Clamp(value, minimumZoom, maximumZoom); // negative fix
+            cameraGO.transform.localPosition = position;
+        }
     }
 
-    public void ChangeAltitude(float amount)
+    /// <summary>
+    /// Property to change rotation of camera. Angle around Y axis measured in Euler degrees.
+    /// </summary>
+    public float rotation
     {
-        SetAltitude(GetAltitude() + amount);
+        get
+        {
+            return transform.localEulerAngles.y;
+        }
+        set
+        {
+            var newRotation = transform.localEulerAngles;
+            newRotation.y = value;
+
+            // Limit rotation to 0 through 360 degrees.
+            if (newRotation.y > 360.0f) newRotation.y -= 360.0f;
+            else if (newRotation.y < 0.0f) newRotation.y += 360.0f;
+
+            transform.localEulerAngles = newRotation;
+        }
     }
 
-    public void ResetAltitude()
+    /// <summary>
+    /// Sets altitude, zoom, and rotation to their default values.
+    /// </summary>
+    public void SetToDefaultValues()
     {
-        SetAltitude(defaultAltitude);
+        altitude = defaultAltitude;
+        zoom = defaultZoom;
+        rotation = defaultRotation;
     }
 
-    public float GetZoom()
-    {
-        return cameraGO.transform.localPosition.z;
-    }
-
-    public void SetZoom(float zoom)
-    {
-        var position = cameraGO.transform.localPosition;
-        position.z = Mathf.Clamp(zoom, -maximumZoom, -minimumZoom);
-        cameraGO.transform.localPosition = position;
-    }
-
-    public void ChangeZoom(float amount)
-    {
-        SetZoom(GetZoom() + amount);
-    }
-
-    public void ResetZoom()
-    {
-        SetZoom(-defaultZoom);
-    }
-
-    public float GetRotation()
-    {
-        return transform.localEulerAngles.y;
-    }
-
-    public void SetRotation(float rotation)
-    {
-        var newRotation = transform.localEulerAngles;
-        newRotation.y = rotation;
-        transform.localEulerAngles = newRotation;
-    }
-
-    public void ChangeRotation(float amount)
-    {
-        var rotation = GetRotation() + amount;
-        if (rotation > 360.0f) rotation -= 360.0f;
-        else if (rotation < 0.0f) rotation += 360.0f;
-        SetRotation(rotation);
-    }
-
-    public void ResetRotation()
-    {
-        SetRotation(defaultRotation);
-    }
-
-    public void ResetAll()
-    {
-        ResetAltitude();
-        ResetRotation();
-        ResetZoom();
-    }
-
+    /// <summary>
+    /// Sets the follow target of the camera controller.
+    /// </summary>
+    /// <param name="gameObject">The game object the camera controller will follow.</param>
+    /// <param name="allowPositionChange">If the camera controller will be forced to follow the game object.</param>
     public void SetTarget(GameObject gameObject, bool allowPositionChange = false)
     {
         targetGO = gameObject;
