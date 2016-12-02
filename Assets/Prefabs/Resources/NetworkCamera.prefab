@@ -194,13 +194,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraGO: {fileID: 1000013525718162}
+  pivotGO: {fileID: 1000013119563842}
   targetGO: {fileID: 0}
   allowAltitudeChange: 1
   allowZoomChange: 1
+  allowRotationChange: 1
   allowPositionChange: 0
   altitudeRate: 1
-  rotationRate: 10
   zoomRate: 10
+  rotationRate: 10
   moveRate: 10
   minimumAltitude: -90
   maximumAltitude: 90
