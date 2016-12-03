@@ -35,7 +35,8 @@ public abstract class Ability : ScriptableObject
     public new string name = "New ability name";
     public string description = "New description";
     public GameObject abilityObject;
-    public float maxRange;
+    public float maxCastRange;
+    public float cooldown;
 
     /// <summary>
     /// Create and cast ability sequences

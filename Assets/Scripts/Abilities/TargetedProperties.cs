@@ -3,7 +3,7 @@ using System.Collections;
 
 //Assets-->Create-->Abilities-->New ability
 [CreateAssetMenu(menuName = "Ability/New Targeted ability")]
-public class Targeted : Ability
+public class TargetedProperties : Ability
 {
     private TargetedBehavior targeted;
     /// <summary>
@@ -15,7 +15,7 @@ public class Targeted : Ability
     {
         targeted = obj.GetComponent<TargetedBehavior>();
         targeted.abilityObject = abilityObject;
-        targeted.maxRange = maxRange;
+        targeted.maxRange = maxCastRange;
     }
 
     /// <summary>

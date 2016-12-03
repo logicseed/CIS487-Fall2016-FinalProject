@@ -10,19 +10,15 @@ public class Gravity : AbilityComponent
         InvokeRepeating("Pull", 0.0f, 0.25f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void Pull()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         foreach(Collider other in hitColliders)
         {
-            other.GetComponent<Rigidbody>().AddForce(((gameObject.transform.position
-            - other.transform.position).normalized) * magnitude, ForceMode.Acceleration);
+            other.transform.position = Vector3.MoveTowards(other.transform.position, gameObject.transform.position, Time.deltaTime);
+
+            //other.GetComponent<Rigidbody>().AddForce(((gameObject.transform.position
+            //- other.transform.position).normalized) * magnitude, ForceMode.Acceleration);
         }
     }
 }

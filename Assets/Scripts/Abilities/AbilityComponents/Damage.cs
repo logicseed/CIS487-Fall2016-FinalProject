@@ -3,7 +3,20 @@ using System.Collections;
 
 public class Damage : AbilityComponent
 {
-    void OnTriggerEnter()
+    DestroyOnCollide temp;
+
+    void Start()
+    {
+        temp = gameObject.GetComponent<DestroyOnCollide>();
+    }
+
+    void Update()
+    {
+        if (temp.activate == true)
+            activate();
+    }
+
+    void activate()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         foreach (Collider x in hitColliders)
