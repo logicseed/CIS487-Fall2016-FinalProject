@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b6cdf20553e8645b26fc9656d97ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphics: {fileID: 1000013777540500}
+  color: {r: 1, g: 0.75686276, b: 0.02745098, a: 1}
   range: 200
   scrollRate: 0
-  graphics: {fileID: 1000013777540500}
   flashRate: 0.1
-  flashBright: 0.7
   flashDim: 0.4
-  flashColor: {r: 1, g: 0.59607846, b: 0, a: 1}
+  flashBright: 0.7
