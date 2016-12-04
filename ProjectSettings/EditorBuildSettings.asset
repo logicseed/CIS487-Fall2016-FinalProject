@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
   - enabled: 1
     path: Assets/Scenes/Workspaces/Harrison.unity
+  - enabled: 1
+    path: Assets/Scenes/Workspaces/Marc.unity

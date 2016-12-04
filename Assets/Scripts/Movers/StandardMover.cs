@@ -6,27 +6,32 @@ using System.Collections.Generic;
 /// <summary>
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
-[RequireComponent(typeof(AgentManager))]
-[RequireComponent(typeof(Rigidbody))]
 [DisallowMultipleComponent]
 public class StandardMover : MonoBehaviour
 {
+    [HideInInspector]
+    public AgentManager agent;
+    private new Rigidbody rigidbody;
+    private List<MovementBehaviour> behaviours = new List<MovementBehaviour>();
+    private List<MovementBehaviour> behavioursToRemove = new List<MovementBehaviour>();
+
     /// <summary>
     /// The maximum velocity of this mover.
     /// </summary>
-    public float maxVelocity;
+    [HideInInspector]
+    public float maxSpeed;
 
     /// <summary>
     /// The maximum steering of this mover.
     /// </summary>
-    public float maxSteering;
+    [HideInInspector]
+    public float maxAccel;
 
     
 
     private void Start()
     {
-        agent = gameObject.GetComponent<AgentManager>();
-        rigidBody = gameObject.GetComponent<Rigidbody>();
+
     }
     private void FixedUpdate()
     {
@@ -34,10 +39,15 @@ public class StandardMover : MonoBehaviour
         RemoveDeletedBehaviours();
     }
 
-    private AgentManager agent;
-    private Rigidbody rigidBody;
-    private List<MovementBehaviour> behaviours = new List<MovementBehaviour>();
-    private List<MovementBehaviour> behavioursToRemove = new List<MovementBehaviour>();
+    public void Setup(AgentManager agent, float maxSpeed, float maxAccel, Rigidbody rigidbody)
+    {
+        this.agent = agent;
+        this.maxSpeed = maxSpeed;
+        this.maxAccel = maxAccel;
+        this.rigidbody = rigidbody;
+    }
+
+
 
     /// <summary>
     /// Updates <see cref="props"/> based on recent movement and behaviours.
@@ -48,9 +58,9 @@ public class StandardMover : MonoBehaviour
         var debugRays = true;
 
         var prioritySteering = CalculateSteeringForce(debugRays);
-        var steering = Vector3.ClampMagnitude(prioritySteering, maxSteering);
+        var steering = Vector3.ClampMagnitude(prioritySteering, maxAccel);
  
-        rigidBody.AddForce(steering, ForceMode.VelocityChange);
+        rigidbody.AddForce(steering, ForceMode.VelocityChange);
 
         if (debugRays)
         {
@@ -151,7 +161,7 @@ public class StandardMover : MonoBehaviour
     /// </summary>
     public Vector3 velocity
     {
-        get { return rigidBody.velocity; }
+        get { return rigidbody.velocity; }
     }
 
     /// <summary>
@@ -159,6 +169,6 @@ public class StandardMover : MonoBehaviour
     /// </summary>
     public Vector3 heading
     {
-        get { return rigidBody.velocity.normalized; }
+        get { return rigidbody.velocity.normalized; }
     }
 }

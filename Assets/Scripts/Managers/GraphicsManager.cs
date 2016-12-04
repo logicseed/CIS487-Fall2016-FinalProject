@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class GraphicsManager : MonoBehaviour
 {
-    private AgentManager agent;
-    public GameObject graphicsGameObject;
+    [HideInInspector]
+    public AgentManager agent;
+    [HideInInspector]
+    public GameObject graphicsGO;
 
     private void Start()
     {
-        agent = gameObject.GetComponent<AgentManager>();
+        
+    }
 
-        CreateGraphicsGameObject();
+    private bool hasSetup = false;
+    public void Setup(AgentManager agent, GameObject graphicsGO = null)
+    {
+        // Single execution
+        if (hasSetup) return;
+        hasSetup = true;
+
+        this.agent = agent;
+        this.graphicsGO = graphicsGO;
+
+        CreateGraphics();
         ApplyTeamColors();
     }
 
@@ -23,37 +36,21 @@ public class GraphicsManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    public void CreateGraphicsGameObject()
+    private void CreateGraphics()
     {
-        if (agent.createGraphics)
+        if (graphicsGO == null)
         {
-            //Debug.Log(agent);
             var resource = "Ships/";
             resource += agent.species.ToString() + "/";
             resource += agent.ship.ToString() + "Graphics";
 
-            //Debug.Log(Resources.Load(resource));
-            graphicsGameObject = Instantiate(Resources.Load(resource)) as GameObject;
-            //Debug.Log(graphicsGameObject);
-            graphicsGameObject.MakeChildOf(gameObject, "Graphics");
+            graphicsGO = Instantiate(Resources.Load(resource)) as GameObject;
         }
         else
         {
-            var renderer = gameObject.GetComponentInChildren<RendererManager>();
-
-            if (renderer != null)
-            {
-                graphicsGameObject = renderer.gameObject;
-            }
-            else
-            {
-                graphicsGameObject = new GameObject();
-                graphicsGameObject.transform.parent = gameObject.transform;
-                graphicsGameObject.transform.localPosition = Vector3.zero;
-                graphicsGameObject.name = "Graphics";
-                graphicsGameObject.AddComponent<RendererManager>();
-            }
+            graphicsGO = Instantiate(graphicsGO) as GameObject;
         }
+        graphicsGO.MakeChildOf(gameObject, "Graphics");
     }
 
     /// <summary>
@@ -61,11 +58,9 @@ public class GraphicsManager : MonoBehaviour
     /// </summary>
     public void ApplyTeamColors()
     {
-        //Debug.Log(agent);
-        var teamColor = GameManager.instance.teamColors[agent.team];
+        var teamColor = GameManager.Instance.teamColors[agent.team];
 
-        //Debug.Log(graphicsGameObject);
-        var rendererManager = graphicsGameObject.GetComponent<RendererManager>();
+        var rendererManager = graphicsGO.GetComponent<RendererManager>();
         rendererManager.SetTeamColor(teamColor);
     }
 
@@ -75,16 +70,16 @@ public class GraphicsManager : MonoBehaviour
     /// </summary>
     private void UpdateGraphicsHeading()
     {
-        if (graphicsGameObject != null)
+        if (graphicsGO != null)
         {
             var targetDir = agent.mover.heading;
 
             var newDir = Vector3.RotateTowards(
-                graphicsGameObject.transform.forward,
+                graphicsGO.transform.forward,
                 targetDir,
                 Time.fixedDeltaTime * 10, 0.0f);
 
-            graphicsGameObject.transform.rotation = Quaternion.LookRotation(newDir);
+            graphicsGO.transform.rotation = Quaternion.LookRotation(newDir);
         }
     }
 }

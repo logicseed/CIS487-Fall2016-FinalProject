@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
     private void FixedUpdate () { }
     private void Update () {
         //healthBar.rect.
-        healthBar.sizeDelta = new Vector2(2.0f * ((float)agent.currentHealth / agent.health), 0.25f);
+        healthBar.sizeDelta = new Vector2(2.0f * ((float)agent.health / agent.maximumHealth), 0.25f);
         container.localPosition = new Vector3(0.0f,agent.sphere.radius + 0.25f,0.0f);
         container.LookAt(Camera.main.transform);
 

@@ -56,7 +56,7 @@ public class AutoAttack : NetworkBehaviour
 
         lineRenderer.enabled = false;
         // reduce health
-        agent.target.direct.currentHealth--;
+        agent.target.direct.health--;
 
     }
 }

@@ -42,7 +42,7 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
 
         var velocity = position - agent.position;
         var distance = velocity.magnitude;
-        velocity = velocity.normalized * agent.mover.maxVelocity;
+        velocity = velocity.normalized * agent.mover.maxSpeed;
 
         //Debug.DrawRay(agentProperties.CurrentPosition, velocity, Color.red);
 
@@ -67,7 +67,7 @@ public class PursueBehaviourDecorator : TargetBehaviourDecorator
     private Vector3 CalculateFuturePosition(AgentManager target)
     {
         var prediction = target.mover.velocity * Time.fixedDeltaTime * behaviour.prediction;
-        prediction *= (Vector3.Distance(target.position, agent.position) / agent.mover.maxVelocity);
+        prediction *= (Vector3.Distance(target.position, agent.position) / agent.mover.maxSpeed);
         
         var position = target.position + prediction;
         

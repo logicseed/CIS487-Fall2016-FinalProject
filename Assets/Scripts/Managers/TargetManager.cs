@@ -20,7 +20,17 @@ public class TargetManager : MonoBehaviour
 
     void Start()
     {
-        agent = gameObject.GetComponent<AgentManager>();
+
+    }
+
+    private bool hasSetup = false;
+    public void Setup(AgentManager agent)
+    {
+        // Single execution
+        if (hasSetup) return;
+        hasSetup = true;
+
+        this.agent = agent;
     }
 
     void Update()
