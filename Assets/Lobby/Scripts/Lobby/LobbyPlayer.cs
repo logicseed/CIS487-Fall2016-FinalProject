@@ -11,7 +11,7 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        public Sprite[] Characters;
+        public Texture[] Characters;
         public Color[] Colors;
         //public Color[] Colors = new Color[] {
         //    MaterialColor.Amber, MaterialColor.Blue, MaterialColor.Cyan, MaterialColor.DeepOrange,
@@ -222,7 +222,7 @@ namespace Prototype.NetworkLobby
         public void OnMyCharacter(int newCharacter)
         {
             playerCharacter = newCharacter;
-            characterButton.GetComponent<Image>().sprite = Characters[newCharacter];
+            characterButton.GetComponent<RawImage>().texture = Characters[newCharacter];
         }
 
         //===== UI Handler

@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;
 
+    [Header("Character Prefabs")]
+    public GameObject[] characters;
+
     [Header("Capture Points")]
     public AgentManager[] capturePoints;
 
