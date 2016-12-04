@@ -24,7 +24,5 @@ public class PlayerAgentManager : AgentManager
         //cameraController.GetComponent<CameraController>().SetTarget(gameObject);
         //networkCamera = cameraController.GetComponent<Camera>();
         this.isPlayer = true;
-
-        Setup();
     }
 }

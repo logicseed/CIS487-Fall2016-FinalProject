@@ -11,15 +11,18 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        static Color[] Colors = new Color[] { 
-            MaterialColor.Amber, MaterialColor.Blue, MaterialColor.Cyan, MaterialColor.DeepOrange,
-            MaterialColor.DeepPurple, MaterialColor.Green, MaterialColor.Indigo, MaterialColor.LightBlue,
-            MaterialColor.LightGreen, MaterialColor.Lime, MaterialColor.Orange, MaterialColor.Pink,
-            MaterialColor.Purple, MaterialColor.Red, MaterialColor.Teal, MaterialColor.Yellow 
-            };
+        public Sprite[] Characters;
+        public Color[] Colors;
+        //public Color[] Colors = new Color[] {
+        //    MaterialColor.Amber, MaterialColor.Blue, MaterialColor.Cyan, MaterialColor.DeepOrange,
+        //    MaterialColor.DeepPurple, MaterialColor.Green, MaterialColor.Indigo, MaterialColor.LightBlue,
+        //    MaterialColor.LightGreen, MaterialColor.Lime, MaterialColor.Orange, MaterialColor.Pink,
+        //    MaterialColor.Purple, MaterialColor.Red, MaterialColor.Teal, MaterialColor.Yellow
+        //    };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
 
+        public Button characterButton;
         public Button colorButton;
         public InputField nameInput;
         public Button readyButton;
@@ -36,6 +39,8 @@ namespace Prototype.NetworkLobby
         public Color playerColor = Color.white;
         [SyncVar(hook = "OnMyNumber")]
         public int playerNumber = 0;
+        [SyncVar(hook = "OnMyCharacter")]
+        public int playerCharacter = 0;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
@@ -71,6 +76,8 @@ namespace Prototype.NetworkLobby
             //will be created with the right value currently on server
             OnMyName(playerName);
             OnMyColor(playerColor);
+            OnMyNumber(playerNumber);
+            OnMyCharacter(playerCharacter);
         }
 
         public override void OnStartAuthority()
@@ -128,6 +135,7 @@ namespace Prototype.NetworkLobby
 
             //we switch from simple name display to name input
             colorButton.interactable = true;
+            characterButton.interactable = true;
             nameInput.interactable = true;
 
             nameInput.onEndEdit.RemoveAllListeners();
@@ -135,6 +143,9 @@ namespace Prototype.NetworkLobby
 
             colorButton.onClick.RemoveAllListeners();
             colorButton.onClick.AddListener(OnColorClicked);
+
+            characterButton.onClick.RemoveAllListeners();
+            characterButton.onClick.AddListener(OnCharacterClicked);
 
             readyButton.onClick.RemoveAllListeners();
             readyButton.onClick.AddListener(OnReadyClicked);
@@ -208,6 +219,12 @@ namespace Prototype.NetworkLobby
             playerNumber = newNumber;
         }
 
+        public void OnMyCharacter(int newCharacter)
+        {
+            playerCharacter = newCharacter;
+            characterButton.GetComponent<Image>().sprite = Characters[newCharacter];
+        }
+
         //===== UI Handler
 
         //Note that those handler use Command function, as we need to change the value on the server not locally
@@ -215,6 +232,11 @@ namespace Prototype.NetworkLobby
         public void OnColorClicked()
         {
             CmdColorChange();
+        }
+
+        public void OnCharacterClicked()
+        {
+            CmdCharacterChange();
         }
 
         public void OnReadyClicked()
@@ -296,6 +318,16 @@ namespace Prototype.NetworkLobby
             }
 
             playerColor = Colors[idx];
+        }
+
+        [Command]
+        public void CmdCharacterChange()
+        {
+            var newCharacter = playerCharacter;
+            newCharacter++;
+            if (newCharacter >= Characters.Length) newCharacter = 0;
+
+            playerCharacter = newCharacter;
         }
 
         [Command]

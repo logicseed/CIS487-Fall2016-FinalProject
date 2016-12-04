@@ -98,7 +98,7 @@ public class AgentManager : NetworkBehaviour
     }
 
     private bool hasSetup = false;
-    public void Setup()
+    public void Setup(GameObject graphicsGO = null)
     {
         // Single execution
         if (hasSetup) return;
@@ -139,6 +139,7 @@ public class AgentManager : NetworkBehaviour
         }
 
         // Graphics Manager
+        this.graphicsGO = graphicsGO;
         graphics = gameObject.AddComponent<GraphicsManager>();
         graphics.Setup(this, graphicsGO);
 
