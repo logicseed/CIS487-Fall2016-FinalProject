@@ -13,4 +13,10 @@ public class AbilityComponent : MonoBehaviour
     /// The potency of that effect
     /// </summary>
     public float magnitude;
+
+    /// <summary>
+    /// Used for team comparisons and who to apply effects to
+    /// </summary>
+    protected AgentManager agent;
+    protected AgentManager objectAgent;
 }
