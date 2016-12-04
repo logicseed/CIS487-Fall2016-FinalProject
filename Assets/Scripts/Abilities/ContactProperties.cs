@@ -13,7 +13,6 @@ public class ContactProperties : Ability
     public override void initialize(GameObject obj)
     {
         contact = obj.GetComponent<ContactBehavior>();
-        contact.abilityObject = abilityObject;
     }
 
     /// <summary>

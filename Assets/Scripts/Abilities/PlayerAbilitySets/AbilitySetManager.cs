@@ -32,7 +32,7 @@ public class AbilitySetManager : MonoBehaviour
         else if (Input.GetKeyUp("c") && Time.time > abilitycooldown3)
         {
             playerAbility.ability3.cast();
-            abilitycooldown2 = Time.time + playerAbility.ability2.cooldown;
+            abilitycooldown3 = Time.time + playerAbility.ability3.cooldown;
 
         }
     }
