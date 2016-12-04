@@ -3,18 +3,25 @@ using System.Collections;
 
 public class ContactBehavior : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject abilityObject;
+
+    public Transform abilitySpawnLoc;
     AgentManager agent;
-    SphereCollider collide;
-    
+    AgentManager objectAgent;
+
     void Start()
     {
         agent = GetComponent<AgentManager>();
-        collide = GetComponent<SphereCollider>();
     }
 
     public void cast ()
     {
-
+        GameObject instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
+        instantiatedObject.transform.parent = transform;
+        objectAgent = instantiatedObject.GetComponent<AgentManager>();
+        objectAgent.SendMessage("Start");
+        objectAgent.team = agent.team;
+        objectAgent.type = AgentType.AbilityEffect;
     }
 }

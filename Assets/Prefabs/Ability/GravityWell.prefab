@@ -19,10 +19,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013488005764}
-  - 111: {fileID: 111000011212325028}
   - 54: {fileID: 54000010841290732}
   - 114: {fileID: 114000013944956772}
   - 114: {fileID: 114000010426346316}
+  - 114: {fileID: 114000010235028968}
+  - 114: {fileID: 114000013795853498}
   m_Layer: 0
   m_Name: GravityWell
   m_TagString: Untagged
@@ -67,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012806920918}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 2, y: 0, z: 2}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012143733326}
@@ -125,21 +126,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!111 &111000011212325028
-Animation:
+--- !u!114 &114000010235028968
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012806920918}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 200
+    i1: 71
+    i2: 222
+    i3: 80
+    i4: 142
+    i5: 101
+    i6: 4
+    i7: 228
+    i8: 25
+    i9: 179
+    i10: 91
+    i11: 181
+    i12: 114
+    i13: 210
+    i14: 75
+    i15: 211
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000010426346316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +170,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
+--- !u!114 &114000013795853498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012806920918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  team: 0
+  isPlayer: 0
+  teamLayer: Default
+  healRate: 0
+  maximumHealth: 100
+  health: 0
+  rechargeRate: 0
+  maximumShields: 100
+  shields: 0
+  hasDied: 0
+  maximumSpeed: 5
+  maximumAcceleration: 0.5
+  mass: 1
+  collisionRadius: 1
+  mover: {fileID: 0}
+  graphicsGO: {fileID: 0}
+  species: 0
+  ship: 0
+  graphics: {fileID: 0}
+  target: {fileID: 0}
+  game: {fileID: 0}
+  sphere: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &114000013944956772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,5 +216,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c3f7f186e2c54c87d529cd6e52d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
-  magnitude: 250
+  radius: 100
+  magnitude: 5

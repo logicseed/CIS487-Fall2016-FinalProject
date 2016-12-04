@@ -4,10 +4,12 @@ using System.Collections;
 
 public class SelfBehavior : MonoBehaviour
 {
+    [HideInInspector]
+    public List<SelfProperties.buff> buffList;
+
     AgentManager agent;
     AutoAttack auto;
-    public List<SelfProperties.buff> buffList;
-    private IEnumerator coroutine;
+    IEnumerator coroutine;
 
     void start()
     {

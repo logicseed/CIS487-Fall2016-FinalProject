@@ -3,9 +3,6 @@ using System.Collections;
 
 public class SkillShotBehavior : MonoBehaviour
 {
-    Vector3 direction;
-
-    public Transform abilitySpawnLoc;
     [HideInInspector]
     public GameObject abilityObject;
     [HideInInspector]
@@ -13,10 +10,24 @@ public class SkillShotBehavior : MonoBehaviour
     [HideInInspector]
     public float force;
 
+    public Transform abilitySpawnLoc;
+    AgentManager agent;
+    AgentManager objectAgent;
+    Vector3 direction;
+
+    void Start()
+    {
+        agent = gameObject.GetComponent<AgentManager>();
+    }
     public void cast()
     {
         GameObject instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
         Rigidbody tempRigidbody = instantiatedObject.GetComponent<Rigidbody>();
+        objectAgent = instantiatedObject.GetComponent<AgentManager>();
+        objectAgent.SendMessage("Start");
+        objectAgent.team = agent.team;
+        objectAgent.type = AgentType.AbilityEffect;
+
         direction = FindMousePosition() - abilitySpawnLoc.position;
         direction.Normalize();
         instantiatedObject.transform.LookAt(direction);

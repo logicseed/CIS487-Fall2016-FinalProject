@@ -14,8 +14,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public abstract class Ability : ScriptableObject
 {
-    //Tractor Beam - Attach your ship to another forcing a set distance between  -- Point click (???)
-
+    //Tractor Beam - Attach your ship to another forcing a set distance between  -- Point click (CC)
     //Smart Bomb - Launch a bomb that explodes creating a huge blast radius      -- Point click (damage)
     //Power Beam - Emit a high damage beam                                       -- Point click (damage)
 
@@ -37,7 +36,7 @@ public abstract class Ability : ScriptableObject
     public float cooldown;
 
     /// <summary>
-    /// Create and cast ability sequences
+    /// Abstract cast and initialize used by different ability types
     /// </summary>
     public abstract void cast();
     public abstract void initialize(GameObject obj);
