@@ -1,16 +1,32 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class SelfBehavior : MonoBehaviour
 {
+    AgentManager agent;
+    AutoAttack auto;
+    public List <string> buff;
+    public List <float> duration;
+    internal List<SelfProperties.toBuff> buffList;
+
     void start()
     {
-        //gameObject.getComponent<stats>
-        //gameObject.getComponent<AgentManager>
+        agent = gameObject.GetComponent<AgentManager>();
+        auto = gameObject.GetComponent<AutoAttack>();
     }
 
     public void cast()
     {
-       //Invisible object to instantiate?
+        for(int i = 0; i < buff.Count; i++)
+        {
+            if(buffList[i].ToString() == "Shields")
+            {
+
+            }
+
+
+
+
+        }
     }
 }
