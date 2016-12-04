@@ -36,7 +36,7 @@ public class FleeBehaviourDecorator : TargetBehaviourDecorator
         if (Deleting()) return parentBehaviour.Steering();
 
         var velocity = agent.position - behaviour.target.position;
-        velocity = velocity.normalized * agent.mover.maxVelocity;
+        velocity = velocity.normalized * agent.mover.maxSpeed;
 
         var steering = (velocity - agent.mover.velocity) * behaviour.priority;
 

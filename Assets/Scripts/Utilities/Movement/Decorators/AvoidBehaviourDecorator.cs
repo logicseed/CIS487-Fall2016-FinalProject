@@ -24,15 +24,15 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
         // avoid obstacles in front
         RaycastHit hit;
 
-        var rayDistance = (behaviour.maxDistance * agent.mover.maxVelocity) *
-            (agent.mover.velocity.magnitude / agent.mover.maxVelocity);
+        var rayDistance = (behaviour.maxDistance * agent.mover.maxSpeed) *
+            (agent.mover.velocity.magnitude / agent.mover.maxSpeed);
 
         if (Physics.SphereCast(agent.position, behaviour.sphereRadius, agent.mover.velocity, out hit, rayDistance, layerMask))
         {
             var hitAgent = hit.collider.gameObject.GetComponent<AgentManager>();
             var direction = hit.point - hitAgent.position;
 
-            steering = (direction.normalized * agent.mover.maxVelocity);
+            steering = (direction.normalized * agent.mover.maxSpeed);
 
             if (debugRays)
             {
@@ -66,7 +66,7 @@ public class AvoidBehaviourDecorator : ActiveBehaviourDecorator
             var importance = behaviour.personalSpace / distance;
             //Debug.Log("Importance: " + importance);
 
-            steering += (direction * agent.mover.maxSteering) * importance;
+            steering += (direction * agent.mover.maxAccel) * importance;
         }
 
 

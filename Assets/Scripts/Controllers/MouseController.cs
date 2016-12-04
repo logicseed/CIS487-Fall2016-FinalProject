@@ -5,7 +5,6 @@ using UnityEngine.Networking;
 using System.Collections;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(TargetManager))]
 [DisallowMultipleComponent]
 public class MouseController : NetworkBehaviour 
 {

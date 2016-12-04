@@ -28,7 +28,7 @@ public class IdleBehaviourComponent : AbstractBehaviourComponent
         //Debug.Log("Behaviour: " + behaviour);
         if (behaviour.activeBraking)
         {
-            var steering = Vector3.ClampMagnitude(-agent.mover.velocity, agent.mover.maxSteering);
+            var steering = Vector3.ClampMagnitude(-agent.mover.velocity, agent.mover.maxAccel);
             return steering;
         }
         return Vector3.zero;

@@ -13,6 +13,18 @@ public class GameManager : MonoBehaviour
     // Singleton
     [HideInInspector]
     public static GameManager instance = null;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                var gameManagerGO = Instantiate(Resources.Load("GameManager")) as GameObject;
+                instance = gameManagerGO.GetComponent<GameManager>();
+            }
+            return instance;
+        }
+    }
 
     [Header("Team Settings")]
     public Dictionary<TeamType, string> teamNames;
@@ -24,19 +36,7 @@ public class GameManager : MonoBehaviour
     [Header("Capture Points")]
     public AgentManager[] capturePoints;
 
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                var go = Instantiate(Resources.Load("GameManager"),Vector3.zero, Quaternion.identity)
-                    as GameObject;
-                instance = go.GetComponent<GameManager>();
-            }
-            return instance;
-        }
-    }
+    
     
 
     private void Awake ()

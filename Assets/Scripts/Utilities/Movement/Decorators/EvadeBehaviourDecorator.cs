@@ -43,7 +43,7 @@ public class EvadeBehaviourDecorator : ActiveBehaviourDecorator
         var position = CalculateFuturePosition();
 
         var velocity = agent.position - position;
-        velocity = velocity.normalized * agent.mover.maxVelocity;
+        velocity = velocity.normalized * agent.mover.maxSpeed;
 
         var steering = (velocity - agent.mover.velocity) * behaviour.priority;
 

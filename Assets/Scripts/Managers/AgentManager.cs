@@ -4,74 +4,168 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-
-
 [DisallowMultipleComponent]
 public class AgentManager : NetworkBehaviour
 {
-    [HideInInspector]
-    public GameManager game;
-
-[SyncVar]
+    [Tooltip("The type determines which components will be attached to this agent.")]
+    [SyncVar]
     public AgentType type = AgentType.None;
+    [Tooltip("The team determines how other agents respond to this agent.")]
     [SyncVar]
-    public TeamType team = TeamType.Team1;
-
-    [SyncVar]
-    public int health = 3;
-
-    [HideInInspector]
-    public StandardMover mover;
-    [HideInInspector]
-    public TargetManager target;
-    [HideInInspector]
-    public GraphicsManager graphics;
-    [HideInInspector]
-    public SphereCollider sphere;
-
-    //public AbilityController abilities;
-
-    [Header("Graphics")]
-    public bool createGraphics = false;
-    [SyncVar]
-    public SpeciesType species;
-    [SyncVar]
-    public ShipType ship;
-
+    public TeamType team = TeamType.World;
     [HideInInspector]
     public bool isPlayer = false;
     [HideInInspector]
     public string teamLayer = "Default";
 
+    [Header("Health & Shields")]
+    [SerializeField]
+    [Range(0, 100)]
+    private int healRate = 0;
     [SyncVar]
-    public bool hasDied = false;
+    [Range(0, 5000)]
+    public int maximumHealth = 100;
     [HideInInspector]
     [SyncVar]
-    public int currentHealth;
+    public int health;
+    [SerializeField]
+    [Range(0, 100)]
+    private int rechargeRate = 0;
+    [SyncVar]
+    [Range(0, 5000)]
+    public int maximumShields = 100;
+    [HideInInspector]
+    [SyncVar]
+    public int shields;
+    [HideInInspector]
+    [SyncVar]
+    public bool hasDied = false;
+    
+
+    [Header("Mover")]
+    [Tooltip("The maximum speed the agent can attain.")]
+    [SerializeField]
+    [Range(0.0f, 20.0f)]
+    private float maximumSpeed = 5.0f;
+    [Tooltip("The maximum change in speed and direction the agent can perform.")]
+    [SerializeField]
+    [Range(0.0f, 5.0f)]
+    private float maximumAcceleration = 0.5f;
+    [SerializeField]
+    [Range(1.0f, 5000.0f)]
+    private float mass = 1.0f;
+    [SerializeField]
+    [Range(0.0f, 100.0f)]
+    private float collisionRadius = 1.0f;
+    [HideInInspector]
+    public StandardMover mover;
+
+    [Header("Graphics")]
+    [SerializeField]
+    private GameObject graphicsGO;
+    [SyncVar]
+    public SpeciesType species;
+    [SyncVar]
+    public ShipType ship;
+    [HideInInspector]
+    public GraphicsManager graphics;
+
+    [Header("Target")]
+
+    [HideInInspector]
+    public TargetManager target;
+
+
+
+
+
+
+    [HideInInspector]
+    public GameManager game;
+    [HideInInspector]
+    public SphereCollider sphere;
+    [HideInInspector]
+    public new Rigidbody rigidbody;
+
+
+
+
 
     protected virtual void Awake()
     {
-        mover = gameObject.GetComponent<StandardMover>();
-        if (mover == null) mover = gameObject.AddComponent<NullStandardMover>() as NullStandardMover;
+        health = maximumHealth;
+        shields = maximumShields;
+    }
 
-        target = gameObject.GetComponent<TargetManager>();
-        if (target == null) target = gameObject.AddComponent<NullTargetManager>() as NullTargetManager;
+    private bool hasSetup = false;
+    public void Setup()
+    {
+        // Single execution
+        if (hasSetup) return;
+        hasSetup = true;
 
-        graphics = gameObject.GetComponent<GraphicsManager>();
-        if (graphics == null) graphics = gameObject.AddComponent<NullGraphicsManager>() as NullGraphicsManager;
+        // Setup components
 
-        sphere = gameObject.GetComponent<SphereCollider>();
+        // Rigidbody
+        if (type != AgentType.TargetIndicator)
+        {
+            rigidbody = gameObject.AddComponent<Rigidbody>();
+            rigidbody.useGravity = false;
+            rigidbody.isKinematic = false;
+            rigidbody.mass = mass;
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+        }
 
-        game = GameManager.Instance;
-        //if (sphere == null) sphere = gameObject.AddComponent<SphereCollider>() as SphereCollider;
+        // Network Transform
+        if (type != AgentType.TargetIndicator)
+        {
+            var netTransform = gameObject.AddComponent<NetworkTransform>();
+            netTransform.transformSyncMode = NetworkTransform.TransformSyncMode.SyncRigidbody3D;
+        }
 
-        //abilities = gameObject.GetComponent<AbilityController>();
-        currentHealth = health;
+        // Sphere Collider
+        if (type != AgentType.TargetIndicator)
+        {
+            sphere = gameObject.AddComponent<SphereCollider>();
+            sphere.isTrigger = false;
+            sphere.radius = collisionRadius;
+        }
+
+        // Standard Mover
+        if (type != AgentType.TargetIndicator)
+        {
+            mover = gameObject.AddComponent<StandardMover>();
+            mover.Setup(this, maximumSpeed, maximumAcceleration, rigidbody);
+        }
+
+        // Graphics Manager
+        graphics = gameObject.AddComponent<GraphicsManager>();
+        graphics.Setup(this, graphicsGO);
+
+        // Target Manager
+        if (type != AgentType.TargetIndicator)
+        {
+            target = gameObject.AddComponent<TargetManager>();
+        }
+
+    }
+
+    protected virtual void Start()
+    {
+        
     }
 
     public void FixedUpdate()
     {
-        if (currentHealth <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
+        HandleHealth();
+    }
+
+    protected virtual void HandleHealth()
+    {
+        if (health <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
+
+        health = Mathf.Clamp(health + Mathf.RoundToInt(healRate * Time.fixedDeltaTime), 0, maximumHealth);
+        shields = Mathf.Clamp(shields + Mathf.RoundToInt(rechargeRate * Time.fixedDeltaTime), 0, maximumShields);
     }
 
     public IEnumerator SpawnExplosion()

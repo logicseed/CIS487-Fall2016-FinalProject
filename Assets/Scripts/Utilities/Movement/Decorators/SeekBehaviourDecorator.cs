@@ -33,7 +33,7 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
         if (Deleting()) return parentBehaviour.Steering();
         
         var velocityVector = behaviour.target.position - agent.position;
-        var desiredVelocity = velocityVector.normalized * agent.mover.maxVelocity;
+        var desiredVelocity = velocityVector.normalized * agent.mover.maxSpeed;
 
         var distance = velocityVector.magnitude;
         if (distance < behaviour.approachRadius)

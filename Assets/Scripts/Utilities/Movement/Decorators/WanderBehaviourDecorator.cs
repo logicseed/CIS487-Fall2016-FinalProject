@@ -41,11 +41,11 @@ public class WanderBehaviourDecorator : ActiveBehaviourDecorator
         //Debug.DrawRay(agentProperties.CurrentPosition, agentProperties.CurrentVelocity, Color.green);
 
         var center = Vector3.ClampMagnitude(
-            agent.mover.heading * agent.mover.maxVelocity,
-            agent.mover.maxVelocity * behaviour.rate
+            agent.mover.heading * agent.mover.maxSpeed,
+            agent.mover.maxSpeed * behaviour.rate
         );
 
-        if (center == Vector3.zero) center = Vector3.forward * agent.mover.maxSteering;
+        if (center == Vector3.zero) center = Vector3.forward * agent.mover.maxAccel;
 
         //Debug.DrawRay(agentProperties.CurrentPosition, center, Color.red);
 

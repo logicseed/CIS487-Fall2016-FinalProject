@@ -2,16 +2,15 @@
 
 using UnityEngine;
 
-[RequireComponent(typeof(MouseController))]
 [DisallowMultipleComponent]
 public class PlayerAgentManager : AgentManager
 {
     [HideInInspector]
     public MouseController mouse;
 
-    public GameObject cameraPrefab;
+    //public GameObject cameraPrefab;
 
-    public Camera networkCamera;
+    //public Camera networkCamera;
 
     protected override void Awake()
     {
@@ -21,9 +20,11 @@ public class PlayerAgentManager : AgentManager
     public override void OnStartLocalPlayer()
     {
         mouse = gameObject.GetComponent<MouseController>();
-        var cameraController = Instantiate(cameraPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-        cameraController.GetComponent<CameraController>().SetTarget(gameObject);
-        networkCamera = cameraController.GetComponent<Camera>();
+        //var cameraController = Instantiate(cameraPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+        //cameraController.GetComponent<CameraController>().SetTarget(gameObject);
+        //networkCamera = cameraController.GetComponent<Camera>();
         this.isPlayer = true;
+
+        Setup();
     }
 }
