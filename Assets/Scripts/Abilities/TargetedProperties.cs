@@ -6,6 +6,9 @@ using System.Collections;
 public class TargetedProperties : Ability
 {
     private TargetedBehavior targeted;
+    public GameObject abilityObject;
+    public float maxCastRange;
+
     /// <summary>
     /// Give the information from the scriptable object to the monobehavior
     /// handlers. 

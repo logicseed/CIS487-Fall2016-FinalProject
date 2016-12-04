@@ -6,8 +6,10 @@ using System.Collections;
 public class SkillShotProperties : Ability
 {
     private SkillShotBehavior skill;
+    public GameObject abilityObject;
+    public float maxCastRange;
     public float force;
-
+    
     /// <summary>
     /// Give the information from the scriptable object to the monobehavior
     /// handlers. 

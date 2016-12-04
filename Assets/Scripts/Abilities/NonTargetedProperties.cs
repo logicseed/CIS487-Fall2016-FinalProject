@@ -5,7 +5,8 @@ using System.Collections;
 public class NonTargetedProperties : Ability
 {
     private NonTargetedBehavior nonTargeted;
-
+    public GameObject abilityObject;
+    public float maxCastRange;
     /// <summary>
     /// Give the information from the scriptable object to the monobehavior
     /// handlers. 
