@@ -20,6 +20,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013827290222}
   - 111: {fileID: 111000013918609716}
+  - 114: {fileID: 114000011768312118}
+  - 114: {fileID: 114000011927503910}
+  - 114: {fileID: 114000011694006110}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -122,3 +125,41 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114000011694006110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645248016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf77743c29f74a4f83e8575b9d2c963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 20
+--- !u!114 &114000011768312118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645248016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac30b99003b05894c89a7754630a3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 15
+  magnitude: 5
+--- !u!114 &114000011927503910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645248016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6113aed9a4b0e244ebcf720e83e23e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 7.5
+  activate: 0

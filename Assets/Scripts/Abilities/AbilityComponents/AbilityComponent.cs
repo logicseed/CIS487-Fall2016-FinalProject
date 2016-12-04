@@ -10,11 +10,6 @@ public class AbilityComponent : MonoBehaviour
     public float radius;
 
     /// <summary>
-    /// Duration of the effect
-    /// </summary>
-    public float duration;
-
-    /// <summary>
     /// The potency of that effect
     /// </summary>
     public float magnitude;

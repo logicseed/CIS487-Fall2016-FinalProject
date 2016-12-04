@@ -17,7 +17,7 @@ public class SkillShotProperties : Ability
     {
         skill = obj.GetComponent<SkillShotBehavior>();
         skill.abilityObject = abilityObject;
-        skill.maxRange = maxRange;
+        skill.maxRange = maxCastRange;
         skill.force = force;
     }
 

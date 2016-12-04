@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a765d091abdf04594692b183fb34b7, type: 3}
   m_Name: PowerShot
   m_EditorClassIdentifier: 
-  name: PowerShot
+  name: Power Shot
   description: Shoot a high damage projectile in a direction
-  effectList: 
   abilityObject: {fileID: 1000011922378890, guid: 930cbb87230832f45bcf5a9b47495f6f,
     type: 2}
-  maxRange: 0
-  force: 0
+  maxCastRange: 20
+  cooldown: 10
+  force: 30

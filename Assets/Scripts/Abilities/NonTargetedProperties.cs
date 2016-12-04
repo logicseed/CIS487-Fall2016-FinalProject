@@ -2,7 +2,7 @@
 using System.Collections;
 
 [CreateAssetMenu(menuName = "Ability/New Non targeted ability")]
-public class NonTargetedProperies : Ability
+public class NonTargetedProperties : Ability
 {
     private NonTargetedBehavior nonTargeted;
 
@@ -15,7 +15,7 @@ public class NonTargetedProperies : Ability
     {
         nonTargeted = obj.GetComponent<NonTargetedBehavior>();
         nonTargeted.abilityObject = abilityObject;
-        nonTargeted.maxRange = maxRange;
+        nonTargeted.maxRange = maxCastRange;
     }
 
     /// <summary>
