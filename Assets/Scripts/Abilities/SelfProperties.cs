@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// Enum list for all different possible buff types
 public enum BuffTypes
 {
     Shields,
@@ -10,12 +11,18 @@ public enum BuffTypes
     MovementSpeed
 }
 
+/// <summary>
+/// Properties for self ability behavior
+/// Create a new unity ability asset: Assets --> Create --> Ability --> New Self ability
+/// </summary>
 [CreateAssetMenu(menuName = "Ability/New Self ability")]
 public class SelfProperties :  Ability
 {
-    private SelfBehavior self;
+    SelfBehavior self;
     public List<buff> buffList;
 
+    // Struct that has information on what a buff should have.
+    // These will be added and modified on the unity asset.
     [System.Serializable]
     public struct buff
     {
@@ -25,8 +32,7 @@ public class SelfProperties :  Ability
     }
 
     /// <summary>
-    /// Give the information from the scriptable object to the monobehavior
-    /// handlers. 
+    /// Give the information from the scriptable object to the monobehavior handler. 
     /// </summary>
     /// <param name="obj"></param>
     public override void initialize(GameObject obj)
@@ -36,8 +42,7 @@ public class SelfProperties :  Ability
     }
 
     /// <summary>
-    /// cast ability using monobehavior handlers. Used to cast generic
-    /// abilities. More complicated things may not be able to be done here.
+    /// Cast ability using monobehavior handler. 
     /// </summary>
     public override void cast()
     {

@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(menuName = "Ability/New Player ability set")]
+/// <summary>
+/// Ability set scriptable object that will accept individual ability scriptalbe objects.
+/// These objects are attached to the AbilitySetManager.
+/// Create a new player ability set: Assets --> Create --> New Player ability set
+/// </summary>
+[CreateAssetMenu(menuName = "New Player ability set")]
 [System.Serializable]
 public class PlayerAbilitySet : ScriptableObject
 {

@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Properties for a blast non targeted ability behavior
+/// Create a new unity ability asset: Assets --> Create --> Ability --> New Non targeted ability
+/// </summary>
 [CreateAssetMenu(menuName = "Ability/New Non targeted ability")]
 public class NonTargetedProperties : Ability
 {
-    private NonTargetedBehavior nonTargeted;
+    NonTargetedBehavior nonTargeted;
     public GameObject abilityObject;
     public float maxCastRange;
+
     /// <summary>
-    /// Give the information from the scriptable object to the monobehavior
-    /// handlers. 
+    /// Give the information from the scriptable object to the monobehavior handler. 
     /// </summary>
     /// <param name="obj"></param>
     public override void initialize(GameObject obj)
@@ -20,8 +24,7 @@ public class NonTargetedProperties : Ability
     }
 
     /// <summary>
-    /// cast ability using monobehavior handlers. Used to cast generic
-    /// abilities. More complicated things may not be able to be done here.
+    /// Cast ability using monobehavior handler. 
     /// </summary>
     public override void cast()
     {

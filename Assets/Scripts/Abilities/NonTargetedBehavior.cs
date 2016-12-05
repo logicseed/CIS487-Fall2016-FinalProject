@@ -26,13 +26,12 @@ public class NonTargetedBehavior : MonoBehaviour
         else if(Vector3.Distance(gameObject.transform.position, FindMousePosition()) <= maxRange)
         {
             instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
-            objectAgent = GetComponent<AgentManager>();
-            objectAgent.SendMessage("Start");
-            objectAgent.team = agent.team;
-            objectAgent.type = AgentType.AbilityEffect;
-
             instantiatedObject.transform.position = FindMousePosition();
         }
+        objectAgent = GetComponent<AgentManager>();
+        objectAgent.SendMessage("Start");
+        objectAgent.team = agent.team;
+        objectAgent.type = AgentType.AbilityEffect;
     }
 
     private Vector3 FindMousePosition()

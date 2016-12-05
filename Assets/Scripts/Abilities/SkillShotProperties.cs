@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Assets-->Create-->Abilities-->New ability
+/// <summary>
+/// Properties for a blast skill shot ability behavior
+/// Create a new unity ability asset: Assets --> Create --> Ability --> New Skill shot ability
+/// </summary>
 [CreateAssetMenu(menuName = "Ability/New Skill shot ability")]
 public class SkillShotProperties : Ability
 {
-    private SkillShotBehavior skill;
+    SkillShotBehavior skill;
     public GameObject abilityObject;
     public float maxCastRange;
     public float force;
-    
+
     /// <summary>
-    /// Give the information from the scriptable object to the monobehavior
-    /// handlers. 
+    /// Give the information from the scriptable object to the monobehavior handler. 
     /// </summary>
     /// <param name="obj"></param>
     public override void initialize(GameObject obj)
@@ -24,8 +26,7 @@ public class SkillShotProperties : Ability
     }
 
     /// <summary>
-    /// cast ability using monobehavior handlers. Used to cast generic
-    /// abilities. More complicated things may not be able to be done here.
+    /// Cast ability using monobehavior handler. 
     /// </summary>
     public override void cast()
     {

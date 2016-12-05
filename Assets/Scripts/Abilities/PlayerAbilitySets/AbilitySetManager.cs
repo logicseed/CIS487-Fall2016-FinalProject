@@ -8,7 +8,6 @@ public class AbilitySetManager : MonoBehaviour
     public PlayerAbilitySet playerAbility;
     float abilitycooldown1, abilitycooldown2, abilitycooldown3;
 
-    // Use this for initialization
     void Start ()
     {
         playerAbility.ability1.initialize(gameObject);
@@ -16,7 +15,6 @@ public class AbilitySetManager : MonoBehaviour
         playerAbility.ability3.initialize(gameObject);
     }
 
-    // Update is called once per frame
     void Update ()
     {
         if (Input.GetKeyUp("z") && Time.time >= abilitycooldown1)

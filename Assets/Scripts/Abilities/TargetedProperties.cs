@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//Assets-->Create-->Abilities-->New ability
+/// <summary>
+/// Properties for targeted ability behavior
+/// Create a new unity ability asset: Assets --> Create --> Ability --> New Targeted ability
+/// </summary>
 [CreateAssetMenu(menuName = "Ability/New Targeted ability")]
 public class TargetedProperties : Ability
 {
-    private TargetedBehavior targeted;
+    TargetedBehavior targeted;
     public GameObject abilityObject;
     public float maxCastRange;
 
     /// <summary>
-    /// Give the information from the scriptable object to the monobehavior
-    /// handlers. 
+    /// Give the information from the scriptable object to the monobehavior handler. 
     /// </summary>
     /// <param name="obj"></param>
     public override void initialize(GameObject obj)
@@ -22,8 +24,7 @@ public class TargetedProperties : Ability
     }
 
     /// <summary>
-    /// Cast ability using monobehavior handlers. Used to cast generic
-    /// abilities. More complicated things may not be able to be done here.
+    /// Cast ability using monobehavior handler. 
     /// </summary>
     public override void cast()
     {
