@@ -946,29 +946,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811523f8e578d6f4abb259f1fbaa5e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLobbyGUI: 0
-  Characters:
-  - {fileID: 8400000, guid: 3681918b225e79641a8692d1ba5f8ad2, type: 2}
-  - {fileID: 8400000, guid: c0eff924db837fd45abef06923d65e83, type: 2}
-  - {fileID: 8400000, guid: ac12839f57cb097428e6180893ef146b, type: 2}
-  - {fileID: 8400000, guid: 45660cfd729830448b7429c94b356a26, type: 2}
+  ShowLobbyGUI: 1
+  CharacterRig: {fileID: 1000013880752510, guid: b957f95ff0a9c9249818cc3848e44620,
+    type: 2}
+  CharacterModels:
+  - {fileID: 1000012874547884, guid: 46d0b2e48e7a883419c3aa087813aa7b, type: 2}
+  - {fileID: 1000011412355652, guid: 6cc2e82292d3cce4eb907d29702eb111, type: 2}
+  - {fileID: 1000013725804914, guid: 92dd84274e0515d4bb75a49e995566d3, type: 2}
+  - {fileID: 1000013603171302, guid: d69d4ee68cad23349a95b8135a14e2af, type: 2}
+  PlayerTextures:
+  - {fileID: 8400000, guid: 3607f34abfb6b694ab84f86626f4e665, type: 2}
+  - {fileID: 8400000, guid: d79e7c316f6243947a354b736b8c25a3, type: 2}
+  - {fileID: 8400000, guid: 3b1a33507f673184db51fc4410e7a80e, type: 2}
+  - {fileID: 8400000, guid: c66e07f65094ce14e91de35247956cf2, type: 2}
   Colors:
-  - {r: 1, g: 0.757, b: 0.027, a: 1}
-  - {r: 0.129, g: 0.588, b: 0.953, a: 1}
-  - {r: 0, g: 0.737, b: 0.831, a: 1}
-  - {r: 1, g: 0.341, b: 0.133, a: 1}
-  - {r: 0.404, g: 0.227, b: 0.718, a: 1}
-  - {r: 0.298, g: 0.686, b: 0.314, a: 1}
-  - {r: 0.247, g: 0.318, b: 0.71, a: 1}
-  - {r: 0.012, g: 0.663, b: 0.957, a: 1}
-  - {r: 0.545, g: 0.765, b: 0.29, a: 1}
-  - {r: 0.804, g: 0.863, b: 0.224, a: 1}
-  - {r: 1, g: 0.596, b: 0, a: 1}
-  - {r: 0.914, g: 0.118, b: 0.388, a: 1}
-  - {r: 0.612, g: 0.153, b: 0.69, a: 1}
-  - {r: 0.957, g: 0.263, b: 0.212, a: 1}
-  - {r: 0, g: 0.588, b: 0.533, a: 1}
-  - {r: 1, g: 0.922, b: 0.231, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   characterButton: {fileID: 11488840}
   colorButton: {fileID: 114000013550773720}
   nameInput: {fileID: 11487112}
@@ -980,9 +977,9 @@ MonoBehaviour:
   playerName: 
   playerColor: {r: 1, g: 1, b: 1, a: 1}
   playerNumber: 0
-  playerCharacter: 1
-  OddRowColor: {r: 0.13725491, g: 0.13725491, b: 0.13725491, a: 0.5}
-  EvenRowColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 0.5}
+  playerCharacter: 0
+  OddRowColor: {r: 0.1397059, g: 0.1397059, b: 0.1397059, a: 0.5019608}
+  EvenRowColor: {r: 0.30882353, g: 0.30882353, b: 0.30882353, a: 0.5019608}
 --- !u!114 &11487112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1108,7 +1105,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 114000013261303170}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1341,8 +1338,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 164, y: 0}
-  m_SizeDelta: {x: 128, y: 128}
+  m_AnchoredPosition: {x: 114, y: 0}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &22439062
 RectTransform:
@@ -1471,8 +1468,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: 0}
-  m_SizeDelta: {x: -929, y: 64}
+  m_AnchoredPosition: {x: 692, y: 0}
+  m_SizeDelta: {x: -1072, y: 64}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &22465144
 RectTransform:
@@ -1791,6 +1788,6 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 342, y: 0}
+  m_AnchoredPosition: {x: 514, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0, y: 0.5}

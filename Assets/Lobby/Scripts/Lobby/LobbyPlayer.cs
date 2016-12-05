@@ -11,14 +11,15 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        public Texture[] Characters;
-        public Color[] Colors;
-        //public Color[] Colors = new Color[] {
-        //    MaterialColor.Amber, MaterialColor.Blue, MaterialColor.Cyan, MaterialColor.DeepOrange,
-        //    MaterialColor.DeepPurple, MaterialColor.Green, MaterialColor.Indigo, MaterialColor.LightBlue,
-        //    MaterialColor.LightGreen, MaterialColor.Lime, MaterialColor.Orange, MaterialColor.Pink,
-        //    MaterialColor.Purple, MaterialColor.Red, MaterialColor.Teal, MaterialColor.Yellow
-        //    };
+        public GameObject CharacterRig;
+        private GameObject[] CharacterRigs = new GameObject[4];
+        private LobbyCharacterGraphics[] CharacterGraphics = new LobbyCharacterGraphics[4];
+        public GameObject[] CharacterModels;
+        public RenderTexture[] PlayerTextures;
+        //public Color[] Colors;
+        public Color[] Colors = new Color[] {
+            Color.blue, Color.cyan, Color.green, Color.magenta, Color.red, Color.yellow
+            };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
 
@@ -63,6 +64,14 @@ namespace Prototype.NetworkLobby
             LobbyPlayerList._instance.AddPlayer(this);
             LobbyPlayerList._instance.DisplayDirectServerWarning(isServer && LobbyManager.s_Singleton.matchMaker == null);
 
+            // Setup character rigs
+            CharacterRigs[playerNumber] = Instantiate(CharacterRig) as GameObject;
+            CharacterRigs[playerNumber].GetComponentInChildren<Camera>().targetTexture = PlayerTextures[playerNumber];
+            CharacterRigs[playerNumber].transform.position = new Vector3(-100.0f * (playerNumber + 1), 0.0f);
+            CharacterGraphics[playerNumber] = CharacterRigs[playerNumber].GetComponentInChildren<LobbyCharacterGraphics>();
+
+            characterButton.GetComponent<RawImage>().texture = PlayerTextures[playerNumber];
+
             if (isLocalPlayer)
             {
                 SetupLocalPlayer();
@@ -77,7 +86,7 @@ namespace Prototype.NetworkLobby
             OnMyName(playerName);
             OnMyColor(playerColor);
             OnMyNumber(playerNumber);
-            OnMyCharacter(playerCharacter);
+            OnMyCharacter(Random.Range(0, CharacterModels.Length));
         }
 
         public override void OnStartAuthority()
@@ -111,6 +120,8 @@ namespace Prototype.NetworkLobby
             readyButton.interactable = false;
 
             OnClientReady(false);
+
+
         }
 
         void SetupLocalPlayer()
@@ -211,6 +222,7 @@ namespace Prototype.NetworkLobby
         public void OnMyColor(Color newColor)
         {
             playerColor = newColor;
+            CharacterGraphics[playerNumber].ColorTextures(playerColor);
             colorButton.GetComponent<Image>().color = newColor;
         }
 
@@ -222,7 +234,10 @@ namespace Prototype.NetworkLobby
         public void OnMyCharacter(int newCharacter)
         {
             playerCharacter = newCharacter;
-            characterButton.GetComponent<RawImage>().texture = Characters[newCharacter];
+
+            var rotation = LobbyPlayerList._instance._players[0].CharacterGraphics[0].transform.eulerAngles.y;
+
+            CharacterGraphics[playerNumber].CreateGraphics(CharacterModels[playerCharacter], playerColor, rotation);
         }
 
         //===== UI Handler
@@ -325,7 +340,7 @@ namespace Prototype.NetworkLobby
         {
             var newCharacter = playerCharacter;
             newCharacter++;
-            if (newCharacter >= Characters.Length) newCharacter = 0;
+            if (newCharacter >= PlayerTextures.Length) newCharacter = 0;
 
             playerCharacter = newCharacter;
         }
