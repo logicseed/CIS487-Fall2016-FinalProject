@@ -1,6 +1,7 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GraphicsManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GraphicsManager : MonoBehaviour
         {
             graphicsGO = Instantiate(graphicsGO) as GameObject;
         }
+
         graphicsGO.MakeChildOf(gameObject, "Graphics");
     }
 

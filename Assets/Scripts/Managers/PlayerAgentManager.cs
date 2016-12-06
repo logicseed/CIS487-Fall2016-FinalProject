@@ -28,7 +28,7 @@ public class PlayerAgentManager : AgentManager
 
     public override void OnStartLocalPlayer()
     {
-
+        base.OnStartLocalPlayer();
         SetupMouseAndCamera();
         this.isPlayer = true;
     }

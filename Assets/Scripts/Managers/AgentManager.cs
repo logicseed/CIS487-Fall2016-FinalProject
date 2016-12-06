@@ -161,6 +161,16 @@ public class AgentManager : NetworkBehaviour
         }
     }
 
+    public override void OnStartLocalPlayer()
+    {
+        Setup(graphicsGO);
+    }
+
+    // public override void OnStartServer()
+    // {
+    //     Setup(graphicsGO);
+    // }
+
     public void FixedUpdate()
     {
         HandleHealth();
