@@ -7,7 +7,7 @@ public class PlayerAgentManager : AgentManager
 {
     [HideInInspector]
     public MouseController mouse;
-
+    new public CameraController camera;
     //public GameObject cameraPrefab;
 
     //public Camera networkCamera;
@@ -17,12 +17,26 @@ public class PlayerAgentManager : AgentManager
         base.Awake();
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        if (type == AgentType.DevPlayer)
+        {
+            SetupMouseAndCamera();
+        }
+    }
+
     public override void OnStartLocalPlayer()
     {
-        mouse = gameObject.GetComponent<MouseController>();
-        //var cameraController = Instantiate(cameraPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-        //cameraController.GetComponent<CameraController>().SetTarget(gameObject);
-        //networkCamera = cameraController.GetComponent<Camera>();
+
+        SetupMouseAndCamera();
         this.isPlayer = true;
+    }
+
+    public void SetupMouseAndCamera()
+    {
+        mouse = gameObject.AddComponent<MouseController>();
+        camera = Camera.main.transform.parent.parent.GetComponent<CameraController>();
+        camera.SetTarget(gameObject);
     }
 }

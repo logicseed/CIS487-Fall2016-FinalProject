@@ -275,7 +275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_PlayScene
-      value: Marc
+      value: ForcesTest
       objectReference: {fileID: 0}
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_GamePlayerPrefab
@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &637010582
 Light:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1204765967
 Light:
   m_ObjectHideFlags: 0

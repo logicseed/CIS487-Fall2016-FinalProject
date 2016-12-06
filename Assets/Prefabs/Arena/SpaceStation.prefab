@@ -72,7 +72,7 @@ GameObject:
   - 4: {fileID: 4000012695069958}
   - 114: {fileID: 114000011961091376}
   m_Layer: 0
-  m_Name: Orbit
+  m_Name: SpaceStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

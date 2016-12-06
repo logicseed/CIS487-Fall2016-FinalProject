@@ -36,18 +36,12 @@ public class GameManager : MonoBehaviour
     [Header("Character Prefabs")]
     public GameObject[] characters;
 
-    [Header("Capture Points")]
-    public AgentManager[] capturePoints;
-
-    
-    
-
     private void Awake ()
     {
         // Singleton
         if (instance == null) instance = this;
         else if (instance != this) Destroy(gameObject);
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
         InitColors();
         InitNames();
         //teamNames = 
@@ -60,6 +54,7 @@ public class GameManager : MonoBehaviour
         teamColors.Add(TeamType.Team2, Color.blue);
         teamColors.Add(TeamType.Team3, Color.green);
         teamColors.Add(TeamType.Team4, Color.yellow);
+        teamColors.Add(TeamType.World, Color.white);
     }
 
     private void InitNames()
@@ -69,6 +64,7 @@ public class GameManager : MonoBehaviour
         teamNames.Add(TeamType.Team2, "Team 2");
         teamNames.Add(TeamType.Team3, "Team 3");
         teamNames.Add(TeamType.Team4, "Team 4");
+        teamNames.Add(TeamType.World, "World");
     }
 
     public void SetTeamColor(TeamType team, Color color)

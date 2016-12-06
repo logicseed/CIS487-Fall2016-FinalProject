@@ -62,7 +62,7 @@ public class AgentManager : NetworkBehaviour
 
     [Header("Graphics")]
     [SerializeField]
-    private GameObject graphicsGO;
+    private GameObject graphicsGO = null;
     [SyncVar]
     public SpeciesType species;
     [SyncVar]
@@ -97,6 +97,7 @@ public class AgentManager : NetworkBehaviour
         shields = maximumShields;
     }
 
+
     private bool hasSetup = false;
     public void Setup(GameObject graphicsGO = null)
     {
@@ -117,7 +118,7 @@ public class AgentManager : NetworkBehaviour
         }
 
         // Network Transform
-        if (type != AgentType.TargetIndicator)
+        if (type != AgentType.TargetIndicator && type != AgentType.DevPlayer)
         {
             var netTransform = gameObject.AddComponent<NetworkTransform>();
             netTransform.transformSyncMode = NetworkTransform.TransformSyncMode.SyncRigidbody3D;
@@ -147,13 +148,17 @@ public class AgentManager : NetworkBehaviour
         if (type != AgentType.TargetIndicator)
         {
             target = gameObject.AddComponent<TargetManager>();
+            target.Setup(this);
         }
 
     }
 
     protected virtual void Start()
     {
-        
+        if (type == AgentType.HomePlanet || type == AgentType.CapturePlanet || type == AgentType.DevPlayer)
+        {
+            Setup(graphicsGO);
+        }
     }
 
     public void FixedUpdate()
@@ -163,15 +168,22 @@ public class AgentManager : NetworkBehaviour
 
     protected virtual void HandleHealth()
     {
-        if (health <= 0 && !hasDied) StartCoroutine(SpawnExplosion());
+        if (health <= 0 && !hasDied) CmdKillerPlayer();
 
         health = Mathf.Clamp(health + Mathf.RoundToInt(healRate * Time.fixedDeltaTime), 0, maximumHealth);
         shields = Mathf.Clamp(shields + Mathf.RoundToInt(rechargeRate * Time.fixedDeltaTime), 0, maximumShields);
     }
 
-    public IEnumerator SpawnExplosion()
+    [Command]
+    public void CmdKillerPlayer()
     {
         hasDied = true;
+        StartCoroutine(SpawnExplosion());
+    }
+
+    public IEnumerator SpawnExplosion()
+    {
+        
         var explosion = Instantiate(Resources.Load("Explosion")) as GameObject;
         explosion.transform.parent = transform;
         explosion.transform.localPosition = Vector3.zero;

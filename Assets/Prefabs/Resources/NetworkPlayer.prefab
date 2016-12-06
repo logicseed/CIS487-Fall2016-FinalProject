@@ -95,12 +95,12 @@ MonoBehaviour:
   maximumShields: 100
   shields: 0
   hasDied: 0
-  maximumSpeed: 5
-  maximumAcceleration: 0.5
+  maximumSpeed: 20
+  maximumAcceleration: 1
   mass: 1
   collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 1000010896397490, guid: 98a21016532343e478165f6a8948446b, type: 2}
+  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -109,3 +109,4 @@ MonoBehaviour:
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
   mouse: {fileID: 0}
+  camera: {fileID: 0}
