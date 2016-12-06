@@ -25,8 +25,8 @@ public class LobbyCharacterGraphics : MonoBehaviour
         var renderers = gameObject.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers)
         {
-            renderer.material.SetColor("_Color", Color.Lerp(Color.white, color, 0.5f) * 0.5f);
-            renderer.material.SetColor("_EmissionColor", color * 5.0f);
+            renderer.material.SetColor("_Color", Color.Lerp(Color.white, color, 0.2f) * 0.5f);
+            renderer.material.SetColor("_EmissionColor", color * 10.0f);
         }
     }
 
