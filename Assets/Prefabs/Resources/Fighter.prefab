@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000012701749990}
+  m_IsPrefabParent: 1
+--- !u!1 &1000012701749990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011174778024}
+  - 114: {fileID: 114000011748070964}
+  - 114: {fileID: 114000012618227872}
+  m_Layer: 0
+  m_Name: Fighter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011174778024
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701749990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011748070964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701749990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 158
+    i1: 118
+    i2: 8
+    i3: 230
+    i4: 77
+    i5: 192
+    i6: 13
+    i7: 164
+    i8: 152
+    i9: 180
+    i10: 124
+    i11: 220
+    i12: 183
+    i13: 17
+    i14: 42
+    i15: 100
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114000012618227872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012701749990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  team: 4
+  isPlayer: 0
+  teamLayer: Default
+  healRate: 0
+  maximumHealth: 100
+  health: 0
+  rechargeRate: 0
+  maximumShields: 100
+  shields: 0
+  hasDied: 0
+  maximumSpeed: 5
+  maximumAcceleration: 0.5
+  mass: 1
+  collisionRadius: 1
+  mover: {fileID: 0}
+  graphicsGO: {fileID: 0}
+  species: 0
+  ship: 4
+  graphics: {fileID: 0}
+  target: {fileID: 0}
+  game: {fileID: 0}
+  sphere: {fileID: 0}
+  rigidbody: {fileID: 0}

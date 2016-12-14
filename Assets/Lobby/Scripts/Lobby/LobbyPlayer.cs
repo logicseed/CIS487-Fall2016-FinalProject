@@ -65,10 +65,14 @@ namespace Prototype.NetworkLobby
             LobbyPlayerList._instance.DisplayDirectServerWarning(isServer && LobbyManager.s_Singleton.matchMaker == null);
 
             // Setup character rigs
-            CharacterRigs[playerNumber] = Instantiate(CharacterRig) as GameObject;
-            CharacterRigs[playerNumber].GetComponentInChildren<Camera>().targetTexture = PlayerTextures[playerNumber];
-            CharacterRigs[playerNumber].transform.position = new Vector3(-100.0f * (playerNumber + 1), 0.0f);
-            CharacterGraphics[playerNumber] = CharacterRigs[playerNumber].GetComponentInChildren<LobbyCharacterGraphics>();
+            if (CharacterRigs[playerNumber] == null)
+            {
+                CharacterRigs[playerNumber] = Instantiate(CharacterRig) as GameObject;
+
+                CharacterRigs[playerNumber].GetComponentInChildren<Camera>().targetTexture = PlayerTextures[playerNumber];
+                CharacterRigs[playerNumber].transform.position = new Vector3(-100.0f * (playerNumber + 1), 0.0f);
+                CharacterGraphics[playerNumber] = CharacterRigs[playerNumber].GetComponentInChildren<LobbyCharacterGraphics>();
+            }
 
             characterButton.GetComponent<RawImage>().texture = PlayerTextures[playerNumber];
 

@@ -10,5 +10,6 @@ public enum AgentType
     CapturePlanet,
     SpaceStation,
     TargetIndicator,
-    AbilityEffect
+    AbilityEffect,
+    DevPlayer
 }

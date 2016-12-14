@@ -1,6 +1,7 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GraphicsManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GraphicsManager : MonoBehaviour
         {
             graphicsGO = Instantiate(graphicsGO) as GameObject;
         }
+
         graphicsGO.MakeChildOf(gameObject, "Graphics");
     }
 
@@ -58,10 +60,17 @@ public class GraphicsManager : MonoBehaviour
     /// </summary>
     public void ApplyTeamColors()
     {
-        var teamColor = GameManager.Instance.teamColors[agent.team];
+        if (agent.team != TeamType.World)
+        {
+            var teamColor = GameManager.Instance.teamColors[agent.team];
+            var renderers = gameObject.GetComponentsInChildren(typeof(Renderer));
 
-        var rendererManager = graphicsGO.GetComponent<RendererManager>();
-        rendererManager.SetTeamColor(teamColor);
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material.SetColor("_Color", Color.Lerp(Color.white, teamColor, 0.2f) * 0.5f);
+                renderer.material.SetColor("_EmissionColor", teamColor * 10.0f);
+            }
+        }
     }
 
     /// <summary>
