@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 
-public class Gravity : AbilityComponent
+/// <summary>
+/// Pulls agents to the instantiated gameobject. 
+/// </summary>
+public class Pull : AbilityComponent
 {
     void Start()
     {
@@ -17,11 +18,11 @@ public class Gravity : AbilityComponent
     void pullObject()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
-        foreach(Collider other in hitColliders)
+        foreach(Collider hit in hitColliders)
         {
-            agent = GetComponent<AgentManager>();
+            agent = hit.GetComponent<AgentManager>();
             if (agent.team != objectAgent.team && agent.type == AgentType.Player)
-                other.transform.position = Vector3.MoveTowards(other.transform.position, gameObject.transform.position, Time.deltaTime * magnitude);
+                hit.transform.position = Vector3.MoveTowards(hit.transform.position, gameObject.transform.position, Time.deltaTime * magnitude);
         }
     }
 }

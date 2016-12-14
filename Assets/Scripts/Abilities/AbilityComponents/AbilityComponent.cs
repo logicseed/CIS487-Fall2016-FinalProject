@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
+/// <summary>
+/// Basis for ability components.
+/// </summary>
 public class AbilityComponent : MonoBehaviour
 {
-    // All abilities components should have a radius to effect to allow for 
-    // area of effect. Make radius small in size if area of effect is not needed.
+    [Tooltip("The radius in which the ability effect will be applied")]
     public float radius;
 
-    // The potency of that effect
+    [Tooltip("The potency of the effect")]
     public float magnitude;
 
     // Used for team comparisons. Determines who will actually be effected by the ability.

@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Destory object when another agent that is not a part of your own team enters 
+/// the overlap sphere. 
+/// </summary>
+/// <remarks>
+/// The collison overlap sphere may have a smaller radius than the actual effect 
+/// sphere, the collsion overlap sphere should never be larger than the effect radius. 
+/// These two variables are independant of each other.
+/// </remarks>
 public class DestoryOnCollide : MonoBehaviour
 {
     [HideInInspector]

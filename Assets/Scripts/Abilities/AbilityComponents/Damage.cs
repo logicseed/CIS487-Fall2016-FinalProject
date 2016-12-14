@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Damage on collide ability component. Once DestroyOnCollide is triggered, the damage
+/// is applied in a given radius.
+/// </summary>
 public class Damage : AbilityComponent
 {
     DestoryOnCollide collide;
@@ -14,15 +17,15 @@ public class Damage : AbilityComponent
     void Update()
     {
         if (collide.triggered == true)
-            activate();   
+            damage();   
     }
 
-    void activate()
+    void damage()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
         foreach (Collider hit in hitColliders)
         {
-            agent = GetComponent<AgentManager>();
+            agent = hit.GetComponent<AgentManager>();
             if (agent.team != objectAgent.team)
                 agent.health = agent.health - (int)magnitude;
             //Debug.Log("You've been hit for: " + magnitude);

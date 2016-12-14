@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Destroy object after a set amount of time after being instantiated.
+/// </summary>
 public class DestroyAfterTime : MonoBehaviour
 {
     float instantiationTime;
@@ -11,7 +13,6 @@ public class DestroyAfterTime : MonoBehaviour
         instantiationTime = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if ((Time.time - instantiationTime) >= duration)
