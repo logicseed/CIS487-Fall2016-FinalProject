@@ -3,12 +3,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System;
 
 public delegate void ColorChangeHandler();
 
+[Serializable]
+public class Character
+{
+    public GameObject Model;
+    public GameObject CruiserModel;
+    public GameObject FighterModel;
+    public int test;
+}
+
 public class GameManager : MonoBehaviour
 {
+    public Character[] Characters;
+    public Color[] Colors;
+    
     public event ColorChangeHandler ColorChange;
+
+
 
     // Singleton
     [HideInInspector]
@@ -32,9 +47,6 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;
-
-    [Header("Character Prefabs")]
-    public GameObject[] characters;
 
     private void Awake ()
     {

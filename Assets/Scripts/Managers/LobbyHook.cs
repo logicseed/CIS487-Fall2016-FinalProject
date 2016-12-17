@@ -24,6 +24,6 @@ public class LobbyHook : Prototype.NetworkLobby.LobbyHook
         agent.name = player.playerName;
         
         
-        agent.Setup(player.CharacterModels[player.playerCharacter]);
+        agent.Setup(GameManager.Instance.Characters[player.playerCharacter].Model);
     }
 }

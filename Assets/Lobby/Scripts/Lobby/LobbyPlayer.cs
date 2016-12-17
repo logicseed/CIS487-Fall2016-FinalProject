@@ -14,12 +14,8 @@ namespace Prototype.NetworkLobby
         public GameObject CharacterRig;
         private GameObject[] CharacterRigs = new GameObject[4];
         private LobbyCharacterGraphics[] CharacterGraphics = new LobbyCharacterGraphics[4];
-        public GameObject[] CharacterModels;
         public RenderTexture[] PlayerTextures;
-        //public Color[] Colors;
-        public Color[] Colors = new Color[] {
-            Color.blue, Color.cyan, Color.green, Color.magenta, Color.red, Color.yellow
-            };
+        private Color[] Colors;
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
 
@@ -61,9 +57,11 @@ namespace Prototype.NetworkLobby
 
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
 
+
             LobbyPlayerList._instance.AddPlayer(this);
             LobbyPlayerList._instance.DisplayDirectServerWarning(isServer && LobbyManager.s_Singleton.matchMaker == null);
 
+            Colors = GameManager.Instance.Colors;
             // Setup character rigs
             if (CharacterRigs[playerNumber] == null)
             {
@@ -90,7 +88,7 @@ namespace Prototype.NetworkLobby
             OnMyName(playerName);
             OnMyColor(playerColor);
             OnMyNumber(playerNumber);
-            OnMyCharacter(Random.Range(0, CharacterModels.Length));
+            OnMyCharacter(playerCharacter);
         }
 
         public override void OnStartAuthority()
@@ -241,7 +239,7 @@ namespace Prototype.NetworkLobby
 
             var rotation = LobbyPlayerList._instance._players[0].CharacterGraphics[0].transform.eulerAngles.y;
 
-            CharacterGraphics[playerNumber].CreateGraphics(CharacterModels[playerCharacter], playerColor, rotation);
+            CharacterGraphics[playerNumber].CreateGraphics(GameManager.Instance.Characters[playerCharacter].Model, playerColor, rotation);
         }
 
         //===== UI Handler
@@ -336,7 +334,7 @@ namespace Prototype.NetworkLobby
                 _colorInUse.Add(idx);
             }
 
-            playerColor = Colors[idx];
+            playerColor = GameManager.Instance.Colors[idx];
         }
 
         [Command]
@@ -344,7 +342,7 @@ namespace Prototype.NetworkLobby
         {
             var newCharacter = playerCharacter;
             newCharacter++;
-            if (newCharacter >= PlayerTextures.Length) newCharacter = 0;
+            if (newCharacter >= GameManager.Instance.Characters.Length) newCharacter = 0;
 
             playerCharacter = newCharacter;
         }

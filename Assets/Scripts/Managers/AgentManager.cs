@@ -97,6 +97,12 @@ public class AgentManager : NetworkBehaviour
         shields = maximumShields;
     }
 
+    [ClientRpc]
+    public void RpcRemoteSetup()
+    {
+        
+    }
+
 
     private bool hasSetup = false;
     public void Setup(GameObject graphicsGO = null)
