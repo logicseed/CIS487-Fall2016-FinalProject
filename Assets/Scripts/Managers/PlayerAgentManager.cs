@@ -33,6 +33,7 @@ public class PlayerAgentManager : AgentManager
         base.OnStartLocalPlayer();
         SetupMouseAndCamera();
         this.isPlayer = true;
+        
     }
 
     public void SetupMouseAndCamera()
@@ -40,5 +41,6 @@ public class PlayerAgentManager : AgentManager
         mouse = gameObject.AddComponent<MouseController>();
         camera = Camera.main.transform.parent.parent.GetComponent<CameraController>();
         camera.SetTarget(gameObject);
+
     }
 }

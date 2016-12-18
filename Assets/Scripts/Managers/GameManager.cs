@@ -64,11 +64,6 @@ public class GameManager : NetworkBehaviour
         //teamNames = 
     }
 
-    private void Start()
-    {
-        StartCoroutine(SetupPlayers());
-    }
-
     private void InitColors()
     {
         // teamColors = new Dictionary<TeamType, Color>();
@@ -107,6 +102,13 @@ public class GameManager : NetworkBehaviour
         OnColorChange();
     }
 
+    [ClientRpc]
+    public void RpcSetTeamColor(TeamType team, Color color)
+    {
+        teamColors[(int)team] = color;
+        OnColorChange();
+    }
+
     public Color GetTeamColor(TeamType team)
     {
         return teamColors[(int)team];
@@ -115,7 +117,12 @@ public class GameManager : NetworkBehaviour
     public void SetTeamName(TeamType team, string name)
     {
         teamNames[(int)team] = name;
+    }
 
+    [ClientRpc]
+    public void RpcSetTeamName(TeamType team, string name)
+    {
+        teamNames[(int)team] = name;
     }
 
     public string GetTeamName(TeamType team)
@@ -128,6 +135,23 @@ public class GameManager : NetworkBehaviour
         SceneManager.LoadScene(scene);
     }
 
+
+    public void SetTeamCharacter(TeamType team, int character)
+    {
+        teamCharacters[(int)team] = character;
+    }
+
+    public int GetTeamCharacter(TeamType team)
+    {
+        return teamCharacters[(int)team];
+    }
+
+    [ClientRpc]
+    public void RpcSetTeamCharacter(TeamType team, int character)
+    {
+        teamCharacters[(int)team] = character;
+    }
+
     /// <summary>
     /// Invokes the DeletingBehaviour event.
     /// </summary>
@@ -136,10 +160,8 @@ public class GameManager : NetworkBehaviour
         if (ColorChange != null) ColorChange();
     }
 
-    public IEnumerator SetupPlayers()
+    public void SetupPlayers()
     {
-        //Debug.Log("Starting player setup");
-        yield return new WaitForFixedUpdate();
         players = GameObject.FindGameObjectsWithTag("Player");
 
         Debug.Log("Players Found: " + players.Length);
