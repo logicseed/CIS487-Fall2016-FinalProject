@@ -471,6 +471,7 @@ namespace Prototype.NetworkLobby
             // Setup team
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
+            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
 
             // Setup player object
             agent.character = lobbyPlayer.playerCharacter;

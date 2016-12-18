@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Networking;
 
 public delegate void ColorChangeHandler();
 
@@ -15,7 +16,7 @@ public class Character
     public GameObject fighterModel;
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public Character[] characters;
     public Color[] colors;
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     public event ColorChangeHandler ColorChange;
 
     public Dictionary<int, int> characterSelections;
-    public Dictionary<int, int> colorSelections;
 
     // Singleton
     [HideInInspector]
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     //public Dictionary<TeamType, Color> teamColors;
     public string[] teamNames = new string[5];
     public Color[] teamColors = new Color[5];
+    public int[] teamCharacters = new int[4];
 
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;

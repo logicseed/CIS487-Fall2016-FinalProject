@@ -170,10 +170,10 @@ public class AgentManager : NetworkBehaviour
         }
     }
 
-    public override void OnStartLocalPlayer()
-    {
-        Setup(graphicsGO);
-    }
+    // public override void OnStartLocalPlayer()
+    // {
+    //     Setup(graphicsGO);
+    // }
 
     public void FixedUpdate()
     {
