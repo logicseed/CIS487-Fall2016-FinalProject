@@ -469,9 +469,9 @@ namespace Prototype.NetworkLobby
             var game = GameManager.Instance;
             var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
 
-            Debug.Log(team);
-            Debug.Log(lobbyPlayer);
-            Debug.Log(lobbyPlayer.playerName);
+            // Debug.Log(team);
+            // Debug.Log(lobbyPlayer);
+            // Debug.Log(lobbyPlayer.playerName);
 
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
@@ -480,7 +480,8 @@ namespace Prototype.NetworkLobby
             game.RpcSetTeamColor(team, lobbyPlayer.playerColor);
             game.RpcSetTeamCharacter(team, lobbyPlayer.playerCharacter);
 
-            var gamePlayer = Instantiate(game.characters[lobbyPlayer.playerCharacter].characterPrefab);
+            var spawnPosition = game.spawnPositions[currentPlayers.IndexOf(conn.connectionId)];
+            var gamePlayer = Instantiate(game.characters[lobbyPlayer.playerCharacter].characterPrefab, spawnPosition.transform.position, spawnPosition.transform.rotation) as GameObject;
 
             var agent = gamePlayer.GetComponent<PlayerAgentManager>();
             agent.game = game;

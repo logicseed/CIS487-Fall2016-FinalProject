@@ -21,6 +21,7 @@ public class GameManager : NetworkBehaviour
 {
     public Character[] characters;
     public Color[] colors;
+    public GameObject[] spawnPositions;
 
 
     public GameObject[] players;

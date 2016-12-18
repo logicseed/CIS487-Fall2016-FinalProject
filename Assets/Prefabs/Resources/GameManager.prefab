@@ -108,6 +108,11 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 0, g: 1, b: 1, a: 1}
+  spawnPositions:
+  - {fileID: 1000014289319604, guid: dd2332b40ee71424ca00b95538496616, type: 2}
+  - {fileID: 1000011918747888, guid: 67c5d7814b04c524187f861fb82389c7, type: 2}
+  - {fileID: 1000012678687672, guid: 5d0cbe867aed4b04495d46163fe80da7, type: 2}
+  - {fileID: 1000011560448286, guid: 28c89b8e6881ad54a8ba49673e03b06c, type: 2}
   players: []
   teamNames:
   - 

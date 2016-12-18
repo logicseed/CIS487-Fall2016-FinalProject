@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters: []
   colors: []
+  spawnPositions: []
   players: []
   teamNames:
   - 

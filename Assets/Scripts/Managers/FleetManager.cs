@@ -25,22 +25,20 @@ public class FleetManager : NetworkBehaviour
         {
             foreach (var position in fighterPositions)
             {
-                var fighter = Instantiate(Resources.Load("Fighter")) as GameObject;
-                var fighterAgent = fighter.GetComponent<AgentManager>();
-                fighterAgent.team = agent.team;
-                fighterAgent.species = agent.species;
-                fighterAgent.mover.AddBehaviour(new SeekBehaviour(position.GetComponent<AgentManager>()));
-                NetworkServer.Spawn(fighter);
+                // var fighter = Instantiate(GameManager.Instance.characters[(int)agent.team].fighterPrefab, ) as GameObject;
+
+
+                // var fighterAgent = fighter.GetComponent<AgentManager>();
+                // fighterAgent.team = agent.team;
+                // fighterAgent.species = agent.species;
+                // fighterAgent.mover.AddBehaviour(new SeekBehaviour(position.GetComponent<AgentManager>()));
+                // NetworkServer.Spawn(fighter);
             }
         }
     }
     private void FixedUpdate()
     {
-
-        if (refillFighters && fighterGOs.Count < fighterPositions.Length)
-        {
-
-        }
+        
     }
     private void Update()
     {
