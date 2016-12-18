@@ -100,26 +100,14 @@ public class AgentManager : NetworkBehaviour
         shields = maximumShields;
     }
 
-    [ClientRpc]
-    public void RpcRemoteSetup()
+    protected virtual void Start()
     {
-        
-    }
-
-
-    private bool hasSetup = false;
-    public void Setup(GameObject graphicsGO = null)
-    {
-        // Single execution
-        if (hasSetup) return;
-        hasSetup = true;
-
         // Setup components
 
         // Rigidbody
-        if (type != AgentType.TargetIndicator)
+        if (type == AgentType.Player || type == AgentType.Cruiser || type == AgentType.Fighter)
         {
-            rigidbody = gameObject.AddComponent<Rigidbody>();
+            rigidbody = gameObject.GetComponent<Rigidbody>();
             rigidbody.useGravity = false;
             rigidbody.isKinematic = false;
             rigidbody.mass = mass;
@@ -127,53 +115,40 @@ public class AgentManager : NetworkBehaviour
         }
 
         // Network Transform
-        if (type != AgentType.TargetIndicator && type != AgentType.DevPlayer)
+        if (type != AgentType.TargetIndicator)
         {
-            var netTransform = gameObject.AddComponent<NetworkTransform>();
+            var netTransform = gameObject.GetComponent<NetworkTransform>();
             netTransform.transformSyncMode = NetworkTransform.TransformSyncMode.SyncRigidbody3D;
         }
 
         // Sphere Collider
         if (type != AgentType.TargetIndicator)
         {
-            sphere = gameObject.AddComponent<SphereCollider>();
+            sphere = gameObject.GetComponent<SphereCollider>();
             sphere.isTrigger = false;
-            sphere.radius = collisionRadius;
+            //sphere.radius = collisionRadius;
+            collisionRadius = sphere.radius;
         }
 
         // Standard Mover
         if (type != AgentType.TargetIndicator)
         {
-            mover = gameObject.AddComponent<StandardMover>();
+            mover = gameObject.GetComponent<StandardMover>();
             mover.Setup(this, maximumSpeed, maximumAcceleration, rigidbody);
         }
 
         // Graphics Manager
-        this.graphicsGO = graphicsGO;
-        graphics = gameObject.AddComponent<GraphicsManager>();
-        graphics.Setup(this, graphicsGO);
+        graphics = gameObject.GetComponent<GraphicsManager>();
+        if (type != AgentType.TargetIndicator) graphics.Setup(this);
 
         // Target Manager
         if (type != AgentType.TargetIndicator)
         {
-            target = gameObject.AddComponent<TargetManager>();
+            target = gameObject.GetComponent<TargetManager>();
             target.Setup(this);
         }
 
     }
-
-    protected virtual void Start()
-    {
-        if (type == AgentType.HomePlanet || type == AgentType.CapturePlanet || type == AgentType.DevPlayer)
-        {
-            Setup(graphicsGO);
-        }
-    }
-
-    // public override void OnStartLocalPlayer()
-    // {
-    //     Setup(graphicsGO);
-    // }
 
     public void FixedUpdate()
     {
@@ -198,15 +173,12 @@ public class AgentManager : NetworkBehaviour
 
     public IEnumerator SpawnExplosion()
     {
-        
         var explosion = Instantiate(Resources.Load("Explosion")) as GameObject;
         explosion.transform.parent = transform;
         explosion.transform.localPosition = Vector3.zero;
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
-
-
 
     /// <summary>
     /// The agent's position in space.
@@ -215,10 +187,5 @@ public class AgentManager : NetworkBehaviour
     {
         get { return transform.position; }
         set { transform.position = value; }
-    }
-
-    private void SetTeamLayer()
-    {
-
     }
 }

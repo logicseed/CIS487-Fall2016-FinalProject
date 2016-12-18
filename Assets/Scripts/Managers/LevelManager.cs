@@ -29,7 +29,7 @@ public class LevelManager : NetworkBehaviour
         else if (instance != this) Destroy(gameObject);
 
         // Setup all the players after they've loaded
-        StartCoroutine(SetupPlayers());
+        //StartCoroutine(SetupPlayers());
     }
 
     public IEnumerator SetupPlayers()
@@ -37,7 +37,7 @@ public class LevelManager : NetworkBehaviour
         yield return new WaitForSeconds(3);
         foreach (var player in players)
         {
-            player.Setup(GameManager.Instance.characters[player.character].model);
+            //player.Setup(GameManager.Instance.characters[player.character].model);
         }
     }
 

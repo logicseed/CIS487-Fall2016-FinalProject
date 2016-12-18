@@ -52,26 +52,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - model: {fileID: 1000012874547884, guid: 46d0b2e48e7a883419c3aa087813aa7b, type: 2}
-    cruiserModel: {fileID: 1000013679587892, guid: ea47e79a0faa9a6489c5b6fc9e5e1959,
+  - characterPrefab: {fileID: 1000013355083376, guid: ac5fe9103e655c34f930418690f40ea3,
       type: 2}
-    fighterModel: {fileID: 1000010256304770, guid: fe240fe2c1d96294c842a6587ed04b4c,
+    cruiserPrefab: {fileID: 0}
+    fighterPrefab: {fileID: 0}
+  - characterPrefab: {fileID: 1000010800758380, guid: 57c41afe81ebbd94ebc8f6040a2d4347,
       type: 2}
-  - model: {fileID: 1000011412355652, guid: 6cc2e82292d3cce4eb907d29702eb111, type: 2}
-    cruiserModel: {fileID: 1000011643562812, guid: 9b7edef45dbab3e49a6ade25987d3046,
+    cruiserPrefab: {fileID: 0}
+    fighterPrefab: {fileID: 0}
+  - characterPrefab: {fileID: 1000013898459082, guid: 514e4f9c67da3114c8cd34247a76bd9e,
       type: 2}
-    fighterModel: {fileID: 1000013177612188, guid: 4b386ebfe9c30a44ea72dd99dfda37c9,
+    cruiserPrefab: {fileID: 0}
+    fighterPrefab: {fileID: 0}
+  - characterPrefab: {fileID: 1000014213114036, guid: 0c936a0103435e342a5076bfbabc2e96,
       type: 2}
-  - model: {fileID: 1000013725804914, guid: 92dd84274e0515d4bb75a49e995566d3, type: 2}
-    cruiserModel: {fileID: 1000010392956706, guid: edac14e5a6a04b346a8b05c7d5227e0d,
-      type: 2}
-    fighterModel: {fileID: 1000013444907738, guid: 980c1c83798f19841b5628ee7799f452,
-      type: 2}
-  - model: {fileID: 1000013603171302, guid: d69d4ee68cad23349a95b8135a14e2af, type: 2}
-    cruiserModel: {fileID: 1000011410558056, guid: 2547c27976700c34d89b41da22883448,
-      type: 2}
-    fighterModel: {fileID: 1000011976054296, guid: 01cc6a48049e9f44d9eed09f94a33bde,
-      type: 2}
+    cruiserPrefab: {fileID: 0}
+    fighterPrefab: {fileID: 0}
   colors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
@@ -79,3 +75,17 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 0, g: 1, b: 1, a: 1}
+  players: []
+  teamNames:
+  - 
+  - 
+  - 
+  - 
+  - 
+  teamColors:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  teamCharacters: 00000000000000000000000000000000

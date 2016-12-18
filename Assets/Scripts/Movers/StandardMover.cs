@@ -28,20 +28,10 @@ public class StandardMover : NetworkBehaviour
     [HideInInspector]
     public float maxAccel;
 
-    
-
-    private void Start()
-    {
-
-    }
-
     private void FixedUpdate()
     {
-        //if (isServer)
-        //{
         UpdateMovement();
         RemoveDeletedBehaviours();
-        //}
     }
 
     //[Server]
@@ -52,8 +42,6 @@ public class StandardMover : NetworkBehaviour
         this.maxAccel = maxAccel;
         this.rigidbody = rigidbody;
     }
-
-
 
     /// <summary>
     /// Updates <see cref="props"/> based on recent movement and behaviours.

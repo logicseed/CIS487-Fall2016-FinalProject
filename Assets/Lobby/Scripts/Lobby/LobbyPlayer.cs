@@ -238,8 +238,8 @@ namespace Prototype.NetworkLobby
             playerCharacter = newCharacter;
 
             var rotation = LobbyPlayerList._instance._players[0].CharacterGraphics[0].transform.eulerAngles.y;
-
-            CharacterGraphics[playerNumber].CreateGraphics(GameManager.Instance.characters[playerCharacter].model, playerColor, rotation);
+            var characterGraphics = GameManager.Instance.characters[playerCharacter].characterPrefab.transform.Find("Graphics").gameObject;
+            CharacterGraphics[playerNumber].CreateGraphics(characterGraphics, playerColor, rotation);
         }
 
         //===== UI Handler

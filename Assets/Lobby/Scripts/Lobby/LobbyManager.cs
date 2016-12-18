@@ -119,18 +119,18 @@ namespace Prototype.NetworkLobby
                 //GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
                 //Debug.Log(GameManager.Instance.players);
 
-                var lobbyPlayers = FindObjectsOfType<LobbyPlayer>();
-                foreach (var lobbyPlayer in lobbyPlayers)
-                {
+                // var lobbyPlayers = FindObjectsOfType<LobbyPlayer>();
+                // foreach (var lobbyPlayer in lobbyPlayers)
+                // {
 
-                    var game = GameManager.Instance;
-                    var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
-                    game.SetTeamName(team, lobbyPlayer.playerName);
-                    game.SetTeamColor(team, lobbyPlayer.playerColor);
-                    game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
-                }
+                //     var game = GameManager.Instance;
+                //     var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
+                //     game.SetTeamName(team, lobbyPlayer.playerName);
+                //     game.SetTeamColor(team, lobbyPlayer.playerColor);
+                //     game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
+                // }
 
-                GameManager.Instance.SetupPlayers();
+                // GameManager.Instance.SetupPlayers();
             }
         }
 
@@ -467,32 +467,22 @@ namespace Prototype.NetworkLobby
 
             // Setup high-level managers
             var game = GameManager.Instance;
-            //var level = LevelManager.Instance;
-
-            // Spawn NetworkPlayer
-            var gamePlayer = Instantiate(Resources.Load("NetworkPlayer")) as GameObject;
-
-            // Move to spawn position
-
-            // Setup agent
-            var agent = gamePlayer.GetComponent<PlayerAgentManager>();
-            agent.game = game;
-            //agent.level = level;
-
-            // Add agent to player list and set team
-            //level.players.Add(agent);
             var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
-            agent.team = team;
 
-            // Setup team
+            Debug.Log(team);
+            Debug.Log(lobbyPlayer);
+            Debug.Log(lobbyPlayer.playerName);
+
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
-            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
+            game.SetTeamCharacter(team, lobbyPlayer.playerCharacter);
 
-            // Setup player object
-            agent.character = lobbyPlayer.playerCharacter;
+            var gamePlayer = Instantiate(game.characters[lobbyPlayer.playerCharacter].characterPrefab);
+
+            var agent = gamePlayer.GetComponent<PlayerAgentManager>();
+            agent.game = game;
+            agent.team = team;
             agent.name = lobbyPlayer.playerName;
-            //agent.Setup(game.characters[agent.character].model);
 
             return gamePlayer;
         }

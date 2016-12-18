@@ -12,9 +12,9 @@ public delegate void ColorChangeHandler();
 [Serializable]
 public class Character
 {
-    public GameObject model;
-    public GameObject cruiserModel;
-    public GameObject fighterModel;
+    public GameObject characterPrefab;
+    public GameObject cruiserPrefab;
+    public GameObject fighterPrefab;
 }
 
 public class GameManager : NetworkBehaviour
@@ -158,18 +158,5 @@ public class GameManager : NetworkBehaviour
     public void OnColorChange()
     {
         if (ColorChange != null) ColorChange();
-    }
-
-    public void SetupPlayers()
-    {
-        players = GameObject.FindGameObjectsWithTag("Player");
-
-        Debug.Log("Players Found: " + players.Length);
-        foreach (var player in players)
-        {
-            var agent = player.GetComponent<PlayerAgentManager>();
-            agent.Setup(characters[teamCharacters[(int)agent.team]].model);
-            //agent.graphics.Setup(agent, characters[teamCharacters[(int)agent.team]].model);
-        }
     }
 }

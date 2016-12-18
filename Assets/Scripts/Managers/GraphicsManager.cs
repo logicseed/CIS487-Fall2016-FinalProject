@@ -10,55 +10,17 @@ public class GraphicsManager : NetworkBehaviour
     [HideInInspector]
     public GameObject graphicsGO;
 
-    private void Start()
+    public void Setup(AgentManager agent)
     {
-        
-    }
-
-    //private bool hasSetup = false;
-    public void Setup(AgentManager agent, GameObject graphicsGO = null)
-    {
-        // // Single execution
-        // if (hasSetup) return;
-        // hasSetup = true;
-
         this.agent = agent;
-        this.graphicsGO = graphicsGO;
+        this.graphicsGO = transform.Find("Graphics").gameObject;
 
-        CreateGraphics();
         ApplyTeamColors();
     }
 
     private void FixedUpdate()
     {
         UpdateGraphicsHeading();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private void CreateGraphics()
-    {
-        // var oldGraphics = transform.Find("Graphics").gameObject;
-        // Debug.Log(oldGraphics);
-        // if (oldGraphics != null) Destroy(oldGraphics);
-
-        // if (graphicsGO == null)
-        // {
-        //     var resource = "Ships/";
-        //     resource += agent.species.ToString() + "/";
-        //     resource += agent.ship.ToString() + "Graphics";
-
-        //     graphicsGO = Instantiate(Resources.Load(resource)) as GameObject;
-        // }
-        // else
-        // {
-        //     graphicsGO = Instantiate(graphicsGO) as GameObject;
-        // }
-
-        if (graphicsGO != null) graphicsGO = Instantiate(graphicsGO) as GameObject;
-
-        graphicsGO.MakeChildOf(gameObject, "Graphics");
     }
 
     /// <summary>

@@ -8,11 +8,8 @@ public class PlayerAgentManager : AgentManager
     [HideInInspector]
     public MouseController mouse;
     new public CameraController camera;
-    //public GameObject cameraPrefab;
 
-    //public Camera networkCamera;
     public int character;
-
 
     protected override void Awake()
     {
@@ -33,7 +30,6 @@ public class PlayerAgentManager : AgentManager
         base.OnStartLocalPlayer();
         SetupMouseAndCamera();
         this.isPlayer = true;
-        
     }
 
     public void SetupMouseAndCamera()
@@ -41,6 +37,5 @@ public class PlayerAgentManager : AgentManager
         mouse = gameObject.AddComponent<MouseController>();
         camera = Camera.main.transform.parent.parent.GetComponent<CameraController>();
         camera.SetTarget(gameObject);
-
     }
 }

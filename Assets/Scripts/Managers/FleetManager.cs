@@ -29,8 +29,6 @@ public class FleetManager : NetworkBehaviour
                 var fighterAgent = fighter.GetComponent<AgentManager>();
                 fighterAgent.team = agent.team;
                 fighterAgent.species = agent.species;
-
-                fighterAgent.Setup();
                 fighterAgent.mover.AddBehaviour(new SeekBehaviour(position.GetComponent<AgentManager>()));
                 NetworkServer.Spawn(fighter);
             }

@@ -18,7 +18,7 @@ public class RandomAgent : MonoBehaviour
         agent.species = (SpeciesType)Random.Range(0,5);
         agent.ship = (ShipType)Random.Range(0,5);
 
-        agent.Setup();
+        //agent.Setup();
     }
 
 }
