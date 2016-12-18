@@ -2,23 +2,13 @@
 
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Collections;
 using UnityEngine.EventSystems;
 
 [DisallowMultipleComponent]
 public class MouseController : NetworkBehaviour 
-{
-    [HideInInspector]
-    public AgentManager agent;
-    
-    // Use this for initialization
-    void Start ()
+{  
+    void Update()
     {
-        agent = gameObject.GetComponent<AgentManager>();
-    }
-    
-    // Update is called once per frame
-    void Update () {
         if (!isLocalPlayer) return;
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
@@ -28,16 +18,31 @@ public class MouseController : NetworkBehaviour
 
             if (target != null)
             {
-                agent.target.SetDirectTarget(target.GetComponent<AgentManager>());
+                CmdSetDirectTarget(target);
             }
             else if (target == null)
             {
-                agent.target.SetLocationTarget(FindMousePosition());
-
-                MovementBehaviour behaviour = new SeekBehaviour(agent.target.location,true);
-                agent.mover.AddBehaviour(behaviour);
+                CmdSetLocationTarget(FindMousePosition());
             }
         }
+    }
+
+    //[Command]
+    void CmdSetLocationTarget(Vector3 position)
+    {
+        var agent = gameObject.GetComponent<AgentManager>();
+
+        agent.target.SetLocationTarget(position);
+
+        MovementBehaviour behaviour = new SeekBehaviour(agent.target.location,true);
+        agent.mover.AddBehaviour(behaviour);
+    }
+
+    //[Command]
+    public void CmdSetDirectTarget(GameObject target)
+    {
+        var agent = gameObject.GetComponent<AgentManager>();
+        agent.target.SetDirectTarget(target.GetComponent<AgentManager>());
     }
 
     private Vector3 FindMousePosition()

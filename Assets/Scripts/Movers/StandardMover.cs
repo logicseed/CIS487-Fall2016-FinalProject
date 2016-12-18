@@ -2,12 +2,13 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Generic mover for all space-based objects that use <see cref="MovementBehaviour"/>s to move.
 /// </summary>
 [DisallowMultipleComponent]
-public class StandardMover : MonoBehaviour
+public class StandardMover : NetworkBehaviour
 {
     [HideInInspector]
     public AgentManager agent;
@@ -33,12 +34,17 @@ public class StandardMover : MonoBehaviour
     {
 
     }
+
     private void FixedUpdate()
     {
+        //if (isServer)
+        //{
         UpdateMovement();
         RemoveDeletedBehaviours();
+        //}
     }
 
+    //[Server]
     public void Setup(AgentManager agent, float maxSpeed, float maxAccel, Rigidbody rigidbody)
     {
         this.agent = agent;
@@ -52,6 +58,7 @@ public class StandardMover : MonoBehaviour
     /// <summary>
     /// Updates <see cref="props"/> based on recent movement and behaviours.
     /// </summary>
+    //[Server]
     private void UpdateMovement()
     {
         // true for debugging
@@ -82,6 +89,7 @@ public class StandardMover : MonoBehaviour
     /// <remarks>
     /// Uses the Decorator pattern.
     /// </remarks>
+    //[Server]
     private Vector3 CalculateSteeringForce(bool debugRays = false)
     {
         //Debug.Log("Behaviours: " + behaviours.Count);
@@ -116,6 +124,7 @@ public class StandardMover : MonoBehaviour
     /// <summary>
     /// Removes all behaviours marked for removal from this mover.
     /// </summary>
+    //[Server]
     private void RemoveDeletedBehaviours()
     {
         if (behavioursToRemove.Count > 0)
@@ -136,6 +145,7 @@ public class StandardMover : MonoBehaviour
     /// Adds a behaviour to this mover.
     /// </summary>
     /// <param name="behaviour">The behaviour to add.</param>
+    //[Server]
     public void AddBehaviour(MovementBehaviour behaviour)
     {
         behaviour.DeletingBehaviour += new DeleteBehaviourHandler(RemoveBehaviour);
@@ -146,6 +156,7 @@ public class StandardMover : MonoBehaviour
     /// Removes a behaviour from this mover.
     /// </summary>
     /// <param name="behaviour">The behaviour to add.</param>
+    //[Server]
     public void RemoveBehaviour(MovementBehaviour behaviour)
     {
         behavioursToRemove.Add(behaviour);

@@ -10,20 +10,20 @@ public delegate void ColorChangeHandler();
 [Serializable]
 public class Character
 {
-    public GameObject Model;
-    public GameObject CruiserModel;
-    public GameObject FighterModel;
-    public int test;
+    public GameObject model;
+    public GameObject cruiserModel;
+    public GameObject fighterModel;
 }
 
 public class GameManager : MonoBehaviour
 {
-    public Character[] Characters;
-    public Color[] Colors;
+    public Character[] characters;
+    public Color[] colors;
     
     public event ColorChangeHandler ColorChange;
 
-
+    public Dictionary<int, int> characterSelections;
+    public Dictionary<int, int> colorSelections;
 
     // Singleton
     [HideInInspector]

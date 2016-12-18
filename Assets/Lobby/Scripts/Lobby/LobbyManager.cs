@@ -5,11 +5,11 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Types;
 using UnityEngine.Networking.Match;
 using System.Collections;
-
+using System.Collections.Generic;
 
 namespace Prototype.NetworkLobby
 {
-    public class LobbyManager : NetworkLobbyManager 
+    public class LobbyManager : NetworkLobbyManager
     {
         static short MsgKicked = MsgType.Highest + 1;
 
@@ -49,7 +49,7 @@ namespace Prototype.NetworkLobby
         public bool _isMatchmaking = false;
 
         protected bool _disconnectServer = false;
-        
+
         protected ulong _currentMatchID;
 
         protected LobbyHook _lobbyHooks;
@@ -163,7 +163,7 @@ namespace Prototype.NetworkLobby
         public void GoBackButton()
         {
             backDelegate();
-			topPanel.isInGame = false;
+            topPanel.isInGame = false;
         }
 
         // ----------------- Server management
@@ -182,20 +182,20 @@ namespace Prototype.NetworkLobby
         {
             ChangeTo(mainMenuPanel);
         }
-                 
+
         public void StopHostClbk()
         {
             if (_isMatchmaking)
             {
-				matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
-				_disconnectServer = true;
+                matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
+                _disconnectServer = true;
             }
             else
             {
                 StopHost();
             }
 
-            
+
             ChangeTo(mainMenuPanel);
         }
 
@@ -243,16 +243,16 @@ namespace Prototype.NetworkLobby
             SetServerInfo("Hosting", networkAddress);
         }
 
-		public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
-		{
-			base.OnMatchCreate(success, extendedInfo, matchInfo);
+        public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
+        {
+            base.OnMatchCreate(success, extendedInfo, matchInfo);
             _currentMatchID = (System.UInt64)matchInfo.networkId;
-		}
+        }
 
-		public override void OnDestroyMatch(bool success, string extendedInfo)
-		{
-			base.OnDestroyMatch(success, extendedInfo);
-			if (_disconnectServer)
+        public override void OnDestroyMatch(bool success, string extendedInfo)
+        {
+            base.OnDestroyMatch(success, extendedInfo);
+            if (_disconnectServer)
             {
                 StopMatchMaker();
                 StopHost();
@@ -275,13 +275,17 @@ namespace Prototype.NetworkLobby
 
         //we want to disable the button JOIN if we don't have enough player
         //But OnLobbyClientConnect isn't called on hosting player. So we override the lobbyPlayer creation
+        public List<int> currentPlayers;
         public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
         {
             GameObject obj = Instantiate(lobbyPlayerPrefab.gameObject) as GameObject;
 
             LobbyPlayer newPlayer = obj.GetComponent<LobbyPlayer>();
             newPlayer.ToggleJoinButton(numPlayers + 1 >= minPlayers);
-
+            
+            if (!currentPlayers.Contains(conn.connectionId))
+                currentPlayers.Add(conn.connectionId);
+            currentPlayers.TrimExcess();
 
             for (int i = 0; i < lobbySlots.Length; ++i)
             {
@@ -309,6 +313,10 @@ namespace Prototype.NetworkLobby
                     p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
                 }
             }
+
+            if (currentPlayers.Contains(conn.connectionId))
+                currentPlayers.Remove(conn.connectionId);
+            currentPlayers.TrimExcess();
         }
 
         public override void OnLobbyServerDisconnect(NetworkConnection conn)
@@ -341,15 +349,15 @@ namespace Prototype.NetworkLobby
 
         public override void OnLobbyServerPlayersReady()
         {
-			bool allready = true;
-			for(int i = 0; i < lobbySlots.Length; ++i)
-			{
-				if(lobbySlots[i] != null)
-					allready &= lobbySlots[i].readyToBegin;
-			}
+            bool allready = true;
+            for (int i = 0; i < lobbySlots.Length; ++i)
+            {
+                if (lobbySlots[i] != null)
+                    allready &= lobbySlots[i].readyToBegin;
+            }
 
-			if(allready)
-				StartCoroutine(ServerCountdownCoroutine());
+            if (allready)
+                StartCoroutine(ServerCountdownCoroutine());
         }
 
         public IEnumerator ServerCountdownCoroutine()
@@ -418,6 +426,58 @@ namespace Prototype.NetworkLobby
         {
             ChangeTo(mainMenuPanel);
             infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
+        }
+
+        public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId)
+        {
+            LobbyPlayer lobbyPlayer = null;
+
+            // Find lobbyPlayer
+            foreach (LobbyPlayer tempLobbyPlayer in FindObjectsOfType<LobbyPlayer>())
+            {
+                int connectionID = 0;
+                NetworkIdentity networkIdentity = tempLobbyPlayer.GetComponent<NetworkIdentity>();
+
+                if (networkIdentity.connectionToClient != null)
+                    connectionID = networkIdentity.connectionToClient.connectionId;
+                else if (networkIdentity.connectionToServer != null)
+                    connectionID = networkIdentity.connectionToServer.connectionId;
+
+                if (connectionID == conn.connectionId)
+                {
+                    lobbyPlayer = tempLobbyPlayer;
+                }
+            }
+
+            // Setup high-level managers
+            var game = GameManager.Instance;
+            //var level = LevelManager.Instance;
+
+            // Spawn NetworkPlayer
+            var gamePlayer = Instantiate(Resources.Load("NetworkPlayer")) as GameObject;
+
+            // Move to spawn position
+
+            // Setup agent
+            var agent = gamePlayer.GetComponent<PlayerAgentManager>();
+            agent.game = game;
+            //agent.level = level;
+
+            // Add agent to player list and set team
+            //level.players.Add(agent);
+            var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
+            agent.team = team;
+
+            // Setup team
+            game.teamNames[team] = lobbyPlayer.playerName;
+            game.teamColors[team] = lobbyPlayer.playerColor;
+
+            // Setup player object
+            agent.character = lobbyPlayer.playerCharacter;
+            agent.name = lobbyPlayer.playerName;
+            agent.Setup(game.characters[agent.character].model);
+
+            return gamePlayer;
         }
     }
 }

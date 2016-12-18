@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class GraphicsManager : MonoBehaviour
+public class GraphicsManager : NetworkBehaviour
 {
     [HideInInspector]
     public AgentManager agent;

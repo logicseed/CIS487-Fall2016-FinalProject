@@ -61,7 +61,7 @@ namespace Prototype.NetworkLobby
             LobbyPlayerList._instance.AddPlayer(this);
             LobbyPlayerList._instance.DisplayDirectServerWarning(isServer && LobbyManager.s_Singleton.matchMaker == null);
 
-            Colors = GameManager.Instance.Colors;
+            Colors = GameManager.Instance.colors;
             // Setup character rigs
             if (CharacterRigs[playerNumber] == null)
             {
@@ -239,7 +239,7 @@ namespace Prototype.NetworkLobby
 
             var rotation = LobbyPlayerList._instance._players[0].CharacterGraphics[0].transform.eulerAngles.y;
 
-            CharacterGraphics[playerNumber].CreateGraphics(GameManager.Instance.Characters[playerCharacter].Model, playerColor, rotation);
+            CharacterGraphics[playerNumber].CreateGraphics(GameManager.Instance.characters[playerCharacter].model, playerColor, rotation);
         }
 
         //===== UI Handler
@@ -334,7 +334,8 @@ namespace Prototype.NetworkLobby
                 _colorInUse.Add(idx);
             }
 
-            playerColor = GameManager.Instance.Colors[idx];
+            
+            playerColor = GameManager.Instance.colors[idx];
         }
 
         [Command]
@@ -342,8 +343,10 @@ namespace Prototype.NetworkLobby
         {
             var newCharacter = playerCharacter;
             newCharacter++;
-            if (newCharacter >= GameManager.Instance.Characters.Length) newCharacter = 0;
+            if (newCharacter >= GameManager.Instance.characters.Length) newCharacter = 0;
 
+            
+            
             playerCharacter = newCharacter;
         }
 

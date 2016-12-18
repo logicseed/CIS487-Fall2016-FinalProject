@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45f135dc5599d1479dc0d55be005b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Characters: []
-  Colors: []
+  characters: []
+  colors: []
 --- !u!114 &250870447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +551,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   target: {fileID: 0}
   game: {fileID: 0}
+  level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
 --- !u!114 &934667452

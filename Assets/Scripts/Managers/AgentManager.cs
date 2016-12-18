@@ -83,6 +83,9 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public GameManager game;
     [HideInInspector]
+    public LevelManager level;
+
+    [HideInInspector]
     public SphereCollider sphere;
     [HideInInspector]
     public new Rigidbody rigidbody;
@@ -172,16 +175,12 @@ public class AgentManager : NetworkBehaviour
         Setup(graphicsGO);
     }
 
-    // public override void OnStartServer()
-    // {
-    //     Setup(graphicsGO);
-    // }
-
     public void FixedUpdate()
     {
-        HandleHealth();
+        if (isServer) HandleHealth();
     }
 
+    [Server]
     protected virtual void HandleHealth()
     {
         if (health <= 0 && !hasDied) CmdKillerPlayer();
@@ -206,6 +205,8 @@ public class AgentManager : NetworkBehaviour
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
+
+
 
     /// <summary>
     /// The agent's position in space.

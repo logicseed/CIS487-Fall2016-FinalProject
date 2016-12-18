@@ -11,6 +11,8 @@ public class PlayerAgentManager : AgentManager
     //public GameObject cameraPrefab;
 
     //public Camera networkCamera;
+    public int character;
+
 
     protected override void Awake()
     {
