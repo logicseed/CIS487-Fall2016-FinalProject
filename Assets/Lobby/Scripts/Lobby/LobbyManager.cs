@@ -119,6 +119,17 @@ namespace Prototype.NetworkLobby
                 //GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
                 //Debug.Log(GameManager.Instance.players);
 
+                var lobbyPlayers = FindObjectsOfType<LobbyPlayer>();
+                foreach (var lobbyPlayer in lobbyPlayers)
+                {
+
+                    var game = GameManager.Instance;
+                    var team = (TeamType)currentPlayers.IndexOf(conn.connectionId);
+                    game.SetTeamName(team, lobbyPlayer.playerName);
+                    game.SetTeamColor(team, lobbyPlayer.playerColor);
+                    game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
+                }
+
                 StartCoroutine(GameManager.Instance.SetupPlayers());
             }
         }
@@ -476,7 +487,7 @@ namespace Prototype.NetworkLobby
             // Setup team
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
-            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter + 1;
+            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
 
             // Setup player object
             agent.character = lobbyPlayer.playerCharacter;

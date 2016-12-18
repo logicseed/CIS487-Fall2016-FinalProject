@@ -21,11 +21,11 @@ public class GameManager : NetworkBehaviour
 {
     public Character[] characters;
     public Color[] colors;
+
+
     public GameObject[] players;
     
     public event ColorChangeHandler ColorChange;
-
-    public Dictionary<int, int> characterSelections;
 
     // Singleton
     [HideInInspector]
