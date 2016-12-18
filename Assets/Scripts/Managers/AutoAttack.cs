@@ -22,7 +22,7 @@ public class AutoAttack : NetworkBehaviour
         go.MakeChildOf(gameObject, "Weapon");
         lineRenderer = go.GetComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-        lineRenderer.SetColors(GameManager.instance.teamColors[agent.team], Color.white);
+        lineRenderer.SetColors(GameManager.instance.GetTeamColor(agent.team), Color.white);
         lineRenderer.enabled = false;
     }
     private void FixedUpdate()

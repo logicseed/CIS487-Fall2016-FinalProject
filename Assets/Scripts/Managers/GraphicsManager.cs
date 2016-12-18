@@ -62,7 +62,7 @@ public class GraphicsManager : NetworkBehaviour
     {
         if (agent.team != TeamType.World)
         {
-            var teamColor = GameManager.Instance.teamColors[agent.team];
+            var teamColor = GameManager.Instance.GetTeamColor(agent.team);
             var renderers = gameObject.GetComponentsInChildren(typeof(Renderer));
 
             foreach (Renderer renderer in renderers)

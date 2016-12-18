@@ -42,8 +42,10 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("Team Settings")]
-    public Dictionary<TeamType, string> teamNames;
-    public Dictionary<TeamType, Color> teamColors;
+    //public Dictionary<TeamType, string> teamNames;
+    //public Dictionary<TeamType, Color> teamColors;
+    public string[] teamNames = new string[5];
+    public Color[] teamColors = new Color[5];
 
     [HideInInspector]
     public readonly float lightIntensity = 5.0f;
@@ -61,33 +63,56 @@ public class GameManager : MonoBehaviour
 
     private void InitColors()
     {
-        teamColors = new Dictionary<TeamType, Color>();
-        teamColors.Add(TeamType.Team1, Color.red);
-        teamColors.Add(TeamType.Team2, Color.blue);
-        teamColors.Add(TeamType.Team3, Color.green);
-        teamColors.Add(TeamType.Team4, Color.yellow);
-        teamColors.Add(TeamType.World, Color.white);
+        // teamColors = new Dictionary<TeamType, Color>();
+        // teamColors.Add(TeamType.Team1, Color.red);
+        // teamColors.Add(TeamType.Team2, Color.blue);
+        // teamColors.Add(TeamType.Team3, Color.green);
+        // teamColors.Add(TeamType.Team4, Color.yellow);
+        // teamColors.Add(TeamType.World, Color.white);
+
+        teamColors[(int)TeamType.Team1] = Color.red;
+        teamColors[(int)TeamType.Team2] = Color.blue;
+        teamColors[(int)TeamType.Team3] = Color.green;
+        teamColors[(int)TeamType.Team4] = Color.yellow;
+        teamColors[(int)TeamType.World] = Color.white;
     }
 
     private void InitNames()
     {
-        teamNames = new Dictionary<TeamType, string>();
-        teamNames.Add(TeamType.Team1, "Team 1");
-        teamNames.Add(TeamType.Team2, "Team 2");
-        teamNames.Add(TeamType.Team3, "Team 3");
-        teamNames.Add(TeamType.Team4, "Team 4");
-        teamNames.Add(TeamType.World, "World");
+        // teamNames = new Dictionary<TeamType, string>();
+        // teamNames.Add(TeamType.Team1, "Team 1");
+        // teamNames.Add(TeamType.Team2, "Team 2");
+        // teamNames.Add(TeamType.Team3, "Team 3");
+        // teamNames.Add(TeamType.Team4, "Team 4");
+        // teamNames.Add(TeamType.World, "World");
+
+        teamNames[(int)TeamType.Team1] = "Team 1";
+        teamNames[(int)TeamType.Team2] = "Team 2";
+        teamNames[(int)TeamType.Team3] = "Team 3";
+        teamNames[(int)TeamType.Team4] = "Team 4";
+        teamNames[(int)TeamType.World] = "World";
     }
 
     public void SetTeamColor(TeamType team, Color color)
     {
-        teamColors[team] = color;
+        teamColors[(int)team] = color;
         OnColorChange();
     }
 
     public Color GetTeamColor(TeamType team)
     {
-        return teamColors[team];
+        return teamColors[(int)team];
+    }
+
+    public void SetTeamName(TeamType team, string name)
+    {
+        teamNames[(int)team] = name;
+
+    }
+
+    public string GetTeamName(TeamType team)
+    {
+        return teamNames[(int)team];
     }
 
     public void LoadScene(string scene)
