@@ -130,7 +130,7 @@ namespace Prototype.NetworkLobby
                     game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
                 }
 
-                StartCoroutine(GameManager.Instance.SetupPlayers());
+                GameManager.Instance.SetupPlayers();
             }
         }
 
