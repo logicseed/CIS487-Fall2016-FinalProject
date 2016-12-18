@@ -23,7 +23,7 @@ GameObject:
   - 114: {fileID: 114000010375227220}
   m_Layer: 0
   m_Name: NetworkPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,9 @@ MonoBehaviour:
   graphics: {fileID: 0}
   target: {fileID: 0}
   game: {fileID: 0}
+  level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
   mouse: {fileID: 0}
   camera: {fileID: 0}
+  character: 0

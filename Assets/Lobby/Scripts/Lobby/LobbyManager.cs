@@ -115,6 +115,11 @@ namespace Prototype.NetworkLobby
                 //backDelegate = StopGameClbk;
                 topPanel.isInGame = true;
                 topPanel.ToggleVisibility(false);
+
+                //GameManager.Instance.players = GameObject.FindGameObjectsWithTag("Player");
+                //Debug.Log(GameManager.Instance.players);
+
+                StartCoroutine(GameManager.Instance.SetupPlayers());
             }
         }
 
@@ -471,12 +476,12 @@ namespace Prototype.NetworkLobby
             // Setup team
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
-            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter;
+            game.teamCharacters[currentPlayers[conn.connectionId]] = lobbyPlayer.playerCharacter + 1;
 
             // Setup player object
             agent.character = lobbyPlayer.playerCharacter;
             agent.name = lobbyPlayer.playerName;
-            agent.Setup(game.characters[agent.character].model);
+            //agent.Setup(game.characters[agent.character].model);
 
             return gamePlayer;
         }

@@ -15,12 +15,12 @@ public class GraphicsManager : NetworkBehaviour
         
     }
 
-    private bool hasSetup = false;
+    //private bool hasSetup = false;
     public void Setup(AgentManager agent, GameObject graphicsGO = null)
     {
-        // Single execution
-        if (hasSetup) return;
-        hasSetup = true;
+        // // Single execution
+        // if (hasSetup) return;
+        // hasSetup = true;
 
         this.agent = agent;
         this.graphicsGO = graphicsGO;
@@ -39,18 +39,24 @@ public class GraphicsManager : NetworkBehaviour
     /// </summary>
     private void CreateGraphics()
     {
-        if (graphicsGO == null)
-        {
-            var resource = "Ships/";
-            resource += agent.species.ToString() + "/";
-            resource += agent.ship.ToString() + "Graphics";
+        // var oldGraphics = transform.Find("Graphics").gameObject;
+        // Debug.Log(oldGraphics);
+        // if (oldGraphics != null) Destroy(oldGraphics);
 
-            graphicsGO = Instantiate(Resources.Load(resource)) as GameObject;
-        }
-        else
-        {
-            graphicsGO = Instantiate(graphicsGO) as GameObject;
-        }
+        // if (graphicsGO == null)
+        // {
+        //     var resource = "Ships/";
+        //     resource += agent.species.ToString() + "/";
+        //     resource += agent.ship.ToString() + "Graphics";
+
+        //     graphicsGO = Instantiate(Resources.Load(resource)) as GameObject;
+        // }
+        // else
+        // {
+        //     graphicsGO = Instantiate(graphicsGO) as GameObject;
+        // }
+
+        if (graphicsGO != null) graphicsGO = Instantiate(graphicsGO) as GameObject;
 
         graphicsGO.MakeChildOf(gameObject, "Graphics");
     }

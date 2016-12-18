@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Networking;
+using System.Collections;
 
 public delegate void ColorChangeHandler();
 
@@ -20,6 +21,7 @@ public class GameManager : NetworkBehaviour
 {
     public Character[] characters;
     public Color[] colors;
+    public GameObject[] players;
     
     public event ColorChangeHandler ColorChange;
 
@@ -60,6 +62,11 @@ public class GameManager : NetworkBehaviour
         InitColors();
         InitNames();
         //teamNames = 
+    }
+
+    private void Start()
+    {
+        StartCoroutine(SetupPlayers());
     }
 
     private void InitColors()
@@ -127,5 +134,20 @@ public class GameManager : NetworkBehaviour
     public void OnColorChange()
     {
         if (ColorChange != null) ColorChange();
+    }
+
+    public IEnumerator SetupPlayers()
+    {
+        //Debug.Log("Starting player setup");
+        yield return new WaitForFixedUpdate();
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        Debug.Log("Players Found: " + players.Length);
+        foreach (var player in players)
+        {
+            var agent = player.GetComponent<PlayerAgentManager>();
+            agent.Setup(characters[teamCharacters[(int)agent.team]].model);
+            //agent.graphics.Setup(agent, characters[teamCharacters[(int)agent.team]].model);
+        }
     }
 }
