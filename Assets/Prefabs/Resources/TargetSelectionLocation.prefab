@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 7
   team: 4
   isPlayer: 0
   teamLayer: Default
@@ -146,4 +146,4 @@ MonoBehaviour:
     i14: 40
     i15: 195
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1

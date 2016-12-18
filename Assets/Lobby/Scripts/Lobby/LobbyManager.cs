@@ -476,6 +476,9 @@ namespace Prototype.NetworkLobby
             game.SetTeamName(team, lobbyPlayer.playerName);
             game.SetTeamColor(team, lobbyPlayer.playerColor);
             game.SetTeamCharacter(team, lobbyPlayer.playerCharacter);
+            game.RpcSetTeamName(team, lobbyPlayer.playerName);
+            game.RpcSetTeamColor(team, lobbyPlayer.playerColor);
+            game.RpcSetTeamCharacter(team, lobbyPlayer.playerCharacter);
 
             var gamePlayer = Instantiate(game.characters[lobbyPlayer.playerCharacter].characterPrefab);
 
