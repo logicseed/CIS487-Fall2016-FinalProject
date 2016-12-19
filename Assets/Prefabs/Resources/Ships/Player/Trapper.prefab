@@ -2077,7 +2077,7 @@ MonoBehaviour:
   maximumShields: 100
   shields: 0
   hasDied: 0
-  maximumSpeed: 5
+  maximumSpeed: 15
   maximumAcceleration: 0.5
   mass: 1
   collisionRadius: 1

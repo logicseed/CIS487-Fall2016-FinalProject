@@ -83,8 +83,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013553900062}
   - 114: {fileID: 114000012528686180}
-  - 114: {fileID: 114000014166681886}
   - 135: {fileID: 135000013019289310}
+  - 54: {fileID: 54000012385219392}
+  - 114: {fileID: 114000013319977928}
   m_Layer: 0
   m_Name: Space Station
   m_TagString: Untagged
@@ -165,13 +166,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012106614428}
-  - 54: {fileID: 54000011402527580}
   - 135: {fileID: 135000010857724078}
-  - 114: {fileID: 114000012133629110}
   - 114: {fileID: 114000012732142518}
   m_Layer: 0
   m_Name: Dank
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011691673048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -282,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013157390794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -296,7 +295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013134832018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.165665, y: 2.5280228, z: 35.097805}
+  m_LocalPosition: {x: 250, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -453,12 +452,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010854512506}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54000011402527580
+--- !u!54 &54000012385219392
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013157390794}
+  m_GameObject: {fileID: 1000011336058726}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -466,7 +465,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &114000010024699178
 MonoBehaviour:
@@ -480,29 +479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 20, z: 0}
---- !u!114 &114000012133629110
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013157390794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 4
-  mover: {fileID: 0}
-  target: {fileID: 0}
-  graphics: {fileID: 0}
-  sphere: {fileID: 0}
-  createGraphics: 1
-  species: 0
-  ship: 0
-  paintColor: {r: 1, g: 1, b: 1, a: 1}
-  lightsColor: {r: 1, g: 1, b: 1, a: 1}
-  isPlayer: 0
-  teamLayer: Default
 --- !u!114 &114000012165351146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,7 +567,7 @@ MonoBehaviour:
     i15: 42
   m_ServerOnly: 1
   m_LocalPlayerAuthority: 0
---- !u!114 &114000014166681886
+--- !u!114 &114000013319977928
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -599,21 +575,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011336058726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
+  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  mover: {fileID: 0}
-  target: {fileID: 0}
-  graphics: {fileID: 0}
-  sphere: {fileID: 0}
-  createGraphics: 0
-  species: 0
-  ship: 0
-  paintColor: {r: 1, g: 1, b: 1, a: 1}
-  lightsColor: {r: 1, g: 1, b: 1, a: 1}
-  isPlayer: 0
-  teamLayer: Default
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!135 &135000010857724078
 SphereCollider:
   m_ObjectHideFlags: 1
