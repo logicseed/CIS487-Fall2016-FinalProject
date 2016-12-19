@@ -3,7 +3,7 @@
 /// <summary>
 /// Instantly destory an player agent shield.
 /// </summary>
-public class DestoryShield : AbilityComponent
+public class DestroyShield : AbilityComponent
 {
     void Start ()
     {

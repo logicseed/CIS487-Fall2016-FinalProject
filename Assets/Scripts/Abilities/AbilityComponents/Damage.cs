@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
-
+using System;
 /// <summary>
 /// Damage on collide ability component. Once DestroyOnCollide is triggered, the damage
 /// is applied in a given radius.
 /// </summary>
 public class Damage : AbilityComponent
 {
-    DestoryOnCollide collide;
-
     void Start()
     {
-        collide = GetComponent<DestoryOnCollide>();
+        if(GetComponent<DestoryOnCollide>() != null)
+            collide = GetComponent<DestoryOnCollide>();
         objectAgent = GetComponent<AgentManager>();
     }
 
     void Update()
     {
         if (collide.triggered == true)
-            damage();   
+            damage();
     }
 
     void damage()
@@ -27,8 +26,17 @@ public class Damage : AbilityComponent
         {
             agent = hit.GetComponent<AgentManager>();
             if (agent.team != objectAgent.team)
-                agent.health = agent.health - (int)magnitude;
-            //Debug.Log("You've been hit for: " + magnitude);
+            {
+                if (agent.shields >= (int)magnitude)
+                    agent.shields = agent.shields - (int)magnitude;
+                else
+                {
+                    int DamagePassedShields = Math.Abs(agent.shields - (int)magnitude);
+                    agent.shields = 0;
+                    agent.health = agent.health - DamagePassedShields;
+                    //Debug.Log("You've been hit for: " + magnitude);
+                }
+            }
         }
     }
 }

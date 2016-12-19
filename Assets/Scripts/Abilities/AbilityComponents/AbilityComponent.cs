@@ -14,4 +14,7 @@ public class AbilityComponent : MonoBehaviour
     // Used for team comparisons. Determines who will actually be effected by the ability.
     protected AgentManager agent;
     protected AgentManager objectAgent;
+
+    //Triggers
+    protected DestoryOnCollide collide;
 }
