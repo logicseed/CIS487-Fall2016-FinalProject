@@ -3198,9 +3198,18 @@ MonoBehaviour:
   m_OfflineScene: Lobby
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 1000013351069136, guid: 50c711f072b9ee5469590b05917c5e7e, type: 2}
-  - {fileID: 1000013033916318, guid: 415bd0a30f2480840b9397b591cc4117, type: 2}
-  - {fileID: 0}
+  - {fileID: 1000011761343350, guid: d6a51b108b4b12f40a4118771dcff7b7, type: 2}
+  - {fileID: 1000011349969494, guid: 203c8f2576373d149b5b254c9b413941, type: 2}
+  - {fileID: 1000010770756332, guid: a3b75421edac0d0498894915867e705f, type: 2}
+  - {fileID: 1000013853765474, guid: cbb69d43f9bd80b47a3ef73ba724c50b, type: 2}
+  - {fileID: 1000012534909244, guid: 1e5bc6eb8fdad9a45a0e03a0547470c3, type: 2}
+  - {fileID: 1000014021258494, guid: 77fce9ad15658994aaf752079612831a, type: 2}
+  - {fileID: 1000011533574560, guid: 4de00e2cdc5a7f447a92bbf8dd57bf64, type: 2}
+  - {fileID: 1000011532122636, guid: ed55fe8b6eb4a414b85db6fdcf12b35b, type: 2}
+  - {fileID: 1000011434119468, guid: ac5fe9103e655c34f930418690f40ea3, type: 2}
+  - {fileID: 1000011547815194, guid: 57c41afe81ebbd94ebc8f6040a2d4347, type: 2}
+  - {fileID: 1000012065395682, guid: 514e4f9c67da3114c8cd34247a76bd9e, type: 2}
+  - {fileID: 1000012567255072, guid: 0c936a0103435e342a5076bfbabc2e96, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -3245,11 +3254,11 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   m_ShowLobbyGUI: 0
   m_MaxPlayers: 4
-  m_MaxPlayersPerConnection: 2
+  m_MaxPlayersPerConnection: 4
   m_MinPlayers: 1
   m_LobbyPlayerPrefab: {fileID: 11487034, guid: ad727d7e1462ecc4f83c898ecc501997,
     type: 2}
-  m_GamePlayerPrefab: {fileID: 1000010217514392, guid: 2f1501c6110d1d4499b5756929b5dad1,
+  m_GamePlayerPrefab: {fileID: 1000010906560118, guid: 47e38df34b93db744b84cf7362092c43,
     type: 2}
   m_LobbyScene: Lobby
   m_PlayScene: ForcesTest
@@ -3267,6 +3276,7 @@ MonoBehaviour:
   hostInfo: {fileID: 11415712}
   _playerNumber: 0
   _isMatchmaking: 0
+  currentPlayers: 
 --- !u!114 &11476426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3972,6 +3982,7 @@ MonoBehaviour:
   playerListContentTransform: {fileID: 22401550}
   warningDirectPlayServer: {fileID: 199766}
   addButtonRow: {fileID: 22432700}
+  _players: []
 --- !u!222 &22203258
 CanvasRenderer:
   m_ObjectHideFlags: 1

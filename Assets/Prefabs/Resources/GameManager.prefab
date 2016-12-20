@@ -85,29 +85,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - characterPrefab: {fileID: 1000013355083376, guid: ac5fe9103e655c34f930418690f40ea3,
+  - characterPrefab: {fileID: 1000012065395682, guid: 514e4f9c67da3114c8cd34247a76bd9e,
       type: 2}
-    cruiserPrefab: {fileID: 1000011322673478, guid: d6a51b108b4b12f40a4118771dcff7b7,
+    cruiserPrefab: {fileID: 1000010770756332, guid: a3b75421edac0d0498894915867e705f,
       type: 2}
-    fighterPrefab: {fileID: 1000012495214084, guid: 1e5bc6eb8fdad9a45a0e03a0547470c3,
+    fighterPrefab: {fileID: 1000011533574560, guid: 4de00e2cdc5a7f447a92bbf8dd57bf64,
       type: 2}
-  - characterPrefab: {fileID: 1000010800758380, guid: 57c41afe81ebbd94ebc8f6040a2d4347,
+  - characterPrefab: {fileID: 1000012567255072, guid: 0c936a0103435e342a5076bfbabc2e96,
       type: 2}
-    cruiserPrefab: {fileID: 1000013769252222, guid: 203c8f2576373d149b5b254c9b413941,
+    cruiserPrefab: {fileID: 1000013853765474, guid: cbb69d43f9bd80b47a3ef73ba724c50b,
       type: 2}
-    fighterPrefab: {fileID: 1000013083723466, guid: 77fce9ad15658994aaf752079612831a,
+    fighterPrefab: {fileID: 1000011532122636, guid: ed55fe8b6eb4a414b85db6fdcf12b35b,
       type: 2}
-  - characterPrefab: {fileID: 1000013898459082, guid: 514e4f9c67da3114c8cd34247a76bd9e,
+  - characterPrefab: {fileID: 1000011547815194, guid: 57c41afe81ebbd94ebc8f6040a2d4347,
       type: 2}
-    cruiserPrefab: {fileID: 1000012336692476, guid: a3b75421edac0d0498894915867e705f,
+    cruiserPrefab: {fileID: 1000011349969494, guid: 203c8f2576373d149b5b254c9b413941,
       type: 2}
-    fighterPrefab: {fileID: 1000011684590704, guid: 4de00e2cdc5a7f447a92bbf8dd57bf64,
+    fighterPrefab: {fileID: 1000014021258494, guid: 77fce9ad15658994aaf752079612831a,
       type: 2}
-  - characterPrefab: {fileID: 1000014213114036, guid: 0c936a0103435e342a5076bfbabc2e96,
+  - characterPrefab: {fileID: 1000011434119468, guid: ac5fe9103e655c34f930418690f40ea3,
       type: 2}
-    cruiserPrefab: {fileID: 1000011699253706, guid: cbb69d43f9bd80b47a3ef73ba724c50b,
+    cruiserPrefab: {fileID: 1000011761343350, guid: d6a51b108b4b12f40a4118771dcff7b7,
       type: 2}
-    fighterPrefab: {fileID: 1000012098788134, guid: ed55fe8b6eb4a414b85db6fdcf12b35b,
+    fighterPrefab: {fileID: 1000012534909244, guid: 1e5bc6eb8fdad9a45a0e03a0547470c3,
       type: 2}
   colors:
   - {r: 1, g: 0, b: 0, a: 1}

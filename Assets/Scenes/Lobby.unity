@@ -367,10 +367,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 22459552, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -447,87 +443,6 @@ Prefab:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_PlayScene
-      value: ForcesTest
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_GamePlayerPrefab
-      value: 
-      objectReference: {fileID: 1000010906560118, guid: 47e38df34b93db744b84cf7362092c43,
-        type: 2}
-    - target: {fileID: 155310, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_MaxPlayersPerConnection
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_CustomConfig
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1000013898459082, guid: 514e4f9c67da3114c8cd34247a76bd9e,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1000014213114036, guid: 0c936a0103435e342a5076bfbabc2e96,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1000011322673478, guid: d6a51b108b4b12f40a4118771dcff7b7,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1000013769252222, guid: 203c8f2576373d149b5b254c9b413941,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 1000012336692476, guid: a3b75421edac0d0498894915867e705f,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1000010800758380, guid: 57c41afe81ebbd94ebc8f6040a2d4347,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000013355083376, guid: ac5fe9103e655c34f930418690f40ea3,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 1000011699253706, guid: cbb69d43f9bd80b47a3ef73ba724c50b,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 1000012495214084, guid: 1e5bc6eb8fdad9a45a0e03a0547470c3,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 1000013083723466, guid: 77fce9ad15658994aaf752079612831a,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[10]
-      value: 
-      objectReference: {fileID: 1000011684590704, guid: 4de00e2cdc5a7f447a92bbf8dd57bf64,
-        type: 2}
-    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[11]
-      value: 
-      objectReference: {fileID: 1000012098788134, guid: ed55fe8b6eb4a414b85db6fdcf12b35b,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
   m_IsPrefabParent: 0
@@ -624,9 +539,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}

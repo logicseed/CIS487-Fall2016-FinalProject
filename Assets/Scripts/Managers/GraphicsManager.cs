@@ -38,8 +38,11 @@ public class GraphicsManager : NetworkBehaviour
 
             foreach (Renderer renderer in renderers)
             {
-                renderer.material.SetColor("_Color", Color.Lerp(Color.white, teamColor, 0.2f) * 0.5f);
-                renderer.material.SetColor("_EmissionColor", teamColor * 10.0f);
+                foreach (Material material in renderer.materials)
+                {
+                    material.SetColor("_Color", Color.Lerp(Color.white, teamColor, 0.2f) * 0.5f);
+                    material.SetColor("_EmissionColor", teamColor * 10.0f);
+                }
             }
         }
     }
