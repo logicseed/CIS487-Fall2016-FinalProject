@@ -12,6 +12,7 @@ public class AutoAttack : NetworkBehaviour
     public float timeBetweenAttacks = 1.0f;
     private float lastAttack = 0.0f;
     public float range = 10.0f;
+    public int damage = 10;
 
     #region MonoBehavior Methods
     private void Awake() { }
@@ -47,16 +48,24 @@ public class AutoAttack : NetworkBehaviour
     private void OnDestroy() { }
     #endregion MonoBehaviour Methods
 
+    [Server]
     public IEnumerator FireAutoAttack()
     {
-        // draw beam
-        //Debug.Log("Firing");
-        lineRenderer.enabled = true;
+        RpcShowAutoAttack();
         yield return new WaitForSeconds(0.5f);
+        agent.target.direct.ApplyDamage(damage);
+        RpcHideAutoAttack();
+    }
 
+    [ClientRpc]
+    public void RpcShowAutoAttack()
+    {
+        lineRenderer.enabled = true;
+    }
+
+    [ClientRpc]
+    public void RpcHideAutoAttack()
+    {
         lineRenderer.enabled = false;
-        // reduce health
-        agent.target.direct.health--;
-
     }
 }

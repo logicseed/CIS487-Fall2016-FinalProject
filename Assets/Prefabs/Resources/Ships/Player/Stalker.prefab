@@ -456,6 +456,7 @@ GameObject:
   - 114: {fileID: 114000013029032812}
   - 114: {fileID: 114000011114744130}
   - 114: {fileID: 114000012845909048}
+  - 114: {fileID: 114000012324943238}
   m_Layer: 0
   m_Name: Stalker
   m_TagString: Player
@@ -2719,6 +2720,20 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114000012324943238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012065395682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3a027ce6c258849a7c8902aa4c96f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  range: 10
+  damage: 10
 --- !u!114 &114000012332668096
 MonoBehaviour:
   m_ObjectHideFlags: 1

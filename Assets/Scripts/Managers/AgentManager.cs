@@ -154,7 +154,6 @@ public class AgentManager : NetworkBehaviour
         if (type == AgentType.Player || type == AgentType.Cruiser || type == AgentType.Fighter)
         {
             Instantiate(Resources.Load("UnitPlaque"), Vector3.zero, Quaternion.Inverse(Quaternion.identity), gameObject.transform);
-            
         }
     }
 

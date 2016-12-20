@@ -457,6 +457,7 @@ GameObject:
   - 114: {fileID: 114000013043807086}
   - 114: {fileID: 114000011063563718}
   - 114: {fileID: 114000010595199160}
+  - 114: {fileID: 114000011788357906}
   m_Layer: 0
   m_Name: Trapper
   m_TagString: Player
@@ -2096,6 +2097,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   range: 15
+--- !u!114 &114000011788357906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012567255072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3a027ce6c258849a7c8902aa4c96f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  range: 10
+  damage: 10
 --- !u!114 &114000012081064930
 MonoBehaviour:
   m_ObjectHideFlags: 1

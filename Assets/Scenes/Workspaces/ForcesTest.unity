@@ -129,6 +129,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010647895592, guid: d6a51b108b4b12f40a4118771dcff7b7,
+        type: 2}
+      propertyPath: team
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6a51b108b4b12f40a4118771dcff7b7, type: 2}
   m_IsPrefabParent: 0
@@ -402,9 +407,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 1
   graphics: {fileID: 0}
@@ -1078,7 +1081,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 18.59, y: -26.41, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &43165388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,9 +1197,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -1700,9 +1701,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -2526,9 +2525,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 2
   graphics: {fileID: 0}
@@ -3432,9 +3429,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -4022,9 +4017,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -5245,9 +5238,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -5522,9 +5513,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -5992,9 +5981,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -6297,9 +6284,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -6699,9 +6684,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -7026,9 +7009,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -7457,9 +7438,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -7737,9 +7716,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -8314,9 +8291,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -9025,9 +9000,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -9249,9 +9222,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -9884,9 +9855,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 4
   graphics: {fileID: 0}
@@ -10244,9 +10213,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -10459,9 +10426,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -10732,7 +10697,7 @@ RectTransform:
   m_Children:
   - {fileID: 1631517656}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 7.61, y: 0}
@@ -11624,9 +11589,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -11965,9 +11928,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -12477,9 +12438,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -12725,9 +12684,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -12940,9 +12897,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -13245,9 +13200,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 4
   graphics: {fileID: 0}
@@ -14578,9 +14531,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -15703,9 +15654,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -16331,9 +16280,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -16641,9 +16588,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -16951,9 +16896,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -18111,9 +18054,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -18376,7 +18317,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 18.59, y: -26.41, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &614825095
 GameObject:
   m_ObjectHideFlags: 0
@@ -18646,9 +18587,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -20986,9 +20925,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 4
   graphics: {fileID: 0}
@@ -21229,9 +21166,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -21793,9 +21728,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -22218,9 +22151,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -23085,7 +23016,7 @@ Transform:
   m_Children:
   - {fileID: 1036653695}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1001 &826610923
 Prefab:
   m_ObjectHideFlags: 0
@@ -23550,9 +23481,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 3
   graphics: {fileID: 0}
@@ -23812,9 +23741,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 1
   graphics: {fileID: 0}
@@ -24519,9 +24446,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -24725,9 +24650,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -25097,9 +25020,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -25570,9 +25491,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 2
   graphics: {fileID: 0}
@@ -26829,9 +26748,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -27155,9 +27072,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -27892,9 +27807,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -28452,9 +28365,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -28954,9 +28865,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -29197,9 +29106,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -29498,9 +29405,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -30195,9 +30100,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -31272,9 +31175,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -31530,9 +31431,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -31826,9 +31725,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -32041,9 +31938,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -32474,9 +32369,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -32884,9 +32777,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -33132,9 +33023,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -33381,9 +33270,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -33682,9 +33569,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -33906,9 +33791,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -34174,9 +34057,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -34566,9 +34447,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -34894,9 +34773,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -35729,9 +35606,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -35958,9 +35833,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -36476,9 +36349,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -36930,9 +36801,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 2
   graphics: {fileID: 0}
@@ -37515,9 +37384,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -38135,9 +38002,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -38592,9 +38457,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -39476,9 +39339,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -39700,9 +39561,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -40137,9 +39996,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -40390,9 +40247,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -40723,9 +40578,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -41282,9 +41135,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -42046,9 +41897,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -42320,7 +42169,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &1459826993 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000014273125796, guid: 231922b3b08221e42a128921e0d9cbe8,
@@ -42796,9 +42645,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -43024,7 +42871,7 @@ Transform:
   m_Children:
   - {fileID: 1686731502}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &1497045018
 Prefab:
   m_ObjectHideFlags: 0
@@ -43880,9 +43727,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -44299,9 +44144,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -44505,9 +44348,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -44810,9 +44651,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -45453,9 +45292,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 3
   graphics: {fileID: 0}
@@ -45696,9 +45533,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 3
   graphics: {fileID: 0}
@@ -45911,9 +45746,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -46154,9 +45987,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 1
   graphics: {fileID: 0}
@@ -46661,9 +46492,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -47605,9 +47434,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -48413,7 +48240,7 @@ Transform:
   - {fileID: 523038616}
   - {fileID: 834645504}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!1001 &1690497864
 Prefab:
   m_ObjectHideFlags: 0
@@ -48596,9 +48423,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -49035,9 +48860,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -49259,9 +49082,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -49502,9 +49323,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -50266,9 +50085,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 2
   graphics: {fileID: 0}
@@ -50814,9 +50631,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -51029,9 +50844,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -51472,7 +51285,7 @@ Transform:
   - {fileID: 343569581}
   - {fileID: 2115394606}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1001 &1790331714
 Prefab:
   m_ObjectHideFlags: 0
@@ -51770,9 +51583,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 1
   graphics: {fileID: 0}
@@ -52313,9 +52124,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -52583,9 +52392,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -52798,9 +52605,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -53075,9 +52880,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -53290,9 +53093,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -53807,9 +53608,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -54181,9 +53980,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -55339,9 +55136,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -55885,9 +55680,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 1
   graphics: {fileID: 0}
@@ -56243,9 +56036,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -56449,9 +56240,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 2
   graphics: {fileID: 0}
@@ -56726,9 +56515,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -56969,9 +56756,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -57278,9 +57063,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -57862,9 +57645,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -58279,9 +58060,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -58494,9 +58273,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -59310,9 +59087,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 4
   graphics: {fileID: 0}
@@ -59525,9 +59300,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -60400,9 +60173,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -61868,9 +61639,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -62200,9 +61969,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 4
   graphics: {fileID: 0}
@@ -62771,9 +62538,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -63487,9 +63252,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -63702,9 +63465,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 3
   graphics: {fileID: 0}
@@ -63945,9 +63706,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -64517,9 +64276,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 3
   graphics: {fileID: 0}
@@ -65029,9 +64786,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
