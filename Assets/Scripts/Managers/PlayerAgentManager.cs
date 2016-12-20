@@ -16,7 +16,7 @@ public class PlayerAgentManager : AgentManager
         base.Awake();
     }
 
-    protected override void Start()
+    public override void Start()
     {
         base.Start();
         if (type == AgentType.DevPlayer)

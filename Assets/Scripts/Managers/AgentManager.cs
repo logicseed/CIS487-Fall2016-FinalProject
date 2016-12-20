@@ -100,8 +100,11 @@ public class AgentManager : NetworkBehaviour
         shields = maximumShields;
     }
 
-    protected virtual void Start()
+    private bool hasStarted = false;
+    public virtual void Start()
     {
+        if (hasStarted) return;
+        hasStarted = true;
         // Setup components
 
         // Rigidbody
@@ -131,7 +134,7 @@ public class AgentManager : NetworkBehaviour
         }
 
         // Standard Mover
-        if (type != AgentType.TargetIndicator || type != AgentType.HomePlanet || type != AgentType.SpaceStation)
+        if (type != AgentType.TargetIndicator && type != AgentType.HomePlanet && type != AgentType.SpaceStation && type != AgentType.CapturePlanet)
         {
             mover = gameObject.GetComponent<StandardMover>();
             mover.Setup(this, maximumSpeed, maximumAcceleration, rigidbody);
@@ -142,7 +145,7 @@ public class AgentManager : NetworkBehaviour
         if (type != AgentType.TargetIndicator) graphics.Setup(this);
 
         // Target Manager
-        if (type != AgentType.TargetIndicator || type != AgentType.HomePlanet || type != AgentType.SpaceStation)
+        if (type != AgentType.TargetIndicator && type != AgentType.HomePlanet && type != AgentType.SpaceStation && type != AgentType.CapturePlanet)
         {
             target = gameObject.GetComponent<TargetManager>();
             target.Setup(this);

@@ -103,6 +103,9 @@ public class StandardMover : NetworkBehaviour
                 case BehaviourType.Evade:
                     movementBehaviours = new EvadeBehaviourDecorator(movementBehaviours, behaviour);
                     break;
+                case BehaviourType.Fighter:
+                    movementBehaviours = new FighterBehaviourDecorator(movementBehaviours, behaviour);
+                    break;
             }
         }
 

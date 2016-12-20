@@ -15,8 +15,6 @@ public class FleetManager : NetworkBehaviour
     private List<GameObject> fighterGOs;
     private AgentManager agent;
 
-    #region MonoBehavior Methods
-    private void Awake() { }
     private void Start()
     {
         agent = gameObject.GetComponent<AgentManager>();
@@ -25,29 +23,23 @@ public class FleetManager : NetworkBehaviour
         {
             foreach (var position in fighterPositions)
             {
-                // var fighter = Instantiate(GameManager.Instance.characters[(int)agent.team].fighterPrefab, ) as GameObject;
-
-
-                // var fighterAgent = fighter.GetComponent<AgentManager>();
-                // fighterAgent.team = agent.team;
-                // fighterAgent.species = agent.species;
-                // fighterAgent.mover.AddBehaviour(new SeekBehaviour(position.GetComponent<AgentManager>()));
-                // NetworkServer.Spawn(fighter);
+                SpawnFighter(position);
             }
         }
     }
-    private void FixedUpdate()
+
+    private void SpawnFighter(GameObject fighterPosition)
     {
-        
+        var fighter = Instantiate(GameManager.Instance.characters[(int)agent.team].fighterPrefab, fighterPosition.transform.position, Quaternion.identity) as GameObject;
+        var fighterAgent = fighter.GetComponent<AgentManager>();
+        fighterAgent.team = agent.team;
+        fighterAgent.Start();
+
+        var behaviour = new FighterBehaviour();
+        behaviour.target = fighterPosition;
+
+        fighterAgent.mover.AddBehaviour(behaviour);
+        NetworkServer.Spawn(fighter);
     }
-    private void Update()
-    {
-
-    }
-    private void LateUpdate() { }
-    private void OnDestroy() { }
-    #endregion MonoBehaviour Methods
-
-
 
 }

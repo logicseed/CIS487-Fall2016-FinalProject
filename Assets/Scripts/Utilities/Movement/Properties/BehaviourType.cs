@@ -67,5 +67,10 @@ public enum BehaviourType
     /// <remarks>
     /// Uses Radius as orbital distance.
     /// </remarks>
-    Orbit
+    Orbit,
+
+    /// <summary>
+    /// Mover attempts to reach its fleet position.
+    /// </summary>
+    Fighter
 }
