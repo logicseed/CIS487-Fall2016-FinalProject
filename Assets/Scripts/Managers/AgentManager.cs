@@ -105,7 +105,7 @@ public class AgentManager : NetworkBehaviour
         // Setup components
 
         // Rigidbody
-        if (type == AgentType.Player || type == AgentType.Cruiser || type == AgentType.Fighter)
+        if (type != AgentType.TargetIndicator)
         {
             rigidbody = gameObject.GetComponent<Rigidbody>();
             rigidbody.useGravity = false;
@@ -131,7 +131,7 @@ public class AgentManager : NetworkBehaviour
         }
 
         // Standard Mover
-        if (type != AgentType.TargetIndicator)
+        if (type != AgentType.TargetIndicator || type != AgentType.HomePlanet || type != AgentType.SpaceStation)
         {
             mover = gameObject.GetComponent<StandardMover>();
             mover.Setup(this, maximumSpeed, maximumAcceleration, rigidbody);
@@ -142,7 +142,7 @@ public class AgentManager : NetworkBehaviour
         if (type != AgentType.TargetIndicator) graphics.Setup(this);
 
         // Target Manager
-        if (type != AgentType.TargetIndicator)
+        if (type != AgentType.TargetIndicator || type != AgentType.HomePlanet || type != AgentType.SpaceStation)
         {
             target = gameObject.GetComponent<TargetManager>();
             target.Setup(this);
@@ -162,6 +162,32 @@ public class AgentManager : NetworkBehaviour
 
         health = Mathf.Clamp(health + Mathf.RoundToInt(healRate * Time.fixedDeltaTime), 0, maximumHealth);
         shields = Mathf.Clamp(shields + Mathf.RoundToInt(rechargeRate * Time.fixedDeltaTime), 0, maximumShields);
+    }
+
+    [Server]
+    public void ApplyDamage(int damage)
+    {
+        var unappliedDamage = damage;
+
+        if (unappliedDamage == 0) return;
+
+        if (shields > 0)
+        {
+            if (shields >= unappliedDamage)
+            {
+                shields -= unappliedDamage;
+                unappliedDamage = 0;
+            }
+            else
+            {
+                unappliedDamage -= shields;
+                shields = 0;
+            }
+        }
+
+        if (unappliedDamage == 0) return;
+
+        health -= unappliedDamage;
     }
 
     [Command]
