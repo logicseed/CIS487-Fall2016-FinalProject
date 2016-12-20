@@ -1,21 +1,27 @@
 ﻿// Marc King - mjking@umich.edu
 
 using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Manages the targets of an agent.
 /// </summary>
 [RequireComponent(typeof(AgentManager))]
 [DisallowMultipleComponent]
-public class TargetManager : MonoBehaviour
+public class TargetManager : NetworkBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public AgentManager agent;
-    [HideInInspector]
+    //[HideInInspector]
+    
     public AgentManager direct;
-    [HideInInspector]
+    [SyncVar]
+    public Vector3 directPosition;
+    //[HideInInspector]
     public GameObject directIndicator;
-    [HideInInspector]
+    //[HideInInspector]
+    [SyncVar]
+    public Vector3 locationPosition;
     public AgentManager location;
 
     void Start()
@@ -41,6 +47,17 @@ public class TargetManager : MonoBehaviour
             var distance = Vector3.Distance(agent.position, location.position);
             if (distance <= 0.5f) RemoveLocationTarget();
         }
+
+        if (direct != null)
+        {
+            directPosition = direct.position;
+        }
+        else
+        {
+            directPosition = Vector3.zero;
+        }
+
+        
     }
 
     /// <summary>

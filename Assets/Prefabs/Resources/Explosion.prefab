@@ -39,6 +39,7 @@ GameObject:
   - 198: {fileID: 198000012669936926}
   - 199: {fileID: 199000013957750126}
   - 114: {fileID: 114000014003410698}
+  - 114: {fileID: 114000013271265716}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -73,6 +74,38 @@ Transform:
   - {fileID: 4000011552411428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000013271265716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011010366054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 10
+    i1: 43
+    i2: 218
+    i3: 55
+    i4: 99
+    i5: 140
+    i6: 93
+    i7: 20
+    i8: 106
+    i9: 74
+    i10: 196
+    i11: 116
+    i12: 244
+    i13: 67
+    i14: 120
+    i15: 203
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000014003410698
 MonoBehaviour:
   m_ObjectHideFlags: 1

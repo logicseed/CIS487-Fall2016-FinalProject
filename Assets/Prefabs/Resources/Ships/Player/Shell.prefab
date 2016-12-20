@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  range: 10
+  range: 50
   damage: 10
 --- !u!114 &114000011806144406
 MonoBehaviour:
