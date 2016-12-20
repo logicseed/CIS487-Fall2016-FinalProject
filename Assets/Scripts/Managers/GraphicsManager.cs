@@ -20,7 +20,10 @@ public class GraphicsManager : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        UpdateGraphicsHeading();
+		if(agent.type == AgentType.Fighter || agent.type == AgentType.Cruiser || agent.type == AgentType.Player || agent.type == AgentType.AbilityEffect){
+			UpdateGraphicsHeading();
+		}
+        
     }
 
     /// <summary>
