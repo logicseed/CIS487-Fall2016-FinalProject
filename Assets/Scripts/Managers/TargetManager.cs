@@ -15,13 +15,9 @@ public class TargetManager : NetworkBehaviour
     //[HideInInspector]
     
     public AgentManager direct;
-    [SyncVar]
-    public Vector3 directPosition;
     //[HideInInspector]
     public GameObject directIndicator;
     //[HideInInspector]
-    [SyncVar]
-    public Vector3 locationPosition;
     public AgentManager location;
 
     void Start()
@@ -47,17 +43,6 @@ public class TargetManager : NetworkBehaviour
             var distance = Vector3.Distance(agent.position, location.position);
             if (distance <= 0.5f) RemoveLocationTarget();
         }
-
-        if (direct != null)
-        {
-            directPosition = direct.position;
-        }
-        else
-        {
-            directPosition = Vector3.zero;
-        }
-
-        
     }
 
     /// <summary>
@@ -90,7 +75,21 @@ public class TargetManager : NetworkBehaviour
     /// </summary>
     /// <param name="type">The type of target.</param>
     /// <param name="target">The game object of the target.</param>
-    public void SetDirectTarget(AgentManager target)
+
+    [Command]
+    public void CmdSetDirectTarget(GameObject target)
+    {
+        SetDirectTarget(target);
+    }
+
+    [Server]
+    public void SetDirectTarget(GameObject target)
+    {
+        RpcSetDirectTarget(target);
+    }
+
+    [ClientRpc]
+    public void RpcSetDirectTarget(GameObject target)
     {
         if (agent.type == AgentType.Player)
         {
@@ -99,10 +98,10 @@ public class TargetManager : NetworkBehaviour
             directIndicator = Instantiate(Resources.Load("TargetSelectionAlly")) as GameObject;
             directIndicator.transform.parent = target.transform;
             directIndicator.transform.localPosition = Vector3.zero;
-            var scale = 4 * target.sphere.radius;
+            var scale = 4 * target.GetComponent<AgentManager>().sphere.radius;
             directIndicator.transform.localScale = new Vector3(scale, scale, scale);
         }
-        direct = target;
+        direct = target.GetComponent<AgentManager>();
     }
 
     /// <summary>

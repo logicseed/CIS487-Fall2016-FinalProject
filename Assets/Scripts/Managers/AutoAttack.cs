@@ -31,7 +31,7 @@ public class AutoAttack : NetworkBehaviour
         if (Time.time > lastAttack + timeBetweenAttacks)
         {
             //Debug.Log("Past time conditional");
-            if (agent.target.direct != null && Vector3.Distance(agent.position, agent.target.directPosition) <= range)
+            if (agent.target.direct != null && Vector3.Distance(agent.position, agent.target.direct.position) <= range)
             {
                 //Debug.Log("Past target conditional");
                 StartCoroutine(FireAutoAttack());
@@ -40,7 +40,7 @@ public class AutoAttack : NetworkBehaviour
         }
 
         lineRenderer.SetPosition(0, agent.position);
-        if (agent.target.direct != null) lineRenderer.SetPosition(1, agent.target.directPosition);
+        if (agent.target.direct != null) lineRenderer.SetPosition(1, agent.target.direct.position);
         else lineRenderer.SetPosition(1, agent.position);
     }
     private void Update() { }

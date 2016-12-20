@@ -37,7 +37,7 @@ public class AttackNearest : MonoBehaviour
 			var agentCollider = shipCollider.gameObject.GetComponent<AgentManager>();
             if (agentCollider.team != agent.team && agentCollider.type != AgentType.HomePlanet)
             {
-                agent.target.SetDirectTarget(agentCollider);
+                agent.target.CmdSetDirectTarget(agentCollider.gameObject);
                 break;
             }
             continue;

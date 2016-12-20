@@ -42,7 +42,7 @@ public class MouseController : NetworkBehaviour
     public void CmdSetDirectTarget(GameObject target)
     {
         var agent = gameObject.GetComponent<AgentManager>();
-        agent.target.SetDirectTarget(target.GetComponent<AgentManager>());
+        agent.target.CmdSetDirectTarget(target);
     }
 
     private Vector3 FindMousePosition()

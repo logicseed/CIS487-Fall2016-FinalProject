@@ -41,7 +41,7 @@ public class GenericCreepController : MonoBehaviour {
 	///</summary>
 	public void setLocateBehavior(){
 		if (goToLocation != null) {
-			agent.target.SetDirectTarget (goToLocation.GetComponent<AgentManager>());
+			agent.target.CmdSetDirectTarget (goToLocation);
 		}
 
 		locateBehavior = new SeekBehaviour (agent.target.direct,true);
@@ -82,7 +82,7 @@ public class GenericCreepController : MonoBehaviour {
 	}
 
 	public void setAttackTarget(){
-		agent.target.SetDirectTarget((AgentManager) nearbyEnemyShips[0]);
+		//agent.target.CmdSetDirectTarget(nearbyEnemyShips[0].gameObject);
 
 		//ADD getting agent from nearbyEnemyships either by shortest diatance or randomly or ____?
 	}
