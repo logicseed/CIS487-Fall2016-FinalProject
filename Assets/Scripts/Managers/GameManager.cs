@@ -25,6 +25,9 @@ public class GameManager : NetworkBehaviour
 
 
     public GameObject[] players;
+
+    public GameObject[] capturePlanets;
+    public GameObject[] spaceStations;
     
     public event ColorChangeHandler ColorChange;
 
