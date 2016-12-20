@@ -34,7 +34,10 @@ public class AutoAttack : NetworkBehaviour
             if (agent.target.direct != null && Vector3.Distance(agent.position, agent.target.direct.position) <= range)
             {
                 //Debug.Log("Past target conditional");
-                StartCoroutine(FireAutoAttack());
+                if (isServer)
+                {
+                    StartCoroutine(FireAutoAttack());
+                }
             }
             lastAttack = Time.time;
         }
