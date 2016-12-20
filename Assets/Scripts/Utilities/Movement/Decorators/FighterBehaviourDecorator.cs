@@ -13,7 +13,7 @@ public class FighterBehaviourDecorator : ActiveBehaviourDecorator
 
     public override Vector3 Steering(bool debugRays = false)
     {
-        Debug.Log("Executing fighter steering");
+        //Debug.Log("Executing fighter steering");
         if (Deleting()) return parentBehaviour.Steering();
         
         var velocityVector = behaviour.target.transform.position - agent.position;

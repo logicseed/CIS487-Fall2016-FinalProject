@@ -5,8 +5,8 @@ using System.Collections;
 
 public class NullStandardMover : StandardMover
 {
-    new public float maxVelocity = 0.0f;
-    new public float maxSteering = 0.0f;
+    public float maxVelocity = 0.0f;
+    public float maxSteering = 0.0f;
 
     new public void AddBehaviour(MovementBehaviour behaviour) { }
     new public void RemoveBehaviour(MovementBehaviour behaviour) { }

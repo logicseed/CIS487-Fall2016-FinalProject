@@ -35,10 +35,10 @@ public class LevelManager : NetworkBehaviour
     public IEnumerator SetupPlayers()
     {
         yield return new WaitForSeconds(3);
-        foreach (var player in players)
-        {
-            //player.Setup(GameManager.Instance.characters[player.character].model);
-        }
+        // foreach (var player in players)
+        // {
+        //     //player.Setup(GameManager.Instance.characters[player.character].model);
+        // }
     }
 
 

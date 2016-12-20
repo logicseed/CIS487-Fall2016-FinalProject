@@ -54,15 +54,15 @@ public class AgentManager : NetworkBehaviour
     [SerializeField]
     [Range(1.0f, 5000.0f)]
     private float mass = 1.0f;
-    [SerializeField]
-    [Range(0.0f, 100.0f)]
-    private float collisionRadius = 1.0f;
+    // [SerializeField]
+    // [Range(0.0f, 100.0f)]
+    // private float collisionRadius = 1.0f;
     [HideInInspector]
     public StandardMover mover;
 
     [Header("Graphics")]
-    [SerializeField]
-    private GameObject graphicsGO = null;
+    // [SerializeField]
+    // private GameObject graphicsGO = null;
     [SyncVar]
     public SpeciesType species;
     [SyncVar]
@@ -130,7 +130,7 @@ public class AgentManager : NetworkBehaviour
             sphere = gameObject.GetComponent<SphereCollider>();
             sphere.isTrigger = false;
             //sphere.radius = collisionRadius;
-            collisionRadius = sphere.radius;
+            //collisionRadius = sphere.radius;
         }
 
         // Standard Mover
