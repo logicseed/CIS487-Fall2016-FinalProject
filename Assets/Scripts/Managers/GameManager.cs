@@ -78,9 +78,9 @@ public class GameManager : NetworkBehaviour
         // teamColors.Add(TeamType.World, Color.white);
 
         teamColors[(int)TeamType.Team1] = Color.red;
-        teamColors[(int)TeamType.Team2] = Color.blue;
-        teamColors[(int)TeamType.Team3] = Color.green;
-        teamColors[(int)TeamType.Team4] = Color.yellow;
+        teamColors[(int)TeamType.Team2] = Color.yellow;
+        teamColors[(int)TeamType.Team3] = Color.cyan;
+        teamColors[(int)TeamType.Team4] = Color.magenta;
         teamColors[(int)TeamType.World] = Color.white;
     }
 
