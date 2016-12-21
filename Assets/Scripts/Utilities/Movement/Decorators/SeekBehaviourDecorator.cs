@@ -58,7 +58,7 @@ public class SeekBehaviourDecorator : TargetBehaviourDecorator
 
     private bool HasArrived()
     {
-        var distance = (agent.target.location.position - agent.position).magnitude;
+		var distance = (behaviour.target.position - agent.position).magnitude;
 
         if (distance < behaviour.arrivedRadius) return true;
         return false;

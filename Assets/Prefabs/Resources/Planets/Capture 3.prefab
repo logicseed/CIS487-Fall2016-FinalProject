@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010870243860}
   - 33: {fileID: 33000013686448760}
   - 23: {fileID: 23000010539588740}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012909092156}
   - 114: {fileID: 114000012731302896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capture 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - 114: {fileID: 114000010052398092}
   - 114: {fileID: 114000014186544528}
   - 114: {fileID: 114000013879144468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Commerce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010966184028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - 4: {fileID: 4000011415605644}
   - 33: {fileID: 33000012908978388}
   - 23: {fileID: 23000010708735016}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010847991020}
   - 114: {fileID: 114000013332485382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
+  mass: 5000
   mover: {fileID: 0}
   species: 0
   ship: 0

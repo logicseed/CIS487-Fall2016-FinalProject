@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011944584724}
   - 114: {fileID: 114000014272052158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011181988866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - 114: {fileID: 114000012283244644}
   - 114: {fileID: 114000011383013202}
   - 114: {fileID: 114000012747342412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Planet 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012291701076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HomeSystem 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - 4: {fileID: 4000012682033190}
   - 33: {fileID: 33000010680600276}
   - 23: {fileID: 23000011913421268}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - 4: {fileID: 4000011539621360}
   - 33: {fileID: 33000013946160416}
   - 23: {fileID: 23000012823008182}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
+  mass: 5000
   mover: {fileID: 0}
   species: 0
   ship: 0

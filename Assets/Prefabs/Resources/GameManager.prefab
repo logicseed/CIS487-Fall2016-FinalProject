@@ -122,8 +122,16 @@ MonoBehaviour:
   - {fileID: 1000012678687672, guid: 5d0cbe867aed4b04495d46163fe80da7, type: 2}
   - {fileID: 1000011560448286, guid: 28c89b8e6881ad54a8ba49673e03b06c, type: 2}
   players: []
-  capturePlanets: []
-  spaceStations: []
+  capturePlanets:
+  - {fileID: 1000011310156394, guid: 1e40e7d2bdcbbec4fb3d3d4f1c8955a8, type: 2}
+  - {fileID: 1000012196009042, guid: 682dd35352b98f649a2556a51f701b60, type: 2}
+  - {fileID: 1000011133398814, guid: 4bc2568c06bfe7841bb0b7e21bebfba1, type: 2}
+  - {fileID: 1000012624063600, guid: 222f645da76d0b04399906fa636fb343, type: 2}
+  spaceStations:
+  - {fileID: 1000010773630648, guid: d1715eb6363f91c4d90e087b29a238e1, type: 2}
+  - {fileID: 1000011795823580, guid: 8f8dfd42a02f20b4783b62ef64a5d7eb, type: 2}
+  - {fileID: 1000013265772112, guid: e88469f7aab12f24e9a4f7b1f515c6b9, type: 2}
+  - {fileID: 1000010506090980, guid: 549c826c1553c0547986a6c19254a376, type: 2}
   teamNames:
   - 
   - 

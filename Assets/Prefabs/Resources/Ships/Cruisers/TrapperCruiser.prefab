@@ -232,6 +232,7 @@ GameObject:
   - 114: {fileID: 114000011121434672}
   - 114: {fileID: 114000011311412400}
   - 114: {fileID: 114000011092104006}
+  - 114: {fileID: 114000012329938916}
   m_Layer: 0
   m_Name: TrapperCruiser
   m_TagString: Untagged
@@ -559,6 +560,24 @@ MonoBehaviour:
     i15: 11
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114000012329938916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013853765474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f21d4cc94c7474ea9b0e540a347a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterPositions:
+  - {fileID: 1000012933731836}
+  - {fileID: 1000010323141998}
+  - {fileID: 1000011010863376}
+  - {fileID: 1000010700891782}
+  refillFighters: 0
+  refillTime: 0
 --- !u!114 &114000013347799322
 MonoBehaviour:
   m_ObjectHideFlags: 1
