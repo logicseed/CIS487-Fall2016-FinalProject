@@ -43,6 +43,8 @@ public class TargetManager : NetworkBehaviour
             var distance = Vector3.Distance(agent.position, location.position);
             if (distance <= 0.5f) RemoveLocationTarget();
         }
+
+        if (direct != null && direct.team == agent.team) RemoveDirectTarget();
     }
 
     /// <summary>

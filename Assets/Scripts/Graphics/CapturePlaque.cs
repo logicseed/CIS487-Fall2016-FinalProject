@@ -11,6 +11,7 @@ public class CapturePlaque : MonoBehaviour
     public RectTransform team2Bar;
     public RectTransform team3Bar;
     public RectTransform team4Bar;
+    public Text teamName;
 
     private void Start()
     {
@@ -28,6 +29,15 @@ public class CapturePlaque : MonoBehaviour
         // team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team2] / 1000.0f), 0.25f);
         // team3Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team3] / 1000.0f), 0.25f);
         // team4Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team4] / 1000.0f), 0.25f);
+
+        if (agent.team == TeamType.World)
+        {
+            teamName.text = "";
+        }
+        else
+        {
+            teamName.text = GameManager.Instance.teamNames[(int)agent.team];
+        }
 
         team1Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team1] / 1000.0f), 0.25f);
         team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team2] / 1000.0f), 0.25f);
