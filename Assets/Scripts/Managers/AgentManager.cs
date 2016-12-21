@@ -89,6 +89,8 @@ public class AgentManager : NetworkBehaviour
     public SphereCollider sphere;
     [HideInInspector]
     public new Rigidbody rigidbody;
+    [HideInInspector]
+    public CaptureManager capture;
 
 
 
@@ -153,6 +155,11 @@ public class AgentManager : NetworkBehaviour
         {
             var go = Instantiate(Resources.Load("UnitPlaque"), Vector3.zero, Quaternion.Inverse(Quaternion.identity), gameObject.transform) as GameObject;
             go.transform.localPosition = new Vector3(0.0f, 2.0f, 0.0f);
+        }
+
+        if (type == AgentType.CapturePlanet)
+        {
+            capture = gameObject.GetComponent<CaptureManager>();
         }
     }
 

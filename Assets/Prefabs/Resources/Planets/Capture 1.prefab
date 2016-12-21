@@ -25,6 +25,7 @@ GameObject:
   - 114: {fileID: 114000011876572830}
   - 114: {fileID: 114000010412071330}
   - 114: {fileID: 114000011922643606}
+  - 114: {fileID: 114000011020933350}
   m_Layer: 10
   m_Name: Planet 2
   m_TagString: Untagged
@@ -309,6 +310,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   graphicsGO: {fileID: 0}
+--- !u!114 &114000011020933350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011310156394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ec05fc7b839104e8bbeec055c97137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!114 &114000011289574566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -355,6 +368,7 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 135000010900159366}
   rigidbody: {fileID: 54000010005864614}
+  capture: {fileID: 0}
 --- !u!114 &114000011922643606
 MonoBehaviour:
   m_ObjectHideFlags: 1

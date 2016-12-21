@@ -56,7 +56,14 @@ public class AutoAttack : NetworkBehaviour
     {
         RpcShowAutoAttack();
         yield return new WaitForSeconds(0.5f);
-        agent.target.direct.ApplyDamage(damage);
+        if (agent.target.direct.type == AgentType.CapturePlanet)
+        {
+            agent.target.direct.capture.ApplyInfluence(agent.team, damage);
+        }
+        else
+        {
+            agent.target.direct.ApplyDamage(damage);
+        }
         RpcHideAutoAttack();
     }
 

@@ -59,6 +59,7 @@ GameObject:
   - 114: {fileID: 114000010052398092}
   - 114: {fileID: 114000014186544528}
   - 114: {fileID: 114000013879144468}
+  - 114: {fileID: 114000012099677418}
   m_Layer: 10
   m_Name: Commerce
   m_TagString: Untagged
@@ -318,6 +319,7 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 135000010292373476}
   rigidbody: {fileID: 54000010928838116}
+  capture: {fileID: 0}
 --- !u!114 &114000010524270588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,6 +352,18 @@ MonoBehaviour:
     i15: 161
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114000012099677418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011133398814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ec05fc7b839104e8bbeec055c97137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!114 &114000012731302896
 MonoBehaviour:
   m_ObjectHideFlags: 1
