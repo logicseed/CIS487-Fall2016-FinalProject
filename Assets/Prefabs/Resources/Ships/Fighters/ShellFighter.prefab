@@ -172,6 +172,7 @@ GameObject:
   - 114: {fileID: 114000011771262008}
   - 114: {fileID: 114000012433005040}
   - 114: {fileID: 114000012369694716}
+  - 114: {fileID: 114000010901737416}
   m_Layer: 0
   m_Name: ShellFighter
   m_TagString: Untagged
@@ -401,6 +402,20 @@ MonoBehaviour:
     i15: 26
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114000010901737416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014021258494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3a027ce6c258849a7c8902aa4c96f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  range: 10
+  damage: 20
 --- !u!114 &114000011771262008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,14 +494,14 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   healRate: 0
-  maximumHealth: 100
+  maximumHealth: 25
   health: 0
-  rechargeRate: 0
-  maximumShields: 100
+  rechargeRate: 5
+  maximumShields: 75
   shields: 0
   hasDied: 0
-  maximumSpeed: 5
-  maximumAcceleration: 0.5
+  maximumSpeed: 20
+  maximumAcceleration: 4
   mass: 1
   mover: {fileID: 0}
   species: 0
@@ -497,6 +512,7 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+  capture: {fileID: 0}
 --- !u!135 &135000013423298106
 SphereCollider:
   m_ObjectHideFlags: 1

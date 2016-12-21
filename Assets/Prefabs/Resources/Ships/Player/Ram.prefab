@@ -1709,11 +1709,11 @@ MonoBehaviour:
   maximumHealth: 100
   health: 0
   rechargeRate: 5
-  maximumShields: 100
+  maximumShields: 300
   shields: 0
   hasDied: 0
   maximumSpeed: 50
-  maximumAcceleration: 0.5
+  maximumAcceleration: 5
   mass: 1
   mover: {fileID: 0}
   species: 0
@@ -1724,6 +1724,7 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+  capture: {fileID: 0}
   mouse: {fileID: 0}
   camera: {fileID: 0}
   character: 0
@@ -1740,7 +1741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
   range: 50
-  damage: 10
+  damage: 50
 --- !u!114 &114000012098969076
 MonoBehaviour:
   m_ObjectHideFlags: 1

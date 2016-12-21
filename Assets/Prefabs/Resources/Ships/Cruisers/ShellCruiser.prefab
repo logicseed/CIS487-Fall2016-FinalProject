@@ -500,8 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  range: 10
-  damage: 10
+  range: 25
+  damage: 25
 --- !u!114 &114000010296385178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,6 +574,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capturePlanets: []
+  attacking: 0
+  retarget: 0
+  attackRange: 30
+  captureTarget: {fileID: 0}
 --- !u!114 &114000012695591582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -622,14 +626,14 @@ MonoBehaviour:
   isPlayer: 0
   teamLayer: Default
   healRate: 0
-  maximumHealth: 100
+  maximumHealth: 50
   health: 0
-  rechargeRate: 0
-  maximumShields: 100
+  rechargeRate: 5
+  maximumShields: 150
   shields: 0
   hasDied: 0
   maximumSpeed: 15
-  maximumAcceleration: 0.5
+  maximumAcceleration: 3
   mass: 1
   mover: {fileID: 0}
   species: 0
@@ -640,6 +644,7 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+  capture: {fileID: 0}
 --- !u!114 &114000013874868926
 MonoBehaviour:
   m_ObjectHideFlags: 1
