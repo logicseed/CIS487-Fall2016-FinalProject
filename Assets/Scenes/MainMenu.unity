@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37356147, g: 0.38111934, b: 0.35888165, a: 1}
+  m_IndirectSpecularColor: {r: 0.37356114, g: 0.38111898, b: 0.35888135, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ RectTransform:
   m_Children:
   - {fileID: 1158220629}
   m_Father: {fileID: 702228848}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -910, y: 476.7}
@@ -1291,7 +1291,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -189.78003, y: 68.899994}
+  m_AnchoredPosition: {x: -287, y: 68}
   m_SizeDelta: {x: 345.44995, y: 105.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555655529
@@ -1679,7 +1679,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<b><color=#FF9800FF>BASIC PROTOTYPE INSTRUCTIONS</color></b>
+  m_Text: '<b><color=#FF9800FF>BASIC PROTOTYPE CONTROLS</color></b>
 
 
     <b>Ship Controls</b>
@@ -1689,7 +1689,9 @@ MonoBehaviour:
 
     Left-Click on enemy ship to attack.
 
-    <i>(Will only attack when within range.)</i>
+    Left-Click on a planet to capture it.
+
+    <i>(Will only attack and capture when within range.)</i>
 
 
     <b>Camera Controls</b>
@@ -1704,10 +1706,20 @@ MonoBehaviour:
     T to reset camera.
 
 
+    <b>Grid</b>
+
+    \ to Enable / Disable grid overlay
+
+
+
+
+
+
+
     <b>Developer Commands</b>
 
 
-    ` to open developer console.'
+    ` to open developer console. '
 --- !u!222 &658681042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1744,6 +1756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 658681040}
+  - {fileID: 1762755606}
   - {fileID: 4446385}
   - {fileID: 1086229721}
   m_Father: {fileID: 445239817}
@@ -5853,7 +5866,7 @@ RectTransform:
   m_Children:
   - {fileID: 343468008}
   m_Father: {fileID: 702228848}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 909.9999, y: 476.69998}
@@ -6496,8 +6509,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468826524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalPosition: {x: 0, y: -0.79, z: 0}
+  m_LocalScale: {x: 70, y: 70, z: 70}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1260322788}
@@ -8588,6 +8601,94 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &1762755605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1762755606}
+  - 222: {fileID: 1762755608}
+  - 114: {fileID: 1762755607}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1762755606
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762755605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 702228848}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 366, y: -14.999998}
+  m_SizeDelta: {x: 660, y: 767}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1762755607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762755605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.86764705, g: 0.86764705, b: 0.86764705, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 676b7f98e93ec3c41bfc37587b4a861b, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 45
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '<b><color=#FF9800FF>HOW TO PLAY</color></b>
+
+
+    Using your main flagship, along with an army of cruiser ships, you''ll capture
+    planets in order to gain resources for your alliance. Which ever alliance has
+    the most resources before the Monolith arrives (timer hits 0), will be able to
+    survive the Monoliths return visit.
+
+
+    Attack enemy planets, defend your own, and deny others from becoming the dominating
+    force in the solar system.
+
+
+
+'
+--- !u!222 &1762755608
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1762755605}
 --- !u!1 &1910551520
 GameObject:
   m_ObjectHideFlags: 0
