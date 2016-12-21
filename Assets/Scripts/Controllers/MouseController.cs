@@ -16,19 +16,19 @@ public class MouseController : NetworkBehaviour
         {
             GameObject target = FindTarget();
 
-            if (target != null)
+            if (target != null && target != gameObject && target.GetComponent<AgentManager>().team != gameObject.GetComponent<AgentManager>().team)
             {
-                CmdSetDirectTarget(target);
+                SetDirectTarget(target);
             }
             else if (target == null)
             {
-                CmdSetLocationTarget(FindMousePosition());
+                SetLocationTarget(FindMousePosition());
             }
         }
     }
 
-    //[Command]
-    void CmdSetLocationTarget(Vector3 position)
+    
+    void SetLocationTarget(Vector3 position)
     {
         var agent = gameObject.GetComponent<AgentManager>();
 
@@ -38,8 +38,8 @@ public class MouseController : NetworkBehaviour
         agent.mover.AddBehaviour(behaviour);
     }
 
-    //[Command]
-    public void CmdSetDirectTarget(GameObject target)
+    
+    public void SetDirectTarget(GameObject target)
     {
         var agent = gameObject.GetComponent<AgentManager>();
         agent.target.CmdSetDirectTarget(target);

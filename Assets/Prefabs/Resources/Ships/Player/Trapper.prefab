@@ -2194,11 +2194,11 @@ MonoBehaviour:
   healRate: 0
   maximumHealth: 100
   health: 0
-  rechargeRate: 0
+  rechargeRate: 5
   maximumShields: 100
   shields: 0
   hasDied: 0
-  maximumSpeed: 15
+  maximumSpeed: 50
   maximumAcceleration: 0.5
   mass: 1
   mover: {fileID: 0}

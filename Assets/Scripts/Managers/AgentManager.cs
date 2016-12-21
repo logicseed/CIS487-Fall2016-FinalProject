@@ -45,11 +45,11 @@ public class AgentManager : NetworkBehaviour
     [Header("Mover")]
     [Tooltip("The maximum speed the agent can attain.")]
     [SerializeField]
-    [Range(0.0f, 20.0f)]
+    [Range(0.0f, 200.0f)]
     private float maximumSpeed = 5.0f;
     [Tooltip("The maximum change in speed and direction the agent can perform.")]
     [SerializeField]
-    [Range(0.0f, 5.0f)]
+    [Range(0.0f, 50.0f)]
     private float maximumAcceleration = 0.5f;
     [SerializeField]
     [Range(1.0f, 5000.0f)]
@@ -129,8 +129,6 @@ public class AgentManager : NetworkBehaviour
         {
             sphere = gameObject.GetComponent<SphereCollider>();
             sphere.isTrigger = false;
-            //sphere.radius = collisionRadius;
-            //collisionRadius = sphere.radius;
         }
 
         // Standard Mover
@@ -153,7 +151,8 @@ public class AgentManager : NetworkBehaviour
 
         if (type == AgentType.Player || type == AgentType.Cruiser || type == AgentType.Fighter)
         {
-            Instantiate(Resources.Load("UnitPlaque"), Vector3.zero, Quaternion.Inverse(Quaternion.identity), gameObject.transform);
+            var go = Instantiate(Resources.Load("UnitPlaque"), Vector3.zero, Quaternion.Inverse(Quaternion.identity), gameObject.transform) as GameObject;
+            go.transform.localPosition = new Vector3(0.0f, 2.0f, 0.0f);
         }
     }
 
