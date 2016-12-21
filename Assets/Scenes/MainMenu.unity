@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
+  m_IndirectSpecularColor: {r: 0.37356147, g: 0.38111934, b: 0.35888165, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1098,9 +1098,17 @@ MonoBehaviour:
   m_Text: '<b><color=#FF9800FF>Additional textures, models and sounds by:</color></b>
 
 
-    Namey Names, Namey Names, Namey Names, Namey Names, Namey Names, Namey Names,
-    Namey Names, Namey Names, Namey Names, Namey Names, Namey Names, Namey Names,
-    Namey Names, Namey Names, Namey Names, Namey Names, Namey Names'
+    Awesome Planet Textures: Robert Stein III
+
+    Other Space Scene Stuff: Imphenzia
+
+    Ship Models: Daniel Kole Productions
+
+    Camaraderie font by Chequered Ink
+
+    Earth Orbiter font by Iconian Fonts
+
+    Other Fonts: Google & Adobe'
 --- !u!222 &470543431
 CanvasRenderer:
   m_ObjectHideFlags: 0
