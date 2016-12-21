@@ -200,6 +200,8 @@ GameObject:
   - 114: {fileID: 114000010418888892}
   - 114: {fileID: 114000010618734550}
   - 114: {fileID: 114000011316488066}
+  - 114: {fileID: 114000011182280288}
+  - 114: {fileID: 114000012611011278}
   m_Layer: 0
   m_Name: Ram
   m_TagString: Player
@@ -1727,6 +1729,20 @@ MonoBehaviour:
   mouse: {fileID: 0}
   camera: {fileID: 0}
   character: 0
+--- !u!114 &114000011182280288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011434119468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067eb14d5a8f3714f825f446fc91ae1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityObject: {fileID: 0}
+  maxRange: 0
+  abilitySpawnLoc: {fileID: 4000011990087002}
 --- !u!114 &114000011316488066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1754,6 +1770,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   range: 15
+--- !u!114 &114000012611011278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011434119468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1500f28da1b097b46b77b77b4f73ea58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAbility: {fileID: 11400000, guid: 5c7dd839f89b8214a827e8b5e5b152b8, type: 2}
 --- !u!114 &114000013454200234
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -28,6 +28,6 @@ public class NonTargetedProperties : Ability
     /// </summary>
     public override void cast()
     {
-        nonTargeted.cast();
+        nonTargeted.Cmdcast();
     }
 }

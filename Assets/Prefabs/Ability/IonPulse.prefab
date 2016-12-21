@@ -71,7 +71,7 @@ GameObject:
   - 114: {fileID: 114000014279067982}
   - 114: {fileID: 114000012832754078}
   - 114: {fileID: 114000011087867948}
-  - 114: {fileID: 114000012796789546}
+  - 114: {fileID: 114000010634325686}
   m_Layer: 0
   m_Name: IonPulse
   m_TagString: Untagged
@@ -206,19 +206,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011375730048}
   m_Mesh: {fileID: 4300002, guid: 4a1142b17f64bbc40871f76529421f77, type: 3}
---- !u!114 &114000011087867948
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012598687282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bf77743c29f74a4f83e8575b9d2c963, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
---- !u!114 &114000012796789546
+--- !u!114 &114000010634325686
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -230,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  team: 0
+  team: 4
   isPlayer: 0
   teamLayer: Default
   healRate: 0
@@ -243,9 +231,7 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
@@ -254,6 +240,18 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!114 &114000011087867948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012598687282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf77743c29f74a4f83e8575b9d2c963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
 --- !u!114 &114000012832754078
 MonoBehaviour:
   m_ObjectHideFlags: 1

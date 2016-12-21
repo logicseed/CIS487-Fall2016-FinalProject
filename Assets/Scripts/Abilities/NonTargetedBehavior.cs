@@ -16,13 +16,13 @@ public class NonTargetedBehavior : NetworkBehaviour
     void Start()
     {
         agent = GetComponent<AgentManager>();
-        ClientScene.RegisterPrefab(abilityObject);
     }
 
     [Command]
-    public void cast()
+    public void Cmdcast()
     {
         GameObject instantiatedObject;
+        ClientScene.RegisterPrefab(abilityObject);
 
         if (maxRange == 0)
         {

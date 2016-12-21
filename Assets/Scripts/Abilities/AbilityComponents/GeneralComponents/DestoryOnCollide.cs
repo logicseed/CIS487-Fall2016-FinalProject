@@ -26,14 +26,17 @@ public class DestoryOnCollide : MonoBehaviour
 	void Update ()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gameObject.transform.position, radius);
-        foreach (Collider hit in hitColliders)
+        if (hitColliders != null)
         {
-            agent = hit.gameObject.GetComponent<AgentManager>();
-            if(agent.team != objectAgent.team)
+            foreach (Collider hit in hitColliders)
             {
-                triggered = true;
-                Destroy(gameObject);
-            }     
+                agent = hit.gameObject.GetComponent<AgentManager>();
+                if (agent.team != objectAgent.team)
+                {
+                    triggered = true;
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

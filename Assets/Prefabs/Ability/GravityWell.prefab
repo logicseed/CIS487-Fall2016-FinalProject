@@ -37,7 +37,7 @@ GameObject:
   - 114: {fileID: 114000010235028968}
   - 114: {fileID: 114000013944956772}
   - 114: {fileID: 114000010426346316}
-  - 114: {fileID: 114000013795853498}
+  - 114: {fileID: 114000010149550540}
   m_Layer: 0
   m_Name: GravityWell
   m_TagString: Untagged
@@ -139,6 +139,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012839203406}
   m_Mesh: {fileID: 4300000, guid: 5ae1b6d4c894f9c449d33837a633a8ec, type: 3}
+--- !u!114 &114000010149550540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012806920918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  team: 4
+  isPlayer: 0
+  teamLayer: Default
+  healRate: 0
+  maximumHealth: 100
+  health: 0
+  rechargeRate: 0
+  maximumShields: 100
+  shields: 0
+  hasDied: 0
+  maximumSpeed: 5
+  maximumAcceleration: 0.5
+  mass: 1
+  mover: {fileID: 0}
+  species: 0
+  ship: 0
+  graphics: {fileID: 0}
+  target: {fileID: 0}
+  game: {fileID: 0}
+  level: {fileID: 0}
+  sphere: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!114 &114000010235028968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,40 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
---- !u!114 &114000013795853498
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012806920918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7dd6f8b66347da48ae535fd230a90d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  team: 0
-  isPlayer: 0
-  teamLayer: Default
-  healRate: 0
-  maximumHealth: 100
-  health: 0
-  rechargeRate: 0
-  maximumShields: 100
-  shields: 0
-  hasDied: 0
-  maximumSpeed: 9
-  maximumAcceleration: 0.5
-  mass: 1
-  mover: {fileID: 0}
-  species: 0
-  ship: 0
-  graphics: {fileID: 0}
-  target: {fileID: 0}
-  game: {fileID: 0}
-  level: {fileID: 0}
-  sphere: {fileID: 0}
-  rigidbody: {fileID: 0}
 --- !u!114 &114000013944956772
 MonoBehaviour:
   m_ObjectHideFlags: 1
