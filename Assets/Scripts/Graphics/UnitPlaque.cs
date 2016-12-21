@@ -15,7 +15,7 @@ public class UnitPlaque : MonoBehaviour
     {
         agent = transform.parent.gameObject.GetComponent<AgentManager>();
 
-        if (agent.isPlayer)
+        if (agent.type == AgentType.Player)
         {
             playerName.text = GameManager.Instance.teamNames[(int)agent.team];
         }
