@@ -458,6 +458,7 @@ GameObject:
   - 114: {fileID: 114000011063563718}
   - 114: {fileID: 114000010595199160}
   - 114: {fileID: 114000011788357906}
+  - 81: {fileID: 81000013964558964}
   m_Layer: 0
   m_Name: Trapper
   m_TagString: Player
@@ -2030,6 +2031,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!81 &81000013964558964
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012567255072}
+  m_Enabled: 1
 --- !u!114 &114000010595199160
 MonoBehaviour:
   m_ObjectHideFlags: 1

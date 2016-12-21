@@ -238,6 +238,7 @@ GameObject:
   - 114: {fileID: 114000012343060918}
   - 114: {fileID: 114000011040187394}
   - 114: {fileID: 114000011269519520}
+  - 81: {fileID: 81000010078013650}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Player
@@ -1352,6 +1353,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!81 &81000010078013650
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011547815194}
+  m_Enabled: 1
 --- !u!114 &114000010382997214
 MonoBehaviour:
   m_ObjectHideFlags: 1

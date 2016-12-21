@@ -200,6 +200,7 @@ GameObject:
   - 114: {fileID: 114000010418888892}
   - 114: {fileID: 114000010618734550}
   - 114: {fileID: 114000011316488066}
+  - 81: {fileID: 81000012778338914}
   m_Layer: 0
   m_Name: Ram
   m_TagString: Player
@@ -1599,6 +1600,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!81 &81000012778338914
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011434119468}
+  m_Enabled: 1
 --- !u!95 &95000011482879850
 Animator:
   serializedVersion: 3

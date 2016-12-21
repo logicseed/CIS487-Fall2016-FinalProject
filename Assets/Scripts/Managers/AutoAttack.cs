@@ -8,6 +8,7 @@ public class AutoAttack : NetworkBehaviour
 {
     private AgentManager agent;
     private LineRenderer lineRenderer;
+    AudioSource audio;
 
     public float timeBetweenAttacks = 1.0f;
     private float lastAttack = 0.0f;
@@ -17,10 +18,11 @@ public class AutoAttack : NetworkBehaviour
     #region MonoBehavior Methods
     private void Awake() { }
     private void Start()
-    {
+    { 
         agent = gameObject.GetComponent<AgentManager>();
         var go = Instantiate(Resources.Load("Weapon")) as GameObject;
         go.MakeChildOf(gameObject, "Weapon");
+        audio = go.GetComponent<AudioSource>();
         lineRenderer = go.GetComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
         lineRenderer.SetColors(GameManager.instance.GetTeamColor(agent.team), Color.white);
@@ -71,6 +73,7 @@ public class AutoAttack : NetworkBehaviour
     public void RpcShowAutoAttack()
     {
         //lineRenderer.SetPosition(1, position);
+        audio.Play();
         lineRenderer.enabled = true;
     }
 

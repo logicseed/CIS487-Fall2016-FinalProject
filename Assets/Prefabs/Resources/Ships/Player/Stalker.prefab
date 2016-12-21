@@ -457,6 +457,7 @@ GameObject:
   - 114: {fileID: 114000011114744130}
   - 114: {fileID: 114000012845909048}
   - 114: {fileID: 114000012324943238}
+  - 81: {fileID: 81000010414197232}
   m_Layer: 0
   m_Name: Stalker
   m_TagString: Player
@@ -2559,6 +2560,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!81 &81000010414197232
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012065395682}
+  m_Enabled: 1
 --- !u!114 &114000010155118034
 MonoBehaviour:
   m_ObjectHideFlags: 1
