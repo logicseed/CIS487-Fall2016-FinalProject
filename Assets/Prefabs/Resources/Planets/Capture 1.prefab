@@ -322,6 +322,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  influences:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  hasStarted: 0
 --- !u!114 &114000011289574566
 MonoBehaviour:
   m_ObjectHideFlags: 1

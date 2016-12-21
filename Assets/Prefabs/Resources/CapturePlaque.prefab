@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65a93b0c58c45e448c04b1898b8bf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 224000011250481260}
+  container: {fileID: 224000010079304962}
   team1Bar: {fileID: 224000013459533962}
   team2Bar: {fileID: 224000010413195562}
   team3Bar: {fileID: 224000011817057136}

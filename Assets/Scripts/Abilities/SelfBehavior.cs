@@ -60,7 +60,7 @@ public class SelfBehavior : MonoBehaviour
 
     IEnumerator applyShields(float duration, float magnitude)
     {
-        int maxShield = agent.maximumShields;
+        float maxShield = agent.maximumShields;
         agent.maximumShields = agent.maximumShields + (int)magnitude;
         agent.shields = agent.shields + (agent.maximumShields - agent.shields);
         yield return new WaitForSeconds(duration);

@@ -24,19 +24,19 @@ public class AgentManager : NetworkBehaviour
     private int healRate = 0;
     [SyncVar]
     [Range(0, 5000)]
-    public int maximumHealth = 100;
+    public float maximumHealth = 100.0f;
     [HideInInspector]
     [SyncVar]
-    public int health;
+    public float health;
     [SerializeField]
     [Range(0, 100)]
     private int rechargeRate = 0;
     [SyncVar]
     [Range(0, 5000)]
-    public int maximumShields = 100;
+    public float maximumShields = 100;
     [HideInInspector]
     [SyncVar]
-    public int shields;
+    public float shields;
     [HideInInspector]
     [SyncVar]
     public bool hasDied = false;
@@ -171,34 +171,34 @@ public class AgentManager : NetworkBehaviour
     [Server]
     protected virtual void HandleHealth()
     {
-        if (health <= 0 && !hasDied) CmdKillerPlayer();
+        if (health <= 0.0f && !hasDied) CmdKillerPlayer();
 
         health = Mathf.Clamp(health + Mathf.RoundToInt(healRate * Time.fixedDeltaTime), 0, maximumHealth);
         shields = Mathf.Clamp(shields + Mathf.RoundToInt(rechargeRate * Time.fixedDeltaTime), 0, maximumShields);
     }
 
     [Server]
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(float damage)
     {
         var unappliedDamage = damage;
 
-        if (unappliedDamage == 0) return;
+        if (unappliedDamage <= 0.0f) return;
 
         if (shields > 0)
         {
             if (shields >= unappliedDamage)
             {
                 shields -= unappliedDamage;
-                unappliedDamage = 0;
+                unappliedDamage = 0.0f;
             }
             else
             {
                 unappliedDamage -= shields;
-                shields = 0;
+                shields = 0.0f;
             }
         }
 
-        if (unappliedDamage == 0) return;
+        if (unappliedDamage <= 0) return;
 
         health -= unappliedDamage;
     }

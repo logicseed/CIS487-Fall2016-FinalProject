@@ -24,10 +24,15 @@ public class CapturePlaque : MonoBehaviour
         //Debug.Log(agent);
         //Debug.Log(agent.capture);
         // Update health and shields
-        team1Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team1] / 1000.0f), 0.25f);
-        team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team2] / 1000.0f), 0.25f);
-        team3Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team3] / 1000.0f), 0.25f);
-        team4Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team4] / 1000.0f), 0.25f);
+        // team1Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team1] / 1000.0f), 0.25f);
+        // team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team2] / 1000.0f), 0.25f);
+        // team3Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team3] / 1000.0f), 0.25f);
+        // team4Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[TeamType.Team4] / 1000.0f), 0.25f);
+
+        team1Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team1] / 1000.0f), 0.25f);
+        team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team2] / 1000.0f), 0.25f);
+        team3Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team3] / 1000.0f), 0.25f);
+        team4Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team4] / 1000.0f), 0.25f);
 
         // Update facing
         //container.localPosition = new Vector3(0.0f, agent.sphere.radius + 0.25f, 0.0f);

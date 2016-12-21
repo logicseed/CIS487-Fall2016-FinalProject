@@ -453,6 +453,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  influences:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  hasStarted: 0
 --- !u!135 &135000011712737308
 SphereCollider:
   m_ObjectHideFlags: 1

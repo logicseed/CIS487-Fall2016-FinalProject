@@ -12,7 +12,7 @@ public class AutoAttack : NetworkBehaviour
     public float timeBetweenAttacks = 1.0f;
     private float lastAttack = 0.0f;
     public float range = 10.0f;
-    public int damage = 10;
+    public float damage = 10.0f;
 
     #region MonoBehavior Methods
     private void Awake() { }
