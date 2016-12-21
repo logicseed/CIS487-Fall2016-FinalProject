@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011513010656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HomeSystem 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012739770028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010437716518}
   - 114: {fileID: 114000013776666228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   - 4: {fileID: 4000013207615106}
   - 33: {fileID: 33000011014007046}
   - 23: {fileID: 23000010750830778}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 4000011187620444}
   - 33: {fileID: 33000013569524760}
   - 23: {fileID: 23000012608008838}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - 54: {fileID: 54000011964295284}
   - 114: {fileID: 114000010156463194}
   - 114: {fileID: 114000011707937870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dank
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -306,7 +306,7 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
+  mass: 5000
   mover: {fileID: 0}
   species: 0
   ship: 0

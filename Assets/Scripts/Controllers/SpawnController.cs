@@ -2,49 +2,87 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Networking;
 /**
  * attached to a child of a spawning object called spawnpoint
  * 
  * 
 **/
-public class SpawnController : MonoBehaviour {
+public class SpawnController : NetworkBehaviour {
 
-	//object you want to have spawn from the is object
-	public GameObject spawnable;
 	//spawn spawnable object every x seconds
-	public float spawnRate =5.0f;
+	public float spawnRate =30.0f;
 	//begin spawning after x seconds of being created
 	public float startDelay = 2.0f;
 
-	public bool spawnSquad = false;
+	public int spawnLimit;
+	private AgentManager agent;
+	public List<GameObject> capturePlanets;
+	public GameObject captureTarget;
+
+	public List<GameObject> spawnedCruisers;
+
 	// Use this for initialization
 	void Start () {
-		if (spawnable!= null) {
+		agent = gameObject.GetComponent<AgentManager> ();
+		//capturePlanets = GameManager.instance.capturePlanets;
+		capturePlanets.Add(GameObject.Find ("/Capture 1/Planet 2"));
+		capturePlanets.Add(GameObject.Find ("/Capture 2/Hoth"));
+		capturePlanets.Add(GameObject.Find ("/Capture 3/Commerce"));
+		capturePlanets.Add(GameObject.Find ("/Capture 4/Dam Ba Da"));
+		//capturePlanets[1]=GameObject.Find ("/Capture 2/Hoth");
+		//capturePlanets[2]=GameObject.Find ("/Capture 3/Commerce");
+		//capturePlanets[3]=GameObject.Find ("/Capture 4/Dam Ba Da");
+		//Debug.Log(capturePlanets);
+		captureTarget=getClosestMoon ();
+		if (isServer) {
 			InvokeRepeating ("spawnSpawnable",startDelay,spawnRate);
 		}
 
 	}
 
 	public void Update(){
+		captureTarget=getClosestMoon ();
 	}
 
+	[Server]
 	private void spawnSpawnable(){
-		if (spawnSquad) {
-			GameObject instance1 = Instantiate(spawnable);
-			instance1.transform.position = transform.position;
-			GameObject instance2 = Instantiate(spawnable);
-			Vector3 offset1 = transform.position;
-			offset1.x += 5;
-			instance2.transform.position = offset1;
-			GameObject instance3 = Instantiate(spawnable);
-			Vector3 offset2 = transform.position;
-			offset2.x -= 5;
-			instance3.transform.position = offset2;
-		} else {
-			GameObject instance = Instantiate(spawnable);
-			instance.transform.position = transform.position;
+		foreach (var item in spawnedCruisers) {
+			if (item == null) {
+				spawnedCruisers.Remove (item);
+			}
 		}
 
-		//instance.
+		if (spawnedCruisers.Count < spawnLimit) {
+			var cruiser = Instantiate(GameManager.Instance.characters[(int)agent.team].cruiserPrefab, transform.FindChild("Cruiser Spawn").transform.position, Quaternion.identity) as GameObject;
+			var cruiserAgent =  cruiser.GetComponent<AgentManager>();
+
+			cruiserAgent.team = agent.team;
+			cruiserAgent.Start();
+			cruiserAgent.target.location = captureTarget.GetComponent<AgentManager> ();
+
+			var behaviour = new SeekBehaviour(captureTarget.GetComponent<AgentManager>());
+			cruiserAgent.mover.AddBehaviour(behaviour);
+			NetworkServer.Spawn(cruiser);
+
+			spawnedCruisers.Add(cruiser);
+
+		}
+			
+	}
+
+	private GameObject getClosestMoon(){
+		GameObject nearCap;
+		float temp = Vector3.Distance (capturePlanets [0].transform.position, transform.position);
+		nearCap = capturePlanets [0];
+		for (int i = 0; i < capturePlanets.Count; i++) {
+			if(Vector3.Distance (capturePlanets [i].transform.position, transform.position)<temp){
+				temp = Vector3.Distance (capturePlanets [i].transform.position, transform.position);
+				nearCap = capturePlanets [i];
+			}
+		}
+
+		return nearCap;
 	}
 }

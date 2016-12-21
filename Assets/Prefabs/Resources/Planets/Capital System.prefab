@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000010419882194}
   - 114: {fileID: 114000013715682036}
   - 114: {fileID: 114000012717325256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010050686996}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capital System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - 4: {fileID: 4000010772791060}
   - 33: {fileID: 33000011147420822}
   - 23: {fileID: 23000011445550064}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014041729670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012296141934}
   - 114: {fileID: 114000011915767622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - 4: {fileID: 4000013501550342}
   - 33: {fileID: 33000010105856594}
   - 23: {fileID: 23000010047295768}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,10 +306,8 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
-  collisionRadius: 1
+  mass: 5000
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}

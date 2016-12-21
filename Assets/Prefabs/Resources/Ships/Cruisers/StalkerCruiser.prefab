@@ -91,6 +91,7 @@ GameObject:
   - 114: {fileID: 114000013118869144}
   - 114: {fileID: 114000010807350524}
   - 114: {fileID: 114000010165189190}
+  - 114: {fileID: 114000013219141276}
   m_Layer: 0
   m_Name: StalkerCruiser
   m_TagString: Untagged
@@ -614,6 +615,24 @@ MonoBehaviour:
   agent: {fileID: 0}
   maxSpeed: 0
   maxAccel: 0
+--- !u!114 &114000013219141276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010770756332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f21d4cc94c7474ea9b0e540a347a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterPositions:
+  - {fileID: 1000013074296450}
+  - {fileID: 1000012680539586}
+  - {fileID: 1000012948621690}
+  - {fileID: 1000010625147930}
+  refillFighters: 0
+  refillTime: 0
 --- !u!135 &135000012509996738
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012142079690}
   - 114: {fileID: 114000012613728248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - 4: {fileID: 4000012256576806}
   - 33: {fileID: 33000013430287082}
   - 23: {fileID: 23000010190523796}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - 114: {fileID: 114000014155233748}
   - 114: {fileID: 114000010546769620}
   - 114: {fileID: 114000014068075624}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hoth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012055437958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - 4: {fileID: 4000010754706256}
   - 33: {fileID: 33000013824714872}
   - 23: {fileID: 23000011032333264}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012017461240}
   - 114: {fileID: 114000010518982862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capture 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
+  mass: 5000
   mover: {fileID: 0}
   species: 0
   ship: 0

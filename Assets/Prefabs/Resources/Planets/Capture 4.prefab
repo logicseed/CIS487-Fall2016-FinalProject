@@ -21,7 +21,7 @@ GameObject:
   - 4: {fileID: 4000010087147898}
   - 33: {fileID: 33000010703915764}
   - 23: {fileID: 23000012638729204}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - 4: {fileID: 4000011139469982}
   - 33: {fileID: 33000011961580384}
   - 23: {fileID: 23000010859410904}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Atmosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010491161052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011682432786}
   - 114: {fileID: 114000012141394316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capture 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - 114: {fileID: 114000011704041668}
   - 114: {fileID: 114000011813581788}
   - 114: {fileID: 114000012601927638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dam Ba Da
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013660461182}
   - 114: {fileID: 114000012764950480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ MonoBehaviour:
   hasDied: 0
   maximumSpeed: 5
   maximumAcceleration: 0.5
-  mass: 1
+  mass: 5000
   mover: {fileID: 0}
   species: 0
   ship: 0

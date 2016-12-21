@@ -106,6 +106,7 @@ GameObject:
   - 114: {fileID: 114000011317446928}
   - 114: {fileID: 114000012292715598}
   - 114: {fileID: 114000011829920120}
+  - 114: {fileID: 114000010296385178}
   m_Layer: 0
   m_Name: ShellCruiser
   m_TagString: Untagged
@@ -485,6 +486,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114000010296385178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011349969494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f21d4cc94c7474ea9b0e540a347a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterPositions:
+  - {fileID: 1000012529789694}
+  - {fileID: 1000014103285818}
+  - {fileID: 1000012145628986}
+  - {fileID: 1000010684006452}
+  refillFighters: 0
+  refillTime: 0
 --- !u!114 &114000011317446928
 MonoBehaviour:
   m_ObjectHideFlags: 1
