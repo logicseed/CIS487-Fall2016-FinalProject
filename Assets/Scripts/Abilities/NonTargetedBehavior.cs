@@ -12,6 +12,7 @@ public class NonTargetedBehavior : NetworkBehaviour
     public Transform abilitySpawnLoc;
     AgentManager agent;
     AgentManager objectAgent;
+    GameObject instantiatedObject;
 
     void Start()
     {
@@ -21,7 +22,6 @@ public class NonTargetedBehavior : NetworkBehaviour
     [Command]
     public void Cmdcast()
     {
-        GameObject instantiatedObject;
         ClientScene.RegisterPrefab(abilityObject);
 
         if (maxRange == 0)
@@ -35,10 +35,9 @@ public class NonTargetedBehavior : NetworkBehaviour
             instantiatedObject.transform.position = FindMousePosition();
             NetworkServer.Spawn(instantiatedObject); //Network spawn
         }
-        objectAgent = GetComponent<AgentManager>();
+        objectAgent = instantiatedObject.GetComponent<AgentManager>();            
         objectAgent.SendMessage("Start");
         objectAgent.team = agent.team;
-        objectAgent.type = AgentType.AbilityEffect;
     }
 
     private Vector3 FindMousePosition()

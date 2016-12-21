@@ -8,8 +8,7 @@ public class Damage : AbilityComponent
 {
     void Start()
     {
-        if(GetComponent<DestoryOnCollide>() != null)
-            collide = GetComponent<DestoryOnCollide>();
+        collide = GetComponent<DestoryOnCollide>();
         objectAgent = GetComponent<AgentManager>();
     }
 
