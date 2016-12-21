@@ -41,7 +41,7 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     [SyncVar]
     public bool hasDied = false;
-    
+
 
     [Header("Mover")]
     [Tooltip("The maximum speed the agent can attain.")]
@@ -93,7 +93,7 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public CaptureManager capture;
 
-    
+
 
 
 
@@ -209,7 +209,12 @@ public class AgentManager : NetworkBehaviour
     {
         hasDied = true;
         StartCoroutine(SpawnExplosion());
-        SceneManager.LoadScene("Scoreboard");
+        if (type == AgentType.Player)
+        {
+            GameManager.Instance.gameRunning = false;
+            Destroy(Prototype.NetworkLobby.LobbyManager.s_Singleton.gameObject);
+            SceneManager.LoadScene("Scoreboard");
+        }
     }
 
     public IEnumerator SpawnExplosion()
