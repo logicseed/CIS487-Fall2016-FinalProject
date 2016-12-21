@@ -27,15 +27,15 @@ public class SpawnController : NetworkBehaviour {
 	void Start () {
 		agent = gameObject.GetComponent<AgentManager> ();
 		//capturePlanets = GameManager.instance.capturePlanets;
-		capturePlanets.Add(GameObject.Find ("/Capture 1/Planet 2"));
-		capturePlanets.Add(GameObject.Find ("/Capture 2/Hoth"));
-		capturePlanets.Add(GameObject.Find ("/Capture 3/Commerce"));
-		capturePlanets.Add(GameObject.Find ("/Capture 4/Dam Ba Da"));
+		// capturePlanets.Add(GameObject.Find ("/Capture 1/Planet 2"));
+		// capturePlanets.Add(GameObject.Find ("/Capture 2/Hoth"));
+		// capturePlanets.Add(GameObject.Find ("/Capture 3/Commerce"));
+		// capturePlanets.Add(GameObject.Find ("/Capture 4/Dam Ba Da"));
 		//capturePlanets[1]=GameObject.Find ("/Capture 2/Hoth");
 		//capturePlanets[2]=GameObject.Find ("/Capture 3/Commerce");
 		//capturePlanets[3]=GameObject.Find ("/Capture 4/Dam Ba Da");
 		//Debug.Log(capturePlanets);
-		captureTarget=getClosestMoon ();
+		//captureTarget=getClosestMoon ();
 		if (isServer) {
 			InvokeRepeating ("spawnSpawnable",startDelay,spawnRate);
 		}
@@ -43,7 +43,7 @@ public class SpawnController : NetworkBehaviour {
 	}
 
 	public void Update(){
-		captureTarget=getClosestMoon ();
+		//captureTarget=getClosestMoon ();
 	}
 
 	[Server]
@@ -60,7 +60,7 @@ public class SpawnController : NetworkBehaviour {
 
 			cruiserAgent.team = agent.team;
 			cruiserAgent.Start();
-			cruiserAgent.target.location = captureTarget.GetComponent<AgentManager> ();
+			//cruiserAgent.target.location = captureTarget.GetComponent<AgentManager> ();
 
 			NetworkServer.Spawn(cruiser);
 
