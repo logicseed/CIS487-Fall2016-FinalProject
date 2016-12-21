@@ -29,8 +29,8 @@ public class SpawnController : NetworkBehaviour {
 		//capturePlanets = GameManager.instance.capturePlanets;
 		capturePlanets.Add(GameObject.Find ("/Capture 1/Planet 2"));
 		capturePlanets.Add(GameObject.Find ("/Capture 2/Hoth"));
-		capturePlanets.Add(GameObject.Find ("/Capture 3/Commerce"));
-		capturePlanets.Add(GameObject.Find ("/Capture 4/Dam Ba Da"));
+		//capturePlanets.Add(GameObject.Find ("/Capture 3/Commerce"));
+		///capturePlanets.Add(GameObject.Find ("/Capture 4/Dam Ba Da"));
 		//capturePlanets[1]=GameObject.Find ("/Capture 2/Hoth");
 		//capturePlanets[2]=GameObject.Find ("/Capture 3/Commerce");
 		//capturePlanets[3]=GameObject.Find ("/Capture 4/Dam Ba Da");
