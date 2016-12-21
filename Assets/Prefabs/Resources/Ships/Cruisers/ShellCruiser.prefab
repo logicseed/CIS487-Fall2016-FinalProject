@@ -628,7 +628,7 @@ MonoBehaviour:
   healRate: 0
   maximumHealth: 50
   health: 0
-  rechargeRate: 5
+  rechargeRate: 20
   maximumShields: 150
   shields: 0
   hasDied: 0

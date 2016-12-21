@@ -238,6 +238,17 @@ MonoBehaviour:
   players: []
   capturePlanets: []
   spaceStations: []
+  teamScores:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  scoreRate: 10
+  gameLength: 10
+  gameStartTime: 0
+  gameTimeElapsed: 0
+  gameRunning: 0
   teamNames:
   - 
   - 
@@ -1063,6 +1074,11 @@ Prefab:
     - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
         type: 2}
       propertyPath: colors.Array.data[5].a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013351088438, guid: a6266ec8837b1dc468162c654349dbdc,
+        type: 2}
+      propertyPath: gameLength
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

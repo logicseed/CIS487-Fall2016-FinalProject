@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  range: 10
+  range: 20
   damage: 20
 --- !u!114 &114000012067706766
 MonoBehaviour:
@@ -513,7 +513,7 @@ MonoBehaviour:
   healRate: 0
   maximumHealth: 25
   health: 0
-  rechargeRate: 5
+  rechargeRate: 20
   maximumShields: 75
   shields: 0
   hasDied: 0

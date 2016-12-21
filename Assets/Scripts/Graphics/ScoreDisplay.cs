@@ -10,10 +10,12 @@ public class ScoreDisplay : MonoBehaviour
     public void Update()
     {
         var text = "";
-        text += "<b>Scores</b>\n\n";
-        text += GameManager.Instance.teamNames[(int)TeamType.Team1] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team1] + "\n";
-        text += GameManager.Instance.teamNames[(int)TeamType.Team2] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team2] + "\n";
-        text += GameManager.Instance.teamNames[(int)TeamType.Team3] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team3] + "\n";
-        text += GameManager.Instance.teamNames[(int)TeamType.Team4] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team4] + "\n";
+        text += "<b>Resources Collected from Captured Planets</b>\n\n";
+		text += GameManager.Instance.teamNames[(int)TeamType.Team1] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team1].ToString("0") + "\n";
+		text += GameManager.Instance.teamNames[(int)TeamType.Team2] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team2].ToString("0") + "\n";
+		text += GameManager.Instance.teamNames[(int)TeamType.Team3] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team3].ToString("0") + "\n";
+		text += GameManager.Instance.teamNames[(int)TeamType.Team4] + " - " + GameManager.Instance.teamScores[(int)TeamType.Team4].ToString("0") + "\n";
+
+		scoreText.text = text;
     }
 }

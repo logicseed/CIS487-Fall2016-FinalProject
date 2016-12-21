@@ -35,21 +35,25 @@ public class GameManager : NetworkBehaviour
     public float gameLength = 10.0f;
     public float gameStartTime = 0.0f;
     public float gameTimeElapsed = 0.0f;
+	public bool gameRunning = false;
 
     public void FixedUpdate()
     {
-        gameTimeElapsed = Time.time - gameStartTime;
+		if (gameRunning) {
+			gameTimeElapsed = Time.time - gameStartTime;
 
-        if (gameTimeElapsed >= gameLength * 60.0f)
-        {
-            SceneManager.LoadScene("Scoreboard");
-        }
+			if (gameTimeElapsed >= gameLength * 60.0f) {
+				gameRunning = false;
+				SceneManager.LoadScene ("Scoreboard");
+			}
+		}
     }
 
     public void StartGame()
     {
         gameTimeElapsed = 0.0f;
         gameStartTime = Time.time;
+		gameRunning = true;
     }
     
     public event ColorChangeHandler ColorChange;
