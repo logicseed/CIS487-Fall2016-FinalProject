@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Destory object when another agent that is not a part of your own team enters 
@@ -9,7 +11,7 @@
 /// sphere, the collsion overlap sphere should never be larger than the effect radius. 
 /// These two variables are independant of each other.
 /// </remarks>
-public class DestoryOnCollide : MonoBehaviour
+public class DestoryOnCollide : NetworkBehaviour
 {
     [HideInInspector]
     public bool triggered;
@@ -34,9 +36,19 @@ public class DestoryOnCollide : MonoBehaviour
                 if (agent.team != objectAgent.team)
                 {
                     triggered = true;
-                    Destroy(gameObject);
+                    StartCoroutine("trigger");
                 }
             }
         }
+    }
+
+    IEnumerator trigger()
+    {
+        yield return new WaitForSeconds(0);
+    }
+
+    void destroyObject()
+    {
+        NetworkServer.Destroy(gameObject);
     }
 }
