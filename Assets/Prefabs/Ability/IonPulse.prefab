@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 1000011375730048}
   m_LocalRotation: {x: -0.7010574, y: 0.09229595, z: -0.09229596, w: 0.7010574}
   m_LocalPosition: {x: 0.000041365623, y: 0.00007702411, z: 0.00013083965}
-  m_LocalScale: {x: 0.5000001, y: 0.5, z: 0.5000001}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010737217018}
@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 1000012598687282}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010737217018}
@@ -251,6 +251,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   target: {fileID: 0}
   game: {fileID: 0}
+  level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
 --- !u!114 &114000012832754078

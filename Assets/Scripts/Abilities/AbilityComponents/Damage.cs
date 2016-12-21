@@ -26,17 +26,7 @@ public class Damage : AbilityComponent
         {
             agent = hit.GetComponent<AgentManager>();
             if (agent.team != objectAgent.team)
-            {
-                if (agent.shields >= (int)magnitude)
-                    agent.shields = agent.shields - (int)magnitude;
-                else
-                {
-                    int DamagePassedShields = Math.Abs(agent.shields - (int)magnitude);
-                    agent.shields = 0;
-                    agent.health = agent.health - DamagePassedShields;
-                    //Debug.Log("You've been hit for: " + magnitude);
-                }
-            }
+                agent.ApplyDamage((int)magnitude);
         }
     }
 }

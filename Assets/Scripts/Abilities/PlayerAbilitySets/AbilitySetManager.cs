@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Manages the set of player abilities along with there cooldowns
 /// </summary>
-public class AbilitySetManager : MonoBehaviour
+public class AbilitySetManager : NetworkBehaviour
 {
     public PlayerAbilitySet playerAbility;
     float abilitycooldown1, abilitycooldown2, abilitycooldown3;

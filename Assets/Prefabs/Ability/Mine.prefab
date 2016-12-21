@@ -36,6 +36,7 @@ GameObject:
   - 4: {fileID: 4000013827290222}
   - 114: {fileID: 114000010380548992}
   - 114: {fileID: 114000011768312118}
+  - 114: {fileID: 114000011521771018}
   - 114: {fileID: 114000011694006110}
   - 114: {fileID: 114000011434130614}
   m_Layer: 0
@@ -196,16 +197,28 @@ MonoBehaviour:
   maximumSpeed: 5
   maximumAcceleration: 0.5
   mass: 1
-  collisionRadius: 1
   mover: {fileID: 0}
-  graphicsGO: {fileID: 0}
   species: 0
   ship: 0
   graphics: {fileID: 0}
   target: {fileID: 0}
   game: {fileID: 0}
+  level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!114 &114000011521771018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011645248016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07d78c88ce23b44db44121d5b22b472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  radius: 10
 --- !u!114 &114000011694006110
 MonoBehaviour:
   m_ObjectHideFlags: 1

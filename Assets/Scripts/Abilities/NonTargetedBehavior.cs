@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class NonTargetedBehavior : MonoBehaviour
+public class NonTargetedBehavior : NetworkBehaviour
 {
     [HideInInspector]
     public GameObject abilityObject;
@@ -15,18 +16,24 @@ public class NonTargetedBehavior : MonoBehaviour
     void Start()
     {
         agent = GetComponent<AgentManager>();
+        ClientScene.RegisterPrefab(abilityObject);
     }
 
+    [Command]
     public void cast()
     {
         GameObject instantiatedObject;
 
         if (maxRange == 0)
+        {
             instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
-        else if(Vector3.Distance(gameObject.transform.position, FindMousePosition()) <= maxRange)
+            NetworkServer.Spawn(instantiatedObject); //Network spawn
+        }
+        else if (Vector3.Distance(gameObject.transform.position, FindMousePosition()) <= maxRange)
         {
             instantiatedObject = (GameObject)Instantiate(abilityObject, abilitySpawnLoc.transform.position, transform.rotation);
             instantiatedObject.transform.position = FindMousePosition();
+            NetworkServer.Spawn(instantiatedObject); //Network spawn
         }
         objectAgent = GetComponent<AgentManager>();
         objectAgent.SendMessage("Start");
