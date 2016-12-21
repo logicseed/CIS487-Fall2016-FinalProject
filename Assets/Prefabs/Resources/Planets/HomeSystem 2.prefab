@@ -51,6 +51,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012654681536}
+  - 114: {fileID: 114000014108192672}
   m_Layer: 10
   m_Name: HomeSystem 2
   m_TagString: Untagged
@@ -361,6 +362,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   graphicsGO: {fileID: 0}
+--- !u!114 &114000014108192672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011957612376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 175
+    i1: 189
+    i2: 114
+    i3: 178
+    i4: 176
+    i5: 238
+    i6: 113
+    i7: 84
+    i8: 27
+    i9: 189
+    i10: 206
+    i11: 182
+    i12: 101
+    i13: 167
+    i14: 255
+    i15: 67
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000014156623732
 MonoBehaviour:
   m_ObjectHideFlags: 1

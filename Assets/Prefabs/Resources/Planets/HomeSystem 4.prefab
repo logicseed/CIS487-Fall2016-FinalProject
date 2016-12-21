@@ -73,6 +73,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011063466874}
+  - 114: {fileID: 114000013452846210}
   m_Layer: 10
   m_Name: HomeSystem 4
   m_TagString: Untagged
@@ -393,6 +394,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: -20, z: 0}
+--- !u!114 &114000013452846210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012431050696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 230
+    i1: 252
+    i2: 235
+    i3: 4
+    i4: 13
+    i5: 136
+    i6: 9
+    i7: 180
+    i8: 186
+    i9: 1
+    i10: 171
+    i11: 242
+    i12: 73
+    i13: 226
+    i14: 186
+    i15: 130
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!135 &135000011871396106
 SphereCollider:
   m_ObjectHideFlags: 1

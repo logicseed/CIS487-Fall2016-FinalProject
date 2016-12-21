@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010050686996}
+  - 114: {fileID: 114000010900925582}
   m_Layer: 10
   m_Name: Capital System
   m_TagString: Untagged
@@ -316,6 +317,38 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!114 &114000010900925582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011218855712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 209
+    i1: 208
+    i2: 5
+    i3: 128
+    i4: 98
+    i5: 97
+    i6: 246
+    i7: 148
+    i8: 217
+    i9: 156
+    i10: 189
+    i11: 165
+    i12: 202
+    i13: 119
+    i14: 13
+    i15: 60
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000011915767622
 MonoBehaviour:
   m_ObjectHideFlags: 1

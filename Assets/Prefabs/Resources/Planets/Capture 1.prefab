@@ -75,6 +75,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010519141978}
   - 114: {fileID: 114000010089647020}
+  - 114: {fileID: 114000012460773424}
   m_Layer: 10
   m_Name: Capture 1
   m_TagString: Untagged
@@ -119,7 +120,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013035221640}
-  m_LocalRotation: {x: 0, y: 0.41740987, z: 0, w: 0.9087184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +375,38 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114000012460773424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013035221640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 30
+    i1: 64
+    i2: 231
+    i3: 210
+    i4: 189
+    i5: 203
+    i6: 190
+    i7: 196
+    i8: 251
+    i9: 61
+    i10: 61
+    i11: 79
+    i12: 28
+    i13: 137
+    i14: 85
+    i15: 168
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000014188839946
 MonoBehaviour:
   m_ObjectHideFlags: 1
