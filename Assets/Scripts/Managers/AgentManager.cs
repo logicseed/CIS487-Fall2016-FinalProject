@@ -11,7 +11,7 @@ public class AgentManager : NetworkBehaviour
     //[SyncVar]
     public AgentType type = AgentType.None;
     [Tooltip("The team determines how other agents respond to this agent.")]
-    [SyncVar]
+    //[SyncVar]
     public TeamType team = TeamType.World;
     [HideInInspector]
     public bool isPlayer = false;
