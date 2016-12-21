@@ -212,7 +212,7 @@ public class AgentManager : NetworkBehaviour
         if (type == AgentType.Player)
         {
             GameManager.Instance.gameRunning = false;
-            Destroy(Prototype.NetworkLobby.LobbyManager.s_Singleton.gameObject);
+            //Destroy(Prototype.NetworkLobby.LobbyManager.s_Singleton.gameObject);
             SceneManager.LoadScene("Scoreboard");
         }
     }

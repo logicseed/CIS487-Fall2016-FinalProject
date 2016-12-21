@@ -44,7 +44,7 @@ public class GameManager : NetworkBehaviour
 
 			if (gameTimeElapsed >= gameLength * 60.0f) {
 				gameRunning = false;
-                Destroy(Prototype.NetworkLobby.LobbyManager.s_Singleton.gameObject);
+                //Destroy(Prototype.NetworkLobby.LobbyManager.s_Singleton.gameObject);
 				SceneManager.LoadScene ("Scoreboard");
 
 			}
