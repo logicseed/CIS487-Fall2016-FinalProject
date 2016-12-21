@@ -3,6 +3,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class AgentManager : NetworkBehaviour
@@ -208,6 +209,7 @@ public class AgentManager : NetworkBehaviour
     {
         hasDied = true;
         StartCoroutine(SpawnExplosion());
+        SceneManager.LoadScene("Scoreboard");
     }
 
     public IEnumerator SpawnExplosion()
