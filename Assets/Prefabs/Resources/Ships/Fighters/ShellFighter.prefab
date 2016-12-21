@@ -173,6 +173,7 @@ GameObject:
   - 114: {fileID: 114000012433005040}
   - 114: {fileID: 114000012369694716}
   - 114: {fileID: 114000010901737416}
+  - 114: {fileID: 114000011592444200}
   m_Layer: 0
   m_Name: ShellFighter
   m_TagString: Untagged
@@ -416,6 +417,21 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   range: 10
   damage: 20
+--- !u!114 &114000011592444200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014021258494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f905c7d45ccf479712a1771f544e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyEnemyShips: []
+  attacking: 0
+  targeting: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &114000011771262008
 MonoBehaviour:
   m_ObjectHideFlags: 1

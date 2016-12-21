@@ -60,6 +60,7 @@ GameObject:
   - 114: {fileID: 114000012674458448}
   - 114: {fileID: 114000013133246588}
   - 114: {fileID: 114000013175715488}
+  - 114: {fileID: 114000010949975572}
   m_Layer: 0
   m_Name: RamFighter
   m_TagString: Untagged
@@ -390,6 +391,21 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114000010949975572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012534909244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f905c7d45ccf479712a1771f544e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyEnemyShips: []
+  attacking: 0
+  targeting: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &114000011076336938
 MonoBehaviour:
   m_ObjectHideFlags: 1

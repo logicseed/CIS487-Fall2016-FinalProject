@@ -79,6 +79,7 @@ GameObject:
   - 114: {fileID: 114000012221042108}
   - 114: {fileID: 114000010993275952}
   - 114: {fileID: 114000014049603080}
+  - 114: {fileID: 114000011433868632}
   m_Layer: 0
   m_Name: TrapperFighter
   m_TagString: Untagged
@@ -419,6 +420,21 @@ MonoBehaviour:
   direct: {fileID: 0}
   directIndicator: {fileID: 0}
   location: {fileID: 0}
+--- !u!114 &114000011433868632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011532122636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f905c7d45ccf479712a1771f544e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyEnemyShips: []
+  attacking: 0
+  targeting: 0
+  attackTarget: {fileID: 0}
 --- !u!114 &114000012221042108
 MonoBehaviour:
   m_ObjectHideFlags: 1

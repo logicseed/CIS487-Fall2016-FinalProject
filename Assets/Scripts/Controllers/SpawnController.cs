@@ -43,16 +43,20 @@ public class SpawnController : NetworkBehaviour {
 	}
 
 	public void Update(){
-		//captureTarget=getClosestMoon ();
+		/*foreach (var item in spawnedCruisers) {
+			if (item == null) {
+				spawnedCruisers.Remove (item);
+			}
+		}*/
 	}
 
 	[Server]
 	private void spawnSpawnable(){
-		foreach (var item in spawnedCruisers) {
+		/*foreach (var item in spawnedCruisers) {
 			if (item == null) {
 				spawnedCruisers.Remove (item);
 			}
-		}
+		}*/
 
 		if (spawnedCruisers.Count < spawnLimit) {
 			var cruiser = Instantiate(GameManager.Instance.characters[(int)agent.team].cruiserPrefab, transform.FindChild("Cruiser Spawn").transform.position, Quaternion.identity) as GameObject;
