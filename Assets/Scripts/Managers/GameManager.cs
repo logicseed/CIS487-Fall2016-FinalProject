@@ -28,6 +28,29 @@ public class GameManager : NetworkBehaviour
 
     public GameObject[] capturePlanets;
     public GameObject[] spaceStations;
+
+    public float[] teamScores = new float[5];
+    public float scoreRate = 10.0f;
+
+    public float gameLength = 10.0f;
+    public float gameStartTime = 0.0f;
+    public float gameTimeElapsed = 0.0f;
+
+    public void FixedUpdate()
+    {
+        gameTimeElapsed = Time.time - gameStartTime;
+
+        if (gameTimeElapsed >= gameLength * 60.0f)
+        {
+            SceneManager.LoadScene("Scoreboard");
+        }
+    }
+
+    public void StartGame()
+    {
+        gameTimeElapsed = 0.0f;
+        gameStartTime = Time.time;
+    }
     
     public event ColorChangeHandler ColorChange;
 
@@ -98,6 +121,14 @@ public class GameManager : NetworkBehaviour
         teamNames[(int)TeamType.Team3] = "Team 3";
         teamNames[(int)TeamType.Team4] = "Team 4";
         teamNames[(int)TeamType.World] = "World";
+    }
+
+    public void ResetScores()
+    {
+        for (int i = 0; i < teamScores.Length; i++)
+        {
+            teamScores[i] = 0.0f;
+        }
     }
 
     public void SetTeamColor(TeamType team, Color color)

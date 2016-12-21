@@ -29,7 +29,15 @@ public class CaptureManager : NetworkBehaviour
 
 
         var go = Instantiate(Resources.Load("CapturePlaque"), Vector3.zero, Quaternion.identity, gameObject.transform) as GameObject;
-        go.transform.localPosition = new Vector3(0.0f, 11.0f, 0.0f);
+        go.transform.localPosition = new Vector3(0.0f, 13.0f, 0.0f);
+    }
+
+    public void FixedUpdate()
+    {
+        if (agent.team != TeamType.World)
+        {
+            GameManager.Instance.teamScores[(int)agent.team] += Time.fixedDeltaTime * GameManager.Instance.scoreRate;
+        }
     }
 
     public void ApplyInfluence(TeamType team, float amount)

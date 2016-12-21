@@ -92,7 +92,7 @@ public class AgentManager : NetworkBehaviour
     [HideInInspector]
     public CaptureManager capture;
 
-
+    
 
 
 

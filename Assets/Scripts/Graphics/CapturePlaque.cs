@@ -39,10 +39,10 @@ public class CapturePlaque : MonoBehaviour
             teamName.text = GameManager.Instance.teamNames[(int)agent.team];
         }
 
-        team1Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team1] / 1000.0f), 0.25f);
-        team2Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team2] / 1000.0f), 0.25f);
-        team3Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team3] / 1000.0f), 0.25f);
-        team4Bar.sizeDelta = new Vector2(4.0f * ((float)agent.capture.influences[(int)TeamType.Team4] / 1000.0f), 0.25f);
+        team1Bar.sizeDelta = new Vector2(Mathf.Min(4.0f, 4.0f * ((float)agent.capture.influences[(int)TeamType.Team1] / 1000.0f)), 0.25f);
+        team2Bar.sizeDelta = new Vector2(Mathf.Min(4.0f, 4.0f * ((float)agent.capture.influences[(int)TeamType.Team2] / 1000.0f)), 0.25f);
+        team3Bar.sizeDelta = new Vector2(Mathf.Min(4.0f, 4.0f * ((float)agent.capture.influences[(int)TeamType.Team3] / 1000.0f)), 0.25f);
+        team4Bar.sizeDelta = new Vector2(Mathf.Min(4.0f, 4.0f * ((float)agent.capture.influences[(int)TeamType.Team4] / 1000.0f)), 0.25f);
 
         // Update facing
         //container.localPosition = new Vector3(0.0f, agent.sphere.radius + 0.25f, 0.0f);

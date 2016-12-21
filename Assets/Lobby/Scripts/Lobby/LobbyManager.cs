@@ -488,6 +488,9 @@ namespace Prototype.NetworkLobby
             agent.team = team;
             agent.name = lobbyPlayer.playerName;
 
+            game.ResetScores();
+            game.StartGame();
+
             return gamePlayer;
         }
     }
