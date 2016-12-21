@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class AgentManager : NetworkBehaviour
 {
     [Tooltip("The type determines which components will be attached to this agent.")]
-    [SyncVar]
+    //[SyncVar]
     public AgentType type = AgentType.None;
     [Tooltip("The team determines how other agents respond to this agent.")]
     [SyncVar]
