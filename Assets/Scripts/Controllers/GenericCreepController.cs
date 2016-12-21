@@ -13,7 +13,7 @@ public class GenericCreepController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		agent = gameObject.GetComponent<AgentManager> ();
-		//goToLocation = GameObject.Find ("/HomeSystem/Dank");
+
 		this.setLocateBehavior ();
 		agent.mover.AddBehaviour(locateBehavior);
 		//agent.mover.AddBehaviour(this.setAttackBehavior());

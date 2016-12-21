@@ -92,6 +92,8 @@ GameObject:
   - 114: {fileID: 114000010807350524}
   - 114: {fileID: 114000010165189190}
   - 114: {fileID: 114000013219141276}
+  - 114: {fileID: 114000011226557456}
+  - 114: {fileID: 114000012857608892}
   m_Layer: 0
   m_Name: StalkerCruiser
   m_TagString: Untagged
@@ -556,7 +558,7 @@ MonoBehaviour:
   maximumShields: 100
   shields: 0
   hasDied: 0
-  maximumSpeed: 5
+  maximumSpeed: 15
   maximumAcceleration: 0.5
   mass: 1
   mover: {fileID: 0}
@@ -581,6 +583,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   graphicsGO: {fileID: 0}
+--- !u!114 &114000011226557456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010770756332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085abbbcc66b42d40bb975ac42b5de23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capturePlanets: []
 --- !u!114 &114000012453173488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -601,6 +615,20 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114000012857608892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010770756332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3a027ce6c258849a7c8902aa4c96f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  range: 10
+  damage: 10
 --- !u!114 &114000013118869144
 MonoBehaviour:
   m_ObjectHideFlags: 1

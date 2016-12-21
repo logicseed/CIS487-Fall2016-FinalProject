@@ -233,6 +233,8 @@ GameObject:
   - 114: {fileID: 114000011311412400}
   - 114: {fileID: 114000011092104006}
   - 114: {fileID: 114000012329938916}
+  - 114: {fileID: 114000011087143136}
+  - 114: {fileID: 114000013982555496}
   m_Layer: 0
   m_Name: TrapperCruiser
   m_TagString: Untagged
@@ -486,6 +488,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114000011087143136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013853765474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085abbbcc66b42d40bb975ac42b5de23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capturePlanets: []
 --- !u!114 &114000011092104006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,7 +634,7 @@ MonoBehaviour:
   maximumShields: 100
   shields: 0
   hasDied: 0
-  maximumSpeed: 5
+  maximumSpeed: 15
   maximumAcceleration: 0.5
   mass: 1
   mover: {fileID: 0}
@@ -632,6 +646,20 @@ MonoBehaviour:
   level: {fileID: 0}
   sphere: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!114 &114000013982555496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013853765474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3a027ce6c258849a7c8902aa4c96f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  range: 10
+  damage: 10
 --- !u!135 &135000013497450090
 SphereCollider:
   m_ObjectHideFlags: 1
