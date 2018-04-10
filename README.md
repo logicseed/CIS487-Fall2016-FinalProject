@@ -1,20 +1,73 @@
-# Introduction
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Game Design I - CIS487 Fall 2016
+======
+>After introducing the class to the basics of the Unity engine with the midterm project, we separated
+>into teams of four to work on a larger project. For this project we chose to create a simple multiplayer
+>battle arena that takes place in space. The players would assume the role of different planets that
+>would do battle of the resources of nearby moons.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+### Details
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+__Students:__ Marc King, Rodney Lewis, Harrison Telfer, Jeff Wright
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+__Professor:__ Dr. Bruce Maxim
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+__School:__ University of Michigan - Dearborn
+
+__My Contributions:__ Design, implementation, logo, UI, networking, movement
+
+__Timeline:__ 6 weeks
+
+### Technologies
+
+* .NET Framework 3.5
+* Unity 5.4.2
+
+### Screenshots
+
+*The main menu exists in 3D space and switching between sub-menus rotates the camera to view the
+different menus.*
+
+[![MainMenu](Screenshots/MainMenu.gif?raw=true "MainMenu")](Screenshots/MainMenu.gif?raw=true)
+
+*The networking lobby allows players to switch ships, change their team color, and await other players.
+The lobby code was the only existing code used in this project, but it was modified to allow for
+players to change their ships and team colors, and to fit the aesthetic of the rest of the menus.*
+
+[![Lobby](Screenshots/Lobby.gif?raw=true "Lobby")](Screenshots/Lobby.gif?raw=true)
+
+*Custom movement code allows the player to click to move their ship. It uses the same movement code
+used by the AI ships but is under control of the player.*
+
+[![Movement](Screenshots/Movement.gif?raw=true "Movement")](Screenshots/Movement.gif?raw=true)
+
+*The camera allows the player to change their perspective to provide a better view of the map, but
+it is under heavy constraints to limit the amount of information provided to a player.*
+
+[![Camera](Screenshots/Camera.gif?raw=true "Camera")](Screenshots/Camera.gif?raw=true)
+
+*The following animation shows a selected moon being drained of its resources. The player then travels
+to a nearby moon and attracts the attention of an opposing team.*
+
+[![Capture](Screenshots/Capture.gif?raw=true "Capture")](Screenshots/Capture.gif?raw=true)
+
+*Early testing indicated that many players found it challenging to maintain their orientation in the
+relatively empty space. To assist with orientation and grid can be overlayed onto the map.*
+
+[![Grid](Screenshots/Grid.gif?raw=true "Grid")](Screenshots/Grid.gif?raw=true)
+
+*Since space is essentially boundless, a warning graphic will indicate when a player has traveled
+too far from the main arena area. The warning graphic always points toward the center of the map.*
+
+[![Boundary](Screenshots/Boundary.gif?raw=true "Boundary")](Screenshots/Boundary.gif?raw=true)
+
+### Development
+
+*Knowing the map would have many entities acting simultaneously, the animation below is an early
+stress test to check for bottlenecks in the movement code.*
+
+[![StressTest](Screenshots/StressTest.gif?raw=true "StressTest")](Screenshots/StressTest.gif?raw=true)
+
+*Below is an early demonstration of the ship and color selection being mirrored across the networking
+code.*
+
+[![NetworkedLobby](Screenshots/NetworkedLobby.gif?raw=true "NetworkedLobby")](Screenshots/NetworkedLobby.gif?raw=true)
