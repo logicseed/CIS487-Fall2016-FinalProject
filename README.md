@@ -8,7 +8,7 @@ Game Design I - CIS487 Fall 2016
 >After introducing the class to the basics of the Unity engine with the midterm project, we separated
 >into teams of four to work on a larger project. For this project we chose to create a simple multiplayer
 >battle arena that takes place in space. The players would assume the role of different planets that
->would do battle of the resources of nearby moons.
+>would do battle for the resources of nearby moons.
 
 ### Details
 
@@ -56,11 +56,11 @@ to a nearby moon and attracts the attention of an opposing team.*
 [![Capture](Screenshots/Capture.gif?raw=true "Capture")](Screenshots/Capture.gif?raw=true)
 
 *Early testing indicated that many players found it challenging to maintain their orientation in the
-relatively empty space. To assist with orientation and grid can be overlayed onto the map.*
+relatively empty space. To assist with orientation a grid can be overlayed onto the map.*
 
 [![Grid](Screenshots/Grid.gif?raw=true "Grid")](Screenshots/Grid.gif?raw=true)
 
-*Since space is essentially boundless, a warning graphic will indicate when a player has traveled
+*Since the maps are boundless, a warning graphic will indicate when a player has traveled
 too far from the main arena area. The warning graphic always points toward the center of the map.*
 
 [![Boundary](Screenshots/Boundary.gif?raw=true "Boundary")](Screenshots/Boundary.gif?raw=true)
